@@ -2,6 +2,8 @@
 
 Material correspondiente al curso...
 
+![pic](FLYERv3.png)
+
 ## Cronograma
 <table >
     <tr align="center" height="65px">
