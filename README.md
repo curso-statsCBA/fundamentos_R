@@ -16,6 +16,11 @@ Material correspondiente al curso...
   - ![4.1 Creación y manipulación de tablas]() falta!
   - ![4.2 Estructuras complejas]() falta!
   - ![5.1 Control de flujo](dia2/5.1_Control_de_flujo.md) cargando...
+- Dia 3
+  - ![5.2 Funciones]() falta!
+- Dia 4
+  - ![6.1 Gráficos básicos]() falta!
+  - ![6.2 Gráficos con ggplot2]() falta!
   
 
 ### Otros recursos de interés
