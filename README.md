@@ -3,8 +3,8 @@
 Material correspondiente al curso...
 
 ## Cronograma
-<table>
-    <tr align="center" height="60px">
+<table >
+    <tr align="center" height="65px">
       <th>Módulo</th>
       <th>Lunes</th>
       <th>Martes</th>
@@ -12,23 +12,28 @@ Material correspondiente al curso...
       <th>Jueves</th>
       <th>Viernes</th>
     </tr>
-    <tr align="center"  height="60px">
+    <tr align="center"  height="65px">
         <td>Mañana 1º</td>
-        <td>Introducción a R y Rstudio (1.1)</td>
+        <td>Introducción a R y Rstudio (1.1) Instalación y carga de paquetes (1.2)</td>
         <td rowspan="2">Creación y manipulación de tablas (4.1)</td>
         <td>Control de flujo (5.1) (cont.)</td>
         <td rowspan="2">Gráficos básicos (6.1)</td>
         <td rowspan="2">Sesión de PyR</td>
     </tr>
-    <tr align="center" height="60px">
+    <tr align="center" height="65px">
         <td>Mañana 2º</td>
         <td>Flujo de trabajo (2.1)</td>
         <td>Funciones (5.2)</td>        
     </tr>
     <tr height="40px">
-        <td colspan="6" align="center">Almuerzo</td>
+        <td align="center"><i>Almuerzo</i></td>
+        <td align="center"><i>Almuerzo</i></td>
+        <td align="center"><i>Almuerzo</i></td>
+        <td align="center"><i>Almuerzo</i></td>
+        <td align="center"><i>Almuerzo</i></td>
+        <td align="center"><i>Almuerzo</i></td>
     </tr>
-    <tr align="center" height="60px">
+    <tr align="center" height="65px">
         <td>Tarde 1º</td>
         <td>Operadores y variables (3.1)</td>
         <td>Estructuras complejas (4.2)</td>
@@ -36,10 +41,10 @@ Material correspondiente al curso...
         <td rowspan="2">Gráficos con ggplot2 (6.2)</td>
         <td rowspan="2">evaluacion</td>
     </tr>
-    <tr align="center" height="60px">
+    <tr align="center" height="65px">
         <td>Tarde 2º</td>
         <td>Creación y manipulación de vectores (3.2)</td>
-        <td>Control de flujo (5.1) (cont.)</td>       
+        <td>Control de flujo (5.1)</td>       
     </tr>    
 </table>
 
