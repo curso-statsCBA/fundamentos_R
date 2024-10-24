@@ -1,5 +1,7 @@
 # fundamentos básicos del lenguaje R
-<img src="./FLYERv3.png" width="800">
+<p align="center">
+    <img src="./FLYERv3.png" width="800">
+</p>
 
 ## Cronograma
 <table >
