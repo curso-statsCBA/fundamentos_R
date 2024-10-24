@@ -7,7 +7,7 @@ Material correspondiente al curso...
 
 ## Índice de contenidos
 - Dia 1
-  - ![1.1 Introducción al lenguaje R]()
+  - ![1.1 Introducción al lenguaje R]() falta!
   - ![1.2 Instalación y carga depaquetes]()
   - ![2.1 Flujo de trabajo]()
   - ![3.1 Operadores y varaibles]()
