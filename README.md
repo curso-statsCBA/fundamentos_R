@@ -2,6 +2,47 @@
 
 Material correspondiente al curso...
 
+## Cronograma
+<table>
+    <tr style="text-align: center; vertical-align: middle;">
+      <th>Módulo</th>
+      <th>Lunes</th>
+      <th>Martes</th>
+      <th>Miércoles</th>
+      <th>Jueves</th>
+      <th>Viernes</th>
+    </tr>
+    <tr style="text-align: center; vertical-align: middle;">
+        <td>Mañana 1º</td>
+        <td>Introducción a R y Rstudio (1.1)</td>
+        <td rowspan="2">Creación y manipulación de tablas (4.1)</td>
+        <td>Control de flujo (5.1) (cont.)</td>
+        <td rowspan="2">Gráficos básicos (6.1)</td>
+        <td rowspan="2">Sesión de PyR</td>
+    </tr>
+    <tr style="text-align: center; vertical-align: middle;">
+        <td>Mañana 2º</td>
+        <td>Flujo de trabajo (2.1)</td>
+        <td>Funciones (5.2)</td>        
+    </tr>
+    <tr>
+        <td colspan="6">Almuerzo</td>
+    </tr>
+    <tr>
+        <td>Tarde 1º</td>
+        <td>Operadores y variables (3.1)</td>
+        <td>Estructuras complejas (4.2)</td>
+        <td rowspan="2">Funciones (5.2) (cont.)</td>
+        <td rowspan="2">Gráficos con ggplot2 (6.2)</td>
+        <td rowspan="2">evaluacion</td>
+    </tr>
+    <tr>
+        <td>Tarde 2º</td>
+        <td>Creación y manipulación de vectores (3.2)</td>
+        <td>Control de flujo (5.1) (cont.)</td>       
+    </tr>    
+</table>
+
 
 
 
