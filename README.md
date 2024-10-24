@@ -1,10 +1,22 @@
-# fundamentos básicos del lenguajeR
+# fundamentos básicos del lenguaje R
 
 Material correspondiente al curso...
 
+
+
+
 ## Índice de contenidos
-1. ![]()
-2. ![Control de flujo](dia2/5.1_Control_de_flujo.md)
+- Dia 1
+  - ![1.1 Introducción al lenguaje R]()
+  - ![1.2 Instalación y carga depaquetes]()
+  - ![2.1 Flujo de trabajo]()
+  - ![3.1 Operadores y varaibles]()
+  - ![3.2 Creación y manipulación de vectores]()
+- Dia 2
+  - ![4.1 Creación y manipulación de tablas]()
+  - ![4.2 Estructuras complejas]()
+  - ![5.1 Control de flujo](dia2/5.1_Control_de_flujo.md)
+  
 
 ### Otros recursos de interés
 - **Curso del Santi B**. [Ir a CursodelSantiBVBareBonesBash](https://barebonesbash.github.io/)
