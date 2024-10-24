@@ -1,6 +1,4 @@
 # fundamentos básicos del lenguaje R
-
-Material correspondiente al curso...
 <img src="./FLYERv3.png" width="800">
 
 ## Cronograma
