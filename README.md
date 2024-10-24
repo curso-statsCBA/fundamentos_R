@@ -40,7 +40,7 @@
         <td>Estructuras complejas (4.2)</td>
         <td rowspan="2">Funciones (5.2) (cont.)</td>
         <td rowspan="2">Gráficos con ggplot2 (6.2)</td>
-        <td rowspan="2">evaluacion</td>
+        <td rowspan="2"><b>EVALUACIÓN</b></td>
     </tr>
     <tr align="center" height="65px">
         <td>Tarde 2º</td>
