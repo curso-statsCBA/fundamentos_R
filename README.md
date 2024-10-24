@@ -25,6 +25,9 @@ Material correspondiente al curso...
 
 ### Otros recursos de interés
 - **Curso del Santi B**. [Ir a CursodelSantiBVBareBonesBash](https://barebonesbash.github.io/)
+- **RecursoA**. [Ir a...]()
+- **RecursoB**. [Ir a...]()
+- **RecursoC**. [Ir a...]()
 
 
 
