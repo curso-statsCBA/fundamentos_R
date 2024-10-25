@@ -1,4 +1,4 @@
-# fundamentos básicos del lenguaje R
+# Fundamentos básicos del lenguaje R
 <p align="center">
     <img src="./FLYERv3.png" width="800">
 </p>
