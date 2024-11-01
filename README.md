@@ -62,7 +62,7 @@
 - Dia 2
   - [4.1 Creación y manipulación de tablas]() falta!
   - [4.2 Estructuras complejas]() falta!
-  - [5.1 Control de flujo](dia2/5.1_Control_de_flujo.md) cargando...
+  - [5.1 Control de flujo](dia2/5.1_control_flujo.Rmd) LISTO.-
 - Dia 3
   - [5.2 Funciones]() falta!
 - Dia 4
