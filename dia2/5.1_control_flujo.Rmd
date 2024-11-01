@@ -1,0 +1,480 @@
+---
+title: "Estructuras de control de flujo"
+output: html_document
+---
+
+## Condicionales y Bucles
+
+Como hemos visto hasta ahora, cuando escribimos código y lo ejecutamos el mismo será interpretando línea a línea, hasta que se ejecuta la última línea y el programa termina. **Las estructuras de control de flujo permiten alterar este comportamiento para adecuarlo a nuestras necesidades**.
+
+En general podemos definir dos grandes tipos de estructuras para el control de flujo. Por un lado, aquellas estructuras que **evaluan condiciones** y ejecutan un código subsiguiente en función de si el resultado de esa evaluación es verdadero o falso, a estas estrucuturas las llamamos *condicionales*. Por otro lado, tenemos estructuras que **repiten iterativamente** una porción de código mientras se cumpla alguna condición dada, a estas estructuras las denominamos *bucles*.
+
+**Nota:** Antes de continuar es recomendable repasar los [operadores]{.underline} aprendidos en el primer día de clases.
+
+------------------------------------------------------------------------
+
+### If ... else
+
+El constructo `if ... else` es una estructura de tipo condicional. En pocas palabras, `if` evaluará una condición dada y si la misma se cumple (ie.: el resultado es **TRUE**), se ejecutará el código correspondiente. Para defenir un bloque de código a ejecutarse si no se cumple la condición previamente establecida, utilizaremos `else`. Si además quisieramos definir múltiples condiciones, en caso de que la primera no se cumpla y que deriven en diferentes ejecuciones, deberemos utilizar `else if`.
+
+```{r}
+if (TRUE) {
+  print("Se ejecutará el código bajo 'if' ya que la condición resulta TRUE")
+}
+```
+
+```{r}
+if (!TRUE) {
+  print("Se ejecutará el código bajo 'if' ya que la condición resulta TRUE")
+} else {
+  print("Se ejecutará el código bajo 'else' dado que la condición resulta FALSE")
+  }
+```
+
+#### *Múltiples condiciones*
+
+En ocasiones necesitamos establecer múltiples condiciones. Ejecute el codigo siguiente varias veces, pero cambiando cada vez el valor de *a*.
+
+```{r}
+a <- 25
+
+if (a >= 40) {
+  print("a es mayor o igual que 40")
+} else if (a >= 30) {
+  print("a es mayor o igual que 30")
+}  else if (a >= 10) {
+  print("a es mayor o igual que 10")
+} else {
+  print("a es menor a 10")
+}
+```
+
+**Para pensar:** ¿Qué pasa cuando, por ejemplo, **a = 35**? ¿Cuántas evaluaciones independientes serían TRUE? ¿Qué porción de código se ejecuta y por qué?
+
+#### *And / or*
+
+Es posible agrupar diferentes evaluaciones utilizando los operadores **Y** (`&`) y **O** (`|`). Ejecute el siguiente código varias veces cambiando los valores de *a*, *b* y *c*.
+
+```{r}
+a <- 35
+b <- 12
+c <- 65
+
+if (a < 40 & b > 10 | c > 50) {
+    print("'a' es menor a 40 y 'b' mayor a 10 ó 'c' es mayor a 50")
+} else {
+    print("No se cumple ninguna condición")
+}
+```
+
+#### [Ejercicio]{.underline}
+
+Compare el código de la celda precedente con el de aquí abajo. ¿Qué diferencias nota? Ejecútelo y explique el resultado con el obtenido usando el código previo con los mismos valores para *a*, *b* y *c*.
+
+```{r eval=FALSE}
+a <- 52
+b <- 8 
+c <- 65
+
+if (a < 40 & (b > 10 | c > 50)){
+  print("'a' es menor a 40 y 'b' mayor a 10 ó 'c' es mayor a 50")
+} else {
+  print("No se cumple ninguna condición")
+}
+```
+
+#### *If anidados*
+
+Recién vimos como combinar varias evaluaciones en una misma expresión, pero frecuentemente lo que necesitaremos es realizar diferentes evaluaciones de forma secuencial y ejecutar código consecuentemente a los resultados obtenidos. Para ello podemos incoporar evaluaciones dentro de una evaluación previa, es decir, anidar las evaluaciones.
+
+```{r}
+a <- 25
+
+if (a > 10){
+  print("a es mayor que 10")
+  if (a > 20) {
+    print("y también es mayor que 20")
+    if (a > 30) {
+      print("y también es mayor que 30")
+    } else {
+      print("pero no mayor que 30")
+    }
+  }
+}
+```
+
+**Para pensar:** ¿Qué sucede si ***a*** **\<= 10**? ¿Qué podemos aprender de esta situación? ¿Cómo podríamos salvar el inconveniente?
+
+#### [Ejercicio]{.underline}
+
+Juan y María fueron a hacer compras, contruya con código que indique cuál de ambos gastó más dinero y de cuanto es la diferencia. El mismo código debe servir para evaluar los tres escenarios siguientes:
+
+-   Escenario Nº 1
+
+compra_juan = 690 / compra_maria = 730
+
+-   Escenario Nº 2
+
+compra_juan = 745 / compra_maria = 745
+
+-   Escenario Nº 3
+
+compra_juan = 890 / compra_maria = 730
+
+```{r include = FALSE}
+compra_juan = 690
+compra_maria = 730
+
+if (compra_juan > compra_maria) {
+  print(paste("Juan gastó", compra_juan - compra_maria, "pesos más que María"))
+  } else if (compra_juan == compra_maria) {
+    print("Juan y Maria gastaron lo mismo")
+    } else {
+      print(paste("María gastó", compra_maria - compra_juan, "pesos más que Juan"))
+      }
+```
+
+*Ayudita*: La salida esperada combina texto y variables, por ejemplo "María gasto *x* pesos más que Juan". Para generar una salida de este tipo, podemos utilizar la funcion `paste` de la siguiente manera:
+
+```{r}
+variable <- 25
+print(paste("La variable vale", variable))
+```
+
+Si no usáramos `paste` obtendríamos un error:
+
+```{r error=TRUE}
+print("La variable vale", variable)
+```
+
+<details>
+  
+  <summary>Ver la respuesta</summary>
+  
+  Su respuesta puede ser correcta y aún así diferir de la de aquí debajo. En programación muchas veces un mismo problema admite múltiples soliciones más o menos similares.
+  
+  <details>
+    <summary>Bueno... ahora sí, ver la respuesta:</summary>
+    
+  Ya intentó resolverlo por sus medios? Lo logró? Si es así entonces:
+    
+    <details>
+      <summary>Ver la respuesta</summary>
+      
+``` r
+compra_juan = 690
+compra_maria = 730
+
+if (compra_juan > compra_maria) {
+  print(paste("Juan gastó", compra_juan - compra_maria, "pesos más que María"))
+  } else if (compra_juan == compra_maria) {
+    print("Juan y Maria gastaron lo mismo")
+    } else {
+      print(paste("María gastó", compra_maria - compra_juan, "pesos más que Juan"))
+      }
+
+```
+
+  </details>
+  </details>  
+  </details>
+
+
+
+------------------------------------------------------------------------
+
+### While ...
+
+El constructo `while` es una estructura de tipo bucle. En pocas palabras, evaluará una condición y ejecutará repetitivamente una porción de código mientras que la misma se cumpla (ie.: el resultado sea TRUE).
+
+```{r}
+i <- 1
+while (i < 4) {
+  print(paste("Repetición nº:", i))
+  i <- i + 1
+}
+```
+
+**Atención!!!** Si en el bucle precendente omitimos incrementar el contador *i*, nuestro bucle se ejecutará indefinidamente.
+
+#### *While en vectores u otros iterables*
+
+Teniendo en cuenta lo que aprendimos sobre el acceso a elementos de un vector, podemos utilizar un bucle `while` para acceder a los mismos. No obstante, [existen formas más eficientes de hacer esto que veremos posteriormente]{.underline}.
+
+```{r}
+carreras <- c('Biología', 'Bioquímica', 'Medicina', 'Nutrición')
+i <- 1
+while (i <= length(carreras)) {
+  print(carreras[i])
+  i <- i + 1
+}
+```
+
+#### *Rompiendo un bucle*
+
+Si fuera necesario, podemos utilizar la declaración `break` para interrumpir la ejecución de un bucle, dada una condición establecida.
+
+```{r}
+i <- 1
+while (i < 12) {
+  print(paste("Repetición nº:", i ))
+  if (i == 5) {
+    break
+  }
+  i <- i + 1
+}
+```
+
+#### *Saltando dentro de un bucle*
+
+De forma similar podemos, dada una condición, saltearnos ejecuciones dentro de un bucle. Para ello, utilizaremos la declaración `next`.
+
+```{r}
+i <- 0
+while (i < 9) {
+  i <- i + 1
+  if (i > 2 & i < 7) {
+    next
+  }
+  else {
+    print(paste("Repetición nº:", i ))
+  }
+}
+```
+
+#### [Ejercicio]{.underline}
+
+Analice el siguiente código **SIN EJECUTARLO** e interprete cuál es la salida esperada explicando que sucede en cada iteración. Luego escriba "a mano" la salida exacta que dará este código.
+
+```{r eval=FALSE}
+compras <- c("pan", "queso", "jamón", "tomate", "lechuga")
+
+i <- 1
+while (i <= length(compras)){
+  if (i == 1){
+    print(paste("En mis lista de compras hay", compras[i]))
+  }
+  else if (i == 2) {
+    print(paste("y también hay", compras[i]))
+  } 
+  else {
+    print(paste("y", compras[i]))
+    }
+  i <- i + 1
+}
+```
+
+<details>
+  
+  <summary>Ver la respuesta</summary>
+  
+  Antes de ver la respuesta, intente resolverlo por su propios medios!
+  
+  <details>
+    <summary>Bueno... ahora sí, ver la respuesta:</summary>
+    
+    Ya intentó resolverlo por sus medios? Lo logró? Si es así entonces:
+    
+    <details>
+      <summary>Ver la respuesta</summary>
+      
+``` 
+## [1] "En mis lista de compras hay pan"
+## [1] "y también hay queso"
+## [1] "y jamón"
+## [1] "y tomate"
+## [1] "y lechuga"
+```
+
+  </details>
+  </details>  
+  </details>
+
+------------------------------------------------------------------------
+
+### For ... in ...
+
+El constructo `for` es otra estructura de tipo bucle que permite iterar sobre una colección dada de elementos. En pocas palabras, repetirá la ejecución de un mismo bloque de código tantas veces como elementos existan en dicha secuencia. Por ello, es importante recordar que su sintaxis básica es:
+
+`for` (*item* `in` **colección**) `{código a ejecutar}`
+
+```{r }
+asistentes <- c("Maria Guadalupe", "Clarisa", "Pablo Alejandro", "Andrea", "Raúl Andres",
+                "Evangelina", "Juan Manuel", "María Azul", "Gala", "Lucille", "Lucas")
+
+for (nombre in asistentes) {
+    print(nombre)
+}
+```
+
+**Para reflexionar:** Compare el código de la celda precedente con el que usamos para listar las carreras reportadas al inscribirse usando un bucle `while`. ¿Que diferencias nota? ¿Cuando usaría uno u otro constructo?
+
+#### *La función `seq()`*
+
+Cuando trabajamos con bucles, es muy frecuente establecer un rango para definir la iteración. Allí entra en juego esta útil función que devuelve una secuencia numérica y cuya sintaxis es: seq(inicio,fin,paso). Por defecto (es decir, si no explicitamos el valor del argumento), el inicio es "1" y el paso "1".
+
+```{r}
+print("Secuencia de 1 a 3")
+for (n in seq(3)){
+    print(n)
+}
+
+print("Secuencia de 2 a 8, cada 2")
+for (n in seq(2,8,2)){
+    print(n)
+}
+
+```
+
+#### *Break, next y condicionales*
+
+Al igual que vimos con `while`, podemos controlar el comportamiento de un bucle `for` de acuerdo a diferentes condiciones.
+
+```{r}
+fruta <- c("banana", "manzana", "pera")
+
+for (f in fruta){
+  print(paste("Cortamos el bucle en su primer iteración, con la fruta", f))
+  if (f == "banana"){
+    break
+  }
+}
+```
+
+```{r}
+for (i in seq(1,10)){
+  if (i %% 2 != 0){
+    next
+  } else {
+    print(paste("Me salteo todos los impares:", i ))}
+}
+```
+
+**Para pensar:** ¿Cómo funciona el operador `%%`? ¿Como resultaría por ejemplo `11 %% 3`? Existe un operador relacionado que es `%/%`, ¿qué diferencias presenta?
+
+#### *Bucles anidados*
+
+En muchas ocasiones, nos encontraremos con la necesidad de operar iterativamente sobre más de un conjunto de elementos, en esos casos podemos anidar los bucles.
+
+```{r}
+letras <- c("a", "b", "c")
+numeros <- c(1, 2, 3)
+
+for (i in letras) {
+  for (j in numeros){
+        print(paste(i,j))
+  }
+}
+```
+
+#### [Ejercicio]{.underline}
+
+```{r}
+all_num <- c(17, 6, -12, 38, -88, 147, 1, -140, -19, 24, 74, -36)
+```
+
+Escriba un código que separe los números positivos y los negativos del vector proporcionado en diferentes vectores. Imprima dichos vectores identificando su condición y ordenados de menor a mayor.
+
+*Ayuda*: ejecute el siguiente código previamente y vea que aprende con ello.
+
+```{r eval=FALSE}
+ej1 <- c(3,1,2)
+print(paste("Ordenados ej1:", sort(ej1)))
+print(ej1)
+
+ej2 <- c(4,8,6)
+cat("Ordenados ej2:", sort(ej2))
+```
+
+```{r include=FALSE, eval=FALSE}
+pos <- c()
+neg <- c()
+for (n in all_num) {
+  if (n > 0) {
+    pos <- c(pos,n)
+  } else if (n < 0) {
+    neg <- c(neg,n)
+    }
+}
+cat("Positivos:", sort(pos), "Negativos:", sort(neg))
+```
+
+<details>
+  <summary>Ver la respuesta</summary>
+  
+  Antes de ver la respuesta, intente resolverlo!
+  
+  <details>
+  <summary>Ahora si, ver la respuesta</summary>
+  
+  Ya intentó resolverlo por sus medios? Lo logró? Si es así entonces:
+  
+  <details>
+  <summary>Ver la respuesta</summary>
+      
+``` r
+pos <- c()
+neg <- c()
+for (n in all_num) {
+  if (n > 0) {
+    pos <- c(pos,n)
+  } else if (n < 0) {
+    neg <- c(neg,n)
+    }
+}
+cat("Positivos:", sort(pos), "Negativos:", sort(neg))
+```
+
+  </details>
+  </details>  
+  </details>
+
+------------------------------------------------------
+
+### [Ejercicio Final]{.underline}
+
+Cuando vimos los condicionales, armamos un código para evaluar en 3 escenarios diferentes los gastos que realizaron Juan y María. Ahora que sabe usar bucles, escriba un código que evalue en una sola ejecución todos los escenarios planteados en ese ejercicio y que utilice todos los constructos aprendidos, es decir:  `if`, `while` y `for`.
+
+*Ayuda*: recuerde que los bucles `while` pueden ejecutarse indefinidamente si no imponemos condiciones para que finalicen.
+
+<details>
+  <summary>Ver la respuesta</summary>
+  
+  Ya pasamos por esto... 
+  
+  <details>
+    
+  <summary>Ahora si, ver la respuesta</summary>
+    
+  Tenga en cuenta, una vez más, que su respuesta puede ser correcta y aún así diferir de esta.
+  
+  <details>
+  
+  <summary>Ver la respuesta</summary>
+
+```{r}
+compra_juan = c(690,745,890) 
+compra_maria = c(730,745,730)
+
+for (j in 1:length(compra_juan)){
+  for (m in 1:length(compra_maria)){
+    while (j == m) {
+    if (compra_juan[j] > compra_maria[m]) {
+    print(paste("En el escenario Nº", j, "Juan gastó", compra_juan[j] - compra_maria[m], "pesos más que María"))
+    break
+    } else if (compra_juan[j] == compra_maria[m]) {
+    print(paste("En el escenario Nº", j, "Juan y Maria gastaron ambos", compra_juan[j], "pesos."))
+    break
+    } else {
+    print(paste("En el escenario Nº", j, "María gastó", compra_maria[m] - compra_juan[j], "pesos más que Juan"))
+    break } 
+    }
+  }
+}
+```
+
+  </details>
+  </details>  
+  </details>
+
+
