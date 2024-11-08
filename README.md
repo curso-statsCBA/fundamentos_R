@@ -54,7 +54,7 @@
 
 ## Índice de contenidos
 - Dia 1
-  - [1.1 Introducción al lenguaje R]() falta!
+  - [1.1 Introducción al lenguaje R]() LISTO teorico.-
   - [1.2 Instalación y carga depaquetes]() falta!
   - [2.1 Flujo de trabajo]() falta!
   - [3.1 Operadores y varaibles]() falta!
@@ -62,7 +62,7 @@
 - Dia 2
   - [4.1 Creación y manipulación de tablas]() falta!
   - [4.2 Estructuras complejas]() falta!
-  - [5.1 Control de flujo](dia2/5.1_control_flujo.Rmd) agregar lapply,sapply,mapply.-
+  - [5.1 Control de flujo](dia2/5.1_control_flujo.Rmd) LISTO.-
 - Dia 3
   - [5.2 Funciones]() falta!
 - Dia 4
