@@ -55,7 +55,7 @@
 ## Índice de contenidos
 - Dia 1
   - [1.1 Introducción al lenguaje R]() LISTO teorico.-
-  - [1.2 Instalación y carga depaquetes]() falta!
+  - [1.2 Primeros pasos con R y RStudio]() falta-instalpaq
   - [2.1 Flujo de trabajo]() falta!
   - [3.1 Operadores y varaibles]() falta!
   - [3.2 Creación y manipulación de vectores]() falta!
