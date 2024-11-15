@@ -14,17 +14,16 @@
       <th>Viernes</th>
     </tr>
     <tr align="center"  height="65px">
-        <td>Mañana 1º</td>
-        <td>Introducción a R y Rstudio (1.1) Instalación y carga de paquetes (1.2)</td>
+        <td style="background: red;">Denice</td>
+        <td>Introducción a R (1.1). Primeros pasos con R y RStudio(1.2)</td>
         <td rowspan="2">Creación y manipulación de tablas (4.1)</td>
-        <td>Control de flujo (5.1) (cont.)</td>
+        <td rowspan="2">Control de flujo (5.1)</td>
         <td rowspan="2">Gráficos básicos (6.1)</td>
         <td rowspan="2">Sesión de PyR</td>
     </tr>
     <tr align="center" height="65px">
         <td>Mañana 2º</td>
-        <td>Flujo de trabajo (2.1)</td>
-        <td>Funciones (5.2)</td>        
+        <td>Flujo de trabajo (2.1)</td>              
     </tr>
     <tr height="40px">
         <td align="center"><i>Almuerzo</i></td>
@@ -37,19 +36,17 @@
     <tr align="center" height="65px">
         <td>Tarde 1º</td>
         <td>Operadores y variables (3.1)</td>
-        <td>Estructuras complejas (4.2)</td>
-        <td rowspan="2">Funciones (5.2) (cont.)</td>
+        <td>Creación y manipulación de tablas (4.1) (cont.)</td>
+        <td rowspan="2">Funciones (5.2)</td>
         <td rowspan="2">Gráficos con ggplot2 (6.2)</td>
         <td rowspan="2"><b>EVALUACIÓN</b></td>
     </tr>
     <tr align="center" height="65px">
         <td>Tarde 2º</td>
         <td>Creación y manipulación de vectores (3.2)</td>
-        <td>Control de flujo (5.1)</td>       
+        <td>Estructuras complejas (4.2)</td>     
     </tr>    
 </table>
-
-
 
 
 ## Índice de contenidos
@@ -70,13 +67,11 @@
   - [6.2 Gráficos con ggplot2]() falta!
   
 
-### Otros recursos de interés
-- **Curso del Santi B**. [Ir a CursodelSantiBVBareBonesBash](https://barebonesbash.github.io/)
-- **RecursoA**. [Ir a...]()
-- **RecursoB**. [Ir a...]()
-- **RecursoC**. [Ir a...]()
-
-
+### Otros cursos
+En el Doctorado de Ciencias Biológicas (FCEFyN, Universidad Nacional de Córdoba), se dictan con regularidad cursos introductorios y avanzados de modelos estadísticos en R:
+- **Introducción al lenguaje R. Modelos lineales y fundamentos de programación**. [Ver curso](https://curso-statscba.github.io/curso-R/)
+- **Modelos Estadísticos Avanzados**. [Ver curso](https://curso-statscba.github.io/modelos_avanzados/)
+- **Otros recursos:** existe una disponibilidad asombrosa de recursos digitales libres para aprender R, tanto en español como en inglés. Al final de la clase introductoria de este mismo curso brindamos una breve lista de refrencia. [Ir a clase introductoria](dia1/1_Intro_R.pdf)
 
 
 ## Licencia
