@@ -1,65 +1,26 @@
 # Fundamentos básicos del lenguaje R
 <p align="center">
-    <img src="./FLYERv3.png" width="800">
+    <img src="./pics/FLYERv3.png" width="800">
 </p>
 
 ## Cronograma
-<table >
-    <tr align="center" height="65px">
-      <th>Módulo</th>
-      <th>Lunes</th>
-      <th>Martes</th>
-      <th>Miércoles</th>
-      <th>Jueves</th>
-      <th>Viernes</th>
-    </tr>
-    <tr align="center"  height="65px">
-        <td style="background: red;">Denice</td>
-        <td>Introducción a R (1.1). Primeros pasos con R y RStudio(1.2)</td>
-        <td rowspan="2">Creación y manipulación de tablas (4.1)</td>
-        <td rowspan="2">Control de flujo (5.1)</td>
-        <td rowspan="2">Gráficos básicos (6.1)</td>
-        <td rowspan="2">Sesión de PyR</td>
-    </tr>
-    <tr align="center" height="65px">
-        <td>Mañana 2º</td>
-        <td>Flujo de trabajo (2.1)</td>              
-    </tr>
-    <tr height="40px">
-        <td align="center"><i>Almuerzo</i></td>
-        <td align="center"><i>Almuerzo</i></td>
-        <td align="center"><i>Almuerzo</i></td>
-        <td align="center"><i>Almuerzo</i></td>
-        <td align="center"><i>Almuerzo</i></td>
-        <td align="center"><i>Almuerzo</i></td>
-    </tr>
-    <tr align="center" height="65px">
-        <td>Tarde 1º</td>
-        <td>Operadores y variables (3.1)</td>
-        <td>Creación y manipulación de tablas (4.1) (cont.)</td>
-        <td rowspan="2">Funciones (5.2)</td>
-        <td rowspan="2">Gráficos con ggplot2 (6.2)</td>
-        <td rowspan="2"><b>EVALUACIÓN</b></td>
-    </tr>
-    <tr align="center" height="65px">
-        <td>Tarde 2º</td>
-        <td>Creación y manipulación de vectores (3.2)</td>
-        <td>Estructuras complejas (4.2)</td>     
-    </tr>    
-</table>
+<p align="center">
+    <img src="./pics/crono.png" width="100%">
+</p>
+
 
 
 ## Índice de contenidos
 - Dia 1
-  - [1.1 Introducción al lenguaje R](dia1/1_Intro_R.pdf) LISTO teorico.-
-  - [1.2 Primeros pasos con R y RStudio](dia1/usandoR.html) falta-instalpaq
+  - [1.1 Introducción al lenguaje R](dia1/1_Intro_R.pdf) LISTO (teorico)
+  - [1.2 Primeros pasos con R y RStudio](dia1/usandoR.html) LISTO
   - [2.1 Flujo de trabajo]() falta!
   - [3.1 Operadores y varaibles]() falta!
   - [3.2 Creación y manipulación de vectores]() falta!
 - Dia 2
   - [4.1 Creación y manipulación de tablas]() falta!
   - [4.2 Estructuras complejas]() falta!
-  - [5.1 Control de flujo](dia2/5.1_control_flujo.Rmd) LISTO.-
+  - [5.1 Control de flujo](dia2/5.1_control_flujo.Rmd) rev-comPablo
 - Dia 3
   - [5.2 Funciones]() falta!
 - Dia 4
