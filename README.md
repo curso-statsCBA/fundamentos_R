@@ -5,7 +5,7 @@
 
 ## Cronograma
 <p align="center">
-    <img src="./pics/crono.png" width="100%">
+    <img src="pics/crono.png" width="100%">
 </p>
 
 
@@ -13,15 +13,15 @@
 ## Índice de contenidos
 - Dia 1
   - [1.1 Introducción al lenguaje R](dia1/1_Intro_R.pdf) LISTO (teorico)
-  - [1.2 Primeros pasos con R y RStudio](dia1/usandoR.html) LISTO
+  - [1.2 Primeros pasos con R y RStudio](dia1/1.2_UsandoR.html) LISTO
   - [2.1 Flujo de trabajo]() falta!
-  - [3.1 Operadores y varaibles]() falta!
+  - [3.1 Operadores y variables]() falta!
   - [3.2 Creación y manipulación de vectores]() falta!
 - Dia 2
   - [4.1 Creación y manipulación de tablas]() falta!
   - [4.2 Estructuras complejas]() falta!
-  - [5.1 Control de flujo](dia2/5.1_control_flujo.Rmd) rev-comPablo
 - Dia 3
+  - [5.1 Control de flujo](dia2/5.1_control_flujo.Rmd) rev-comPablo
   - [5.2 Funciones]() falta!
 - Dia 4
   - [6.1 Gráficos básicos]() falta!
