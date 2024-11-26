@@ -12,7 +12,7 @@
 
 ## Índice de contenidos
 - Dia 1
-  - [1.1 Introducción al lenguaje R](dia1/1_Intro_R.pdf) LISTO (teorico)
+  - [1.1 Introducción al lenguaje R](dia1/1.1_IntroR.pdf) LISTO (teorico)
   - [1.2 Primeros pasos con R y RStudio](dia1/1.2_UsandoR.html) LISTO
   - [2.1 Flujo de trabajo]() falta!
   - [3.1 Operadores y variables]() falta!
