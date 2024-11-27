@@ -21,7 +21,7 @@
   - [4.1 Creación y manipulación de tablas]() falta!
   - [4.2 Estructuras complejas]() falta!
 - Dia 3
-  - [5.1 Control de flujo](dia2/5.1_control_flujo.Rmd) rev-comPablo
+  - [5.1 Control de flujo](dia3/5.1_control_flujo.html) LISTO
   - [5.2 Funciones]() falta!
 - Dia 4
   - [6.1 Gráficos básicos]() falta!
