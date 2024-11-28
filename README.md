@@ -1,6 +1,6 @@
 # Fundamentos básicos del lenguaje R
 <p align="center">
-    <img src="pics/FLYERv3.png" width="800">
+    <img src="pics/portada.png" width="800">
 </p>
 
 ## Cronograma
