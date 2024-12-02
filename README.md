@@ -10,11 +10,11 @@
 
 ## Índice de contenidos
 - Día 1
-  - [1.1 Introducción al lenguaje R](dia1/1.1_IntroR.pdf) LISTO (teorico)
-  - [1.2 Primeros pasos con R y RStudio](dia1/1.2_UsandoR.html) LISTO
-  - [2.1 Flujo de trabajo](dia1/2.1_FlujoTrabajo.html) LISTO
-  - [3.1 Operadores](dia1/3.1_Operadores.html) falta!
-  - [3.2 Vectores](dia1/3.2_Vectores.html) falta!
+  - [1.1 Introducción al lenguaje R](dia1/1.1_IntroR.pdf)
+  - [1.2 Primeros pasos con R y RStudio](dia1/1.2_UsandoR.html)
+  - [2.1 Flujo de trabajo](dia1/2.1_FlujoTrabajo.html)
+  - [3.1 Operadores](dia1/3.1_Operadores.html)
+  - [3.2 Vectores](dia1/3.2_Vectores.html)
 - Día 2
   - [4.1 Tablas y estructuras complejas](dia2/4.1_Tablas.html)
 - Día 3
