@@ -11,19 +11,19 @@
 
 
 ## Índice de contenidos
-- Dia 1
+- Día 1
   - [1.1 Introducción al lenguaje R](dia1/1.1_IntroR.pdf) LISTO (teorico)
   - [1.2 Primeros pasos con R y RStudio](dia1/1.2_UsandoR.html) LISTO
   - [2.1 Flujo de trabajo](dia1/2.1_FlujoTrabajo.html) LISTO
   - [3.1 Operadores y variables]() falta!
   - [3.2 Creación y manipulación de vectores]() falta!
-- Dia 2
+- Día 2
   - [4.1 Creación y manipulación de tablas]() falta!
   - [4.2 Estructuras complejas]() falta!
-- Dia 3
+- Día 3
   - [5.1 Control de flujo](dia3/5.1_control_flujo.html) LISTO
   - [5.2 Funciones]() falta!
-- Dia 4
+- Día 4
   - [6.1 Gráficos básicos]() falta!
   - [6.2 Gráficos con ggplot2]() falta!
   
