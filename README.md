@@ -21,7 +21,7 @@
   - [5.1 Control de flujo](dia3/5.1_control_flujo.html)
   - [5.2 Funciones](dia3/5.2_Funciones.html)
 - **Día 4**
-  - [6.1 Gráficos básicos](dia4/6.1_graficos.html) falta!
+  - [6.1 Gráficos básicos](dia4/6.1_graficos_base.html)
   - [6.2 Gráficos con *ggplot2*](dia4/6.2_ggplot2.html)
   
 ### Otros cursos
