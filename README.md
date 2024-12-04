@@ -2,11 +2,6 @@
     <img src="pics/portada.png" width="100%">
 </p>
 
-## Cronograma
-<p align="center">
-    <img src="pics/crono.png" width="100%">
-</p>
-
 ## Índice de contenidos
 - **Día 1**
   - [1.1 Introducción al lenguaje R](dia1/1.1_IntroR.pdf)
@@ -24,7 +19,12 @@
   - [6.2 Gráficos con *ggplot2*](dia4/6.2_ggplot2.html)
  
 **Descarga todo el material del curso [aquí](https://github.com/pastornicolas/fundamentos_R/archive/refs/heads/main.zip)**
-  
+
+## Cronograma
+<p align="center">
+    <img src="pics/crono.png" width="100%">
+</p>
+
 ### Otros cursos orientados al uso de R
 En el Doctorado de Ciencias Biológicas (FCEFyN, Universidad Nacional de Córdoba), se dictan con regularidad cursos introductorios y avanzados de modelos estadísticos en R:
 - **Introducción al lenguaje R. Modelos lineales y fundamentos de programación**. [Ver curso](https://curso-statscba.github.io/curso-R/)
