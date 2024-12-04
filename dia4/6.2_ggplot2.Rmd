@@ -300,10 +300,10 @@ La función `ggarrange()` del paquete `egg` es una de muchas formas de generar p
 
 ## Exportación de gráficos
 
-Existen varias formas de exportar los gráficos de *ggplot2*. Una de ellas es a través de la interfaz gráfica de RStudio, en el panel de gráficos. Otra opción es encerrar el bloque de código de la siguiente manera, y correr todo el bloque a la vez:
+Existen varias formas de exportar los gráficos de *ggplot2*. Una de ellas es a través de la interfaz gráfica de RStudio, en el panel de gráficos. Otra opción es encerrar el bloque de código de la siguiente manera, y correr todo el bloque a la vez, bloque de código que también es válido para gráficos en `R base`:
 
 ```{r results=FALSE,eval=FALSE,message=FALSE}
-png(filename = "dia4/scatterplot.png", width = 500, height = 400)
+png(filename = "dia4/scatterplot.png", width = 1200, height = 1000, res = 300)
 ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
   geom_point(size = 3, alpha = 0.5) +
   geom_smooth(method = "lm") +
@@ -316,7 +316,7 @@ ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Length, color = Sp
 dev.off()
 ```
 
-Como hemos visto en el práctico anterior, otras alternativas a `png()` son `jpeg()` y `tiff()`.
+Como podemos observar, entre otros argumentos, es posible indicar el ancho, largo y la resolución (en <u id='ppi'>ppi</u>). Otras alternativas a `png()` son `jpeg()` y `tiff()`.
 
 Otra alternativa es utilizar la función `ggsave()`, por ejemplo:
 
@@ -353,7 +353,7 @@ Los niveles de la columna "Subject" están desordenados. ¿Por qué? Arreglar es
 
 3. Genere un panel con los gráficos anteriores, a la izquierda el gráfico del punto 1 y a la derecha el del punto 2. El panel, al estar compuesto por gráficos individuales, posiblemente contenga información redundante: el nombre para el eje vertical y la leyenda (está repetida). No es necesario repetir la información. Arreglar eso!
 
-4. Exporte el panel gráfico con una resolución de 300 <u id='ppi'>ppi</u> dentro de la carpeta "dia4" del proyecto del curso. Para ello, explore `?png`.
+4. Exporte el panel gráfico con una resolución de 300 ppi dentro de la carpeta "dia4" del proyecto del curso. Para ello, explore `?png`.
 
 
 ```{r, echo=FALSE}

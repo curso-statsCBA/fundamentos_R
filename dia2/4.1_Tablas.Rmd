@@ -261,6 +261,8 @@ iris$Sepal.width.cat2 <- factor(iris$Sepal.width.cat2)
 iris$Sepal.width.cat2
 ```
 
+Recordemos, como vimos en la clase de [Vectores](../dia1/3.2_Vectores.html), que al indicar un factor es posible también indicar el orden de sus niveles. Esto también aplica en el contexto de manipulación de tablas.
+
 No obstante, a la hora de generar vectores (aquí asociados a una tabla), la función `cut()` es más adecuada. Esta función divide el rango de valores de un vector en intervalos específicos, y define nombres para cada intervalo. Por ejemplo:
 
 ```{r}

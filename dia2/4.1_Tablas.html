@@ -1353,8 +1353,8 @@ tabla (por ejemplo, vectores numéricos y de texto).</p>
 <p>Para crear una tabla desde cero, en R utilizamos la
 <u id="table_classes">clase</u> <code>data.frame</code>, y una función
 con el mismo nombre para generarla:</p>
-<span class="tippy html-widget html-fill-item" height="480" id="htmlwidget-175837a928b3de6ae15e" width="672"></span>
-<script type="application/json" data-for="htmlwidget-175837a928b3de6ae15e">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="480" id="htmlwidget-72f9d9985b6d4e902121" width="672"></span>
+<script type="application/json" data-for="htmlwidget-72f9d9985b6d4e902121">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>df &lt;- data.frame(Especie = c(&quot;Algarrobo&quot;, &quot;Piquillin&quot;, &quot;Molle&quot;),
                  Individuos = c(15, 17, 9))</code></pre>
 <p>Aquí, generamos un objeto de tipo <code>data.frame</code>, definiendo
@@ -1523,51 +1523,65 @@ head(iris, 10)</code></pre>
 índices para cada fila, indicando que nueva posición deberían ocupar
 para que la tabla quede ordenada. Por defecto, <code>order()</code>
 ordena de manera creciente. Indicando <code>decreasing = TRUE</code> se
-ordena la tabla de manera decreciente.</p>
+ordena la tabla de manera decreciente. Es posible indicar una ordenación
+por más de una columna:</p>
+<pre class="r"><code>iris &lt;- iris[order(iris$Species, iris$Sepal.Length, decreasing = TRUE), ]
+head(iris, 10)</code></pre>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 132          7.9         3.8          6.4         2.0 virginica
+## 118          7.7         3.8          6.7         2.2 virginica
+## 119          7.7         2.6          6.9         2.3 virginica
+## 123          7.7         2.8          6.7         2.0 virginica
+## 136          7.7         3.0          6.1         2.3 virginica
+## 106          7.6         3.0          6.6         2.1 virginica
+## 131          7.4         2.8          6.1         1.9 virginica
+## 108          7.3         2.9          6.3         1.8 virginica
+## 110          7.2         3.6          6.1         2.5 virginica
+## 126          7.2         3.2          6.0         1.8 virginica</code></pre>
 <p>Es posible obtener subconjuntos de datos que cumplan con ciertas
 condiciones. Las condiciones, en general, serán sobre los datos
 contenidos en las filas.</p>
 <pre class="r"><code>iris_sub3 &lt;- iris[iris$Sepal.Length &gt; 5, ]
 head(iris_sub3)</code></pre>
-<pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1           5.1         3.5          1.4         0.2  setosa
-## 18          5.1         3.5          1.4         0.3  setosa
-## 20          5.1         3.8          1.5         0.3  setosa
-## 22          5.1         3.7          1.5         0.4  setosa
-## 24          5.1         3.3          1.7         0.5  setosa
-## 40          5.1         3.4          1.5         0.2  setosa</code></pre>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 132          7.9         3.8          6.4         2.0 virginica
+## 118          7.7         3.8          6.7         2.2 virginica
+## 119          7.7         2.6          6.9         2.3 virginica
+## 123          7.7         2.8          6.7         2.0 virginica
+## 136          7.7         3.0          6.1         2.3 virginica
+## 106          7.6         3.0          6.6         2.1 virginica</code></pre>
 <p>Aquí estamos seleccionando aquellas filas para los cuales
 <code>Sepal.Length</code> es mayor a 5. ¿Por qué esta sintáxis tan rara?
 En realidad, lo que estamos haciendo es indicar una expresión lógica
 para las filas, especificando el nombre de la tabla y la columna (es un
 vector!) mediante el operador <code>$</code>:</p>
 <pre class="r"><code>iris$Sepal.Length &gt; 5</code></pre>
-<pre><code>##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+<pre><code>##   [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [13]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [25]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 ##  [37]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [49]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [49]  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 ##  [61]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 ##  [73]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 ##  [85]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [97]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [97]  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 ## [109]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-## [121]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-## [133]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-## [145]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+## [121]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [133] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [145] FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <p>Es posible, entonces, indicar cualquier expresión lógica referida a
 una o más columnas de la tabla. El mismo filtrado puede realizarse
 mediante la función <code>subset()</code>, siendo este método un poco
 menos “engorroso”:</p>
 <pre class="r"><code>iris_sub3 &lt;- subset(iris, Sepal.Length &gt; 5)
 head(iris_sub3)</code></pre>
-<pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1           5.1         3.5          1.4         0.2  setosa
-## 18          5.1         3.5          1.4         0.3  setosa
-## 20          5.1         3.8          1.5         0.3  setosa
-## 22          5.1         3.7          1.5         0.4  setosa
-## 24          5.1         3.3          1.7         0.5  setosa
-## 40          5.1         3.4          1.5         0.2  setosa</code></pre>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 132          7.9         3.8          6.4         2.0 virginica
+## 118          7.7         3.8          6.7         2.2 virginica
+## 119          7.7         2.6          6.9         2.3 virginica
+## 123          7.7         2.8          6.7         2.0 virginica
+## 136          7.7         3.0          6.1         2.3 virginica
+## 106          7.6         3.0          6.6         2.1 virginica</code></pre>
 <p>El primer argumento indica el conjunto de datos a utilizar, y el
 segundo argumento la expresión a aplicar para filtrar dicho conjunto de
 datos. Notar que no es necesario aclarar la sintaxis
@@ -1577,13 +1591,13 @@ cuando haya que indicar múltiples condiciones lógicas.</p>
 columnas a dejar luego del filtro:</p>
 <pre class="r"><code>iris_sub4 &lt;- subset(iris, Sepal.Length &gt; 5, select = c(&quot;Species&quot;, &quot;Sepal.Width&quot;))
 head(iris_sub4)</code></pre>
-<pre><code>##    Species Sepal.Width
-## 1   setosa         3.5
-## 18  setosa         3.5
-## 20  setosa         3.8
-## 22  setosa         3.7
-## 24  setosa         3.3
-## 40  setosa         3.4</code></pre>
+<pre><code>##       Species Sepal.Width
+## 132 virginica         3.8
+## 118 virginica         3.8
+## 119 virginica         2.6
+## 123 virginica         2.8
+## 136 virginica         3.0
+## 106 virginica         3.0</code></pre>
 <p>El argumento <code>drop</code>, en cambio, permite indicar (mediante
 sus índices) qué columna o columnas deben eliminarse tras el
 filtrado.</p>
@@ -1608,7 +1622,7 @@ filtrado anterior?</p>
 <code>unique()</code>, que devuelve los valores únicos para un objeto
 dado:</p>
 <pre class="r"><code>unique(iris$Species)</code></pre>
-<pre><code>## [1] &quot;arctica&quot;    &quot;versicolor&quot; &quot;virginica&quot;</code></pre>
+<pre><code>## [1] &quot;virginica&quot;  &quot;versicolor&quot; &quot;arctica&quot;</code></pre>
 <div id="ejercicio-1" class="section level4">
 <h4><ins>Ejercicio 1</ins></h4>
 <p>Genere nuevas tablas a partir de la tabla <code>iris</code> (utilizar
@@ -1729,6 +1743,9 @@ iris$Sepal.width.cat2</code></pre>
 ## [136] Mediano Largo   Mediano Mediano Mediano Mediano Mediano Corto   Mediano
 ## [145] Largo   Mediano Corto   Mediano Largo   Mediano
 ## Levels: Corto Largo Mediano</code></pre>
+<p>Recordemos, como vimos en la clase de <a href="../dia1/3.2_Vectores.html">Vectores</a>, que al indicar un factor
+es posible también indicar el orden de sus niveles. Esto también aplica
+en el contexto de manipulación de tablas.</p>
 <p>No obstante, a la hora de generar vectores (aquí asociados a una
 tabla), la función <code>cut()</code> es más adecuada. Esta función
 divide el rango de valores de un vector en intervalos específicos, y
@@ -2012,8 +2029,8 @@ iris_info$year_of_creation</code></pre>
 <pre><code>## [1] &quot;Dos mil veinticuatro&quot;</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que
 confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
-<span class="tippy html-widget html-fill-item" height="480" id="htmlwidget-2b662a591e5e489bc1c2" width="672"></span>
-<script type="application/json" data-for="htmlwidget-2b662a591e5e489bc1c2">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="480" id="htmlwidget-f1acd3ea9da53b7c0487" width="672"></span>
+<script type="application/json" data-for="htmlwidget-f1acd3ea9da53b7c0487">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>mod &lt;- lm(Sepal.Length ~ Petal.Length, data = iris)
 is.list(mod)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
