@@ -346,7 +346,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore"><a id="top"></a>Objetos y operadores</h1>
+<h1 class="title toc-ignore">Objetos y operadores</h1>
 
 </div>
 
@@ -364,6 +364,15 @@ body {
 text-align: justify;
 }
 </style>
+<style>
+h1.title { display: none; }
+</style>
+<div style="text-align: right;">
+<p><a href="#top">Volver al inicio</a></p>
+</div>
+<p><a id="top"></a></p>
+<div id="objetos-y-operadores" class="section level1">
+<h1>Objetos y operadores</h1>
 <div id="objetos-comunes-en-r" class="section level2">
 <h2>Objetos comunes en R</h2>
 <p>Como ya vimos anteriormente, R es un lenguaje orientado a objetos y
@@ -623,7 +632,7 @@ condición ya es falsa. Si hiciéramos la misma comparación con
 <code>&amp;</code>, R devuelve un error:</p>
 <pre class="r"><code>a &lt;- 5
 a &lt; 3 &amp; b &gt; 10</code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): objeto &#39;b&#39; no encontrado</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;b&#39; not found</code></pre>
 <p>Veamos un ejemplo similar con el operador <code>||</code>:</p>
 <pre class="r"><code>a &lt;- 5
 a &gt; 3 || b &gt; 10</code></pre>
@@ -632,7 +641,7 @@ a &gt; 3 || b &gt; 10</code></pre>
 verdadera. El mismo código con <code>|</code> arroja un error:</p>
 <pre class="r"><code>a &lt;- 5
 a &gt; 3 | b &gt; 10</code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): objeto &#39;b&#39; no encontrado</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;b&#39; not found</code></pre>
 <p>Las funciones <code>all()</code> y <code>any()</code> permiten
 evaluar más de una condición simultáneamente. La función
 <code>all()</code> devuelve <code>TRUE</code> si todas las condiciones
@@ -696,6 +705,7 @@ floor(x = 6.756)</code></pre>
 <p><br></p>
 <div style="text-align: right;">
 <p><a href="#top">Ir arriba</a></p>
+</div>
 </div>
 </div>
 </div>
