@@ -1,5 +1,5 @@
 ---
-title: "<a id='top'></a>Vectores"
+title: "Vectores"
 output: 
   html_document: 
     highlight: textmate
@@ -28,6 +28,18 @@ body {
 }
 </style>
 ```
+
+<style>
+  h1.title { display: none; }
+</style>
+
+::: {style="text-align: right;"}
+[Volver al inicio](../)
+:::
+
+<a id='top'></a>
+
+# Vectores
 
 En R, un vector es una colección ordenada de objetos de un mismo tipo o *clase*. Aprender sobre la creación y manipulación de vectores es un paso fundamental para comprender la manipulación de objetos más complejos, por ejemplo, las tablas y las matrices. Esto se debe a que estos objetos son justamente una colección de vectores.
 

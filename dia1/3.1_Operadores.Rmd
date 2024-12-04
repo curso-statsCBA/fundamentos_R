@@ -34,7 +34,7 @@ body {
 </style>
 
 ::: {style="text-align: right;"}
-[Volver al inicio](aaaaaa.html)
+[Volver al inicio](../)
 :::
 
 <a id='top'></a>
