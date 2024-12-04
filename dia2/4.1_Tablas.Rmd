@@ -152,7 +152,9 @@ iris <- iris[order(iris$Sepal.Length), ]
 head(iris, 10)
 ```
 
-La expresión `order(iris$Sepal.Length)` genera nuevos índices para cada fila, indicando que nueva posición deberían ocupar para que la tabla quede ordenada. Por defecto, `order()` ordena de manera creciente. Indicando `decreasing = TRUE` se ordena la tabla de manera decreciente. Es posible indicar una ordenación por más de una columna:
+La expresión `order(iris$Sepal.Length)` genera nuevos índices para cada fila, indicando que nueva posición deberían ocupar para que la tabla quede ordenada. Por defecto, `order()` ordena de manera creciente. Indicando `decreasing = TRUE` se ordena la tabla de manera decreciente. 
+
+Es posible indicar una ordenación por más de una columna:
 
 ```{r}
 iris <- iris[order(iris$Species, iris$Sepal.Length, decreasing = TRUE), ]
