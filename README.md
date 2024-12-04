@@ -24,7 +24,7 @@
   - [6.1 Gráficos básicos](dia4/6.1_graficos_base.html)
   - [6.2 Gráficos con *ggplot2*](dia4/6.2_ggplot2.html)
   
-### Otros cursos
+### Otros cursos orientados al uso de R
 En el Doctorado de Ciencias Biológicas (FCEFyN, Universidad Nacional de Córdoba), se dictan con regularidad cursos introductorios y avanzados de modelos estadísticos en R:
 - **Introducción al lenguaje R. Modelos lineales y fundamentos de programación**. [Ver curso](https://curso-statscba.github.io/curso-R/)
 - **Modelos Estadísticos Avanzados**. [Ver curso](https://curso-statscba.github.io/modelos_avanzados/)
