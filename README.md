@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="pics/portada.png" width="100%">
+    <img src="pics/portada2.png" width="100%">
 </p>
 
 ## Índice de contenidos
