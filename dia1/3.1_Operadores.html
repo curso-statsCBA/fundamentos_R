@@ -632,7 +632,7 @@ condición ya es falsa. Si hiciéramos la misma comparación con
 <code>&amp;</code>, R devuelve un error:</p>
 <pre class="r"><code>a &lt;- 5
 a &lt; 3 &amp; b &gt; 10</code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): objeto &#39;b&#39; no encontrado</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;b&#39; not found</code></pre>
 <p>Veamos un ejemplo similar con el operador <code>||</code>:</p>
 <pre class="r"><code>a &lt;- 5
 a &gt; 3 || b &gt; 10</code></pre>
@@ -641,7 +641,7 @@ a &gt; 3 || b &gt; 10</code></pre>
 verdadera. El mismo código con <code>|</code> arroja un error:</p>
 <pre class="r"><code>a &lt;- 5
 a &gt; 3 | b &gt; 10</code></pre>
-<pre><code>## Error in eval(expr, envir, enclos): objeto &#39;b&#39; no encontrado</code></pre>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;b&#39; not found</code></pre>
 <p>Las funciones <code>all()</code> y <code>any()</code> permiten
 evaluar más de una condición simultáneamente. La función
 <code>all()</code> devuelve <code>TRUE</code> si todas las condiciones

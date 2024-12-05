@@ -364,10 +364,10 @@ text-align: justify;
 <style>
 h1.title { display: none; }
 </style>
+<p><a id="top"></a></p>
 <div style="text-align: right;">
 <p><a href="../">Volver al inicio</a></p>
 </div>
-<p><a id="top"></a></p>
 <div id="funciones" class="section level1">
 <h1>Funciones</h1>
 <p>Las funciones en R son las herramientas que nos permiten realizar una
@@ -527,7 +527,7 @@ otorgando así el mismo peso a cada elemento:</p>
 <p>Por ejemplo, para el mismo conjunto de números anterior:</p>
 <pre class="r"><code>pesos_aleatorios &lt;- sample(c(0.5, 0.75, 1), length(1:30), replace = TRUE)
 valor_promedio(x = 1:30, pesos = pesos_aleatorios)</code></pre>
-<pre><code>## [1] 12.5</code></pre>
+<pre><code>## [1] 12.83333</code></pre>
 </div>
 <div id="uso-de-stop-y-warning" class="section level2">
 <h2>Uso de <code>stop()</code> y <code>warning()</code></h2>
@@ -624,19 +624,19 @@ vector numérico:</p>
                       sample(1:1000, size = 50))
 lista_numeros</code></pre>
 <pre><code>## [[1]]
-##  [1] 804 221 987 988 588 306 878 600 975 732 287 294 877 707 110 521 460 903 473
-## [20] 178 417 785  22 633 747 910 403 792 576 717 636 680  45  71 644 159  78 158
-## [39] 176 339 766 960 308 375 921 855 386 313 812 645
+##  [1] 759 373 183 465 856 510 873 641 795 206 926 616 475 569 546 867 308 137 375
+## [20] 431 201 893 830 701 237  89 171   6 913 919 384 784 277 396 270 383 776 288
+## [39] 209 275 652 752 278 646 765 501 622 875  84 793
 ## 
 ## [[2]]
-##  [1] 558 652 157 303 716 858 454 523   9 126  58 664 621  69 207 793 127 173 516
-## [20] 190 920 410 611 405 376 197 426 487 989 150 134 463 168 771 430 564 958 239
-## [39] 701 418 172 263  53 786 835 393 498 721 678 176
+##  [1] 466 670 284 877 779 803 329 651  76 560 402 231 715 178 196  97 404  54 240
+## [20] 204 652 630 363 718 381 732 664 806 682 460 409 948 321 679  11 923 432 953
+## [39] 994 414 520 778 929 317  59 132 671 486 831 456
 ## 
 ## [[3]]
-##  [1] 870  57 160 848 293 294 725 811 966 135 360 156 361 493 402 686 136 377 460
-## [20] 312 955 709 423 663 684 311 485 455 937 504 746  45 923 641 250 487 159 736
-## [39] 745 716 801 961  74 999  82 555 714 936  80 251</code></pre>
+##  [1] 764 911 840 715 200 810 404 449 643 544 538 704 599 143 136 357 496 889 848
+## [20] 207 796 728 939 281 499 531 989 812 502  97 799 669 635 341 500  92 938 308
+## [39] 241 613 551 542 663 288 611 822  73 214 520 995</code></pre>
 <p>La función <code>sapply()</code> aplica una función dada a un objeto
 de tipo <code>list()</code>, y devuelve un vector. En este ejemplo,
 utilizaremos la función recientemente creada
@@ -644,7 +644,7 @@ utilizaremos la función recientemente creada
 conjunto de números de la lista (indicados en el primer argumento):</p>
 <pre class="r"><code>promedios &lt;- sapply(lista_numeros, FUN = valor_promedio)
 promedios</code></pre>
-<pre><code>## [1] 544.36 443.32 518.58</code></pre>
+<pre><code>## [1] 517.62 511.34 555.72</code></pre>
 <p>Notar que para el argumento <code>FUN</code> indicamos el nombre de
 la función sin los paréntesis, la cual debe existir en el entorno
 (cargada por el usuario o por defecto en R).</p>
@@ -654,7 +654,7 @@ argumento <code>FUN</code>:</p>
 <pre class="r"><code>pesos_aleatorios &lt;- sample(c(0.5, 0.75, 1), size = 50, replace = TRUE)
 promedios &lt;- sapply(lista_numeros, FUN = valor_promedio, pesos = pesos_aleatorios)
 promedios</code></pre>
-<pre><code>## [1] 391.100 328.150 380.785</code></pre>
+<pre><code>## [1] 363.915 344.595 377.150</code></pre>
 <p><strong>Para pensar:</strong> tal cual como está programada, la
 función <code>valor_promedio()</code> no es útil para ser utilizada con
 la función <code>sapply()</code>, especialmente en cuanto al argumento
