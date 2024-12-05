@@ -20,6 +20,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <img src="pics/tick.png" width="120px"/>
 
-El formulario se envío correctamente
+El formulario se envíó correctamente
 
 [Volver al Inicio](./)
