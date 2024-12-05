@@ -33,11 +33,11 @@ body {
   h1.title { display: none; }
 </style>
 
+<a id='top'></a>
+
 ::: {style="text-align: right;"}
 [Volver al inicio](../)
 :::
-
-<a id='top'></a>
 
 # Objetos y operadores
 
@@ -291,6 +291,18 @@ floor(x = 6.756)
 <p align="center"><a href="pics/meme_practico_operadores.png" target="_blank"><img src="pics/meme_practico_operadores.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a></p>
 
 <br>
+
+
+<form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/f/xovqryjk" method="post">
+  <fieldset id="fs-frm-inputs">
+    <label for="full-name">Nombre</label><br>
+    <input type="text" name="name" id="full-name" required=""><br><br>
+    <label for="codigo">Código</label><br>
+    <textarea rows="20" cols="50" name="codigo" id="codigo" required=""></textarea><br>
+    <input type="hidden" name="_subject" id="email-subject" value="Codigo de R para testear">
+  </fieldset>
+  <input type="submit" value="Enviar">
+</form>
 
 ::: {style="text-align: right;"}
 [Ir arriba](#top)

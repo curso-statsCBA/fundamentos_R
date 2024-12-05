@@ -25,11 +25,11 @@ body {
   h1.title { display: none; }
 </style>
 
+<a id='top'></a>
+
 ::: {style="text-align: right;"}
 [Volver al inicio](../)
 :::
-
-<a id='top'></a>
 
 # Tablas
 

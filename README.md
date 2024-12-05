@@ -20,6 +20,8 @@
  
 **Descarga todo el material del curso [aquí](https://github.com/pastornicolas/fundamentos_R/archive/refs/heads/main.zip)**
 
+[**Código colaborativo!**](code_form.html)
+
 ## Cronograma
 <p align="center">
     <img src="pics/crono.png" width="100%">
