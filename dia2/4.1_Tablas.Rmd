@@ -504,7 +504,7 @@ El paquete *dplyr* ofrece numerosas herramientas R para manipular y transformar 
   
 Por ejemplo, *dplyr* ofrece funciones intuitivas para realizar operaciones comunes, como filtrar filas (`filter()`), seleccionar columnas (`select()`), reordenar datos (`arrange()`), crear nuevas variables (`mutate()`) y resumir información (`summarize()`).
 
-El presente curso está orientado a entender los fundamentos básicos del lenguaje R, y no ahondaremos en el uso de este paquete. No obstante, creemos que es útil saber su existencia y explorar sobre su uso en caso de necesidad.
+El presente curso está orientado a entender los fundamentos básicos del lenguaje R y no ahondaremos en el uso de este paquete. No obstante, creemos que es útil saber de su existencia y explorar sobre su uso en caso de necesidad.
 
 ------------------------------------------------------------------------
 

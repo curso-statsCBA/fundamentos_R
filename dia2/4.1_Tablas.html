@@ -1353,8 +1353,8 @@ tabla (por ejemplo, vectores numéricos y de texto).</p>
 <p>Para crear una tabla desde cero, en R utilizamos la
 <u id="table_classes">clase</u> <code>data.frame</code>, y una función
 con el mismo nombre para generarla:</p>
-<span class="tippy html-widget html-fill-item" height="480" id="htmlwidget-580ad9da9873d416862a" width="672"></span>
-<script type="application/json" data-for="htmlwidget-580ad9da9873d416862a">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="480" id="htmlwidget-810bf2a1eda693672637" width="672"></span>
+<script type="application/json" data-for="htmlwidget-810bf2a1eda693672637">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>df &lt;- data.frame(Especie = c(&quot;Algarrobo&quot;, &quot;Piquillin&quot;, &quot;Molle&quot;),
                  Individuos = c(15, 17, 9))</code></pre>
 <p>Aquí, generamos un objeto de tipo <code>data.frame</code>, definiendo
@@ -2029,8 +2029,8 @@ iris_info$year_of_creation</code></pre>
 <pre><code>## [1] &quot;Dos mil veinticuatro&quot;</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que
 confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
-<span class="tippy html-widget html-fill-item" height="480" id="htmlwidget-058f39be7ed5aaa6ee3b" width="672"></span>
-<script type="application/json" data-for="htmlwidget-058f39be7ed5aaa6ee3b">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="480" id="htmlwidget-d46b3056a488254dcead" width="672"></span>
+<script type="application/json" data-for="htmlwidget-d46b3056a488254dcead">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>mod &lt;- lm(Sepal.Length ~ Petal.Length, data = iris)
 is.list(mod)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
@@ -2105,9 +2105,9 @@ seleccionar columnas (<code>select()</code>), reordenar datos
 (<code>arrange()</code>), crear nuevas variables (<code>mutate()</code>)
 y resumir información (<code>summarize()</code>).</p>
 <p>El presente curso está orientado a entender los fundamentos básicos
-del lenguaje R, y no ahondaremos en el uso de este paquete. No obstante,
-creemos que es útil saber su existencia y explorar sobre su uso en caso
-de necesidad.</p>
+del lenguaje R y no ahondaremos en el uso de este paquete. No obstante,
+creemos que es útil saber de su existencia y explorar sobre su uso en
+caso de necesidad.</p>
 <hr />
 <div id="ejercicio-final" class="section level4">
 <h4><ins>Ejercicio final</ins></h4>
