@@ -12,6 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 </p>
 
+## Pruba Nico
+
+esto es una prueba
+
 ## Índice de contenidos
 
 -   **Día 1**
