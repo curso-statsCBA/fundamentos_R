@@ -292,18 +292,6 @@ floor(x = 6.756)
 
 <br>
 
-
-<form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/f/xovqryjk" method="post">
-  <fieldset id="fs-frm-inputs">
-    <label for="full-name">Nombre</label><br>
-    <input type="text" name="name" id="full-name" required=""><br><br>
-    <label for="codigo">Código</label><br>
-    <textarea rows="20" cols="50" name="codigo" id="codigo" required=""></textarea><br>
-    <input type="hidden" name="_subject" id="email-subject" value="Codigo de R para testear">
-  </fieldset>
-  <input type="submit" value="Enviar">
-</form>
-
 ::: {style="text-align: right;"}
 [Ir arriba](#top)
 :::
