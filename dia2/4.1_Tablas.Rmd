@@ -515,7 +515,7 @@ El presente curso está orientado a entender los fundamentos básicos del lengua
 3.  Hay valores negativos para la concentración de Ca, lo cual no tiene sentido. Cambie estos valores por ceros.
 4.  Hay valores `NA` en la columna que indica la concentración de N. Genere una nueva tabla, utilizando el mismo nombre que antes, que no contenga estas observaciones (filas). Puede utilizar la expresión `is.na()`, pero explore también la ayuda de `na.omit()`.
 5.  Cargue la tabla del archivo "analisis_tierra2.csv", la cual muestra los resultados realizados por otra técnica (Claudia). Incorpore estos nuevos datos a la tabla anterior. Es necesario corregir algunos errores antes de hacer esto <img src="pics/emoticon1.png" width="20" height="20"/>. Entre ellos, los números asignados a cada muestra deben cambiarse, para que estos no coincidan con los números de muestra de la tabla anterior.
-6.  Ordene la tabla según valores decrecientes en la cantidad de N.
+6.  Ordene la tabla según la Parcela (orden alfabético) y por valores crecientes en la cantidad de N, en ese orden!
 7.  Exprese a la columna "Tecnico" como factor.
 8.  Genere una tabla resumen con los valores medios de N, C y Ca por Parcela, y otra con los valores de desviación estándar de N, C y Ca por Técnico. Exporte dichas tablas resumen.
 
