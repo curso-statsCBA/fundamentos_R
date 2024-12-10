@@ -379,7 +379,7 @@ Generar una tabla que contenga el cálculo de la media de "Petal.Length" para ca
 La exportación de un `data.frame` se realiza con `write.table`:
 
 ```{r, eval = FALSE}
-write.table(iris_mean, file = "iris.mean.csv")
+write.table(iris_mean, file = "iris.mean.csv", row.names = F)
 ```
 
 Análogamente a las funciones de importación, también disponemos de las funciones `write.csv()` y `write.csv2`.
