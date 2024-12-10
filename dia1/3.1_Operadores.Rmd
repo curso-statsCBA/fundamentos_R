@@ -282,7 +282,7 @@ y <- 90
 round(x = 6.756)
 round(6.756, digits = 2)
 trunc(6.756)
-ceiling(6.756)
+ceiling(6.356)
 floor(x = 6.756)
 ```
 
