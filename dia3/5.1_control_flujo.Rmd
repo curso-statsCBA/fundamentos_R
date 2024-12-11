@@ -396,7 +396,7 @@ for (i in 1:nrow(mat)) {
 
 Tomando de base el conjunto de datos `iris`, construya el siguiente `data.frame`:
 ```{r}
-model_outputs <- data.frame(Species = rep(unique(iris$Species)),
+model_outputs <- data.frame(Species = unique(iris$Species),
                             Estimate = NA,
                             P.value = NA)
 model_outputs

@@ -782,23 +782,23 @@ matrices:</p>
 <pre class="r"><code>mat &lt;- matrix(sample(1:100, size = 9), ncol = 3)
 mat</code></pre>
 <pre><code>##      [,1] [,2] [,3]
-## [1,]   89   59   65
-## [2,]   75   14    5
-## [3,]    8   70   37</code></pre>
+## [1,]   28   13   76
+## [2,]   56   61    6
+## [3,]   71   35   51</code></pre>
 <pre class="r"><code>for (i in 1:nrow(mat)) {
   for( j in 1:ncol(mat)) {
     print(paste(&quot;El elemento de la fila&quot;, i, &quot;y columna&quot;, j, &quot;es igual a&quot;, mat[i, j]))
   }
 }</code></pre>
-<pre><code>## [1] &quot;El elemento de la fila 1 y columna 1 es igual a 89&quot;
-## [1] &quot;El elemento de la fila 1 y columna 2 es igual a 59&quot;
-## [1] &quot;El elemento de la fila 1 y columna 3 es igual a 65&quot;
-## [1] &quot;El elemento de la fila 2 y columna 1 es igual a 75&quot;
-## [1] &quot;El elemento de la fila 2 y columna 2 es igual a 14&quot;
-## [1] &quot;El elemento de la fila 2 y columna 3 es igual a 5&quot;
-## [1] &quot;El elemento de la fila 3 y columna 1 es igual a 8&quot;
-## [1] &quot;El elemento de la fila 3 y columna 2 es igual a 70&quot;
-## [1] &quot;El elemento de la fila 3 y columna 3 es igual a 37&quot;</code></pre>
+<pre><code>## [1] &quot;El elemento de la fila 1 y columna 1 es igual a 28&quot;
+## [1] &quot;El elemento de la fila 1 y columna 2 es igual a 13&quot;
+## [1] &quot;El elemento de la fila 1 y columna 3 es igual a 76&quot;
+## [1] &quot;El elemento de la fila 2 y columna 1 es igual a 56&quot;
+## [1] &quot;El elemento de la fila 2 y columna 2 es igual a 61&quot;
+## [1] &quot;El elemento de la fila 2 y columna 3 es igual a 6&quot;
+## [1] &quot;El elemento de la fila 3 y columna 1 es igual a 71&quot;
+## [1] &quot;El elemento de la fila 3 y columna 2 es igual a 35&quot;
+## [1] &quot;El elemento de la fila 3 y columna 3 es igual a 51&quot;</code></pre>
 <p>¿Cómo funciona este código? La mejor forma de entender un bucle
 individual, o bucles anidados, es evaluar el primer caso de la serie de
 <em>repeticiones</em> que el bucle está efectuando y evaluar el código
@@ -810,7 +810,7 @@ para el caso. Aquí, el primer caso sería cuando <code>i = 1</code> y
 <h4><ins>Ejercicio Final</ins></h4>
 <p>Tomando de base el conjunto de datos <code>iris</code>, construya el
 siguiente <code>data.frame</code>:</p>
-<pre class="r"><code>model_outputs &lt;- data.frame(Species = rep(unique(iris$Species)),
+<pre class="r"><code>model_outputs &lt;- data.frame(Species = unique(iris$Species),
                             Estimate = NA,
                             P.value = NA)
 model_outputs</code></pre>
