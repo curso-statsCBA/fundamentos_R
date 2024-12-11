@@ -782,23 +782,23 @@ matrices:</p>
 <pre class="r"><code>mat &lt;- matrix(sample(1:100, size = 9), ncol = 3)
 mat</code></pre>
 <pre><code>##      [,1] [,2] [,3]
-## [1,]   28   13   76
-## [2,]   56   61    6
-## [3,]   71   35   51</code></pre>
+## [1,]   28   79   70
+## [2,]   91   88   50
+## [3,]    3   15   86</code></pre>
 <pre class="r"><code>for (i in 1:nrow(mat)) {
   for( j in 1:ncol(mat)) {
     print(paste(&quot;El elemento de la fila&quot;, i, &quot;y columna&quot;, j, &quot;es igual a&quot;, mat[i, j]))
   }
 }</code></pre>
 <pre><code>## [1] &quot;El elemento de la fila 1 y columna 1 es igual a 28&quot;
-## [1] &quot;El elemento de la fila 1 y columna 2 es igual a 13&quot;
-## [1] &quot;El elemento de la fila 1 y columna 3 es igual a 76&quot;
-## [1] &quot;El elemento de la fila 2 y columna 1 es igual a 56&quot;
-## [1] &quot;El elemento de la fila 2 y columna 2 es igual a 61&quot;
-## [1] &quot;El elemento de la fila 2 y columna 3 es igual a 6&quot;
-## [1] &quot;El elemento de la fila 3 y columna 1 es igual a 71&quot;
-## [1] &quot;El elemento de la fila 3 y columna 2 es igual a 35&quot;
-## [1] &quot;El elemento de la fila 3 y columna 3 es igual a 51&quot;</code></pre>
+## [1] &quot;El elemento de la fila 1 y columna 2 es igual a 79&quot;
+## [1] &quot;El elemento de la fila 1 y columna 3 es igual a 70&quot;
+## [1] &quot;El elemento de la fila 2 y columna 1 es igual a 91&quot;
+## [1] &quot;El elemento de la fila 2 y columna 2 es igual a 88&quot;
+## [1] &quot;El elemento de la fila 2 y columna 3 es igual a 50&quot;
+## [1] &quot;El elemento de la fila 3 y columna 1 es igual a 3&quot;
+## [1] &quot;El elemento de la fila 3 y columna 2 es igual a 15&quot;
+## [1] &quot;El elemento de la fila 3 y columna 3 es igual a 86&quot;</code></pre>
 <p>¿Cómo funciona este código? La mejor forma de entender un bucle
 individual, o bucles anidados, es evaluar el primer caso de la serie de
 <em>repeticiones</em> que el bucle está efectuando y evaluar el código
@@ -821,12 +821,14 @@ model_outputs</code></pre>
 <p>Luego, evalúe modelos lineales que relacionen a la variable
 <code>Petal.Length</code> con la variable <code>Sepal.Length</code> en
 ese orden, para cada especie. Rellene la tabla generada anteriormente
-con los valores de los coeficientes (<code>Estimate</code>) y su valor-P
+con los valores de los coeficientes (llamado <code>Estimate</code> o
+coeficiente de la variable predictora) y su valor-P
 (<code>P.value</code>) en cada caso. Para hacer esto, utilice alguna
 estructura de control de flujo aprendida!</p>
 <p><em>Ayuda</em>: utilice la función <code>lm()</code> para construir
-los modelos lineales, y la función <code>summary()</code> para obtener
-los coeficientes.</p>
+los modelos lineales. La salida de la función <code>summary()</code>,
+que actúa sobre el modelo (salida de <code>lm()</code>), contiene la
+información sobre los coeficientes que necesitamos.</p>
 <hr />
 <p align="center">
 <a href="pics/meme.jpg" target="_blank">

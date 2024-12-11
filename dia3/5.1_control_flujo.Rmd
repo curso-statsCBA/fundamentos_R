@@ -402,9 +402,9 @@ model_outputs <- data.frame(Species = unique(iris$Species),
 model_outputs
 ```
 
-Luego, evalúe modelos lineales que relacionen a la variable `Petal.Length` con la variable `Sepal.Length` en ese orden, para cada especie. Rellene la tabla generada anteriormente con los valores de los coeficientes (`Estimate`) y su valor-P (`P.value`) en cada caso. Para hacer esto, utilice alguna estructura de control de flujo aprendida!
+Luego, evalúe modelos lineales que relacionen a la variable `Petal.Length` con la variable `Sepal.Length` en ese orden, para cada especie. Rellene la tabla generada anteriormente con los valores de los coeficientes (llamado `Estimate` o coeficiente de la variable predictora) y su valor-P (`P.value`) en cada caso. Para hacer esto, utilice alguna estructura de control de flujo aprendida!
 
-*Ayuda*: utilice la función `lm()` para construir los modelos lineales, y la función `summary()` para obtener los coeficientes.
+*Ayuda*: utilice la función `lm()` para construir los modelos lineales. La salida de la función `summary()`, que actúa sobre el modelo (salida de `lm()`), contiene la información sobre los coeficientes que necesitamos.
 
 ```{r, echo = FALSE}
 # Respuesta verPablo
