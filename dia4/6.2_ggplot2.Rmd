@@ -349,7 +349,7 @@ El dataset `Indometh` contiene los datos de concentración en sangre de una drog
 
 Los niveles de la columna "Subject" están desordenados. ¿Por qué? Arreglar eso!
 
-2. Genere un gráfico relacionando las mismas variables que el anterior, pero haciendo un *zoom* a una región particular del gráfico. Para ello, el código será casi idéntico al gráfico anterior, pero además deberá utilizar la función `coord_fixed()`, en donde deberá indicar la región del gráfico de interés (explore ?coord_fixed sobre cómo hacer esto). Esta región será la de mayor variación de cambio entre la concentración de la droga en sangre y el tiempo. Indique el título "(b)" para el gráfico.
+2. Genere un gráfico relacionando las mismas variables que el anterior, pero haciendo un *zoom* a una región particular del gráfico. Para ello, el código será casi idéntico al gráfico anterior, pero además deberá utilizar la función `coord_fixed()`, en donde deberá indicar la región del gráfico de interés (explore ?coord_fixed sobre cómo hacer esto). La región donde hará *zoom* será la de mayor variación de cambio entre la concentración de la droga en sangre y el tiempo. Indique el título "(b)" para el gráfico.
 
 3. Genere un panel con los gráficos anteriores, a la izquierda el gráfico del punto 1 y a la derecha el del punto 2. El panel, al estar compuesto por gráficos individuales, posiblemente contenga información redundante: el nombre para el eje vertical y la leyenda (está repetida). No es necesario repetir la información. Arreglar eso!
 
