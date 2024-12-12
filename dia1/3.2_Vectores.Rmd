@@ -107,13 +107,6 @@ especies <- factor(especies, levels = c("Quebracho", "Espinillo", "Algarrobo"))
 especies
 ```
 
-O posteriormente con la función `levels`:
-
-```{r}
-levels(especies) <- c("Espinillo", "Quebracho", "Algarrobo")
-especies
-```
-
 ### Funciones útiles para la creación de vectores
 
 Durante nuestro trabajo, puede ser útil la creación de vectores que sigan una lógica determinada. Si queremos generar una secuencia de números enteros con incremento de a una unidad, el operador de secuencia `:` es el indicado, siguiendo la lógica "desde:hasta":

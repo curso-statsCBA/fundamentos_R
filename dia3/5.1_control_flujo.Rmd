@@ -392,6 +392,26 @@ for (i in 1:nrow(mat)) {
 
 ------------------------------------------------------
 
+### Algunos consejos...
+
+Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situación más común si nuestra experiencia en lenguajes de programación es nula. A continuación, presentamos algunos consejos que pueden ayudarnos a programar nuestras primeras rutinas:
+
+- **Paso a paso**. No trates de programar la tarea propuesta entera de una sola vez, mejor descomponer la tarea en tareas más pequeñas concatenadas entre sí.
+
+- **Pseudocódigo**. Es útil pensar, o incluso escribir, los pasos a seguir mediante *pseudocódigo*. Es decir, representar con oraciones simples cada tarea a realizar.
+
+- **Empezar por el final**. Muchas veces es útil pensar cuál es el resultado final que necesitamos y, luego, pensar desde allí, de atrás hacia adelante, que tareas debemos realizar para lograr ese resultado.
+
+- **Ejemplo de juguete**. Ante una tarea *compleja*, lo mejor es intentar generar la rutina deseada con un ejemplo de juguete o una pequeña porción de lo que nos proponemos hacer. Luego, si salió todo bien, extender la solución al problema en su totalidad.
+
+- **Primero lo primero**. Al programar un ciclo (`for` o `while`), puede ser difícil desarrollar de un tirón todo el código. Lo más indicado es programar las operaciones a realizar sobre el primer caso y, luego de haber obtenido el resultado exitosamente, *generalizar* el código para todos los casos.
+
+- **Pensar en modo tabla**. Si lo que quiero es obtener resultados en forma de tabla, una buena estrategia es generar la tabla con la o las columnas vacías. Luego, utilizamos un ciclo `for` para *ir rellenando* cada fila de las columnas creadas. Si lo pensamos así, nuestros ciclos `for` tendrán la siguiente forma general: `for (i in 1:nrow(mi_tabla)) {mi código a ejecutar}`.
+
+- **El error como parte del proceso**. Es normal que aparezcan errores todo el tiempo, pero es clave aprender a leer y comprender los mensajes de error. Estos mensajes suelen indicar exactamente qué está fallando y dónde.
+
+------------------------------------------------------
+
 #### <ins>Ejercicio Final</ins>
 
 Tomando de base el conjunto de datos `iris`, construya el siguiente `data.frame`:
