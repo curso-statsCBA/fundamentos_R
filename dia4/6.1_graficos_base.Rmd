@@ -178,7 +178,7 @@ with(iris, plot(Petal.Length, Sepal.Length,
                 xlim=c(0, 8),
                 ylim=c(0,8)))
 # abline() -> función de bajo nivel, añade la recta al gráfico ya creado
-with(iris, abline(lm(sepal.Length ~ Petal.Length)))
+with(iris, abline(lm(Sepal.Length ~ Petal.Length)))
 ```
 ```{r eval=T, echo=F, fig.align='center', fig.height=5, fig.width=5}
 par(mar=c(4,4,1,1))
