@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [**Código colaborativo!**](code_form.html)
 
-<!--  [**Link a la evaluación**](dia5/Evaluacion.html) -->
+[**Link a la evaluación**](dia5/Evaluacion.html)
 
 -------------------------------------
 
