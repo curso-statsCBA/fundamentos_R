@@ -26,7 +26,8 @@
 
 [**Código colaborativo!**](code_form.html)
 
-[**Link a la evaluación**](dia5/Evaluacion.html)
+<a href="dia5/Evaluacion.html" target="_blank"><strong>Link a la
+evaluación</strong></a>
 
 ------------------------------------------------------------------------
 
