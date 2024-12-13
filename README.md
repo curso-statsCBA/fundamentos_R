@@ -26,6 +26,8 @@
 
 [**Código colaborativo!**](code_form.html)
 
+<!--  [**Link a la evaluación**](dia5/Evaluacion.html) -->
+
 ------------------------------------------------------------------------
 
 ## Cronograma
