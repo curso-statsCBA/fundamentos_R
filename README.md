@@ -20,6 +20,8 @@
 -   **Día 4**
     -   [6.1 Gráficos básicos](dia4/6.1_graficos_base.html)
     -   [6.2 Gráficos con *ggplot2*](dia4/6.2_ggplot2.html)
+-   **Día 5**
+    -   [7.1 Funciones](dia5/7.1_Funciones.html)
 
 **Descarga todo el material del curso
 [aquí](https://github.com/pastornicolas/fundamentos_R/archive/refs/heads/main.zip)**
