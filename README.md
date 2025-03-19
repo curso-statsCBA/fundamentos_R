@@ -1,16 +1,11 @@
-<p align="center">
+# Fundamentos básicos del lenguaje R
 
 <font size=5>Curso de posgrado | FCEFyN - UNC</font>
-
-<p align="center" style="margin: 0; padding: 0;">
 
 <img src="pics/foto_2024.jpg" style="padding: 5px 0 5px 0; width: 66rem; max-width: 100%; height: auto; vertical-align: middle; border-style: none;"/>
 <br>
 <span style="display: block; text-align: right; margin: 0; padding: 0;"><i><sup>Edición
 2024</sup></i></span>
-
-</p>
-</p>
 
 # ¡Bienvenid@s al curso!
 
@@ -21,7 +16,7 @@ para iniciarse en el uso del lenguaje R, mediante el aprendizaje de su
 lógica programática, y orientado a resolver problemas específicos de sus
 temas de investigación.
 
-[Haz click aquí para acceder a la página y contenidos del
+[Haz click aquí para acceder a la página con los contenidos del
 curso](https://curso-statscba.github.io/fundamentos_R/)
 
 # Otros cursos de interés
