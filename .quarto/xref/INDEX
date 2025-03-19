@@ -1,0 +1,44 @@
+{
+  "index.qmd": {
+    "index.html": "ba87b6d9"
+  },
+  "about.qmd": {
+    "about.html": "6c15e5bd"
+  },
+  "dia2/4.1_Tablas.Rmd": {
+    "4.1_Tablas.html": "7a0166c0"
+  },
+  "dia2/4.1_Tablas.qmd": {
+    "4.1_Tablas.html": "d8c9d018"
+  },
+  "dia3/5.1_control_flujo.Rmd": {
+    "5.1_control_flujo.html": "46a5adb5"
+  },
+  "dia1/3.1_Operadores.qmd": {
+    "3.1_Operadores.html": "5d3f5ba7"
+  },
+  "dia1/3.2_Vectores.qmd": {
+    "3.2_Vectores.html": "1c671b7d"
+  },
+  "dia1/2.1_FlujoTrabajo.qmd": {
+    "2.1_FlujoTrabajo.html": "98ceb292"
+  },
+  "dia1/1.2_UsandoR.qmd": {
+    "1.2_UsandoR.html": "9da9ffed"
+  },
+  "dia4/6.1_graficos_base.qmd": {
+    "6.1_graficos_base.html": "74280ec9"
+  },
+  "dia4/6.2_ggplot2.qmd": {
+    "6.2_ggplot2.html": "9ea88262"
+  },
+  "dia5/7.1_Funciones.qmd": {
+    "7.1_Funciones.html": "4a947454"
+  },
+  "dia3/5.1_control_flujo.qmd": {
+    "5.1_control_flujo.html": "a8459899"
+  },
+  "codigo_colab.qmd": {
+    "codigo_colab.html": "efc18658"
+  }
+}

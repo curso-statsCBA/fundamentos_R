@@ -1,0 +1,74 @@
+project:
+  type: website
+
+website:
+  favicon: favicon.png
+  back-to-top-navigation: true
+  reader-mode: false
+  bread-crumbs: false
+  page-footer: "<br>Doctorado en Ciencias Biológicas | FCEFYN - UNC" 
+  navbar:
+    background: "#375a7f"
+    title: "Fundamentos básicos del lenguaje R"
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: index.qmd#cronograma
+        text: Cronograma
+      - text: Recursos útiles
+        menu:
+          - text: R for Data Science
+            href: https://r4ds.had.co.nz/
+            target: "_blank"
+          - text: The R Graph Gallery
+            href: https://r-graph-gallery.com
+            target: "_blank"
+          - text: R Charts
+            href: https://r-charts.com/
+            target: "_blank"
+          - text: R Colors
+            href: https://sites.stat.columbia.edu/tzheng/files/Rcolor.pdf
+            target: "_blank"
+  sidebar:
+    style: "floating"
+    search: true
+    collapse-level: 2
+    contents:
+      - text: "Inicio"
+        href: index.qmd
+      - section: "Día 1"
+        contents:
+          - text: Introducción a R
+            href: dia1/1.1_IntroR.pdf
+          - dia1/1.2_UsandoR.qmd
+          - dia1/2.1_FlujoTrabajo.qmd
+          - dia1/3.1_Operadores.qmd
+          - dia1/3.2_Vectores.qmd
+      - section: "Día 2"
+        contents:
+          - dia2/4.1_Tablas.qmd
+      - section: "Día 3"
+        contents:
+          - dia3/5.1_control_flujo.qmd
+      - section: "Día 4"
+        contents:
+          - dia4/6.1_graficos_base.qmd
+          - text: Gráficos con *ggplot2*
+            href: dia4/6.2_ggplot2.qmd
+      - section: "Día 5"
+        contents:
+          - dia5/7.1_Funciones.qmd
+      - text: Código colaborativo!
+        href: codigo_colab.qmd
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: [cosmo, cosmo-dark.scss]
+    css: styles.css
+    smooth-scroll: true
+    toc: true
+
+editor: visual
+

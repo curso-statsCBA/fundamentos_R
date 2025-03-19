@@ -1,0 +1,499 @@
+---
+title: "Tablas"
+pagetitle: "Tablas"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Creación de tablas desde cero
+
+La tabla será posiblemente el objeto de R más utilizado en el contexto de nuestro trabajo científico. Consiste en una estructura de datos que organiza la información en filas y columnas. Desde un punto de vista programático es útil considerar a las tablas como una *colección de vectores*. Consideradas de esta manera, veremos que la manipulación de las filas y columnas de una tabla es análoga a la manipulación de vectores individuales. En una tabla, *cada columna es un vector*, pudiendo haber vectores de distintos tipos en una misma tabla (por ejemplo, vectores numéricos y de texto).
+
+Para crear una tabla desde cero, en R utilizamos la <u id='table_classes'>clase</u> `data.frame`, y una función con el mismo nombre para generarla:
+
+```{r, echo=FALSE}
+tippy::tippy_this(elementId = "table_classes", tooltip = '<span style="font-size:16px;">Si bien la clase más utilizada es <code>data.frame</code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()</code> (del paquete <code>data.table</code>), o a través de la función <code>tibble()</code> (del paquete <code>tibble</code>).</span>')
+```
+
+```{r}
+df <- data.frame(Especie = c("Algarrobo", "Piquillin", "Molle"),
+                 Individuos = c(15, 17, 9))
+```
+
+Aquí, generamos un objeto de tipo `data.frame`, definiendo el nombre de cada columna e igualando cada columna a un contenido en forma de vector. Existen algunas buenas prácticas a la hora de definir los nombres de las columnas, tanto si la generamos en R o con algún software externo (Excel, Calc, Google Sheets, etc.), que nos ahorrarán dolores de cabeza en el futuro:
+
+-   Los nombres de las columnas no pueden comenzar con un número.
+-   Utilizar caracteres alfanuméricos simples. Evitar la ñ u otras letras específicas de otros idiomas.
+-   Evitar símbolos extraños reservados para el uso del lenguaje, tales como: !?¿\$%&()@*+-\>\<{}
+-   Evitar el uso de tildes, comas y puntos y coma.
+-   Evitar el uso de espacios, y reemplazarlos por punto, guión medio o guión bajo.
+
+Al crear o cargar una tabla, veremos la tabla en el panel de entorno. Desplegando la flechita azul podemos obtener información sobre las columnas de la tabla. Además, haciendo click sobre el nombre del objeto, podemos visualizar la tabla entera en otra pestaña.
+
+Normalmente, las tablas se generan fuera del entorno R para ser luego importadas a R. La creación de tablas desde cero adquiere mayor relevancia para tareas mas posteriores del flujo de análisis, como veremos más adelante.
+
+Antes que nada, [descargue el archivo zip](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/dia2/data/data.zip) con los datos necesarios para realizar el práctico, y extraiga los archivos dentro de una carpeta llamada "data" en el directorio "dia2" del proyecto del curso.
+
+------------------------------------------------------------------------
+
+## Importación y exploración de tablas
+
+Existen muchas formas de importar tablas al ambiente de R. Quizás la forma más fácil es hacerlo desde la interfaz gráfica de RStudio: en el panel de entorno, clickeando en el ícono de importación.
+
+Para hacerlo desde la consola, `read.table()` es la función genérica, indicando la dirección y nombre del archivo a importar:
+
+```{r}
+iris <- read.table(file = "data/iris.csv")
+```
+
+En realidad, el dataset `iris` viene instalado por defecto con R, pero para ejemplificar lo hacemos visible en el panel de entorno mediante su importación. Esta tabla contiene el valor de distintas variables para 50 flores de 3 especies del género *Iris*.
+
+Otras funciones similares son `read.csv()` y `read.csv2()`, cuyo funcionamiento es idéntico a `read.table()` pero sus argumentos poseen otras especificaciones por defecto.
+
+Existen algunas funciones útiles para obtener información sobre su contenido o estructura. Simplemente llamando a la tabla por su nombre en la consola, R imprime todo el contenido de la tabla. Generalmente no es útil ver una tabla de esta forma, sobre todo si tiene muchas filas y columnas. Podemos visualizar las primeras filas con la función `head()`:
+
+```{r}
+head(iris)
+```
+
+La cual imprime las primeras 6 filas de la tabla. Podemos cambiar este número con el segundo argumento de la función (`n`):
+
+```{r}
+head(iris, n = 10)
+```
+
+La función `tail()` imprime las últimas filas de la tabla.
+
+```{r}
+tail(iris)
+```
+
+La función `str()` devuelve información básica sobre las columnas, similar a lo que se detalla en el panel de entorno.
+
+```{r}
+str(iris)
+```
+
+La función `dim()` imprime las dimensiones de la tabla (número de filas y de columnas, respectivamente).
+
+```{r}
+dim(iris)
+```
+
+La funciones `nrow()` y `ncol()` devuelven dichos valores individualmente.
+
+La función `colnames()` devuelve los nombres de las columnas en un vector de texto:
+
+```{r}
+colnames(iris)
+```
+
+La función `rownames()` funciona de manera idéntica, pero para las filas.
+
+Al importar un dataset, una buena práctica es realizar una exploración inicial de la estructura de la tabla, especialmente sus columnas y nombres. La importación incorrecta de datasets es una fuente de error muy frecuente.
+
+------------------------------------------------------------------------
+
+## Manipulación de tablas
+
+Una tarea usual consiste en, una vez cargada una tabla, realizar modificaciones a la misma. Esto incluye, por ejemplo, obtener una nueva tabla de acuerdo a ciertas condiciones, eliminar ciertas filas o agregar nuevas columnas.
+
+### Indexación y filtrado
+
+Los corchetes son muy versátiles para manipular y extraer datos de un `data.frame`. La sintaxis general es `data[filas, columnas]`, siendo posible indicar índices, expresiones lógicas o nombres de columnas para obtener un subconjunto de datos (i.e. un subset).
+
+```{r}
+iris_sub <- iris[1:5, ]
+```
+
+Aquí, generamos un nuevo dataset con sólo las 5 primeras filas de la tabla `iris`. Notar que al mismo tiempo que se realiza el filtrado, lo asigno a un nuevo objeto. Si la asignación no se realiza, el objeto no queda guardado en el entorno, pero es útil si queremos probar rápidamente alguna línea de código, sin necesidad de generar un nuevo objeto.
+
+Ahora, generamos un nuevo dataset que contiene sólo las columnas `"Species"` y `"Sepal.Length"`.
+
+```{r}
+iris_sub2 <- iris[, c("Species", "Sepal.Length")]
+head(iris_sub2)
+```
+
+Notar que la nueva tabla mantiene la identidad pero también el orden de las columnas indicadas en la sintaxis. Por lo tanto, esta sintaxis también puede utilizarse para cambiar el orden de las columnas, pudiendo indicar el nombre (como en el ejemplo) o los índices (para este ejemplo sería `c(5, 1)`).
+
+La función `order()` permite ordenar una tabla de acuerdo a los valores de una columna o más columnas:
+
+```{r}
+iris <- iris[order(iris$Sepal.Length), ]
+head(iris, 10)
+```
+
+Para seleccionar una columna de una table utilizamos la sintaxis `tabla$columna`.
+
+En esto contexto, la expresión `order(iris$Sepal.Length)` genera nuevos índices para cada fila, indicando que nueva posición deberían ocupar para que la tabla quede ordenada. Por defecto, `order()` ordena de manera creciente. Indicando `decreasing = TRUE` se ordena la tabla de manera decreciente.
+
+Es posible indicar una ordenación por más de una columna:
+
+```{r}
+iris <- iris[order(iris$Species, iris$Sepal.Length, decreasing = TRUE), ]
+head(iris, 10)
+```
+
+Es posible obtener subconjuntos de datos que cumplan con ciertas condiciones. Las condiciones, en general, serán sobre los datos contenidos en las filas.
+
+```{r}
+iris_sub3 <- iris[iris$Sepal.Length > 5, ]
+head(iris_sub3)
+```
+
+Aquí estamos seleccionando aquellas filas para los cuales `Sepal.Length` es mayor a 5. ¿Por qué esta sintáxis tan rara? En realidad, lo que estamos haciendo es indicar una expresión lógica para las filas, especificando el nombre de la tabla y la columna (es un vector!) mediante el operador `$`:
+
+```{r}
+iris$Sepal.Length > 5
+```
+
+Es posible, entonces, indicar cualquier expresión lógica referida a una o más columnas de la tabla. El mismo filtrado puede realizarse mediante la función `subset()`, siendo este método un poco menos "engorroso":
+
+```{r}
+iris_sub3 <- subset(iris, Sepal.Length > 5)
+head(iris_sub3)
+```
+
+El primer argumento indica el conjunto de datos a utilizar, y el segundo argumento la expresión a aplicar para filtrar dicho conjunto de datos. Notar que no es necesario aclarar la sintaxis `iris$Sepal.Length`. Esto es hace más fácil la escritura cuando haya que indicar múltiples condiciones lógicas.
+
+El argumento `select` permite además seleccionar una o más columnas a dejar luego del filtro:
+
+```{r}
+iris_sub4 <- subset(iris, Sepal.Length > 5, select = c("Species", "Sepal.Width"))
+head(iris_sub4)
+```
+
+¿Cómo modificamos el contenido de una tabla? Para ello, debemos primero seleccionar qué campos queremos modificar, y luego asignarle el nuevo contenido. Por ejemplo, si quisiéramos cambiar el nombre de una de las especies por un sinónimo:
+
+```{r}
+iris$Species[iris$Species == "setosa"] <- "arctica"
+```
+
+Analicemos con cuidado esta expresión. La primera parte, `iris$Species`, indica la columna `Species`. Es decir, selecciono dicho el vector-columna. Entre corchetes indico una expresión lógica para seleccionar todos aquellos elementos del vector en donde dicha expresión sea verdadera. En este caso, donde el vector `iris$Species` sea igual (`==`) a `"setosa"`. Finalmente, le asignamos el valor `"arctica"`. Dado que queremos un único valor para todos los campos, no es necesario asignar un vector con elementos repetidos para `"arctica"`.
+
+**Para pensar:** ¿Por qué no hay coma en la sintaxis de filtrado anterior?
+
+Podemos corroborar que se ha modificado la tabla con la función `unique()`, que devuelve los valores únicos para un objeto dado:
+
+```{r}
+unique(iris$Species)
+```
+
+```{r, echo = FALSE}
+iris <- read.table(file = "data/iris.csv")
+```
+
+#### <ins>Ejercicio 1</ins>
+
+Genere nuevas tablas a partir de la tabla `iris` (utilizar nombres nuevos para cada tabla), para:
+
+-   La especie "setosa", y las columnas "Species" y "Petal.Width".
+-   Las especies "setosa" y "versicolor". Deberá utilizar el operador `%in%` en vez del `==` (recordá de qué estamos hablando en [Vectores](../dia1/3.2_Vectores.qmd)).
+-   Flores en donde "Petal.Length" es mayor o igual a 4.
+-   Flores en donde "Sepal.Width" es mayor a 3 o "Sepal.Length" \< 4.
+
+### Creación de nuevas columnas
+
+Para agregar una nueva columna utilizamos la sintaxis `data$nueva_columna`. La columna debe asociarse a un contenido, las filas, mediante el operador de asignación. Lo que hacemos es agregar un nuevo vector-columna a la colección de vectores-columnas que es el `data.frame`:
+
+```{r}
+iris$Seed.set <- NA
+head(iris)
+```
+
+Vemos que se ha generado una nueva columna con campos igual a `NA` (no dato). Crear una columna con datos vacíos de esta manera puede llegar a ser útil para luego *ir rellenando* cada fila de acuerdo al contenido de otras columnas. Spoiler: el control de flujo podría ser útil para esta tarea.
+
+La siguiente línea genera una nueva columna a partir del cociente de otras dos:
+
+```{r}
+iris$Sepal.Petal.ratio <- iris$Sepal.Length/iris$Petal.Length
+head(iris)
+```
+
+La función `ifelse()` es útil para generar nuevas columnas basadas en la información de columnas ya existentes. Funciona de manera similar a un "SI()" de Excel/Calc. El primer argumento establece la condición, el segundo el valor devuelto si la condición es verdadera, y el tercero si es falsa:
+
+```{r}
+iris$Sepal.width.cat <- ifelse(iris$Sepal.Width < 3, "Corto", "Largo")
+head(iris)
+```
+
+Es posible anidar la función `ifelse()` para obtener más categorías:
+
+```{r}
+iris$Sepal.width.cat2 <- ifelse(iris$Sepal.Width < 2.8, "Corto",
+                               ifelse(iris$Sepal.Width >= 2.8 & iris$Sepal.Width < 3.3, "Mediano", "Largo"))
+head(iris)
+```
+
+Traducción en palabras: Si el largo del sépalo es menor a 2.8, clasificarlo como "Corto". En caso contrario, si es mayor o igual a 2.8 Y menor a 3.3, clasificarlo como "Mediano"; si no es así, clasificarlo como "Largo".
+
+Con la función `factor()`, es posible aisgnarle a un vector-columna la clase de `factor`:
+
+```{r}
+iris$Sepal.width.cat2 <- factor(iris$Sepal.width.cat2)
+iris$Sepal.width.cat2
+```
+
+Recordemos, como vimos en la clase de [Vectores](../dia1/3.2_Vectores.qmd), que al indicar un factor es posible también indicar el orden de sus niveles. Esto también aplica en el contexto de manipulación de tablas.
+
+No obstante, a la hora de generar vectores (aquí asociados a una tabla), la función `cut()` es más adecuada. Esta función divide el rango de valores de un vector en intervalos específicos, y define nombres para cada intervalo. Por ejemplo:
+
+```{r}
+iris$Sepal.width.cat4 <- cut(x = iris$Sepal.Width, breaks = 3, labels = c("Corto", "Mediano", "Largo"))
+head(iris)
+```
+
+Aquí, creamos una nueva columna, construida a partir de los valores de la columna `Sepal.Width`. Mediante `breaks = 3`, indicamos que el rango de valores de `Sepal.Width` se divida en 3 partes iguales, y definimos los nombres para cada intervalo en el argumento `labels`. El argumento `breaks` también admite un vector numérico con los valores que dividirán los intervalos generados.
+
+La función `cut()` devuelve un factor con niveles, adecuado en contextos de análisis estadísticos y graficación:
+
+```{r}
+class(iris$Sepal.width.cat4)
+```
+
+#### <ins>Ejercicio 2</ins>
+
+Genere una nueva columna para la tabla `iris` llamada "Flower.color". Para las especie *Iris setosa* y *Iris versicolor*, asignarle "Purple". Para la especie *Iris virginica* asignarle "Blue".
+
+------------------------------------------------------------------------
+
+### Unión de tablas
+
+Las funciones `rbind()` y `cbind()` permiten añadir filas ("r" de "row") y columnas ("c" de "column") a un `data.frame`, respectivamente.
+
+A modo de ejemplo, importaremos un `data.frame` conteniendo las medidas de variables florales (inventadas para el ejemplo) para la especie *Iris florentina*. Asimismo, cargamos nuevamente la tavla `iris` con la estructura y datos originales:
+
+```{r}
+# Cargamos nuevamente la tabla con la estructura y datos originales
+iris <- read.table("data/iris.csv")
+# Cargamos la nueva tabla
+iris_fl <- read.table("data/iris_florentina.csv")
+head(iris_fl)
+```
+
+Podemos ver que tiene la misma cantidad de columnas y los mismos nombres que la tabla original con la que venimos trabajando. Lo lógico sería unir estas dos tablas mediante `rbind()`:
+
+```{r}
+iris_new <- rbind(iris, iris_fl)
+```
+
+La exploración de las últimas filas de la nueva tabla comprueban que hemos hecho la unión correctamente:
+
+```{r}
+tail(iris_new)
+```
+
+Al utilizar `rbind()`, debemos asegurarnos de que la cantidad de columnas y sus nombres sean idénticos. De lo contrario, R devuelve un error.
+
+De manera similar, la función `cbind()` une tablas a lo largo de sus columnas, y su sintaxis tiene la forma de `cbind(tabla1, tabla2)`. Lógicamente, el número de filas de ambas tablas debe ser el mismo, de lo contraria obtendremos una advertencia o un error.
+
+Usualmente, la información está repartida en más de una tabla. ¿Cómo generamos una nueva tabla que reúna toda la información junta? Para ello utilizamos la función `merge()` (fusionar/combinar). A modo de ejemplo, cargamos una nueva tabla con los nombres comunes de las especies de *Iris* con las que venimos trabajando:
+
+```{r}
+iris_names <- read.table("data/iris_common_names.csv")
+iris_names
+```
+
+Vemos que la tabla tiene dos columnas, una para la especie y otra para el nombre común. La idea sería agregar a la tabla generada anteriormente `iris_new` una nueva columna con los nombres comunes, repetidos para cada fila correspondiente. Hacerlo manualmente no es viable, siendo la función `merge()` la adecuada para esta tarea:
+
+```{r}
+iris_new2 <- merge(iris_new, iris_names, by = "Species")
+head(iris_new2)
+```
+
+Los primeros dos argumentos indican las tablas a combinar, y el argumento `by` la columna común a ambas tablas (pueden indicarse más columnas con la sintaxis `c("columna1", "columna2")`). La función *busca* coincidencias de campos en la columna (o columnas) en ambas tablas, y *rellena* correspondientemente.
+
+La función `merge()` es una función muy útil para combinar tablas, pero debe utilizarse con cuidado, pensando qué tabla final es la que nos proponemos generar. Por ejemplo, obtendremos resultados distintos si los campos de la columna especificada en `by` (en el ejemplo, las especies) difieren de alguna manera, o si hay campos faltantes. Esto es particularmente importante para datasets muy grandes en donde no podemos corroborar que lo que se ha fusionado es lo que realmente nos proponíamos hacer. Es conveniente explorar las distintas opciones en `?merge`.
+
+### Cálculo de estadísticas sobre tablas
+
+La función `aggregate()` es útil para generar tablas con estadísticas de resumen de acuerdo a los niveles de un determinado factor. Por ejemplo, para calcular el valor medio de la longitud del sépalo para cada especie utilizamos la siguiente sintaxis:
+
+```{r}
+iris_mean <- aggregate(Sepal.Width ~ Species, data = iris, FUN = mean)
+iris_mean
+```
+
+El primer argumento indica una fórmula con la sintaxis `variable ~ factor`, el segundo el `data.frame` de referencia y el tercero la función a aplicar. Esta función debe existir en el entorno, tanto por defecto (las cuales no aparecen visibles, como `mean()` o `sd()`) o programadas por el usuario.
+
+No es útil que la columna de esta nueva tabla se siga llamando `Sepal.Width`. Podemos cambiarla asignando un nuevo nombre al vector generado con la función `colnames()`:
+
+```{r}
+colnames(iris_mean) <- c("Species", "Sepal.Width.mean")
+iris_mean
+```
+
+**Para pensar:** Aquí debí aclarar "Species" para la primera columna, que no cambia de nombre. ¿Cuál podría ser la línea de código para cambiar únicamente la segunda columna?
+
+Para calcular la media de varias variables en una misma línea de código, utilizamos la función `cbind()`:
+
+```{r}
+iris_mean <- aggregate(cbind(Sepal.Length, Sepal.Width) ~ Species, data = iris, FUN = mean)
+iris_mean
+```
+
+El uso del punto `.` es útil para hacer el cálculo sobre todas las columnas del dataset, a excepción de la definida a la derecha de `~`:
+
+```{r}
+iris_mean <- aggregate(. ~ Species, data = iris, FUN = mean)
+iris_mean
+```
+
+#### <ins>Ejercicio 3</ins>
+
+Generar una tabla que contenga el cálculo de la media de "Petal.Length" para cada especie. Luego, generar otra tabla con la desviación estándar de "Petal.Length" para cada especie. En cada tabla, cambiar los nombres de las nuevas columnas a "Petal.Length.mean" y "Petal.Length.sd". Finalmente, unir ambas tablas con `cbind()`.
+
+------------------------------------------------------------------------
+
+## Exportación de tablas
+
+La exportación de un `data.frame` se realiza con `write.table`:
+
+```{r, eval = FALSE}
+write.table(iris_mean, file = "iris.mean.csv", row.names = F)
+```
+
+Análogamente a las funciones de importación, también disponemos de las funciones `write.csv()` y `write.csv2`.
+
+------------------------------------------------------------------------
+
+## Otras estructuras de datos
+
+### Matrices
+
+Las matrices en R pertenecen a la clase `matrix`. Es una colección de datos agrupados en filas y columnas y, si bien admiten objetos de distinto tipo, en general se utilizan para almacenar números. La utilidad principal de una matriz, a diferencia de un `data.frame`, es que permite operaciones matemáticas propias. Por ello, es un objeto fundamental para el análisis estadístico en múltiples disciplinas.
+
+Para crear una matriz en R, utilizamos la función `matrix()`:
+
+```{r}
+mat <- matrix(data = 1:25, ncol = 5, nrow = 5)
+mat
+```
+
+El primer argumento indica los elementos que contendrá la matriz. En este caso, se utiliza la sucesión de números enteros desde el 1 al 25. Los argumentos `ncol` y `nrow` indican el número de columnas y filas correspondientes para generar la matriz. Un detalle importante es la forma en la que los elementos de la matriz se van *rellenando*. Por defecto, los datos se van agregando por columnas. En cambio, si se indica `byrow = TRUE`, los datos se agregan por fila:
+
+```{r}
+mat <- matrix(data = 1:25, ncol = 5, nrow = 5, byrow = TRUE)
+mat
+```
+
+La función `dim()` nos indica el número de filas y columnas de la matriz:
+
+```{r}
+dim(mat)
+```
+
+Al igual que para la clase `data.frame`, las funciones `nrow()` y `ncol()` indican el número de filas y columnas de una matriz.
+
+Los corchetes son los operadores indicados para acceder a los elementos de una matriz, indicando los índices para las filas y las columnas separado por una coma:
+
+```{r}
+mat[2, 3]
+```
+
+Las matrices se asocian a numerosas funciones especiales para matrices, pero no es la idea de este curso indagar mucho en este tema. Podemos mencionar las funciones `rowSums()` y `colSums()`, que devuelven las sumas de las filas y las columnas respectivamente. Análogamente, las funciones `rowMeans()` y `colMeans()` devuelven los valores medios.
+
+### Listas
+
+Una gran parte de diversos paquetes de R contienen funciones cuyas salidas son estructuras más complejas que las aprendidas hasta ahora. Un tipo de estas estructuras es la lista; estos son objetos de clase `list`. Es una colección de objetos de cualquier tipo. Por ejemplo:
+
+```{r}
+iris_info <- list(data = iris,
+                  mean_stats = iris_mean,
+                  year_of_creation = 2024)
+```
+
+La información guardada en una lista se accede mediante el operador `$`, si es que los elementos de la lista a acceder tienen asociado un nombre:
+
+```{r}
+iris_info$mean_stats
+```
+
+También es posible acceder a la información de un elemento de una lista indicando el índice del elemento entre corchetes dobles:
+
+```{r}
+iris_info[[3]]
+```
+
+La estructura y parte del contenido de una lista también puede desplegarse en el panel de entorno.
+
+Es posible modificar el contenido de un elemento de la lista, incluso indicando un elemento de otra clase:
+
+```{r}
+iris_info$year_of_creation <- "Dos mil veinticuatro"
+iris_info$year_of_creation
+```
+
+Por ejemplo, la salida de la función `lm()`, que confecciona una <u id='lm'>regresión lineal</u>, es una lista:
+
+```{r, echo=FALSE}
+tippy::tippy_this(elementId = "lm", tooltip = '<span style="font-size:16px;">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.</span>')
+```
+
+```{r}
+mod <- lm(Sepal.Length ~ Petal.Length, data = iris)
+is.list(mod)
+```
+
+Aquí, en el primer argumento, indicamos para modelar la variable `Sepal.Length` en función de la variable `Petal.Length`. El símbolo `~` (virgulilla) es el indicado para expresar la fórmula. En el argumento `data` indicamos el `data.frame` de referencia. Por otro lado, la función `is.list()` devuelve `TRUE` si el objeto indicado es de clase `list`.
+
+La función `summary()` devuelve información relevante sobre el modelo:
+
+```{r}
+mod_summ <- summary(mod)
+mod_summ
+```
+
+Que también guarda la información en una lista:
+
+```{r}
+is.list(mod_summ)
+```
+
+Es posible acceder a los coeficientes del modelo, en forma de tabla, explorando la salida de `summary()`:
+
+```{r}
+mod_summ$coefficients
+```
+
+#### Clases S4
+
+Otra salida menos común de algunos paquetes son las clases S4. En esencia, son muy similares a las listas en el sentido de que pueden almacenar cualquier tipo de objeto. Una de las diferencias radica en que el tipo de elemento a almacenar está predefinido, y no puede cambiarse.
+
+Un ejemplo es la salida de la función `raster()` del paquete `raster`, la cual genera un objeto de tipo raster, muy utilizado en el contexto de Sistemas de Información Geográfica. Por ahora, basta con saber que la información de estos objetos se acceden con el operador `@`, mediante la sintaxis `objeto@elemento`.
+
+------------------------------------------------------------------------
+
+### El paquete *dplyr*
+
+El paquete *dplyr* ofrece numerosas herramientas R para manipular y transformar datos. Es parte del universo [tidyverse](https://www.tidyverse.org/){target="_blank"}, diseñado para facilitar el trabajo con datos tabulares de manera eficiente y legible. A diferencia del manejo básico de tablas en R, *dplyr* introduce una sintaxis diferente a través del operador `%>%`, que relaciona una expresión con otra como si fuera una oración de texto:
+
+*cargar tabla %\>% seleccionar columnas %\>% filtrar filas %\>% crear nueva columna*
+
+Por ejemplo, *dplyr* ofrece funciones intuitivas para realizar operaciones comunes, como filtrar filas (`filter()`), seleccionar columnas (`select()`), reordenar datos (`arrange()`), crear nuevas variables (`mutate()`) y resumir información (`summarize()`).
+
+El presente curso está orientado a entender los fundamentos básicos del lenguaje R y no ahondaremos en el uso de este paquete. No obstante, creemos que es útil saber de su existencia y explorar sobre su uso en caso de necesidad.
+
+------------------------------------------------------------------------
+
+#### <ins>Ejercicio final</ins>
+
+1.  Cargue la tabla del archivo "analisis_tierra.csv", la cual muestra los resultados de un análisis de muestras de tierra, detallando las concentraciones de N, C y Ca. Explore su estructura y contenido utilizando las funciones `head()`, `tail()`, `str()` y `dim()`.
+2.  Explore los nombres de las columnas. Corrija el error en la segunda columna, que debería llamarse "Parcela".
+3.  Hay valores negativos para la concentración de Ca, lo cual no tiene sentido. Cambie estos valores por ceros.
+4.  Hay valores `NA` en la columna que indica la concentración de N. Genere una nueva tabla, utilizando el mismo nombre que antes, que no contenga estas observaciones (filas). Puede utilizar la expresión `is.na()`, pero explore también la ayuda de `na.omit()`.
+5.  Cargue la tabla del archivo "analisis_tierra2.csv", la cual muestra los resultados realizados por otra técnica (Claudia). Incorpore estos nuevos datos a la tabla anterior. Es necesario corregir algunos errores antes de hacer esto <img src="pics/emoticon1.png" width="20" height="20"/>. Entre ellos, los números asignados a cada muestra deben cambiarse, para que estos no coincidan con los números de muestra de la tabla anterior.
+6.  Ordene la tabla según la Parcela (orden alfabético) y por valores crecientes en la cantidad de N, en ese orden!
+7.  Exprese a la columna "Tecnico" como factor.
+8.  Genere una tabla resumen con los valores medios de N, C y Ca por Parcela, y otra con los valores de desviación estándar de N, C y Ca por Técnico. Exporte dichas tablas resumen.
+
+<br>
+
+<p align="center">
+
+<a href="pics/meme_practico_tablas.png" target="_blank"><img src="pics/meme_practico_tablas.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a>
+
+</p>

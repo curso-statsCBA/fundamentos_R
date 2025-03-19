@@ -1,0 +1,42 @@
+---
+title: ¡Código colaborativo!
+---
+
+Enviá tu código para probarlo en la clase en vivo.
+
+Utilizá el siguiente formulario para enviarnos tu bloque de código de los ejercicios que realicemos durante la clase. Lo ejecutaremos en vivo frente a todos, revisando juntos cómo funciona y resolviendo dudas en tiempo real!
+
+```{=html}
+<!-- 
+    This is a working contact form. To receive email, 
+    Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+
+    Create Access Key here 👉 https://web3forms.com/
+ -->
+
+<link rel="stylesheet" href="style_form.css">
+<section class="contact-section">
+
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="redirect" value="https://pastornicolas.github.io/fundamentos_R/success.html">
+    <input type="hidden" name="access_key" value="3055f274-afac-4062-b381-0bd19e931dde" />
+    <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+    <input type="hidden" name="from_name" value="My Website" />
+    <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+
+    <div class="form-group-container">
+      <div class="form-group">
+        <label for="name" class="form-label">Nombre</label>
+        <input id="name" name="name" class="form-input" placeholder="Tu nombre" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Bloque de código</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Pegá tu código aquí"></textarea>
+      </div>
+    </div>
+    <button class="form-submit" type="submit">Enviar</button>
+  </form>
+
+</section>
+```

@@ -1,0 +1,48 @@
+---
+title: Fundamentos básicos del lenguaje R
+pagetitle: "Inicio"
+---
+
+<font size=5>Curso de posgrado | FCEFyN - UNC</font>
+
+<p align="center" style="margin: 0; padding: 0;">
+  <img src="pics/foto_2024.jpg" style="padding: 5px 0 5px 0; width: 66rem; max-width: 100%; height: auto; vertical-align: middle; border-style: none;"/>
+  <br>
+  <span style="display: block; text-align: right; margin: 0; padding: 0;"><i><sup>Edición 2024</sup></i></span>
+</p>
+
+# ¡Bienvenid\@s al curso!
+
+Bienvenid\@s al curso de **Fundamentos básicos del lenguaje R**, dictado por el Dr. Pablo Yair Huais y el Biól. Nicolás Pastor. El curso fue diseñado para proveer a l\@s estudiantes con las herramientas necesarias para iniciarse en el uso del lenguaje R, mediante el aprendizaje de su lógica programática, y orientado a resolver problemas específicos de sus temas de investigación.
+
+A la izquierda de la pantalla se encuentran disponibles todos los recursos prácticos y teóricos que utilizaremos durante el desarrollo del curso.
+
+# Objetivos específicos
+
+-   Que l\@s estudiantes adquieran conceptos teóricos fundamentales y habilidades prácticas básicas del lenguaje R.
+-   Que l\@s estudiantes desarrollen un pensamiento programático en relación al uso del lenguaje R.
+-   Que l\@s estudiantes sean capaces de trasladar las herramientas aprendidas para la resolución de problemas metodológicos específicos de sus investigaciones.
+
+# Cronograma {#cronograma}
+
+<p align="center">
+
+<a href="pics/cronograma.png" target="_blank"> <img src="pics/cronograma.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a>
+
+</p>
+
+# Otros cursos de interés
+
+En el Doctorado de Ciencias Biológicas (FCEFyN, Universidad Nacional de Córdoba), se dictan con regularidad cursos introductorios y avanzados de modelos estadísticos en R:
+
+-   **Introducción al lenguaje R. Modelos lineales y fundamentos de programación** <br>Dictado por el Dr. Santiago Benitez-Vieyra. [Ver curso](https://curso-statscba.github.io/curso-R/){target="_blank"}
+-   **Modelos Estadísticos Avanzados** <br>Dictado por el Dr. Santiago Benitez-Vieyra. [Ver curso](https://curso-statscba.github.io/modelos_avanzados/){target="_blank"}
+-   **Gráficos para publicaciones en R con énfasis en *ggplot2*** <br>Dictado por el Dr. Andrés Blanco. [Ver curso](https://andresblanco-unc.github.io/curso_graficos_ggplot/){target="_blank"}
+
+# Licencia
+
+© 2024 Pablo Y. Huais & Nicolás Pastor. Bajo licencia [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+<font size=3 color = "gray">CC BY-NC-SA 4.0</font>
+
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"> <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"/></a>

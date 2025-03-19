@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Primeros pasos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "coincidencias",
+    "search-copy-link-title": "Copiar link para buscar",
+    "search-hide-matches-text": "No mostrar coincidencias adicionales",
+    "search-more-match-text": "otra coincidencia en este documento",
+    "search-more-matches-text": "más coincidencias en este documento",
+    "search-clear-button-title": "Limpiar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Buscar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
+<link href="../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
+<link href="../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
+<link href="../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
+<script src="../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
+<script src="../site_libs/tippy-binding-0.1.0/tippy.js"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Fundamentos básicos del lenguaje R</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html#cronograma"> 
+<span class="menu-text">Cronograma</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-recursos-útiles" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Recursos útiles</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-recursos-útiles">    
+        <li>
+    <a class="dropdown-item" href="https://r4ds.had.co.nz/" target="_blank">
+ <span class="dropdown-text">R for Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-graph-gallery.com" target="_blank">
+ <span class="dropdown-text">The R Graph Gallery</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-charts.com/" target="_blank">
+ <span class="dropdown-text">R Charts</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://sites.stat.columbia.edu/tzheng/files/Rcolor.pdf" target="_blank">
+ <span class="dropdown-text">R Colors</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Cambiar a tema oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Primeros pasos con R y RStudio</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inicio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Día 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia1/1.1_IntroR.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción a R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia1/1.2_UsandoR.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Primeros pasos con R y RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia1/2.1_FlujoTrabajo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Flujo de Trabajo en R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia1/3.1_Operadores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Objetos y operadores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia1/3.2_Vectores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vectores</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Día 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia2/4.1_Tablas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tablas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Día 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia3/5.1_control_flujo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estructuras de control de flujo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Día 4</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia4/6.1_graficos_base.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gráficos con R base</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia4/6.2_ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gráficos con <em>ggplot2</em></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Día 5</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dia5/7.1_Funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Funciones</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../codigo_colab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Código colaborativo!</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#cómo-se-usa-r" id="toc-cómo-se-usa-r" class="nav-link active" data-scroll-target="#cómo-se-usa-r">¿Cómo se usa R?</a>
+  <ul class="collapse">
+  <li><a href="#presentando-a-rstudio" id="toc-presentando-a-rstudio" class="nav-link" data-scroll-target="#presentando-a-rstudio">Presentando a RStudio</a></li>
+  <li><a href="#buscando-ayuda-en-r" id="toc-buscando-ayuda-en-r" class="nav-link" data-scroll-target="#buscando-ayuda-en-r">Buscando ayuda en R</a></li>
+  <li><a href="#instalación-y-carga-de-paquetes" id="toc-instalación-y-carga-de-paquetes" class="nav-link" data-scroll-target="#instalación-y-carga-de-paquetes">Instalación y carga de paquetes</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Primeros pasos con R y RStudio</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="cómo-se-usa-r" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-se-usa-r">¿Cómo se usa R?</h2>
+<p>R puede ser utilizado de forma interactiva iniciándolo directamente de cualquier <a href="https://es.wikipedia.org/wiki/Bash" target="_blank">terminal de BASH</a> (en sistemas <i>UNIX-like</i>), o desde el <a href="https://es.wikipedia.org/wiki/S%C3%ADmbolo_del_sistema_de_Windows" target="_blank">“Simbolo del sistema”</a> o haciendo doble click en el ejecutable típicamente localizado en “<i>C:\Program Files\R\R-<i>version</i>\bin\x64\</i>” (en sistemas Windows). Por ejemplo en cualquier distribución GNU/Linux, bastará con abrir la terminal e ingresar el comando “R”.</p>
+<p align="center">
+</p><p><a href="pics/r_inter.png" target="_blank"> <img src="pics/r_inter.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>Cuando R es iniciado de esa forma, veremos un texto con una pequeña presentación de R, incluyendo la versión que se está ejecutando y algunas ayudas básicas. Luego de este texto, vemos una linea vacía comenzada por el carácter <code>&gt;</code>. Este último carácter se conoce como <i>prompt</i> y nos indica que R está listo para recibir órdenes. Así pues, podríamos pedir que nos imprima una bienvenida al curso utilizando la función <code>print()</code>, haciendo por ejemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Bienvenides al curso!!!"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p align="center">
+</p><p><a href="pics/r_inter2.png" target="_blank"> <img src="pics/r_inter2.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>Aún funcionando desde un <a href="https://es.wikipedia.org/wiki/Interfaz_de_l%C3%ADnea_de_comandos" target="_blank">CLI</a>, sin una interfaz gráfica, debido a que R está pensado para funcionar en sistemas de ventanas, es posible realizar gráficos y estos se mostraran en una nueva ventana exclusivamente creada para tal fin. Podríamos por ejemplo graficar 3 puntos de diferentes colores, ubicados en las coordenadas <code>(x,y)=(1,1 ; 2,1 ; 3,1)</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"red"</span>,<span class="st">"black"</span>), <span class="at">cex=</span><span class="dv">5</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p align="center">
+</p><p><a href="pics/r_inter3.png" target="_blank"> <img src="pics/r_inter3.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>Como al usar R de esta forma solo podremos ir ejecutando de a una orden a la vez, puede ser conveniente disponer de algún editor de <a href="https://es.wikipedia.org/wiki/Archivo_de_texto" target="_blank">texto plano</a> para poder ir guardando nuestro código a medida que lo vamos escribiendo y ejecutando. Para ello podemos utilizar cualquier editor de texto plano (e.g., en GNU/Linux podemos usar “<a href="https://help.gnome.org/users/gedit/stable/index.html.es" target="_blank">gedit</a>” o el editor que traiga nuestra distribución; en Windows podemos utilizar “<a href="https://apps.microsoft.com/detail/9msmlrh6lzf3?hl=en-us&amp;gl=US#activetab=pivot:overviewtab" target="_blank">Bloc de Notas</a>”, “<a href="https://notepad-plus-plus.org/" target="_blank">Notepad++</a>”, etc). Aprovechando el espacio del escritorio de nuestra PC podríamos entonces hacer una disposición con las ventanas abiertas de nuestra terminal donde ejecutamos R, la ventana gráfica donde se mostrarán nuestros gráficos, el archivo de texto plano con nuestro código y podríamos sumar también una ventana con las carpetas donde estamos guardando el trabajo y desde donde leeremos los datos que cargaremos a R. Algo parecido a lo siguiente:</p>
+<p align="center">
+</p><p><a href="pics/r_inter4.png" target="_blank"> <img src="pics/r_inter4.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>Finalmente, si deseamos salir de la sesión de R activa, podemos utilizar la función <code>quit()</code> (o su forma abreviada <code>q()</code>), a lo que R responderá preguntando si queremos guardar una <i>imagen del espacio de trabajo</i>, a lo que responderemos que NO ingresando <code>n</code>. Esto cerrara cualquier ventana gráfica que hubiera abierta, así como en nuestra terminal veremos que el <i>prompt</i> vuelve a ser el de nuestro sistema.</p>
+<section id="anch1" class="level4">
+<h4 class="anchored" data-anchor-id="anch1"></h4>
+<p align="center">
+</p><p><a href="pics/r_inter5.png" target="_blank"> <img src="pics/r_inter5.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+</section>
+<section id="ejercicio-1" class="level4">
+<h4 class="anchored" data-anchor-id="ejercicio-1"><ins>Ejercicio 1</ins></h4>
+<p>Abra R desde una terminal de su sistema operativo e intente replicar las líneas de código mostradas en la parte previa, de paso, sabremos que su sistema tiene correctamente instalado R.</p>
+<hr>
+</section>
+<section id="presentando-a-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="presentando-a-rstudio">Presentando a RStudio</h3>
+<p>A pesar de lo sencillo que resulta usar R nativamente en cualquier sistema, para ahorrarnos tener que usar múltiples programas en simultáneo, así como para sumar toda una gran colección de funcionalidades y herramientas que nos facilitarán mucho el trabajo, es recomendable utilizar R en conjunto con alguna <a href="https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado" target="_blank">IDE</a>. En este curso, utilizaremos <a href="https://posit.co/products/open-source/rstudio/" target="_blank">RStudio</a>.</p>
+<p align="center">
+</p><p><a href="pics/r_stud_let.png" target="_blank"> <img src="pics/r_stud_let.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>En la figura precedente podemos identificar rápidamente las principales áreas de trabajo con diferentes funcionalidades que nos ofrece el programa (estos paneles pueden maximizarse, minimizarse o redimensionarse a gusto con el puntero del <i>mouse</i>, así como personalizarse en “<i>Tools</i> &gt; <i>Global Options</i> &gt; <i>Pane Layout</i>”):</p>
+<ol>
+<li style="font-weight:bold;">
+<p>Consola: <span style="font-weight:normal;">una consola de R equivalente a la que iniciamos previamente y con la misma funcionalidad.</span></p>
+</li>
+<li style="font-weight:bold;">
+<p>Fuente: <span style="font-weight:normal;">equivalente al editor de texto plano (este panel puede no abrirse por defecto si todavía no creamos ninguna rutina, para ello hacer “<i>File</i> &gt; <i>New File</i> &gt; <i>R Script</i>” o click en el botón <img src="pics/r_scrp_new.png" class="img-fluid" width="24"> [<strong>a</strong>])</span></p>
+</li>
+<li style="font-weight:bold;">
+<p>Entorno: <span style="font-weight:normal;">muestra todos los objetos creados ordenados por tipo, permite la carga de dataset gráficamente y la gestión de la memoria en uso.</span></p>
+</li>
+<li style="font-weight:bold;">
+<p>Archivos, Gráficos, Paquetes, Ayuda: <span style="font-weight:normal;">esta es una área de mucho uso ya que permite ver y manipular el sistema de archivos dónde estamos trabajando [<strong>b</strong>], así como gestionar los paquetes de R gráficamente [<strong>c</strong>]. Además, cambiará automáticamente al área gráfica cuando realicemos un gráfico [<strong>d</strong>] y cambiará a las ayudas internas disponibles en caso de solicitarlo [<strong>e</strong>].</span></p>
+</li>
+</ol>
+<p>Cuando tengamos una rutina (i.e.&nbsp;un <em>script</em>) creada, podremos ejecutar directamente desde la misma el código sin necesidad de “<i>copiar y pegar</i>” en la consola de R. Para ello, con el cursor de texto sobre la linea de código podemos utilizar el botón <img src="pics/r_run.png" class="img-fluid" width="24"> <code>Run</code> ubicado en el sector superior derecho del panel <em>Fuente</em>, o utilizar el atajo de teclado <code>Ctrl + Enter</code>. Esto mismo podemos hacerlo sobre varias líneas, seleccionando con el cursor todas aquellas líneas que querramos ejecutar.</p>
+<p><strong>Para prestar atención:</strong> un <em>script</em> no es más que una serie ordenada de órdenes que se ejecutan una tras otra. Por defecto, siempre que ejecutemos un <em>script</em> completo, no importa si lo hacemos <i>línea a línea</i> o seleccionado todo el conjunto, la ejecución subyacente es secuencial. Para romper este comportamiento existen estructuras especiales conocidas como “<i>Estructuras de control de flujo</i>”, que estudiaremos más adelante.</p>
+<p><strong>Para pensar:</strong> en el ejemplo de la figura previa existen líneas que comienzan con un carácter <code>#</code> (llamado de muchas formas: numeral, almohadilla, <i>hashtag</i>). Si presta atención, esas líneas están coloreadas de forma homogénea en el editor y, además, aparentan tener mensajes que explican el código. ¿Qué imagina que sucede cuando se ejecutan? ¿Cómo se llama y qué función cumplen esas líneas? Más adelante veremos otra forma adicional de utilizarlas para organizar nuestro código en RStudio.</p>
+<section id="proyectos-en-rstudio" class="level4">
+<h4 class="anchored" data-anchor-id="proyectos-en-rstudio"><em>Proyectos en RStudio</em></h4>
+<p>Una de las primeras nociones sobre las <i>buenas prácticas</i> de trabajo es intentar mantener una organización coherente de nuestro código, así como de los archivos de entrada (i.e.&nbsp;los datos) y salida (i.e.&nbsp;resultados, gráficos, etc). Aunque estrictamente no existe una forma única ni correcta de organización y cada persona debe encontrar lo que le resulta más práctico, siempre debemos considerar que existen potenciales receptores de nuestro código que idealmente tendrían que interpretar con el menor esfuerzo posible la organización seguida. Incluso podemos ser nosotros mismos quienes en un futuro revisitemos algo que hicimos hace un tiempo y le estaremos enormemente agradecidos a nuestra versión del pasado por haber mantenido una organización coherente.</p>
+<p>Cuando trabajamos con RStudio, esto último puede ser muy sencillo de realizar utilizando los <em>proyectos</em>, que no son otra cosa más que una forma de mantener nuestro trabajo en un contexto dado, con su propio directorio de trabajo, historial, rutinas, entradas, salidas, etc. De esta forma, pensemos por ejemplo en una organización con una estructura hipotética similar a la siguiente:</p>
+</section>
+<section id="anch2" class="level4">
+<h4 class="anchored" data-anchor-id="anch2"></h4>
+<pre><code>AnalisisTesis
+  |
+  |-- CapII
+  |     |
+  |     |-- datos
+  |     |     |-- muestreoEne-Mar.csv
+  |     |     |-- muestreoAgo-Oct.csv
+  |     |      
+  |     |--resultados
+  |     |     |-- diversidad.txt
+  |     |     |-- composicion.txt
+  |     |     |-- graficos
+  |     |            |-- fig_div_estacion.pdf
+  |     |            |-- fig_NMDS.pdf
+  |     |
+  |     |-- analisis
+  |           |-- exploratorios.R
+  |           |-- anova.R
+  |           |-- NMDS.R
+  |-- CapIII
+  |     |
+  |    ...
+ ...</code></pre>
+<p>En este caso, podríamos entonces pensar en crear un proyecto para todo el conjunto de “AnalisisTesis” o podemos subdividir y crear un proyecto por cada capítulo que requiera realizar algun tipo de análisis. De nuevo, no hay una manera única, todo dependerá del contexto y lo que resulte -o parezca resultar- óptimo en cada situación.</p>
+<p>Existen múltiples formas de crear un nuevo proyecto. Podemos hacer “<i>File</i> &gt; <i>New Project…</i>”; podemos usar el botón <img src="pics/r_proy_but.png" class="img-fluid" width="24"> en la esquina superior izquierda; o utilizar el menú de proyectos <img src="pics/r_proy_but2.png" class="img-fluid" width="20"> <code>Project: (None)</code>, situado en la esquina superior derecha. A la hora de crear un nuevo proyecto, podemos elegir partir de un directorio nuevo o de uno previamente creado. Así mismo, podemos elegir un tipo específico de proyecto según si estemos haciendo un proyecto general, un proyecto para un nuevo paquete de R, una <a href="https://shiny.posit.co/" target="_blank">aplicación Shiny</a>, etc. Todo esto se realiza mediante una serie de menús gráficos que se nos irán presentado y que son sumamente intuitivos de seguir.</p>
+</section>
+<section id="ejercicio-2" class="level4">
+<h4 class="anchored" data-anchor-id="ejercicio-2"><ins>Ejercicio 2</ins></h4>
+<p>Luego de ver la demostración del docente sobre la creación de proyectos en RStudio, abra una sesión propia de RStudio y cree un proyecto para este curso. La organización sugerida es la siguiente:</p>
+<pre><code>fundamentosR
+  |
+  |-- fundamentosR.Rproj
+  |-- dia1
+  |     |-- mi_rutinaR.R
+  |
+  |--dia2
+  |--dia3
+ ...</code></pre>
+<p>A medida que el curso avance, iremos completando estos directorios con datos, rutinas, etc.</p>
+</section>
+<section id="ejercicio-3" class="level4">
+<h4 class="anchored" data-anchor-id="ejercicio-3"><ins>Ejercicio 3</ins></h4>
+<p>Cree una rutina dentro de <code>dia1</code>, como se muestra en la estructura precedente, que contenga el código ejecutado en el <a href="#anch1">Ejercicio 1</a> para el mensaje de bienvenida y el gráfico. Corra esas líneas y explore las funciones del panel gráfico. Finalmente, guarde el mismo como un archivo <code>PNG</code> dentro del directorio <code>dia1</code>.</p>
+</section>
+<section id="el-directorio-de-trabajo" class="level4">
+<h4 class="anchored" data-anchor-id="el-directorio-de-trabajo"><em>El directorio de trabajo</em></h4>
+<p>Cuando trabajamos con R, implícitamente lo estamos haciendo en alguna ubicación de nuestro sistema de archivos. Los proyectos de RStudio facilitan esta cuestión haciendo que el <em>directorio de trabajo</em> sea aquel en el cual creamos el proyecto. Para conocer en donde estamos trabajando, podemos utilizar la función <code>getwd()</code>. Por ejemplo, mientras escribo esta guía puedo ver en qué ubicación se encuentra el proyecto en la cual la estoy realizando (Sí! R es tan versátil, que hasta podemos crear páginas web y cualquier otro tipo de documento con su propio formato, imágenes embebidas, vínculos de internet, etc.):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/home/pablo/MEGA/Cursos/fundamentos_R_quarto/dia1"</code></pre>
+</div>
+</div>
+<p>Si por algun motivo deseara cambiar el directorio de trabajo, puedo hacerlo desde el menú “<i>Session</i> &gt; <i>Set Working Directory</i> &gt; <i>Choose Directory</i>” o, de forma más sencilla, utilizar la función <code>setwd()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd("/home/usuario/R/mi_proyecto_de_R") # ejecución sin salida en consola</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># getwd() # muestra el nuevo working directory</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd("/home/usuario/cursoR/clases/1_2_usandoR/") # regreso al original</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># getwd() # muestra el nuevo working directory</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rutas-relativas-y-absolutas" class="level4">
+<h4 class="anchored" data-anchor-id="rutas-relativas-y-absolutas"><em>Rutas relativas y absolutas</em></h4>
+<p>Una ruta (en inglés <i>path</i>) en R o en cualquier otro sistema informático es la “dirección” de cada archivo que existe en el sistema de archivos. De forma general, existen dos formas de representar a cualquier ruta:</p>
+<ul>
+<li><p>Las <strong>rutas absolutas</strong> son aquellas en las que explícitamente se indica todo el trayecto realizado desde la ráiz del sistema hasta la ubicación en cuestión. En los sistemas GNU/Linux, la raíz del sistema es <code>/</code> (llamado <strong>root</strong>); mientras que en los sistemas Windows será el origen del disco que este utilizándose, típicamente <code>C:\</code>. Teniendo esto en cuenta, la ruta anterior al directorio de trabajo es una ruta absoluta, ya que en la misma se explicita toda la ruta desde la raíz hasta el archivo.</p></li>
+<li><p>Las <strong>rutas relativas</strong> por su parte, nos muestran la ubicación de un archivo o directorio en sentido relativo al directorio de trabajo activo. Generalmente, las mismas empiezan con uno o dos caracteres de punto “.”, teniendo la expresión <code>./</code> el significado literal de “en este directorio”, es decir, en el directorio actual; mientras que la expresión <code>../</code> indica el directorio superior en la jerarquía del directorio actual. Tener en cuenta que en sistemas Windows, el caracter que separa directorios es la “<i>barra inversa</i>”, por lo que en esos sistemas será: <code>.\</code> y <code>..\</code>.</p></li>
+</ul>
+<p>Como ejemplo, tomando como referencia la <a href="#anch2">estructura sugerida</a> para el proyecto de los analisis de la tesis, si el directorio de trabajo activo fuera <code>analisis</code> dentro de <code>CapII</code>, la ruta relativa a <code>CapIII</code> seria <code>../../CapIII</code></p>
+</section>
+<section id="ejercicio-4" class="level4">
+<h4 class="anchored" data-anchor-id="ejercicio-4"><ins>Ejercicio 4</ins></h4>
+<p>Imagine que dentro del directorio <code>/home/usuario/Documentos</code>, posee la siguiente estructura de directorios:</p>
+<pre><code>carpeta0/
+├── archivo0_a
+├── archivo0_b
+├── carpeta1
+│  ├── archivo1_a
+│  ├── archivo1_b
+│  └── archivo1_c
+└── carpeta2
+    ├── archivo2_a
+    ├── archivo2_b
+    └── carpeta2a
+        ├── archivo2a_a
+        └── carpeta2b
+            └── archivo2b_a     </code></pre>
+<ul>
+<li>¿Cuál sería la ruta absoluta al archivo “archivo1_c”?</li>
+</ul>
+<div id="app">
+<p><label for="userText">Su respuesta:</label> <input type="text" id="userText" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer()">OK</button></p>
+<p id="result">
+</p>
+</div>
+<script>
+  // Use the correct answer defined in R
+  const correctAnswer = "/home/usuario/Documentos/carpeta0/carpeta1/archivo1_c";
+
+  function checkAnswer() {
+    // Get the user's input text
+    const userText = document.getElementById("userText").value;
+    // Check if the input matches the correct answer
+    if (userText === correctAnswer) {
+      document.getElementById("result").innerText = "Correcto!";
+      result.style.color = "green"; result.style.fontWeight = "bold";
+    } else {
+      document.getElementById("result").innerText = "Incorrecto. Por favor, intente nuevamente.";
+      result.style.color = "red"; result.style.fontWeight = "bold";
+    }
+  }
+</script>
+<ul>
+<li>¿Cómo sería la ruta relativa desde el directorio “carpeta2b” hacia el archivo “archivo1_c”?</li>
+</ul>
+<div>
+<p><label for="userText">Su respuesta:</label> <input type="text" id="userText2" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer2()">OK</button></p>
+<p id="result2">
+</p>
+</div>
+<script>
+  // Use the correct answer defined in R
+  const correctAnswer2 = "../../../carpeta1/archivo1_c";
+
+  function checkAnswer2() {
+    // Get the user's input text
+    const userText2 = document.getElementById("userText2").value;
+    // Check if the input matches the correct answer
+    if (userText2 === correctAnswer2) {
+      document.getElementById("result2").innerText = "Correcto!";
+      result2.style.color = "green"; result2.style.fontWeight = "bold"; 
+    } else {
+      document.getElementById("result2").innerText = "Incorrecto. Por favor, intente nuevamente.";
+      result2.style.color = "red"; result2.style.fontWeight = "bold";
+    }
+  }
+</script>
+</section>
+<section id="las-rutas-en-los-proyectos-de-rstudio" class="level4">
+<h4 class="anchored" data-anchor-id="las-rutas-en-los-proyectos-de-rstudio"><em>Las rutas en los proyectos de RStudio</em></h4>
+<p>Cuando trabajamos dentro de un proyecto de RStudio, todas las rutas son relativas a la raíz del proyecto. Esto tiene algunas ventajas, como por ejemplo si compartimos nuestro proyecto con colaboradores, estos no necesitarán configurar las rutas para su sistema, ya que las rutas se mantienen relativas al proyecto. Por otro lado, no es necesario que anonimicemos nuestras rutas, ya que si trabajamos exclusivamente dentro de la carpeta raíz del proyecto, no debería aparecer ninguna ruta absoluta. Las razones por las que quisiéramos mantener nuestras <em>otras</em> carpetas internas privadas son muchas, y variarán en cada caso, pero para un ejemplo interesante podemos considerar el siguiente caso:</p>
+<p align="center">
+</p><p><a href="pics/r_paths.png" target="_blank"> <img src="pics/r_paths.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>Por cierto, Alexandra es, ni más ni menos, la creadora del sitio <a href="https://www.sci-hub.se/" target="_blank">Sci-Hub</a> y esa captura corresponde a una guía básica para voluntarias/os de <a href="https://es.wikipedia.org/wiki/Archivo_de_Anna" target="_blank">Anna’s Archive</a>.</p>
+<hr>
+</section>
+</section>
+<section id="buscando-ayuda-en-r" class="level3">
+<h3 class="anchored" data-anchor-id="buscando-ayuda-en-r">Buscando ayuda en R</h3>
+<p>Una de las cosas que más intimidan a quienes intentan aprender un lenguaje de programación suele ser intentar recordar el nombre de todas las funciones disponibles y cómo se usa exactamente cada una. Pero lo cierto es que esto rara vez preocupa a quienes llevan un tiempo inmersos en algún lenguaje. Esto es así, ya que como el resto de los lenguajes más populares, R posee un compendio de documentación interna que explica detalladamente cada una de sus funciones. Esta ayuda se encuentra disponible desde la instalación de R, así como de cada uno de los paquetes oficiales, y puede ser consultada incluso <em>fuera de línea</em> (i.e.&nbsp;sin conexión a internet).</p>
+<p>Existen múltiples formas de consultar esta documentación. Si nos encontramos trabajando directamente desde una consola de R, podremos invocar la ayuda con la función <code>help(funcion)</code>, donde <code>funcion</code> es el nombre de la función o el objeto sobre el que estamos requiriendo la documentación. Por ejemplo, con la formula <code>help(help)</code> podemos obtener la ayuda de la función de ayuda:</p>
+<p align="center">
+</p><p><a href="pics/r_help.png" target="_blank"> <img src="pics/r_help.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>Así mismo, disponemos de una versión corta de la función previa, que es la función <code>?funcion</code> y en caso de que queramos buscar con una palabra clave, ya que no recordamos siquiera el nombre de la función o paquete, podemos utilizar <code>??palabraclave</code>.</p>
+<p>En RStudio, como ya mencionamos antes, disponemos de un área específica para mostrar la ayuda. Está área se activará automáticamente al solicitar alguna ayuda, e incluso disponemos de una función de <em>autocompletado</em> con ayudas en ventanas emergentes. Para activarla, solo debemos comenzar a escribir el nombre de la función y apretar la tecla <code>Tab ↹</code>. En la siguiente figura, podemos ver que sucede al comenzar a escribir “<code>me + Tab ↹</code>”:</p>
+<p align="center">
+</p><p><a href="pics/r_help2.png" target="_blank"> <img src="pics/r_help2.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<section id="ejercicio-5" class="level4">
+<h4 class="anchored" data-anchor-id="ejercicio-5"><ins>Ejercicio 5</ins></h4>
+<p>En RStudio corra las siguientes líneas de a una y observe que salidas le brinda el programa. Anímese a explorar, no hay nada que pueda romper, haga click aquí y allá, vaya y vuelva. De igual forma, intente utilizar el autocompletado y las ayudas emergentes, fomente su creatividad buscando lo que se le ocurra, o intente averiguar como se usa esa función que hace 2 o 3 semanas que no logra ejecutar sin error. En clase discutiremos que partes componen la ayuda y como interpretarla.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(help)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>?help</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>??distance</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>?plot</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="foros-y-bitácoras-de-la-comunidad" class="level4">
+<h4 class="anchored" data-anchor-id="foros-y-bitácoras-de-la-comunidad"><em>Foros y bitácoras de la comunidad</em></h4>
+<p>Además de estas útiles ayudas <em>offline</em>, si contamos con una conexión a internet, por supuesto no dudaremos en hacer uso extensivo de buscadores. Muchas veces, más que saber cómo opera una función en particular, queremos conocer como realizar una acción dada, con el método que sea. Aprender a buscar es en sí mismo un arte. La cantidad de sitios con información sobre R es inabarcable y muchas veces podemos perdernos en el afán de encontrar lo que buscamos, por ello a continuación veremos algunas recomendaciones.</p>
+<ul>
+<li>El idioma en que buscamos importa. Como para cualquier otra búsqueda, no encontraremos los mismos recursos si buscamos en español que si buscamos en inglés.</li>
+</ul>
+<p align="center">
+</p><p><a href="pics/r_help3.png" target="_blank"> <img src="pics/r_help3.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<ul>
+<li>Existen múltiples foros que incluyen hilos específicos para R, buscar en ellos muchas veces es una forma segura de aprender como hacer algo. La única recomendación en este sentido, aunque no podemos enfatizarla lo suficiente, es que <strong>nunca debemos ejecutar código que no comprendamos</strong>. Si creemos que cierto fragmento de código nos puede ser útil, primero intentemos entenderlo con un ejemplo de juguete, en una sesión nueva, lejos de nuestros scripts de los análisis en curso. Cuando pensemos que hemos podido entender como funciona, entonces ya estamos listos para trasladar ese código a nuestro script. Si no encontramos la respuesta al problema específico que tenemos, en estos foros también podemos realizar una pregunta y nos responderán bastante rápido. La clave es poder expresar concretamente el problema, el resultado esperado y, en la medida de lo posible, brindar un conjunto de datos mínimo que sirva de ejemplo al que realmente queremos procesar. A continuación un ejemplo de <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
+</ul>
+<p align="center">
+</p><p><a href="pics/r_help4.png" target="_blank"> <img src="pics/r_help4.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<ul>
+<li>Ademas de los foros, existe una cantidad inmensa de artículos en sitios webs dedicados a R, así como en blogs personales. Muchas personas, que de hecho investigan en problemas similares a los nuestros, dedican mucho tiempo a publicar métodos de análisis en R, incluyendo muchas veces apartados con explicaciones teóricas sobre ciertos tópicos. Nunca está de más tomarse el tiempo para ver que encontramos. Debajo un ejemplo correspondiente a los materiales de un sitio sobre <a href="https://www.davidzeleny.net/anadat-r/doku.php/en:start" target="_blank">Analisis en ecologia de comunidades en R</a>.</li>
+</ul>
+<p align="center">
+</p><p><a href="pics/r_help5.png" target="_blank"> <img src="pics/r_help5.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+</section>
+<section id="los-errores-como-una-oportunidad-de-aprendizaje" class="level4">
+<h4 class="anchored" data-anchor-id="los-errores-como-una-oportunidad-de-aprendizaje"><em>Los errores como una oportunidad de aprendizaje</em></h4>
+<p>Muy frecuentemente nos encontraremos con errores en la ejecución de alguna línea. Lejos de desanimarnos y/o frustrarnos, debemos pensar que los errores son una oportunidad de aprendizaje. Los errores puede ir desde pequeños errores de tipeo, hasta la falta de memoria de cómputo para la acción requerida, pasando por operaciones imposibles de realizar o falta de argumentos obligatorios en las funciones. En cualquier caso, lo primero que debemos hacer es mantener la calma e intentar <strong>interpretar el mensaje de error</strong>. Si no logramos solucionarlo por nuestra cuenta, siempre podemos copiar el mensaje y ver que ayuda obtenemos en línea.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>iris[iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="dv">3</span>]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `[.data.frame`(iris, iris$Sepal.Length &gt; 3): columnas no definidas seleccionadas</code></pre>
+</div>
+</div>
+<p align="center">
+</p><p><a href="pics/r_help6.png" target="_blank"> <img src="pics/r_help6.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p><strong>Sobre los <em>warnings</em></strong>: ocasionalmente R no producirá un mensaje de error, sino una <ins><em>advertencia</em></ins>. En estos casos, también es importante que intentemos entender que está ocasionando este mensaje para saber si es algo crítico o no, sobre todo en cuanto a resultados de análisis se refiere.</p>
+</section>
+<section id="uso-de-ia" class="level4">
+<h4 class="anchored" data-anchor-id="uso-de-ia"><em>Uso de IA</em></h4>
+<p>Otra fuente de ayuda en los tiempos modernos, es recurrir al <em>chatbot</em> de inteligencia artificial de su preferencia. Una vez más, lo importante es intentar interpretar el código previo a su ejecución. En sentido estricto, podríamos darle nuestros datos a un <em>chatbot</em> y pedirle todos los análisis necesarios y, si supimos desmenuzar e indicar nuestra pregunta correctamente, incluso es posible que la salida sea correcta. Dicho esto, estamos aquí para aprender a hacerlo nosotros mismos, por ende, si bien es una fuente más de ayuda, el objetivo es que <strong>aunque el código lo produzca la IA, seamos capaces de entender completamente lo que está sucediendo</strong>.</p>
+<p>Fuera de estas consideraciones, podemos preguntar directamente como hacer algo, como en el ejemplo que sigue:</p>
+<p align="center">
+</p><p><a href="pics/r_help7.png" target="_blank"> <img src="pics/r_help7.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>O incluso podemos darle algún fragmento de código que falla, y pedirle que intente encontrar el error y explicarnos que es lo que lo esta generando:</p>
+<p align="center">
+</p><p><a href="pics/r_help8.png" target="_blank"> <img src="pics/r_help8.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p><strong>Para pensar:</strong> más adelante aprenderemos efectivamente a filtrar una tabla basados en una condición. Recuerde la respuesta brindada por la IA en este ejemplo y veremos luego si es una “buena” respuesta.</p>
+<hr>
+</section>
+</section>
+<section id="instalación-y-carga-de-paquetes" class="level3">
+<h3 class="anchored" data-anchor-id="instalación-y-carga-de-paquetes">Instalación y carga de paquetes</h3>
+<p>A medida que usemos R nos surgirá la necesidad de instalar paquetes por fuera de la versión básica, para añadir funcionalidades extras a R. Esto se puede realizar sencillamente desde RStudio, ya sea utilizando la interfaz gráfica o con funciones especificas para la instalación; así como podemos realizar la instalación desde <a href="https://cran.r-project.org/" target="_blank">CRAN</a> o desde repositorios externos (e.g.&nbsp;<a href="https://github.com/" target="_blank">GitHub</a>).</p>
+<section id="instalación-desde-cran" class="level4">
+<h4 class="anchored" data-anchor-id="instalación-desde-cran"><em>Instalación desde CRAN</em></h4>
+<p>La forma más sencilla de instalar paquetes es usando la función <code>install.packages()</code>, indicando en el argumento de la función el nombre del paquete. Si no recordamos exactamente el nombre, podemos hacer uso de la función de autocompletado (con la tecla <code>Tab ↹</code>). También podemos utilizar el botón <img src="pics/r_inst_but.png" class="img-fluid" width="20"> para instalar paquetes, en el área correspondiente de RStudio. Si usamos esta última forma, se abrirá una ventana de diálogo, donde podemos indicar el nombre del paquete a instalar.</p>
+</section>
+<section id="anch3" class="level4">
+<h4 class="anchored" data-anchor-id="anch3"></h4>
+<p align="center">
+</p><p><a href="pics/r_install.png" target="_blank"> <img src="pics/r_install.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>Es importante recordar que cuando realicemos la instalación, muchas veces será necesario instalar otros paquetes que son requeridos para que funcione correctamente el paquete que queremos usar. Estos <em>paquetes necesarios</em> se conocen como <strong>dependencias</strong> y por defecto R instalará todas las dependencias necesarias. En la siguiente imagen se muestra la descripción de <a href="https://cran.r-project.org/web/packages/vegan/index.html" target="_blank"><code>vegan</code></a>, un paquete muy popular para Ecología de Comunidades, dónde podemos ver que <em>depende</em> de los paquetes <code>permute</code>y <code>lattice</code>, en sus versiones mínimas 0.9 y 4.1 respectivamente, así como “<em>importa</em>” los paquetes <code>MASS</code>, <code>cluster</code> y <code>mgcv</code>.</p>
+<p align="center">
+</p><p><a href="pics/r_install2.png" target="_blank"> <img src="pics/r_install2.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
+<p>Dentro de los errores comunes que podemos encontrar tenemos:</p>
+<ul>
+<li><p>No indicamos entre comillas el nombre del paquete. Recordar que la sintaxis correcta es <code>install.packages("paquete")</code> y no <code>install.packages(paquete)</code>.</p></li>
+<li><p>Queremos instalar múltiples paquetes sin indicar correctamente la lista de paquetes a instalar. Recordar que en ese caso sería <code>install.packages(c("paquete1", "paquete2", "paquete3"))</code> utilizando la nomenclatura de un <em>vector</em> (más adelante esto tendrá sentido, no se preocupe si ahora no lo entiende).</p></li>
+<li><p>Alguna <em>dependencia</em> se encuentra en una versión anterior a la necesaria y no puede actualizarse. Esto normalmente se debe a que otro paquete la tiene <em>fijada</em> en una versión anterior. Se soluciona, generalmente, reiniciando la sesión de R, actualizando independientemente el paquete en cuestión y luego re-intentando la instalación del paquete objetivo. <em>Atención</em>: si un paquete tiende a fijar alguna dependencia en una versión dada, es posible que ese paquete sea viejo y ya no se esté <u id="manteniendo">manteniendo</u>; en cuyo caso debemos evaluar si tiene sentido seguir usándolo, principalmente porque al actualizar su dependencia se generará un conflicto y ya no funcionará.</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-b7709512ff797918bb8b" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-b7709512ff797918bb8b">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<ul>
+<li>Alguna <em>dependencia</em> no puede ser instalada y por ende falla la instalación del paquete objetivo. Esto puede deberse a un problema de compatibilidad entre versiones de las dependencias o de algún conflicto entre la dependencia necesaria y otra que exista (o falte) en nuestro Sistema Operativo. Muchas veces este problema se debe a que faltan los <em>compiladores</em> (<code>gcc</code>, <code>gfortran</code>, <code>g++</code>, etc) necesarios para compilar el nuevo paquete. Resolver estos conflictos puede requerir un poco de tiempo, en tanto necesitamos identificar cuál es la librería que esta generando el conflicto, pero suelen resolverse simplemente luego de haber instalado la dependencia correcta en nuestro Sistema Operativo.</li>
+</ul>
+</section>
+<section id="cargando-paquetes" class="level4">
+<h4 class="anchored" data-anchor-id="cargando-paquetes"><em>Cargando paquetes</em></h4>
+<p>Por defecto, cuando abrimos una nueva sesión de R o apenas luego de que instalamos un nuevo paquete, estos no se encuentran disponibles en la memoria de trabajo. Para que un paquete particular (y todas las funciones que este contiene), se carguen en la memoria de trabajo, debemos llamarlo usando la función <code>library()</code>. Así mismo, si lo deseamos podemos “descargar” un paquete a fin de liberar memoria, utilizando la función <code>detach()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga de paquetes</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Descarga de paquetes</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(<span class="st">"package:remotes"</span>, <span class="at">unload =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Todo esto en RStudio también puede ser realizado simplemente tildando o destildando el paquete correspondiente en la lista de paquetes.</p>
+</section>
+<section id="ejercicio-6" class="level4">
+<h4 class="anchored" data-anchor-id="ejercicio-6"><ins>Ejercicio 6</ins></h4>
+<p>Instale con el medio que le sea conveniente el paquete <code>remotes</code>, tal como se muestra en la <a href="#anch3">imagen previa</a>. Luego use la función <code>library()</code> para cargarlo. Utilizando las ayudas internas de R responda: ¿para qué sirve este paquete?</p>
+<p><br></p>
+</section>
+<section id="llamando-funciones-de-paquetes-específicos" class="level4">
+<h4 class="anchored" data-anchor-id="llamando-funciones-de-paquetes-específicos"><em>Llamando funciones de paquetes específicos</em></h4>
+<p>En ocasiones, algunas funciones puede tener igual nombre en diferentes paquetes. Por defecto, cuando llamamos a una función R intentará utilizar la función del paquete que más recientemente se haya cargado. Si deseamos referirnos a una función de un paquete específico podemos hacerlo utilizando la expresión <code>paquete::funcion()</code>. Por ejemplo:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">Anova</span>(<span class="fu">lm</span>(hp <span class="sc">~</span> <span class="fu">as.factor</span>(cyl), <span class="at">data =</span> mtcars))</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Anova Table (Type II tests)
+
+Response: hp
+               Sum Sq Df F value    Pr(&gt;F)    
+as.factor(cyl) 104031  2  36.177 1.319e-08 ***
+Residuals       41696 29                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(hp <span class="sc">~</span> cyl, <span class="at">data =</span> mtcars, <span class="at">main =</span> <span class="st">"Relación entre caballos de fuerza (hp) y nº de cilindros (cyl)"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="1.2_UsandoR_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="instalación-desde-otros-repositorios" class="level4">
+<h4 class="anchored" data-anchor-id="instalación-desde-otros-repositorios"><em>Instalación desde otros repositorios</em></h4>
+<p>Así como instalamos paquetes desde CRAN, también podemos instalar paquetes directamente desde los repositorios de código en los que se encuentran. Existen múltiples paquetes que permiten interactuar con diferentes repositorios, uno de ellos es el paquete <code>remotes</code> que instalamos en el ejercicio previo. Si por ejemplo queremos instalar el paquete <code>multilandr</code> que se encuentra en <a href="https://github.com/phuais/multilandr" target="_blank">este repositorio</a>, podemos hacer:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL al repositorio: https://github.com/phuais/multilandr</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="at">repo =</span> <span class="st">"phuais/multilandr"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multilandr)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+<section id="ejercicio-final" class="level4">
+<h4 class="anchored" data-anchor-id="ejercicio-final"><ins>Ejercicio Final</ins></h4>
+<p>Instale el paquete <code>ggplot2</code>. Una vez instalado, cárguelo y realice algún gráfico de los ejemplos disponibles en su <em>vignette</em>. Finalmente, guarde el gráfico en el directorio de trabajo.</p>
+<hr>
+<p align="center">
+</p><p><a href="pics/meme.jpg" target="_blank"> <img src="pics/meme.jpg" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a></p>
+<p></p>
+
+
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><br>Doctorado en Ciencias Biológicas | FCEFYN - UNC</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

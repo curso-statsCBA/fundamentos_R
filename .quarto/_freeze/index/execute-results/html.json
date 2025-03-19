@@ -1,0 +1,15 @@
+{
+  "hash": "c138bae10526bb5b2d4eb5d84d022757",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: ¡Bienvenid@s al curso!\n---\n\n\n\n\n<p align=\"center\">\n<img src=\"pics/foto_2024.jpg\" style=\"padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;\"/>\n</p>\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n\n\n\n# Objetivos\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>. This is a Quarto website.\n\n# Cronograma\n\n<p align=\"center\">\n<a href=\"pics/cronograma.png\" target=\"_blank\"> <img src=\"pics/cronograma.png\" style=\"padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;\"/></a>\n</p>\n\n# Otros cursos de interés\n\nEn el Doctorado de Ciencias Biológicas (FCEFyN, Universidad Nacional de Córdoba), se dictan con regularidad cursos introductorios y avanzados de modelos estadísticos en R:\n\n- Introducción al lenguaje R. Modelos lineales y fundamentos de programación. Ver curso\n- Modelos Estadísticos Avanzados. Ver curso\n\n# Licencia\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
