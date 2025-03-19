@@ -2,10 +2,14 @@
 
 <font size=5>Curso de posgrado | FCEFyN - UNC</font>
 
+<p align="center" style="margin: 0; padding: 0;">
+
 <img src="pics/foto_2024.jpg" style="padding: 5px 0 5px 0; width: 66rem; max-width: 100%; height: auto; vertical-align: middle; border-style: none;"/>
 <br>
 <span style="display: block; text-align: right; margin: 0; padding: 0;"><i><sup>Edición
 2024</sup></i></span>
+
+</p>
 
 # ¡Bienvenid@s al curso!
 
