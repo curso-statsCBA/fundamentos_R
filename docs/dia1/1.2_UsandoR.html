@@ -336,10 +336,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#cómo-se-usa-r" id="toc-cómo-se-usa-r" class="nav-link active" data-scroll-target="#cómo-se-usa-r">¿Cómo se usa R?</a>
   <ul class="collapse">
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1"><ins>Ejercicio 1</ins></a></li>
   <li><a href="#presentando-a-rstudio" id="toc-presentando-a-rstudio" class="nav-link" data-scroll-target="#presentando-a-rstudio">Presentando a RStudio</a></li>
+  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><ins>Ejercicio 2</ins></a></li>
+  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3"><ins>Ejercicio 3</ins></a></li>
+  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4"><ins>Ejercicio 4</ins></a></li>
   <li><a href="#buscando-ayuda-en-r" id="toc-buscando-ayuda-en-r" class="nav-link" data-scroll-target="#buscando-ayuda-en-r">Buscando ayuda en R</a></li>
+  <li><a href="#ejercicio-5" id="toc-ejercicio-5" class="nav-link" data-scroll-target="#ejercicio-5"><ins>Ejercicio 5</ins></a></li>
   <li><a href="#instalación-y-carga-de-paquetes" id="toc-instalación-y-carga-de-paquetes" class="nav-link" data-scroll-target="#instalación-y-carga-de-paquetes">Instalación y carga de paquetes</a></li>
+  <li><a href="#ejercicio-6" id="toc-ejercicio-6" class="nav-link" data-scroll-target="#ejercicio-6"><ins>Ejercicio 6</ins></a></li>
   </ul></li>
+  <li><a href="#ejercicio-final" id="toc-ejercicio-final" class="nav-link" data-scroll-target="#ejercicio-final"><ins>Ejercicio Final</ins></a></li>
   </ul>
 </nav>
     </div>
@@ -396,8 +403,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </p><p><a href="pics/r_inter5.png" target="_blank"> <img src="pics/r_inter5.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
 <p></p>
 </section>
-<section id="ejercicio-1" class="level4">
-<h4 class="anchored" data-anchor-id="ejercicio-1"><ins>Ejercicio 1</ins></h4>
+<section id="ejercicio-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-1"><ins>Ejercicio 1</ins></h3>
 <p>Abra R desde una terminal de su sistema operativo e intente replicar las líneas de código mostradas en la parte previa, de paso, sabremos que su sistema tiene correctamente instalado R.</p>
 <hr>
 </section>
@@ -458,8 +465,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>En este caso, podríamos entonces pensar en crear un proyecto para todo el conjunto de “AnalisisTesis” o podemos subdividir y crear un proyecto por cada capítulo que requiera realizar algun tipo de análisis. De nuevo, no hay una manera única, todo dependerá del contexto y lo que resulte -o parezca resultar- óptimo en cada situación.</p>
 <p>Existen múltiples formas de crear un nuevo proyecto. Podemos hacer “<i>File</i> &gt; <i>New Project…</i>”; podemos usar el botón <img src="pics/r_proy_but.png" class="img-fluid" width="24"> en la esquina superior izquierda; o utilizar el menú de proyectos <img src="pics/r_proy_but2.png" class="img-fluid" width="20"> <code>Project: (None)</code>, situado en la esquina superior derecha. A la hora de crear un nuevo proyecto, podemos elegir partir de un directorio nuevo o de uno previamente creado. Así mismo, podemos elegir un tipo específico de proyecto según si estemos haciendo un proyecto general, un proyecto para un nuevo paquete de R, una <a href="https://shiny.posit.co/" target="_blank">aplicación Shiny</a>, etc. Todo esto se realiza mediante una serie de menús gráficos que se nos irán presentado y que son sumamente intuitivos de seguir.</p>
 </section>
-<section id="ejercicio-2" class="level4">
-<h4 class="anchored" data-anchor-id="ejercicio-2"><ins>Ejercicio 2</ins></h4>
+</section>
+<section id="ejercicio-2" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-2"><ins>Ejercicio 2</ins></h3>
 <p>Luego de ver la demostración del docente sobre la creación de proyectos en RStudio, abra una sesión propia de RStudio y cree un proyecto para este curso. La organización sugerida es la siguiente:</p>
 <pre><code>fundamentosR
   |
@@ -472,10 +480,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  ...</code></pre>
 <p>A medida que el curso avance, iremos completando estos directorios con datos, rutinas, etc.</p>
 </section>
-<section id="ejercicio-3" class="level4">
-<h4 class="anchored" data-anchor-id="ejercicio-3"><ins>Ejercicio 3</ins></h4>
+<section id="ejercicio-3" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-3"><ins>Ejercicio 3</ins></h3>
 <p>Cree una rutina dentro de <code>dia1</code>, como se muestra en la estructura precedente, que contenga el código ejecutado en el <a href="#anch1">Ejercicio 1</a> para el mensaje de bienvenida y el gráfico. Corra esas líneas y explore las funciones del panel gráfico. Finalmente, guarde el mismo como un archivo <code>PNG</code> dentro del directorio <code>dia1</code>.</p>
-</section>
 <section id="el-directorio-de-trabajo" class="level4">
 <h4 class="anchored" data-anchor-id="el-directorio-de-trabajo"><em>El directorio de trabajo</em></h4>
 <p>Cuando trabajamos con R, implícitamente lo estamos haciendo en alguna ubicación de nuestro sistema de archivos. Los proyectos de RStudio facilitan esta cuestión haciendo que el <em>directorio de trabajo</em> sea aquel en el cual creamos el proyecto. Para conocer en donde estamos trabajando, podemos utilizar la función <code>getwd()</code>. Por ejemplo, mientras escribo esta guía puedo ver en qué ubicación se encuentra el proyecto en la cual la estoy realizando (Sí! R es tan versátil, que hasta podemos crear páginas web y cualquier otro tipo de documento con su propio formato, imágenes embebidas, vínculos de internet, etc.):</p>
@@ -502,8 +509,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Como ejemplo, tomando como referencia la <a href="#anch2">estructura sugerida</a> para el proyecto de los analisis de la tesis, si el directorio de trabajo activo fuera <code>analisis</code> dentro de <code>CapII</code>, la ruta relativa a <code>CapIII</code> seria <code>../../CapIII</code></p>
 </section>
-<section id="ejercicio-4" class="level4">
-<h4 class="anchored" data-anchor-id="ejercicio-4"><ins>Ejercicio 4</ins></h4>
+</section>
+<section id="ejercicio-4" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-4"><ins>Ejercicio 4</ins></h3>
 <p>Imagine que dentro del directorio <code>/home/usuario/Documentos</code>, posee la siguiente estructura de directorios:</p>
 <pre><code>carpeta0/
 ├── archivo0_a
@@ -569,7 +577,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   }
 </script>
-</section>
 <section id="las-rutas-en-los-proyectos-de-rstudio" class="level4">
 <h4 class="anchored" data-anchor-id="las-rutas-en-los-proyectos-de-rstudio"><em>Las rutas en los proyectos de RStudio</em></h4>
 <p>Cuando trabajamos dentro de un proyecto de RStudio, todas las rutas son relativas a la raíz del proyecto. Esto tiene algunas ventajas, como por ejemplo si compartimos nuestro proyecto con colaboradores, estos no necesitarán configurar las rutas para su sistema, ya que las rutas se mantienen relativas al proyecto. Por otro lado, no es necesario que anonimicemos nuestras rutas, ya que si trabajamos exclusivamente dentro de la carpeta raíz del proyecto, no debería aparecer ninguna ruta absoluta. Las razones por las que quisiéramos mantener nuestras <em>otras</em> carpetas internas privadas son muchas, y variarán en cada caso, pero para un ejemplo interesante podemos considerar el siguiente caso:</p>
@@ -592,8 +599,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p align="center">
 </p><p><a href="pics/r_help2.png" target="_blank"> <img src="pics/r_help2.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
 <p></p>
-<section id="ejercicio-5" class="level4">
-<h4 class="anchored" data-anchor-id="ejercicio-5"><ins>Ejercicio 5</ins></h4>
+</section>
+<section id="ejercicio-5" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-5"><ins>Ejercicio 5</ins></h3>
 <p>En RStudio corra las siguientes líneas de a una y observe que salidas le brinda el programa. Anímese a explorar, no hay nada que pueda romper, haga click aquí y allá, vaya y vuelva. De igual forma, intente utilizar el autocompletado y las ayudas emergentes, fomente su creatividad buscando lo que se le ocurra, o intente averiguar como se usa esa función que hace 2 o 3 semanas que no logra ejecutar sin error. En clase discutiremos que partes componen la ayuda y como interpretarla.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(help)</span>
@@ -601,7 +609,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>??distance</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>?plot</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
 <section id="foros-y-bitácoras-de-la-comunidad" class="level4">
 <h4 class="anchored" data-anchor-id="foros-y-bitácoras-de-la-comunidad"><em>Foros y bitácoras de la comunidad</em></h4>
 <p>Además de estas útiles ayudas <em>offline</em>, si contamos con una conexión a internet, por supuesto no dudaremos en hacer uso extensivo de buscadores. Muchas veces, más que saber cómo opera una función en particular, queremos conocer como realizar una acción dada, con el método que sea. Aprender a buscar es en sí mismo un arte. La cantidad de sitios con información sobre R es inabarcable y muchas veces podemos perdernos en el afán de encontrar lo que buscamos, por ello a continuación veremos algunas recomendaciones.</p>
@@ -678,8 +685,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-ff908428421d1de88acd" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-ff908428421d1de88acd">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-1ecfe5bb870a094e4cda" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-1ecfe5bb870a094e4cda">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <ul>
@@ -697,11 +704,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Todo esto en RStudio también puede ser realizado simplemente tildando o destildando el paquete correspondiente en la lista de paquetes.</p>
 </section>
-<section id="ejercicio-6" class="level4">
-<h4 class="anchored" data-anchor-id="ejercicio-6"><ins>Ejercicio 6</ins></h4>
+</section>
+<section id="ejercicio-6" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-6"><ins>Ejercicio 6</ins></h3>
 <p>Instale con el medio que le sea conveniente el paquete <code>remotes</code>, tal como se muestra en la <a href="#anch3">imagen previa</a>. Luego use la función <code>library()</code> para cargarlo. Utilizando las ayudas internas de R responda: ¿para qué sirve este paquete?</p>
 <p><br></p>
-</section>
 <section id="llamando-funciones-de-paquetes-específicos" class="level4">
 <h4 class="anchored" data-anchor-id="llamando-funciones-de-paquetes-específicos"><em>Llamando funciones de paquetes específicos</em></h4>
 <p>En ocasiones, algunas funciones puede tener igual nombre en diferentes paquetes. Por defecto, cuando llamamos a una función R intentará utilizar la función del paquete que más recientemente se haya cargado. Si deseamos referirnos a una función de un paquete específico podemos hacerlo utilizando la expresión <code>paquete::funcion()</code>. Por ejemplo:</p>
@@ -737,8 +744,10 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <hr>
 </section>
-<section id="ejercicio-final" class="level4">
-<h4 class="anchored" data-anchor-id="ejercicio-final"><ins>Ejercicio Final</ins></h4>
+</section>
+</section>
+<section id="ejercicio-final" class="level1">
+<h1><ins>Ejercicio Final</ins></h1>
 <p>Instale el paquete <code>ggplot2</code>. Una vez instalado, cárguelo y realice algún gráfico de los ejemplos disponibles en su <em>vignette</em>. Finalmente, guarde el gráfico en el directorio de trabajo.</p>
 <hr>
 <p align="center">
@@ -746,8 +755,6 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p></p>
 
 
-</section>
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
