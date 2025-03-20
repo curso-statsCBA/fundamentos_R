@@ -334,8 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#creación-de-tablas-desde-cero" id="toc-creación-de-tablas-desde-cero" class="nav-link active" data-scroll-target="#creación-de-tablas-desde-cero">Creación de tablas desde cero</a>
-  <ul class="collapse">
+  <li><a href="#creación-de-tablas-desde-cero" id="toc-creación-de-tablas-desde-cero" class="nav-link active" data-scroll-target="#creación-de-tablas-desde-cero">Creación de tablas desde cero</a></li>
   <li><a href="#importación-y-exploración-de-tablas" id="toc-importación-y-exploración-de-tablas" class="nav-link" data-scroll-target="#importación-y-exploración-de-tablas">Importación y exploración de tablas</a></li>
   <li><a href="#manipulación-de-tablas" id="toc-manipulación-de-tablas" class="nav-link" data-scroll-target="#manipulación-de-tablas">Manipulación de tablas</a>
   <ul class="collapse">
@@ -350,7 +349,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">Matrices</a></li>
   <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas">Listas</a></li>
   <li><a href="#el-paquete-dplyr" id="toc-el-paquete-dplyr" class="nav-link" data-scroll-target="#el-paquete-dplyr">El paquete <em>dplyr</em></a></li>
-  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -377,14 +375,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="creación-de-tablas-desde-cero" class="level1">
-<h1>Creación de tablas desde cero</h1>
+<section id="creación-de-tablas-desde-cero" class="level2">
+<h2 class="anchored" data-anchor-id="creación-de-tablas-desde-cero">Creación de tablas desde cero</h2>
 <p>La tabla será posiblemente el objeto de R más utilizado en el contexto de nuestro trabajo científico. Consiste en una estructura de datos que organiza la información en filas y columnas. Desde un punto de vista programático es útil considerar a las tablas como una <em>colección de vectores</em>. Consideradas de esta manera, veremos que la manipulación de las filas y columnas de una tabla es análoga a la manipulación de vectores individuales. En una tabla, <em>cada columna es un vector</em>, pudiendo haber vectores de distintos tipos en una misma tabla (por ejemplo, vectores numéricos y de texto).</p>
 <p>Para crear una tabla desde cero, en R utilizamos la <u id="table_classes">clase</u> <code>data.frame</code>, y una función con el mismo nombre para generarla:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-9feeeb5d29a1727452f2" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-9feeeb5d29a1727452f2">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-2ce1d252c787cb9d894a" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-2ce1d252c787cb9d894a">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -403,6 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Normalmente, las tablas se generan fuera del entorno R para ser luego importadas a R. La creación de tablas desde cero adquiere mayor relevancia para tareas mas posteriores del flujo de análisis, como veremos más adelante.</p>
 <p>Antes que nada, <a href="https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/dia2/data/data.zip">descargue el archivo zip</a> con los datos necesarios para realizar el práctico, y extraiga los archivos dentro de una carpeta llamada “data” en el directorio “dia2” del proyecto del curso.</p>
 <hr>
+</section>
 <section id="importación-y-exploración-de-tablas" class="level2">
 <h2 class="anchored" data-anchor-id="importación-y-exploración-de-tablas">Importación y exploración de tablas</h2>
 <p>Existen muchas formas de importar tablas al ambiente de R. Quizás la forma más fácil es hacerlo desde la interfaz gráfica de RStudio: en el panel de entorno, clickeando en el ícono de importación.</p>
@@ -995,8 +994,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-5f52459a66f47a4aacfd" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-5f52459a66f47a4aacfd">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-b7654abdb7ffd3a1014b" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-b7654abdb7ffd3a1014b">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -1080,7 +1079,6 @@ Petal.Length 0.4089223 0.01889134 21.64602  1.038667e-47</code></pre>
 <p></p>
 
 
-</section>
 </section>
 </section>
 </section>
