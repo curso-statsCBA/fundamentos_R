@@ -385,8 +385,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Para crear una tabla desde cero, en R utilizamos la <u id="table_classes">clase</u> <code>data.frame</code>, y una función con el mismo nombre para generarla:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-874f2db2bfe68b9b348e" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-874f2db2bfe68b9b348e">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-f5b79fb29765b497389d" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-f5b79fb29765b497389d">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -998,8 +998,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-4bfe9db122fa4d72bf59" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-4bfe9db122fa4d72bf59">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-89ad2526b934a4f76547" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-89ad2526b934a4f76547">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -1072,15 +1072,15 @@ Petal.Length 0.4089223 0.01889134 21.64602  1.038667e-47</code></pre>
 <li>Explore los nombres de las columnas. Corrija el error en la segunda columna, que debería llamarse “Parcela”.</li>
 <li>Hay valores negativos para la concentración de Ca, lo cual no tiene sentido. Cambie estos valores por ceros.</li>
 <li>Hay valores <code>NA</code> en la columna que indica la concentración de N. Genere una nueva tabla, utilizando el mismo nombre que antes, que no contenga estas observaciones (filas). Puede utilizar la expresión <code>is.na()</code>, pero explore también la ayuda de <code>na.omit()</code>.</li>
-<li>Cargue la tabla del archivo “analisis_tierra2.csv”, la cual muestra los resultados realizados por otra técnica (Claudia). Incorpore estos nuevos datos a la tabla anterior. Es necesario corregir algunos errores antes de hacer esto <img src="pics/emoticon1.png" width="20" height="20">. Entre ellos, los números asignados a cada muestra deben cambiarse, para que estos no coincidan con los números de muestra de la tabla anterior.</li>
+<li>Cargue la tabla del archivo “analisis_tierra2.csv”, la cual muestra los resultados realizados por otra técnica (Claudia). Incorpore estos nuevos datos a la tabla anterior. Es necesario corregir algunos errores antes de hacer esto <img src="pics/emoticon.png" width="20" height="20">. Entre ellos, los números asignados a cada muestra deben cambiarse, para que estos no coincidan con los números de muestra de la tabla anterior.</li>
 <li>Ordene la tabla según la Parcela (orden alfabético) y por valores crecientes en la cantidad de N, en ese orden!</li>
 <li>Exprese a la columna “Tecnico” como factor.</li>
 <li>Genere una tabla resumen con los valores medios de N, C y Ca por Parcela, y otra con los valores de desviación estándar de N, C y Ca por Técnico. Exporte dichas tablas resumen.</li>
 </ol>
 <p><br></p>
 <p align="center">
-</p><p><a href="pics/meme_practico_tablas.png" target="_blank"><img src="pics/meme_practico_tablas.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a></p>
-<p></p>
+<a href="pics/meme_tablas.png" target="_blank"><img src="pics/meme_tablas.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a>
+</p>
 
 
 </section>
@@ -1659,7 +1659,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p><br>Doctorado en Ciencias Biológicas | FCEFYN - UNC</p>
+<p><span class="footer-space">Doctorado en Ciencias Biológicas | FCEFYN - UNC</span></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
