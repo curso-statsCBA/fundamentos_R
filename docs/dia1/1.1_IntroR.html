@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Objetos y operadores</title>
+<title>Introducción a R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -105,35 +71,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -203,7 +140,7 @@ window.Quarto = {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Objetos y operadores</h1>
+          <h1 class="quarto-secondary-nav-title">Introducción a R</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -239,7 +176,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dia1/1.1_IntroR.html" class="sidebar-item-text sidebar-link">
+  <a href="../dia1/1.1_IntroR.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introducción a R</span></a>
   </div>
 </li>
@@ -257,7 +194,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dia1/3.1_Operadores.html" class="sidebar-item-text sidebar-link active">
+  <a href="../dia1/3.1_Operadores.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Objetos y operadores</span></a>
   </div>
 </li>
@@ -354,28 +291,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
-   
-  <ul>
-  <li><a href="#objetos-comunes-en-r" id="toc-objetos-comunes-en-r" class="nav-link active" data-scroll-target="#objetos-comunes-en-r">Objetos comunes en R</a></li>
-  <li><a href="#operadores" id="toc-operadores" class="nav-link" data-scroll-target="#operadores">Operadores</a>
-  <ul class="collapse">
-  <li><a href="#operadores-aritméticos" id="toc-operadores-aritméticos" class="nav-link" data-scroll-target="#operadores-aritméticos">Operadores aritméticos</a></li>
-  <li><a href="#operadores-relacionales" id="toc-operadores-relacionales" class="nav-link" data-scroll-target="#operadores-relacionales">Operadores relacionales</a></li>
-  <li><a href="#operadores-lógicos-o-booleanos" id="toc-operadores-lógicos-o-booleanos" class="nav-link" data-scroll-target="#operadores-lógicos-o-booleanos">Operadores lógicos o booleanos</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><ins>Ejercicios</ins></a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Objetos y operadores</h1>
+<h1 class="title d-none d-lg-block">Introducción a R</h1>
 </div>
 
 
@@ -392,386 +316,20 @@ window.Quarto = {
 </header>
 
 
-<section id="objetos-comunes-en-r" class="level2">
-<h2 class="anchored" data-anchor-id="objetos-comunes-en-r">Objetos comunes en R</h2>
-<p>Como ya vimos anteriormente, R es un lenguaje orientado a objetos y existe una gran variedad de “cosas” que estos objetos pueden contener/almacenar. En general, los objetos que presentamos a continuación permiten realizar la mayoría de las tareas cotidianas en R.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 69%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Objeto</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>vector</td>
-<td>Colección de objetos de un mismo tipo (números enteros, números reales, texto, etc.). Los vectores son los objetos básicos a partir de los cuales pueden crearse gran parte del resto de los objetos más relevantes en R.</td>
-</tr>
-<tr class="even">
-<td>data.frame</td>
-<td>Tabla que contiene datos, conformada por una serie de columnas como vectores. Las columnas de un <code>data.frame</code> pueden ser vectores de distinto tipo. Generalmente, estos objetos son cargados por el usuario a partir de un archivo, pero también pueden ser creados con la función <code>data.frame()</code>.</td>
-</tr>
-<tr class="odd">
-<td>matrix</td>
-<td>Colección de vectores organizado en filas y columnas. A diferencia de un <code>data.frame</code>, es un objeto que permite operaciones matemáticas propias de las matrices (e.g., suma o producto de matrices).</td>
-</tr>
-<tr class="even">
-<td>list</td>
-<td>Es una coleccion de objetos de cualquier tipo, sean vectores, tablas, matrices, otras listas y más. Gran parte de las salidas de las funciones de R son listas, por ejemplo, la salida de un modelo lineal con la funcion <code>lm()</code>.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="operadores" class="level2">
-<h2 class="anchored" data-anchor-id="operadores">Operadores</h2>
-<p>Un operador es una expresión, compuesta por uno o más símbolos, que realiza una operación específica sobre uno o más valores para producir un resultado.</p>
-<section id="operadores-aritméticos" class="level3">
-<h3 class="anchored" data-anchor-id="operadores-aritméticos">Operadores aritméticos</h3>
-<p>Relacionan dos números para generar un resultado.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Símbolo</th>
-<th style="text-align: left;">Operación</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>+</code></td>
-<td style="text-align: left;">Suma</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>-</code></td>
-<td style="text-align: left;">Resta</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>*</code></td>
-<td style="text-align: left;">Multiplicación</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>/</code></td>
-<td style="text-align: left;">División</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>^</code></td>
-<td style="text-align: left;">Potenciación</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>%/%</code></td>
-<td style="text-align: left;">División entera</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>%%</code></td>
-<td style="text-align: left;">Resto de la división</td>
-</tr>
-</tbody>
-</table>
-<p>Por ejemplo:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">7</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 12</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">^</span><span class="dv">4</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 81</code></pre>
-</div>
-</div>
-<p>El uso de paréntesis muchas veces es necesario:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">^</span>(<span class="dv">4</span><span class="sc">+</span><span class="dv">3</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2187</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">%/%</span> <span class="dv">3</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">%%</span> <span class="dv">3</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1</code></pre>
-</div>
-</div>
-</section>
-<section id="operadores-relacionales" class="level3">
-<h3 class="anchored" data-anchor-id="operadores-relacionales">Operadores relacionales</h3>
-<p>Relacionan un valor con otro y devuelven una constante lógica (<code>TRUE</code> o <code>FALSE</code>).</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Símbolo</th>
-<th style="text-align: left;">Operación</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>&lt;</code></td>
-<td style="text-align: left;">Menor a…</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>&lt;=</code></td>
-<td style="text-align: left;">Menor o igual a..</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>&gt;</code></td>
-<td style="text-align: left;">Mayor a…</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>&gt;=</code></td>
-<td style="text-align: left;">Mayor o igual a…</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>==</code></td>
-<td style="text-align: left;">Igual a…</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>!=</code></td>
-<td style="text-align: left;">Distinto de…</td>
-</tr>
-</tbody>
-</table>
-<p>Por ejemplo:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span> <span class="sc">&gt;</span> <span class="dv">9</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span> <span class="sc">&gt;=</span> <span class="dv">9</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">==</span> <span class="dv">5</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="sc">!=</span> <span class="dv">12</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-</section>
-<section id="operadores-lógicos-o-booleanos" class="level3">
-<h3 class="anchored" data-anchor-id="operadores-lógicos-o-booleanos">Operadores lógicos o booleanos</h3>
-<div style="display: flex; justify-content: space-between; align-items: flex-start;">
-<div style="flex: 1; margin-right: 10px;">
-<p>Estos operadores devuelven una constante lógica (<code>TRUE</code> o <code>FALSE</code>).</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Símbolo</th>
-<th style="text-align: left;">Operación</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>!</code></td>
-<td style="text-align: left;">Negación</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>&amp;</code></td>
-<td style="text-align: left;">Y</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>&amp;&amp;</code></td>
-<td style="text-align: left;">Y secuencial</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>|</code></td>
-<td style="text-align: left;">O</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>||</code></td>
-<td style="text-align: left;">O secuencial</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>xor</code></td>
-<td style="text-align: left;">Unión excluyente</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div style="flex: 1; margin-left: 10px; text-align: center;">
-<p><img src="pics/george_boole.jpg" alt="Image" style="max-width: 60%; height: auto;"></p>
-<p style="font-style: italic; font-size: 0.9em; margin-top: 5px;">
-</p><p>George Boole, matemático inglés. En su honor, los operadores<br>
-lógicos también se llaman “booleanos”.</p>
-<p></p>
-</div>
-</div>
-<p><br></p>
-<p>Para entender cómo funcionan estos operadores las <a href="https://es.wikipedia.org/wiki/Tabla_de_verdad" target="_blank">tablas de verdad</a> son útiles. Aquí, aprenderemos el comportamiento de estos operadores mediante ejemplos.</p>
-<p>El operador <code>!</code> devuelve el resultado opuesto de una expresión lógica dada:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">10</span> <span class="sc">&gt;</span> <span class="dv">5</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<p>El operador <code>&amp;</code> (Y) combina dos o más expresiones, y devuelve <code>TRUE</code> sólo si todas las expresiones lógicas son verdaderas:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">10</span> <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">&amp;</span> (<span class="dv">30</span> <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-<p>En cambio, devuelve <code>FALSE</code> si alguna de ellas no es verdadera:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">10</span> <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">&amp;</span> (<span class="dv">30</span> <span class="sc">&gt;</span> <span class="dv">40</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<p>El operador <code>|</code> (O) combina dos o más expresiones, y devuelve <code>TRUE</code> si al menos una de las expresiones lógicas son verdaderas:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">10</span> <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">|</span> (<span class="dv">30</span> <span class="sc">&gt;</span> <span class="dv">40</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-<p>En cambio, devuelve <code>FALSE</code> si ninguna de las expresiones son verdaderas:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">10</span> <span class="sc">&gt;</span> <span class="dv">15</span>) <span class="sc">|</span> (<span class="dv">30</span> <span class="sc">&gt;</span> <span class="dv">40</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<p>El operador <code>xor</code> es en realidad una función con dos argumentos. Sólo devuelve <code>TRUE</code> cuando una condición es verdadera y la otra es falsa:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="dv">10</span> <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="dv">30</span> <span class="sc">&gt;</span> <span class="dv">40</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-<p>En cambio, devuelve <code>FALSE</code> cuando ambas expresiones son verdaderas:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="dv">10</span> <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="dv">30</span> <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<p>O ambas son falsas:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xor</span>(<span class="dv">10</span> <span class="sc">&gt;</span> <span class="dv">15</span>, <span class="dv">30</span> <span class="sc">&gt;</span> <span class="dv">40</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<p>Los operadores <code>&amp;&amp;</code> y <code>||</code> trabajan secuencialmente, sólo evalúan la segunda condición si la primera es <code>TRUE</code>. Si la primera condición ya es <code>FALSE</code>, no se evalúa la segunda condición. Adquieren mayor sentido cuando el segundo elemento de la comparación no está definido, y suele utilizarse en contextos de programación más avanzada. Por ejemplo:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> b <span class="sc">&gt;</span> <span class="dv">10</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<p>Aquí vemos que el objeto <code>b</code> no existe en el ambiente de R. Sin embargo, el resultado es <code>FALSE</code> porque la primera condición ya es falsa. Si hiciéramos la misma comparación con <code>&amp;</code>, R devuelve un error:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">&amp;</span> b <span class="sc">&gt;</span> <span class="dv">10</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): objeto 'b' no encontrado</code></pre>
-</div>
-</div>
-<p>Veamos un ejemplo similar con el operador <code>||</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">||</span> b <span class="sc">&gt;</span> <span class="dv">10</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-<p>El resultado es <code>TRUE</code>, porque la primera condición ya es verdadera. El mismo código con <code>|</code> arroja un error:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">|</span> b <span class="sc">&gt;</span> <span class="dv">10</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): objeto 'b' no encontrado</code></pre>
-</div>
-</div>
-<p>Las funciones <code>all()</code> y <code>any()</code> permiten evaluar más de una condición simultáneamente. La función <code>all()</code> devuelve <code>TRUE</code> si todas las condiciones indicadas son verdaderas, caso contrario devuelve <code>FALSE</code>. Su comportamiento es análogo al operador <code>&amp;</code> utilizado secuencialmente. Las condiciones se escriben de a una y separadas por coma. Por ejemplo:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">all</span>(a <span class="sc">&gt;</span> <span class="dv">3</span>, b <span class="sc">&gt;</span> <span class="dv">8</span>, c <span class="sc">&gt;</span> <span class="dv">11</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-<p>Todas las condiciones son verdaderas, por lo que devuelve <code>TRUE</code>. Si en cambio al menos una es falsa, obtenemos <code>FALSE</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all</span>(a <span class="sc">&gt;</span> <span class="dv">3</span>, b <span class="sc">&gt;</span> <span class="dv">8</span>, c <span class="sc">&gt;</span> <span class="dv">21</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<p>La función <code>any()</code> devuelve <code>TRUE</code> si al menos una condición es verdadera. Su comportamiento es análogo al operador <code>|</code> utilizado de manera secuencial. Por ejemplo:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(a <span class="sc">&gt;</span> <span class="dv">7</span>, b <span class="sc">&gt;</span> <span class="dv">12</span>, c <span class="sc">&gt;</span> <span class="dv">13</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-<p>En cambio, si todas las condiciones son falsas, <code>any()</code> devuelve <code>FALSE</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(a <span class="sc">&gt;</span> <span class="dv">7</span>, b <span class="sc">&gt;</span> <span class="dv">12</span>, c <span class="sc">&gt;</span> <span class="dv">23</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-</section>
-<section id="ejercicios" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicios"><ins>Ejercicios</ins></h3>
-<ol type="1">
-<li>La variable <code>y</code> puede calcularse mediante la siguiente fórmula:</li>
-</ol>
-<p><span class="math display">\[ \hspace{-9cm} y = a + b\sqrt{x+2} + cx^2 \]</span></p>
-<p>Siendo <code>a = 5.3</code>, <code>b = 3.2</code> y <code>c = 1.7</code>, calcule el valor de <code>y</code> cuando <code>x = 20</code>.</p>
-<ol start="2" type="1">
-<li>Sin correr las siguientes líneas, ¿cuál es el resultado de cada expresión?</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">90</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>(x <span class="sc">&lt;=</span> <span class="dv">10</span>) <span class="sc">&amp;</span> (y <span class="sc">&gt;</span> <span class="dv">40</span>)</span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>(x <span class="sc">==</span> <span class="dv">10</span>) <span class="sc">|</span> (y <span class="sc">==</span> <span class="dv">89</span>)</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>((x <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">&amp;</span> (y <span class="sc">!=</span> <span class="dv">70</span>)) <span class="sc">&amp;</span> (x<span class="sc">*</span>y <span class="sc">&gt;</span> <span class="dv">1000</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol start="3" type="1">
-<li>¿Qué hacen las funciones <code>round()</code>, <code>floor()</code>, <code>ceiling()</code> y <code>trunc()</code>?</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> <span class="fl">6.756</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">6.756</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">trunc</span>(<span class="fl">6.756</span>)</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fl">6.356</span>)</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">floor</span>(<span class="at">x =</span> <span class="fl">6.756</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br></p>
-<p align="center">
-</p><p><a href="pics/meme_practico_operadores.png" target="_blank"><img src="pics/meme_practico_operadores.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a></p>
-<p></p>
+<iframe id="pdf-frame" src="1.1_IntroR.pdf" style="width:100%" frameborder="0"></iframe>
+
+<script>
+  function adjustPDFSize() {
+    var iframe = document.getElementById('pdf-frame');
+    var width = iframe.clientWidth;
+    iframe.style.height = (width * (3/4))+ 45 + "px"; // Height = 3 X × Width
+  }
+
+  window.onload = adjustPDFSize;
+  window.onresize = adjustPDFSize;
+</script>
 
 
-</section>
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
