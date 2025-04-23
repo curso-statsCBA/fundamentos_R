@@ -42,11 +42,9 @@ modelos estadísticos en R:
 
 # Licencia
 
-© 2024 Pablo Y. Huais & Nicolás Pastor. Bajo licencia [Creative Commons
+© 2024-2025 Pablo Y. Huais & Nicolás Pastor. Bajo licencia [Creative Commons
 Attribution-NonCommercial-ShareAlike 4.0 International
 License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
-
-<font size=3 color = "gray">CC BY-NC-SA 4.0</font>
 
 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
 <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"/></a>
