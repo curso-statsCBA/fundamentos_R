@@ -3,7 +3,7 @@ title: Fundamentos básicos del lenguaje R
 pagetitle: "Inicio"
 ---
 
-<font size=5>Curso de posgrado \| FCEFyN - UNC</font>
+<font size=5>Curso de posgrado \| Doctorado en Cs. Biológicas \| FCEFyN - UNC</font>
 
 <p align="center" style="margin: 0; padding: 0;">
 
