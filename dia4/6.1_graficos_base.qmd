@@ -63,7 +63,7 @@ axis(2, at = c(1,2,3), labels = c("pch" , "col" , "cex"),
      tick = TRUE, col = "black", las = 1, cex.axis = 1, font.axis=2)
 ```
 
-#### <ins>Ejercicio 1</ins>
+## Ejercicio 1
 
 Utilizando como molde el código del gráfico previo, intente realizar uno que posea 3 puntos en las coordenadas `(x,y)=(1,3),(2,1),(3,2)`, que estos puntos sean rombos de color azul, amarillo y rojo, respectivamente, todos con borde negro, y que su tamaño relativo sea distinto y creciente, como se muestra a continuación:
 
@@ -74,7 +74,7 @@ plot(1:3, c(3,1,2), pch=23, col="black", bg=c("blue","yellow","red"), cex=c(1,2,
 
 *Ayuda*: los valores de `cex` recomendados son `1,2,3`. Para las formas con borde y relleno, `col` solo especifica el color del borde. Busque por sus medios qué parámetro permite indicar el color de relleno.
 
-### Histogramas
+## Histogramas
 
 Los histogramas son gráficos que nos permiten visualizar la distribución de frecuencia de los datos. Son muy utilizados en el *análisis exploratorio* de los datos. Graficar histogramas en R es sumamente sencillo gracias a la función `hist()`, una función de alto nivel que permite realizarlos. Para el siguiente ejemplo, visualizaremos una distribución normal de 1.000 observaciones con `media = 0` y `desviación estandar = 0` .
 
@@ -82,7 +82,7 @@ Los histogramas son gráficos que nos permiten visualizar la distribución de fr
 hist(rnorm(1000))
 ```
 
-#### *Editando títulos y etiquetas de ejes*
+### *Editando títulos y etiquetas de ejes*
 
 Como podemos ver, el gráfico muestra una serie de barras con la frecuencia acumulada de los valores por intervalos igualmente espaciados. Así mismo, como se trata de una función de alto nivel, ya posee configurado algunas cuestiones, como las etiquetas de los ejes y el título. Para modificar esto último podríamos incluir los parámetros `xlab` e `ylab`, para las etiquetas de los ejes `x` e `y`, respectivamente y `main` para el título:
 
@@ -94,7 +94,7 @@ hist(rnorm(1000),
 )
 ```
 
-#### <ins>Ejercicio 2</ins>
+## Ejercicio 2
 
 Ayudándose con la documentación de las funciones `hist()` y `rnorm()`:
 
@@ -114,7 +114,7 @@ hist(rnorm(30000, 173.47, 4.03),
 
 c)  Puede que su gráfico se vea muy parecido, más no igual al ejemplo. De hecho, cada vez que llama a la función gráfica observará que el gráfico cambia, ¿por qué sucede esto?
 
-### Gráfico de dispersión
+## Gráfico de dispersión
 
 Muchas veces necesitamos evaluar si existe una relación entre 2 variables cuantitativas. Una de las mejores formas de representar gráficamente estas relaciones es mediante gráficos de dispersión. A continuación un ejemplo utilizando el conjunto de datos `iris`, con el que ya debería estar muy familiarizado.
 
@@ -137,7 +137,7 @@ with(iris, plot(Petal.Length, Sepal.Length,
 
 **Para pensar:** En el código precedente apareció `with()`, una función que previamente no habíamos utilizado. Analice el código y trate de descifrar que ventajas tiene su uso. Por supuesto, siempre puede consultar la ayuda con `?with()`.
 
-#### *Límites gráficos*
+### *Límites gráficos*
 
 En el código del gráfico previo, aparecieron algunas novedades: los parámetros `xlim` e `ylim`. Como puede imaginarse, se trata de los parámetros para fijar los límites de los ejes. Ambos parámetros esperan un vector de largo 2 con los rangos de las coordenadas de `x` e `y`, y son muy útiles a la hora de crear una base gráfica sin ningún contenido, para luego rellenar con nuestros datos. Esta forma de trabajo es muy extendida al trabajar con gráficos básicos en R, y para ello cuando llamamos a la función `plot()` debemos indicarle que el gráfico sea vacío, con el parámetro `typ = "n"`.
 
@@ -152,7 +152,7 @@ par(mar=c(2,2,1,1))
 plot(0,0, xlim=c(0, 100), ylim=c(0, 50), typ='n', xaxs="r",yaxs="i")
 ```
 
-#### *Añadiendo otros elementos a nuestro gráfico*
+### *Añadiendo otros elementos a nuestro gráfico*
 
 En el gráfico de dispersión, muchas veces es interesante mostrar el resultado de la correlación entre las variables de forma gráfica, es decir, la línea (o curva) resultante del ajuste de un modelo de regresión entre las variables. Teniendo en cuenta el mismo conjunto de datos con el que venimos trabajando, recordemos primero como podemos obtener la regresión lineal usando la función `lm()`.
 
@@ -219,7 +219,7 @@ text(3.5,0, paste0("La ecuación es: y = ",
      cex=0.9, adj=0)
 ```
 
-#### *Personalizando parámetros según los datos*
+### *Personalizando parámetros según los datos*
 
 En muchas ocasiones, necesitamos que en nuestro gráfico los colores o los marcadores se correspondan con alguna variable, ya sea esta cuantitativa o cualitativa. Existen diferentes formas de abordar esta situación que dependerán en gran medida de la complejidad y el tamaño del conjunto de datos, así como de la diversidad de parámetros que debamos modificar.
 
@@ -295,7 +295,7 @@ with(toplot,
      )
 ```
 
-#### *Editando los ejes del gráfico*
+### *Editando los ejes del gráfico*
 
 En algunas ocasiones, quisiéramos que el gráfico no presentará el recuadro que lo rodea. Esto podemos lograrlo removiendo los ejes con el parámetro `axes = FALSE`.
 
@@ -360,9 +360,9 @@ axis(side=2, at=c(seq(0,8,2)), las=1, labels=c("cero", "dos", 4, "seis", 8))
 box(bty="l")
 ```
 
-### Gráficos de caja
+## Gráficos de caja
 
-#### *Leyendas y anotaciones*
+### *Leyendas y anotaciones*
 
 A continuación, cambiaremos el conjunto de datos por `ToohGrowth`, proveniente de un experimento de crecimiento dental en cobayos, según la dosis de dos suplementos dietarios. Este tipo de experimentos es perfecto para poner en práctica la función `boxplot()`, para crear gráficos de caja. Como en este punto ya conocemos la lógica de construcción de gráficos, pasemos directamente al código:
 
@@ -428,14 +428,14 @@ legend("bottom", horiz=TRUE, bty = "n",
        fill = c("yellow", "orange"))
 ```
 
-#### <ins>Ejercicio 3</ins>
+## Ejercicio 3
 
 a)  Analice el código precedente sin ejecutarlo, intentando describir que hace cada línea. Luego, copie el mismo a un script dentro de `dia4` y ejecútelo por partes para entender el funcionamiento. Recuerde buscar en las ayudas interna de R y juegue con las opciones disponibles.
 b)  Repita el gráfico pero con una flecha azul que indique el valor de la mediana para la 0,5 mm/día del suplemento jugo de naranja. Además, ubique la leyenda en la posición `(x,y) = (2.5,5)`.
 
 <br>
 
-### Panel de múltiples gráficos
+## Panel de múltiples gráficos
 
 En muchas ocasiones, necesitamos mostrar en un solo panel varios gráficos diferentes. Para ello, debemos utilizar la función `par()`, que permite configurar todos los parámetros básicos del dispositivo gráfico que usa R. Esta función tiene un nivel jerárquico superior a todas las que vimos previamente, ya que con la misma podemos cambiar el comportamiento *por defecto* de todos los parámetros gráficos de forma semi-permanente (i.e. en el contexto de RStudio, durante toda la sesión en curso; y para dispositivos gráficos externos, hasta que se reinicie el mismo). Por esto, si realizamos un cambio con `par()` para mostrar dos gráficos en paralelo y, posteriormente, queremos realizar un nuevo gráfico solitario, debemos volver a configurar el dispositivo gráfico para mostrar un solo gráfico.
 
@@ -471,7 +471,7 @@ plot(regL)
 
 ------------------------------------------------------------------------
 
-#### <ins>Ejercicio final</ins>
+## Ejercicio final
 
 Con el conjuntos de datos provisto, y ayudándose con la documentación de las funciones `points()`, `segments()` y `title()`, y buscando como funcionan los parámetros gráficos para líneas `lwd` y `lty`, realice un gráfico como el que se muestra a continuación.
 

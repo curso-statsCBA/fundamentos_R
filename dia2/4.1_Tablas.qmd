@@ -7,7 +7,7 @@ pagetitle: "Tablas"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Creación de tablas desde cero
+## Creación de tablas desde cero
 
 La tabla será posiblemente el objeto de R más utilizado en el contexto de nuestro trabajo científico. Consiste en una estructura de datos que organiza la información en filas y columnas. Desde un punto de vista programático es útil considerar a las tablas como una *colección de vectores*. Consideradas de esta manera, veremos que la manipulación de las filas y columnas de una tabla es análoga a la manipulación de vectores individuales. En una tabla, *cada columna es un vector*, pudiendo haber vectores de distintos tipos en una misma tabla (por ejemplo, vectores numéricos y de texto).
 
@@ -186,7 +186,7 @@ unique(iris$Species)
 iris <- read.table(file = "data/iris.csv")
 ```
 
-#### <ins>Ejercicio 1</ins>
+## Ejercicio 1
 
 Genere nuevas tablas a partir de la tabla `iris` (utilizar nombres nuevos para cada tabla), para:
 
@@ -254,7 +254,7 @@ La función `cut()` devuelve un factor con niveles, adecuado en contextos de an�
 class(iris$Sepal.width.cat4)
 ```
 
-#### <ins>Ejercicio 2</ins>
+## Ejercicio 2
 
 Genere una nueva columna para la tabla `iris` llamada "Flower.color". Para las especie *Iris setosa* y *Iris versicolor*, asignarle "Purple". Para la especie *Iris virginica* asignarle "Blue".
 
@@ -342,7 +342,7 @@ iris_mean <- aggregate(. ~ Species, data = iris, FUN = mean)
 iris_mean
 ```
 
-#### <ins>Ejercicio 3</ins>
+## Ejercicio 3
 
 Generar una tabla que contenga el cálculo de la media de "Petal.Length" para cada especie. Luego, generar otra tabla con la desviación estándar de "Petal.Length" para cada especie. En cada tabla, cambiar los nombres de las nuevas columnas a "Petal.Length.mean" y "Petal.Length.sd". Finalmente, unir ambas tablas con `cbind()`.
 
@@ -479,7 +479,7 @@ El presente curso está orientado a entender los fundamentos básicos del lengua
 
 ------------------------------------------------------------------------
 
-#### <ins>Ejercicio final</ins>
+## Ejercicio final
 
 1.  Cargue la tabla del archivo "analisis_tierra.csv", la cual muestra los resultados de un análisis de muestras de tierra, detallando las concentraciones de N, C y Ca. Explore su estructura y contenido utilizando las funciones `head()`, `tail()`, `str()` y `dim()`.
 2.  Explore los nombres de las columnas. Corrija el error en la segunda columna, que debería llamarse "Parcela".

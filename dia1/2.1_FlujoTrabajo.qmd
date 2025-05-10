@@ -13,7 +13,7 @@ Cuando trabajamos con R (pero esto es válido también para cualquier otro proye
 
 </p>
 
-### Comentarios e índices
+## Comentarios e índices
 
 Como hemos visto previamente, cuando estemos trabajando dentro de RStudio la mayor parte del tiempo estaremos editando un archivo de texto con nuestro código. A este archivo que contiene todas las instrucciones, desde la carga de paquetes necesarios, la carga de datos, la manipulación de los mismos, la ejecución de análisis, las instrucciones para realizar gráficos y la exportación de los mismos, etcétera, lo llamamos ***script*** o ***rutina***.
 
@@ -44,13 +44,13 @@ De igual forma, cada entrada del índice nos permitirá *plegar* o *colapsar*, l
 
 </p>
 
-#### <ins>Ejercicio 1</ins>
+## Ejercicio 1
 
 Cree una rutina dentro de `dia1` y cree un índice que contenga títulos de 1º, 3º, 5º y 6º nivel.
 
 ------------------------------------------------------------------------
 
-### Carga de funciones externas
+## Carga de funciones externas
 
 Más adelante veremos en profundidad como se construye una función, por el momento solo digamos que una función es una forma de personalizar la ejecución de código para una función específica que nosotros diseñamos. Para evitar repetir en todos nuestros scripts estas funciones *personalizadas*, podemos generar una **biblioteca propia de funciones** desde donde las cargaremos. Así mismo, puede que algún/a colega haya diseñado una función y nos la envíe, en cuyo caso también podemos cargarla sin necesidad de *copiar y pegar* la misma en nuestro script.
 
@@ -83,7 +83,7 @@ source(URL)
 
 <br>
 
-#### <ins>Ejercicio 2</ins>
+## Ejercicio 2
 
 Descargue [el archivo con la función](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/7abf94fd87129b5433c5ac70af1194e822b2afb6/dia1/mifuncion.R){target="_blank"} al directorio de trabajo correspondiente a `dia1` y cárguela utilizando `source()`. Pruebe su correcto funcionamiento para los valores:
 
@@ -102,7 +102,7 @@ fun_cuad(c(1,10,100))
 
 ------------------------------------------------------------------------
 
-### Trabajando sin interfaz gráfica
+## Trabajando sin interfaz gráfica
 
 En algunas ocasiones deberemos usar R de una forma no interactiva, esto es, daremos la instrucción para que se ejecute un script dado pero ya no viéndolo dentro de RStudio y corriendo línea por línea, sino desde alguna herramienta propia del Sistema Operativo. Una situación típica de esto es si alguna vez trabajamos con R dentro de un [cluster de cómputo de alto rendimiento](https://en.wikipedia.org/wiki/High-performance_computing){target="_blank"}, como por ejemplo en el [CCAD (Centro de Cómputo de Alto Desempeño)](https://ccad.unc.edu.ar/equipamiento/){target="_blank"} de la UNC. Otras situaciones puede ser incorporar algún procesamiento con R dentro un [*pipeline*](https://en.wikipedia.org/wiki/Pipeline_(software)){target="_blank"} de análisis que utilice otros lenguajes en combinación a R (e.g. [BASH](https://es.wikipedia.org/wiki/Bash){target="_blank"}, [python](https://www.python.org/about/){target="_blank"}, etc.)
 
@@ -118,17 +118,17 @@ Rscript mi_script.R
 
 </p>
 
-#### <ins>Ejercicio 3</ins>
+## Ejercicio 3
 
 Descargue [el archivo con el script](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/dia1/no_interactivo.R){target="_blank"} para graficar la función cuadrática al directorio de trabajo correspondiente a `dia1`. Ejecute el script en su sistema por fuera de RStudio y chequee el correcto funcionamiento (i.e. se debería ver en la consola los mensajes de salida y se debería crear un archivo PDF con el gráfico en el directorio donde se ejecutó).
 
-#### <ins>Ejercicio 4</ins>
+## Ejercicio 4
 
 Abra el script que recién ejecutó en el editor de RStudio. Intente interpretar que hace cada línea, recuerde usar las función `help()` o `?` para acceder a las ayudas internas de las funciones. No se preocupe si por el momento no lo entiende completamente, para cuando este curso termine no habrá ni una sola de esas líneas que no sea capaz de interpretar.
 
 ------------------------------------------------------------------------
 
-### Algunas máximas para recordar a la hora de programar en R
+## Algunas máximas para recordar a la hora de programar en R
 
 -   <u>Explícito es mejor que implícito</u>. Ante la duda, declaremos explícitamente todo lo que hacemos. Esto puede ser un poco engorroso, pero nos ayudara sobre todo en la etapa de aprendizaje inicial.
 

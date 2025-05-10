@@ -40,7 +40,7 @@ str(vec)
 Un vector puede componerse de cinco clases principales de elementos:
 
 |  |  |
-|-----------------------|------------------------------------------------|
+|------------------------|------------------------------------------------|
 | numeric | Contienen números reales (decimales). Por ejemplo: `c(1.2, 1.5, 1.7)`. |
 | integer | Contienen números enteros. Debemos indicarse con la letra `L` luego del número. Por ejemplo: `c(1L, -5L, 16L, 17L)`. |
 | logical | Contienen valores booleanos o lógicos. Por ejemplo: `c(TRUE, FALSE, NA)` o `c(T, F, T)`. |
@@ -123,7 +123,7 @@ Aquí, `each = 3` indica que cada elemento del vector en `x` debe repetirse 3 ve
 
 Además de las expuestas, existen numerosas funciones nativas de R para generar vectores. Entre ellas, podemos mencionar a `sample()`, la cual genera un vector con un subconjunto aleatorio de elementos a partir un vector dado; `runif()` y `rnorm()`, los cuales generan vectores de elementos provenientes de una distribución uniforme o normal, respectivamente. Por otro lado, las funciones `letters()` y `LETTERS()` generan vectores de letras en minúscula o mayúscula.
 
-#### <ins>Ejercicio 1</ins>
+## Ejercicio 1
 
 Dado el vector `rep(x = 3:1, each = 5)`, explore qué hacen las siguientes funciones: `length()`, `sort()`, `rev()` y `unique()`.
 
@@ -323,7 +323,7 @@ round(vec, digits = 1)
 
 R también provee de numerosas funciones nativas para obtener medidas de resumen. Podemos mencionar a `mean()` para calcular el promedio, `median()` para calcular la mediana y `sd()` para calcular el desvío estándar.
 
-#### <ins>Ejercicio final</ins>
+## Ejercicio final
 
 1.  Utilice las funciones `rep()` y `seq()` para generar los siguientes vectores:
 

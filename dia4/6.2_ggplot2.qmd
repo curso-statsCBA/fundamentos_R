@@ -11,14 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 El paquete *ggplot2* ofrece una nutrida biblioteca de funciones para la creación de gráficos de diversos tipos en R. La diversidad de gráficos y formas de personalización es enorme -es un curso en sí mismo- y aquí simplemente desarrollaremos los fundamentos básicos para su comprensión. Existen varias páginas web útiles para aprender sobre el desarrollo de gráficos con *ggplot2*, incluyendo a [The R Graph Gallery](https://r-graph-gallery.com/ggplot2-package.html){target="_blank"} y [R Charts](https://r-charts.com/colors/){target="_blank"}. En esta [página](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf){target="_blank"} se muestra una tabla de colores junto con su nombre a utilizar dentro del entorno R.
 
-A diferencia de otros paquetes de graficación, incluyendo a las funciones nativas de R que ya hemos visto, la creación de gráficos con *ggplot2* sigue una lógica diferente. Se trabaja mediante la apilación de "capas gráficas" a través de un lenguaje propio del paquete. Si tradujéramos el código en palabras, sería algo así: 
+A diferencia de otros paquetes de graficación, incluyendo a las funciones nativas de R que ya hemos visto, la creación de gráficos con *ggplot2* sigue una lógica diferente. Se trabaja mediante la apilación de "capas gráficas" a través de un lenguaje propio del paquete. Si tradujéramos el código en palabras, sería algo así:
 
-*creo espacio de graficación &#8594;*<br>
-&nbsp;&nbsp;*añado capa gráfica nº1 (e.g. puntos) &#8594;*<br>
-&nbsp;&nbsp;*añado capa gráfica nº2 (e.g. líneas) &#8594;*<br>
-&nbsp;&nbsp;*configuro eje x &#8594;*<br>
-&nbsp;&nbsp;*configuro eje y &#8594;*<br>
-&nbsp;&nbsp;*configuro parámetros generales del gráfico*
+*creo espacio de graficación →*<br>   *añado capa gráfica nº1 (e.g. puntos) →*<br>   *añado capa gráfica nº2 (e.g. líneas) →*<br>   *configuro eje x →*<br>   *configuro eje y →*<br>   *configuro parámetros generales del gráfico*
 
 Mejor que explicarlo, es mostrarlo!
 
@@ -169,11 +164,11 @@ ggplot(data = iris, mapping = aes(x = Species, y = Petal.Length, fill = Species)
 
 Al indicar `height = 0`, los puntos mantendrán la ubicación original para la variable `y`. En cambio, `width = 0.3` reubica *aleatoriamente* cada punto a lo largo del eje `x`. El valor 0.3 simplemente indica el nivel de *ruido*, en este caso horizontal, que tendrá cada punto.
 
-#### <ins>Ejercicio 1</ins>
+## Ejercicio 1
 
 Genere un gráfico idéntico al último expuesto, pero con un orden distinto para los niveles del eje x. El orden debe ser, de izquierda a derecha, *I. virginica*, *I. versicolor* e *I. setosa*. Para ello, debe redefinir la variable "Species" de la tabla como un factor con niveles en el orden indicado. Si no se acuerda como hacerlo, vuelva a la clase de [Vectores](../dia1/3.2_Vectores.qmd).
 
-### Funciones de tipo `theme`
+## Funciones de tipo `theme`
 
 Las funciones que inician con `theme` permiten la personalización general del gráfico. Por un lado, contamos con funciones como `theme_light()`, las cuales vienen asociadas con configuraciones gráficas preestablecidas. Por otro lado, la función `theme()` permite un grado de personalización del gráfico muy alta. Por ejemplo:
 
@@ -203,7 +198,7 @@ Vale la pena mencionar la nueva capa añadida mediante `annotate()`, la cual sir
 
 **Para jugar:** Cambie `theme_light()` por otras funciones del tipo con otras configuraciones preestablecida y observe los distintos resultados.
 
-### Ejemplo de caso típico: gráficos de barras con error
+## Ejemplo de caso típico: gráficos de barras con error
 
 Un gráfico muy popular es el gráfico de barras con error asociado. Usualmente, la barra indica un valor promedio y la barra de error el error estándar o la desviación estándar. ¿Cómo haríamos este gráfico en *ggplot2*? Primero, es necesario generar un `data.frame` con los valores promedio y de error asociados (en este ejemplo, la desviación estándar). Lo haremos para cada especie del género *Iris*:
 
@@ -324,7 +319,7 @@ plot5 <- ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Length, c
 ggsave(filename = "scatterplot.png", plot = plot5, dpi = 600, units = "px")
 ```
 
-#### <ins>Ejercicios</ins>
+## Ejercicios
 
 El dataset `Indometh` contiene los datos de concentración en sangre de una droga en función del tiempo para 6 sujetos (para mayor información sobre el dataset, explore la ayuda con `?Indometh`). Antes que nada, explore el dataset, su estructura y tipo de dato.
 

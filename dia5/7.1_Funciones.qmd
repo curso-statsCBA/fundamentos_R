@@ -256,7 +256,7 @@ promedios
 
 Existen otras variantes a la función `sapply()`, como por ejemplo `lapply()`, que funciona de manera idéntica pero devuelve una lista en vez de un vector.
 
-#### <ins>Ejercicios</ins>
+## Ejercicios
 
 1.  Cree una función que calcule el área de un triángulo a partir de su base y altura. Contemple el escenario en el que el usuario indique valores no numéricos para los argumentos.
 2.  Cree una función que calcule el error estándar de un conjunto de números. El error estándar se calcula realizando el cociente entre el desvío estándar de la muestra y la raíz cuadrada de la cantidad de números evaluados.

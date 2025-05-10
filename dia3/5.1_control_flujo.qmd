@@ -68,7 +68,7 @@ if (a < 40 & b > 10 | c > 50) {
 }
 ```
 
-#### <ins>Ejercicio 1</ins>
+### Ejercicio 1
 
 Compare el código de la celda precedente con el de aquí abajo. ¿Qué diferencias nota? Ejecútelo y explique el resultado con el obtenido usando el código previo con los mismos valores para `a`, `b` y `c`.
 
@@ -108,7 +108,7 @@ if (a > 10) {
 
 ####  {#anch1}
 
-#### <ins>Ejercicio 2</ins>
+### Ejercicio 2
 
 Andrea y Ariel fueron a hacer compras, construya con código que indique quién gastó más dinero y de cuanto es la diferencia. El mismo código debe servir para evaluar los tres escenarios siguientes:
 
@@ -207,7 +207,7 @@ while (i < 9) {
 }
 ```
 
-#### <ins>Ejercicio 3</ins>
+### Ejercicio 3
 
 Analice el siguiente código **SIN EJECUTARLO** e interprete cuál es la salida esperada explicando que sucede en cada iteración. Luego escriba *a mano* la salida exacta que dará este código.
 
@@ -394,7 +394,7 @@ Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situació
 
 ------------------------------------------------------------------------
 
-#### <ins>Ejercicio Final</ins>
+### Ejercicio Final
 
 Tomando de base el conjunto de datos `iris`, construya el siguiente `data.frame`:
 
@@ -436,7 +436,7 @@ for (sp in unique(iris$Species)){
 
 ------------------------------------------------------------------------
 
-#### <ins>Ejercicio Extra</ins>
+### Ejercicio Extra
 
 Cuando vimos los condicionales, armamos un código para [evaluar en 3 escenarios diferentes](#anch1) los gastos que realizaron Andrea y Ariel. Ahora que sabe usar bucles, escriba un código que evalué en una sola ejecución todos los escenarios planteados en ese ejercicio y que utilice todos los constructos aprendidos, es decir: `if`, `while` y `for`.
 

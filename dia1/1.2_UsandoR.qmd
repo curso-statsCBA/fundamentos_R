@@ -55,13 +55,13 @@ Finalmente, si deseamos salir de la sesión de R activa, podemos utilizar la fun
 
 </p>
 
-#### <ins>Ejercicio 1</ins>
+## Ejercicio 1
 
 Abra R desde una terminal de su sistema operativo e intente replicar las líneas de código mostradas en la parte previa, de paso, sabremos que su sistema tiene correctamente instalado R.
 
 ------------------------------------------------------------------------
 
-### Presentando a RStudio
+## Presentando a RStudio
 
 A pesar de lo sencillo que resulta usar R nativamente en cualquier sistema, para ahorrarnos tener que usar múltiples programas en simultáneo, así como para sumar toda una gran colección de funcionalidades y herramientas que nos facilitarán mucho el trabajo, es recomendable utilizar R en conjunto con alguna [IDE](https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado){target="_blank"}. En este curso, utilizaremos [RStudio](https://posit.co/products/open-source/rstudio/){target="_blank"}.
 
@@ -107,7 +107,7 @@ Cuando tengamos una rutina (i.e. un *script*) creada, podremos ejecutar directam
 
 **Para pensar:** en el ejemplo de la figura previa existen líneas que comienzan con un carácter `#` (llamado de muchas formas: numeral, almohadilla, <i>hashtag</i>). Si presta atención, esas líneas están coloreadas de forma homogénea en el editor y, además, aparentan tener mensajes que explican el código. ¿Qué imagina que sucede cuando se ejecutan? ¿Cómo se llama y qué función cumplen esas líneas? Más adelante veremos otra forma adicional de utilizarlas para organizar nuestro código en RStudio.
 
-#### *Proyectos en RStudio*
+### *Proyectos en RStudio*
 
 Una de las primeras nociones sobre las <i>buenas prácticas</i> de trabajo es intentar mantener una organización coherente de nuestro código, así como de los archivos de entrada (i.e. los datos) y salida (i.e. resultados, gráficos, etc). Aunque estrictamente no existe una forma única ni correcta de organización y cada persona debe encontrar lo que le resulta más práctico, siempre debemos considerar que existen potenciales receptores de nuestro código que idealmente tendrían que interpretar con el menor esfuerzo posible la organización seguida. Incluso podemos ser nosotros mismos quienes en un futuro revisitemos algo que hicimos hace un tiempo y le estaremos enormemente agradecidos a nuestra versión del pasado por haber mantenido una organización coherente.
 
@@ -145,7 +145,7 @@ En este caso, podríamos entonces pensar en crear un proyecto para todo el conju
 
 Existen múltiples formas de crear un nuevo proyecto. Podemos hacer "<i>File</i> \> <i>New Project...</i>"; podemos usar el botón ![](pics/r_proy_but.png){width="24"} en la esquina superior izquierda; o utilizar el menú de proyectos ![](pics/r_proy_but2.png){width="20"} `Project: (None)`, situado en la esquina superior derecha. A la hora de crear un nuevo proyecto, podemos elegir partir de un directorio nuevo o de uno previamente creado. Así mismo, podemos elegir un tipo específico de proyecto según si estemos haciendo un proyecto general, un proyecto para un nuevo paquete de R, una [aplicación Shiny](https://shiny.posit.co/){target="_blank"}, etc. Todo esto se realiza mediante una serie de menús gráficos que se nos irán presentado y que son sumamente intuitivos de seguir.
 
-#### <ins>Ejercicio 2</ins>
+## Ejercicio 2
 
 Luego de ver la demostración del docente sobre la creación de proyectos en RStudio, abra una sesión propia de RStudio y cree un proyecto para este curso. La organización sugerida es la siguiente:
 
@@ -163,11 +163,11 @@ fundamentosR
 
 A medida que el curso avance, iremos completando estos directorios con datos, rutinas, etc.
 
-#### <ins>Ejercicio 3</ins>
+## Ejercicio 3
 
 Cree una rutina dentro de `dia1`, como se muestra en la estructura precedente, que contenga el código ejecutado en el [Ejercicio 1](#anch1) para el mensaje de bienvenida y el gráfico. Corra esas líneas y explore las funciones del panel gráfico. Finalmente, guarde el mismo como un archivo `PNG` dentro del directorio `dia1`.
 
-#### *El directorio de trabajo*
+## El directorio de trabajo
 
 Cuando trabajamos con R, implícitamente lo estamos haciendo en alguna ubicación de nuestro sistema de archivos. Los proyectos de RStudio facilitan esta cuestión haciendo que el *directorio de trabajo* sea aquel en el cual creamos el proyecto. Para conocer en donde estamos trabajando, podemos utilizar la función `getwd()`. Por ejemplo, mientras escribo esta guía puedo ver en qué ubicación se encuentra el proyecto en la cual la estoy realizando (Sí! R es tan versátil, que hasta podemos crear páginas web y cualquier otro tipo de documento con su propio formato, imágenes embebidas, vínculos de internet, etc.):
 
@@ -184,7 +184,7 @@ Si por algun motivo deseara cambiar el directorio de trabajo, puedo hacerlo desd
 # getwd() # muestra el nuevo working directory
 ```
 
-#### *Rutas relativas y absolutas*
+### *Rutas relativas y absolutas*
 
 Una ruta (en inglés <i>path</i>) en R o en cualquier otro sistema informático es la "dirección" de cada archivo que existe en el sistema de archivos. De forma general, existen dos formas de representar a cualquier ruta:
 
@@ -194,7 +194,7 @@ Una ruta (en inglés <i>path</i>) en R o en cualquier otro sistema informático 
 
 Como ejemplo, tomando como referencia la [estructura sugerida](#anch2) para el proyecto de los analisis de la tesis, si el directorio de trabajo activo fuera `analisis` dentro de `CapII`, la ruta relativa a `CapIII` seria `../../CapIII`
 
-#### <ins>Ejercicio 4</ins>
+## Ejercicio 4
 
 Imagine que dentro del directorio `/home/usuario/Documentos`, posee la siguiente estructura de directorios:
 
@@ -230,6 +230,7 @@ correct_answer <- "/home/usuario/Documentos/carpeta0/carpeta1/archivo1_c"
 </p>
 :::
 
+```{=html}
 <script>
   // Use the correct answer defined in R
   const correctAnswer = "`r correct_answer`";
@@ -247,6 +248,7 @@ correct_answer <- "/home/usuario/Documentos/carpeta0/carpeta1/archivo1_c"
     }
   }
 </script>
+```
 
 -   ¿Cómo sería la ruta relativa desde el directorio "carpeta2b" hacia el archivo "archivo1_c"?
 
@@ -265,6 +267,7 @@ correct_answer2 <- "../../../carpeta1/archivo1_c"
 
 </div>
 
+```{=html}
 <script>
   // Use the correct answer defined in R
   const correctAnswer2 = "`r correct_answer2`";
@@ -282,8 +285,9 @@ correct_answer2 <- "../../../carpeta1/archivo1_c"
     }
   }
 </script>
+```
 
-#### *Las rutas en los proyectos de RStudio*
+## *Las rutas en los proyectos de RStudio*
 
 Cuando trabajamos dentro de un proyecto de RStudio, todas las rutas son relativas a la raíz del proyecto. Esto tiene algunas ventajas, como por ejemplo si compartimos nuestro proyecto con colaboradores, estos no necesitarán configurar las rutas para su sistema, ya que las rutas se mantienen relativas al proyecto. Por otro lado, no es necesario que anonimicemos nuestras rutas, ya que si trabajamos exclusivamente dentro de la carpeta raíz del proyecto, no debería aparecer ninguna ruta absoluta. Las razones por las que quisiéramos mantener nuestras *otras* carpetas internas privadas son muchas, y variarán en cada caso, pero para un ejemplo interesante podemos considerar el siguiente caso:
 
@@ -297,7 +301,7 @@ Por cierto, Alexandra es, ni más ni menos, la creadora del sitio [Sci-Hub](http
 
 ------------------------------------------------------------------------
 
-### Buscando ayuda en R
+## Buscando ayuda en R
 
 Una de las cosas que más intimidan a quienes intentan aprender un lenguaje de programación suele ser intentar recordar el nombre de todas las funciones disponibles y cómo se usa exactamente cada una. Pero lo cierto es que esto rara vez preocupa a quienes llevan un tiempo inmersos en algún lenguaje. Esto es así, ya que como el resto de los lenguajes más populares, R posee un compendio de documentación interna que explica detalladamente cada una de sus funciones. Esta ayuda se encuentra disponible desde la instalación de R, así como de cada uno de los paquetes oficiales, y puede ser consultada incluso *fuera de línea* (i.e. sin conexión a internet).
 
@@ -319,7 +323,7 @@ En RStudio, como ya mencionamos antes, disponemos de un área específica para m
 
 </p>
 
-#### <ins>Ejercicio 5</ins>
+## Ejercicio 5
 
 En RStudio corra las siguientes líneas de a una y observe que salidas le brinda el programa. Anímese a explorar, no hay nada que pueda romper, haga click aquí y allá, vaya y vuelva. De igual forma, intente utilizar el autocompletado y las ayudas emergentes, fomente su creatividad buscando lo que se le ocurra, o intente averiguar como se usa esa función que hace 2 o 3 semanas que no logra ejecutar sin error. En clase discutiremos que partes componen la ayuda y como interpretarla.
 
@@ -399,7 +403,7 @@ O incluso podemos darle algún fragmento de código que falla, y pedirle que int
 
 ------------------------------------------------------------------------
 
-### Instalación y carga de paquetes
+## Instalación y carga de paquetes
 
 A medida que usemos R nos surgirá la necesidad de instalar paquetes por fuera de la versión básica, para añadir funcionalidades extras a R. Esto se puede realizar sencillamente desde RStudio, ya sea utilizando la interfaz gráfica o con funciones especificas para la instalación; así como podemos realizar la instalación desde [CRAN](https://cran.r-project.org/){target="_blank"} o desde repositorios externos (e.g. [GitHub](https://github.com/){target="_blank"}).
 
@@ -450,7 +454,7 @@ detach("package:remotes", unload = TRUE)
 
 Todo esto en RStudio también puede ser realizado simplemente tildando o destildando el paquete correspondiente en la lista de paquetes.
 
-#### <ins>Ejercicio 6</ins>
+## Ejercicio 6
 
 Instale con el medio que le sea conveniente el paquete `remotes`, tal como se muestra en la [imagen previa](#anch3). Luego use la función `library()` para cargarlo. Utilizando las ayudas internas de R responda: ¿para qué sirve este paquete?
 
@@ -477,7 +481,7 @@ library(multilandr)
 
 ------------------------------------------------------------------------
 
-#### <ins>Ejercicio Final</ins>
+## Ejercicio Final
 
 Instale el paquete `ggplot2`. Una vez instalado, cárguelo y realice algún gráfico de los ejemplos disponibles en su *vignette*. Finalmente, guarde el gráfico en el directorio de trabajo.
 

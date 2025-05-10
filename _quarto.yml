@@ -37,7 +37,7 @@ website:
     contents:
       - text: "Inicio"
         href: index.qmd
-      - section: "Día 1"
+      - section: "Unidad 1"
         contents:
           - text: Introducción a R
             href: dia1/1.1_IntroR.pdf
@@ -45,18 +45,18 @@ website:
           - dia1/2.1_FlujoTrabajo.qmd
           - dia1/3.1_Operadores.qmd
           - dia1/3.2_Vectores.qmd
-      - section: "Día 2"
+      - section: "Unidad 2"
         contents:
           - dia2/4.1_Tablas.qmd
-      - section: "Día 3"
+      - section: "Unidad 3"
         contents:
           - dia3/5.1_control_flujo.qmd
-      - section: "Día 4"
+      - section: "Unidad 4"
         contents:
           - dia4/6.1_graficos_base.qmd
           - text: Gráficos con *ggplot2*
             href: dia4/6.2_ggplot2.qmd
-      - section: "Día 5"
+      - section: "Unidad 5"
         contents:
           - dia5/7.1_Funciones.qmd
       - text: Código colaborativo!
@@ -70,6 +70,7 @@ format:
     css: styles.css
     smooth-scroll: true
     toc: true
+    toc-depth: 3
 
 editor: visual
 
