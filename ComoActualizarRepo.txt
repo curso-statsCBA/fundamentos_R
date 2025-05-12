@@ -1,0 +1,10 @@
+Hacer commit sobre archivos .qmd y archivos usados para la página
+
+Push
+
+Luego para renderizar la pagina y subirla al repo, en la termial de RStudio:
+
+quarto render
+git add docs
+git commit -m "Publish site to docs/"
+git push
