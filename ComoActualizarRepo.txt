@@ -1,8 +1,6 @@
-Hacer commit sobre archivos .qmd y archivos usados para la página
+1) Hacer commit sobre archivos .qmd y archivos usados para la página. Luego Pushaer.
 
-Push
-
-Luego para renderizar la pagina y subirla al repo, en la termial de RStudio:
+2) Luego para renderizar la pagina y subirla al repo, escribiendo en la terminal de RStudio:
 
 quarto render
 git add docs
