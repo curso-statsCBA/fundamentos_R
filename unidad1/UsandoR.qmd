@@ -59,8 +59,6 @@ Finalmente, si deseamos salir de la sesión de R activa, podemos utilizar la fun
 
 Abra R desde una terminal de su sistema operativo e intente replicar las líneas de código mostradas en la parte previa, de paso, sabremos que su sistema tiene correctamente instalado R.
 
-------------------------------------------------------------------------
-
 ## Presentando a RStudio
 
 A pesar de lo sencillo que resulta usar R nativamente en cualquier sistema, para ahorrarnos tener que usar múltiples programas en simultáneo, así como para sumar toda una gran colección de funcionalidades y herramientas que nos facilitarán mucho el trabajo, es recomendable utilizar R en conjunto con alguna [IDE](https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado){target="_blank"}. En este curso, utilizaremos [RStudio](https://posit.co/products/open-source/rstudio/){target="_blank"}.
@@ -299,8 +297,6 @@ Cuando trabajamos dentro de un proyecto de RStudio, todas las rutas son relativa
 
 Por cierto, Alexandra es, ni más ni menos, la creadora del sitio [Sci-Hub](https://www.sci-hub.se/){target="_blank"} y esa captura corresponde a una guía básica para voluntarias/os de [Anna's Archive](https://es.wikipedia.org/wiki/Archivo_de_Anna){target="_blank"}.
 
-------------------------------------------------------------------------
-
 ## Buscando ayuda en R
 
 Una de las cosas que más intimidan a quienes intentan aprender un lenguaje de programación suele ser intentar recordar el nombre de todas las funciones disponibles y cómo se usa exactamente cada una. Pero lo cierto es que esto rara vez preocupa a quienes llevan un tiempo inmersos en algún lenguaje. Esto es así, ya que como el resto de los lenguajes más populares, R posee un compendio de documentación interna que explica detalladamente cada una de sus funciones. Esta ayuda se encuentra disponible desde la instalación de R, así como de cada uno de los paquetes oficiales, y puede ser consultada incluso *fuera de línea* (i.e. sin conexión a internet).
@@ -401,8 +397,6 @@ O incluso podemos darle algún fragmento de código que falla, y pedirle que int
 
 **Para pensar:** más adelante aprenderemos efectivamente a filtrar una tabla basados en una condición. Recuerde la respuesta brindada por la IA en este ejemplo y veremos luego si es una "buena" respuesta.
 
-------------------------------------------------------------------------
-
 ## Instalación y carga de paquetes
 
 A medida que usemos R nos surgirá la necesidad de instalar paquetes por fuera de la versión básica, para añadir funcionalidades extras a R. Esto se puede realizar sencillamente desde RStudio, ya sea utilizando la interfaz gráfica o con funciones especificas para la instalación; así como podemos realizar la instalación desde [CRAN](https://cran.r-project.org/){target="_blank"} o desde repositorios externos (e.g. [GitHub](https://github.com/){target="_blank"}).
@@ -479,13 +473,9 @@ install_github(repo = "phuais/multilandr")
 library(multilandr)
 ```
 
-------------------------------------------------------------------------
-
 ## Ejercicio Final
 
 Instale el paquete `ggplot2`. Una vez instalado, cárguelo y realice algún gráfico de los ejemplos disponibles en su *vignette*. Finalmente, guarde el gráfico en el directorio de trabajo.
-
-------------------------------------------------------------------------
 
 <p align="center">
 
