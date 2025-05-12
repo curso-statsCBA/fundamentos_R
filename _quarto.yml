@@ -58,7 +58,7 @@ website:
         contents:
           - unidad4/GraficosBase.qmd
           - text: Gráficos con *ggplot2*
-            href: ggplot2.qmd
+            href: unidad4/ggplot2.qmd
       - section: "Unidad 5"
         contents:
           - unidad5/Funciones.qmd
