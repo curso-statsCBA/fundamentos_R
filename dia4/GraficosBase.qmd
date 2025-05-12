@@ -449,7 +449,7 @@ regL <- lm(Petal.Length ~ Sepal.Length, data = subset(iris[iris$Species == "virg
 summary(regL)
 ```
 
-Habiendo generado el objeto que contiene el resultado de `lm()`, podemos pedirle a R que lo grafique con `plot()`. Este es un ejemplo más de la característica de *polimorfismo* que vimos en la [clase introductoria](../dia1/1.1_IntroR.pdf){target="_blank"}, ya que `plot()` puede usarse sobre diferentes tipos de objetos, resultantes de diferentes funciones, y realizará diferentes gráficos según cada uno.
+Habiendo generado el objeto que contiene el resultado de `lm()`, podemos pedirle a R que lo grafique con `plot()`. Este es un ejemplo más de la característica de *polimorfismo* que vimos en la [clase introductoria](../dia1/IntroR.qmd){target="_blank"}, ya que `plot()` puede usarse sobre diferentes tipos de objetos, resultantes de diferentes funciones, y realizará diferentes gráficos según cada uno.
 
 Como en nuestro ejemplo la función `plot()`realizará 4 gráficos separados, configuraremos con `par()` la posibilidad de tener un panel de 4 gráficos, con 2 filas y 2 columnas, esto es: `mfrow = c(2,2)`.
 

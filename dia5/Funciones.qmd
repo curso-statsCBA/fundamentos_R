@@ -220,8 +220,6 @@ Vemos que el promedio es calculado correctamente (con `pesos = rep(1, length(x))
 
 El uso de las funciones `stop()` y `warning()` en el contexto de funciones no es fundamental, pero adquieren relevancia para funciones que usarán otras personas. Uno nunca sabe con absoluta seguridad el tipo de entrada que un usuario externo usaría en una de nuestras funciones, y uno debe prevenir distintos escenarios. Sin embargo, si a las funciones las usaremos sólo nosotros, contemplar estos escenarios no será vital, por lo que no sería absolutamente necesario el uso de `stop()` o `warning()`.
 
-------------------------------------------------------------------------
-
 ## Funciones del tipo *apply*
 
 Las funciones de la familia *apply* se utilizan para aplicar una función determinada a una lista o a un vector. Es útil para realizar un mismo cálculo a un conjunto de elementos dado, evitando utilizar, por ejemplo, un ciclo `for`.
@@ -256,7 +254,7 @@ promedios
 
 Existen otras variantes a la función `sapply()`, como por ejemplo `lapply()`, que funciona de manera idéntica pero devuelve una lista en vez de un vector.
 
-## Ejercicios
+## Ejercicio final
 
 1.  Cree una función que calcule el área de un triángulo a partir de su base y altura. Contemple el escenario en el que el usuario indique valores no numéricos para los argumentos.
 2.  Cree una función que calcule el error estándar de un conjunto de números. El error estándar se calcula realizando el cociente entre el desvío estándar de la muestra y la raíz cuadrada de la cantidad de números evaluados.

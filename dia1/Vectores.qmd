@@ -123,7 +123,7 @@ Aquí, `each = 3` indica que cada elemento del vector en `x` debe repetirse 3 ve
 
 Además de las expuestas, existen numerosas funciones nativas de R para generar vectores. Entre ellas, podemos mencionar a `sample()`, la cual genera un vector con un subconjunto aleatorio de elementos a partir un vector dado; `runif()` y `rnorm()`, los cuales generan vectores de elementos provenientes de una distribución uniforme o normal, respectivamente. Por otro lado, las funciones `letters()` y `LETTERS()` generan vectores de letras en minúscula o mayúscula.
 
-## Ejercicio 1
+## Ejercicio
 
 Dado el vector `rep(x = 3:1, each = 5)`, explore qué hacen las siguientes funciones: `length()`, `sort()`, `rev()` y `unique()`.
 

@@ -166,7 +166,7 @@ Al indicar `height = 0`, los puntos mantendrán la ubicación original para la v
 
 ## Ejercicio 1
 
-Genere un gráfico idéntico al último expuesto, pero con un orden distinto para los niveles del eje x. El orden debe ser, de izquierda a derecha, *I. virginica*, *I. versicolor* e *I. setosa*. Para ello, debe redefinir la variable "Species" de la tabla como un factor con niveles en el orden indicado. Si no se acuerda como hacerlo, vuelva a la clase de [Vectores](../dia1/3.2_Vectores.qmd).
+Genere un gráfico idéntico al último expuesto, pero con un orden distinto para los niveles del eje x. El orden debe ser, de izquierda a derecha, *I. virginica*, *I. versicolor* e *I. setosa*. Para ello, debe redefinir la variable "Species" de la tabla como un factor con niveles en el orden indicado. Si no se acuerda como hacerlo, vuelva a la clase de [Vectores](../dia1/Vectores.qmd).
 
 ## Funciones de tipo `theme`
 
@@ -198,7 +198,7 @@ Vale la pena mencionar la nueva capa añadida mediante `annotate()`, la cual sir
 
 **Para jugar:** Cambie `theme_light()` por otras funciones del tipo con otras configuraciones preestablecida y observe los distintos resultados.
 
-## Ejemplo de caso típico: gráficos de barras con error
+### Ejemplo de caso típico: gráficos de barras con error
 
 Un gráfico muy popular es el gráfico de barras con error asociado. Usualmente, la barra indica un valor promedio y la barra de error el error estándar o la desviación estándar. ¿Cómo haríamos este gráfico en *ggplot2*? Primero, es necesario generar un `data.frame` con los valores promedio y de error asociados (en este ejemplo, la desviación estándar). Lo haremos para cada especie del género *Iris*:
 
@@ -319,7 +319,7 @@ plot5 <- ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Length, c
 ggsave(filename = "scatterplot.png", plot = plot5, dpi = 600, units = "px")
 ```
 
-## Ejercicios
+## Ejercicio final
 
 El dataset `Indometh` contiene los datos de concentración en sangre de una droga en función del tiempo para 6 sujetos (para mayor información sobre el dataset, explore la ayuda con `?Indometh`). Antes que nada, explore el dataset, su estructura y tipo de dato.
 

@@ -36,8 +36,6 @@ Normalmente, las tablas se generan fuera del entorno R para ser luego importadas
 
 Antes que nada, [descargue el archivo zip](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/dia2/data/data.zip) con los datos necesarios para realizar el práctico, y extraiga los archivos dentro de una carpeta llamada "data" en el directorio "dia2" del proyecto del curso.
 
-------------------------------------------------------------------------
-
 ## Importación y exploración de tablas
 
 Existen muchas formas de importar tablas al ambiente de R. Quizás la forma más fácil es hacerlo desde la interfaz gráfica de RStudio: en el panel de entorno, clickeando en el ícono de importación.
@@ -93,8 +91,6 @@ colnames(iris)
 La función `rownames()` funciona de manera idéntica, pero para las filas.
 
 Al importar un dataset, una buena práctica es realizar una exploración inicial de la estructura de la tabla, especialmente sus columnas y nombres. La importación incorrecta de datasets es una fuente de error muy frecuente.
-
-------------------------------------------------------------------------
 
 ## Manipulación de tablas
 
@@ -191,11 +187,11 @@ iris <- read.table(file = "data/iris.csv")
 Genere nuevas tablas a partir de la tabla `iris` (utilizar nombres nuevos para cada tabla), para:
 
 -   La especie "setosa", y las columnas "Species" y "Petal.Width".
--   Las especies "setosa" y "versicolor". Deberá utilizar el operador `%in%` en vez del `==` (recordá de qué estamos hablando en [Vectores](../dia1/3.2_Vectores.qmd)).
+-   Las especies "setosa" y "versicolor". Deberá utilizar el operador `%in%` en vez del `==` (recordá de qué estamos hablando en [Vectores](../dia1/Vectores.qmd)).
 -   Flores en donde "Petal.Length" es mayor o igual a 4.
 -   Flores en donde "Sepal.Width" es mayor a 3 o "Sepal.Length" \< 4.
 
-### Creación de nuevas columnas
+## Creación de nuevas columnas
 
 Para agregar una nueva columna utilizamos la sintaxis `data$nueva_columna`. La columna debe asociarse a un contenido, las filas, mediante el operador de asignación. Lo que hacemos es agregar un nuevo vector-columna a la colección de vectores-columnas que es el `data.frame`:
 
@@ -237,7 +233,7 @@ iris$Sepal.width.cat2 <- factor(iris$Sepal.width.cat2)
 iris$Sepal.width.cat2
 ```
 
-Recordemos, como vimos en la clase de [Vectores](../dia1/3.2_Vectores.qmd), que al indicar un factor es posible también indicar el orden de sus niveles. Esto también aplica en el contexto de manipulación de tablas.
+Recordemos, como vimos en la clase de [Vectores](../dia1/Vectores.qmd), que al indicar un factor es posible también indicar el orden de sus niveles. Esto también aplica en el contexto de manipulación de tablas.
 
 No obstante, a la hora de generar vectores (aquí asociados a una tabla), la función `cut()` es más adecuada. Esta función divide el rango de valores de un vector en intervalos específicos, y define nombres para cada intervalo. Por ejemplo:
 
@@ -258,9 +254,7 @@ class(iris$Sepal.width.cat4)
 
 Genere una nueva columna para la tabla `iris` llamada "Flower.color". Para las especie *Iris setosa* y *Iris versicolor*, asignarle "Purple". Para la especie *Iris virginica* asignarle "Blue".
 
-------------------------------------------------------------------------
-
-### Unión de tablas
+## Unión de tablas
 
 Las funciones `rbind()` y `cbind()` permiten añadir filas ("r" de "row") y columnas ("c" de "column") a un `data.frame`, respectivamente.
 
@@ -346,8 +340,6 @@ iris_mean
 
 Generar una tabla que contenga el cálculo de la media de "Petal.Length" para cada especie. Luego, generar otra tabla con la desviación estándar de "Petal.Length" para cada especie. En cada tabla, cambiar los nombres de las nuevas columnas a "Petal.Length.mean" y "Petal.Length.sd". Finalmente, unir ambas tablas con `cbind()`.
 
-------------------------------------------------------------------------
-
 ## Exportación de tablas
 
 La exportación de un `data.frame` se realiza con `write.table`:
@@ -357,8 +349,6 @@ write.table(iris_mean, file = "iris.mean.csv", row.names = F)
 ```
 
 Análogamente a las funciones de importación, también disponemos de las funciones `write.csv()` y `write.csv2`.
-
-------------------------------------------------------------------------
 
 ## Otras estructuras de datos
 
@@ -465,8 +455,6 @@ Otra salida menos común de algunos paquetes son las clases S4. En esencia, son 
 
 Un ejemplo es la salida de la función `raster()` del paquete `raster`, la cual genera un objeto de tipo raster, muy utilizado en el contexto de Sistemas de Información Geográfica. Por ahora, basta con saber que la información de estos objetos se acceden con el operador `@`, mediante la sintaxis `objeto@elemento`.
 
-------------------------------------------------------------------------
-
 ### El paquete *dplyr*
 
 El paquete *dplyr* ofrece numerosas herramientas R para manipular y transformar datos. Es parte del universo [tidyverse](https://www.tidyverse.org/){target="_blank"}, diseñado para facilitar el trabajo con datos tabulares de manera eficiente y legible. A diferencia del manejo básico de tablas en R, *dplyr* introduce una sintaxis diferente a través del operador `%>%`, que relaciona una expresión con otra como si fuera una oración de texto:
@@ -476,8 +464,6 @@ El paquete *dplyr* ofrece numerosas herramientas R para manipular y transformar 
 Por ejemplo, *dplyr* ofrece funciones intuitivas para realizar operaciones comunes, como filtrar filas (`filter()`), seleccionar columnas (`select()`), reordenar datos (`arrange()`), crear nuevas variables (`mutate()`) y resumir información (`summarize()`).
 
 El presente curso está orientado a entender los fundamentos básicos del lenguaje R y no ahondaremos en el uso de este paquete. No obstante, creemos que es útil saber de su existencia y explorar sobre su uso en caso de necesidad.
-
-------------------------------------------------------------------------
 
 ## Ejercicio final
 

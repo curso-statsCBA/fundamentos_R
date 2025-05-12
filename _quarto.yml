@@ -3,19 +3,22 @@ project:
   output-dir: docs
 
 website:
+  #title: "Fundamentos básicos del lenguaje R"
   favicon: favicon.png
   back-to-top-navigation: true
   reader-mode: false
   bread-crumbs: false
-  page-footer: "<br>Doctorado en Ciencias Biológicas | FCEFYN - UNC" 
+  page-footer: "<span class='footer-space'>Doctorado en Ciencias Biológicas | FCEFyN - UNC</span>"
   navbar:
     background: "#375a7f"
-    title: "Fundamentos básicos del lenguaje R"
+    logo: pics/logo.png
     left:
       - href: index.qmd
         text: Inicio
       - href: index.qmd#cronograma
         text: Cronograma
+      - href: codigo_colab.qmd
+        text: Código colaborativo
       - text: Recursos útiles
         menu:
           - text: R for Data Science
@@ -40,25 +43,25 @@ website:
       - section: "Unidad 1"
         contents:
           - text: Introducción a R
-            href: dia1/1.1_IntroR.pdf
-          - dia1/1.2_UsandoR.qmd
-          - dia1/2.1_FlujoTrabajo.qmd
-          - dia1/3.1_Operadores.qmd
-          - dia1/3.2_Vectores.qmd
+            href: dia1/IntroR.qmd
+          - dia1/UsandoR.qmd
+          - dia1/FlujoTrabajo.qmd
+          - dia1/Operadores.qmd
+          - dia1/Vectores.qmd
       - section: "Unidad 2"
         contents:
-          - dia2/4.1_Tablas.qmd
+          - dia2/Tablas.qmd
       - section: "Unidad 3"
         contents:
-          - dia3/5.1_control_flujo.qmd
+          - dia3/ControlFlujo.qmd
       - section: "Unidad 4"
         contents:
-          - dia4/6.1_graficos_base.qmd
+          - dia4/GraficosBase.qmd
           - text: Gráficos con *ggplot2*
-            href: dia4/6.2_ggplot2.qmd
+            href: ggplot2.qmd
       - section: "Unidad 5"
         contents:
-          - dia5/7.1_Funciones.qmd
+          - dia5/Funciones.qmd
       - text: Código colaborativo!
         href: codigo_colab.qmd
 
