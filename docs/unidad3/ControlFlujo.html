@@ -778,9 +778,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
-[1,]   88    8   97
-[2,]   28   43   32
-[3,]   80   25   59</code></pre>
+[1,]   38   20   43
+[2,]   56   22   39
+[3,]   84    2    5</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>( j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(mat)) {</span>
@@ -788,15 +788,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 88"
-[1] "El elemento de la fila 1 y columna 2 es igual a 8"
-[1] "El elemento de la fila 1 y columna 3 es igual a 97"
-[1] "El elemento de la fila 2 y columna 1 es igual a 28"
-[1] "El elemento de la fila 2 y columna 2 es igual a 43"
-[1] "El elemento de la fila 2 y columna 3 es igual a 32"
-[1] "El elemento de la fila 3 y columna 1 es igual a 80"
-[1] "El elemento de la fila 3 y columna 2 es igual a 25"
-[1] "El elemento de la fila 3 y columna 3 es igual a 59"</code></pre>
+<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 38"
+[1] "El elemento de la fila 1 y columna 2 es igual a 20"
+[1] "El elemento de la fila 1 y columna 3 es igual a 43"
+[1] "El elemento de la fila 2 y columna 1 es igual a 56"
+[1] "El elemento de la fila 2 y columna 2 es igual a 22"
+[1] "El elemento de la fila 2 y columna 3 es igual a 39"
+[1] "El elemento de la fila 3 y columna 1 es igual a 84"
+[1] "El elemento de la fila 3 y columna 2 es igual a 2"
+[1] "El elemento de la fila 3 y columna 3 es igual a 5"</code></pre>
 </div>
 </div>
 <p>¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de <em>repeticiones</em> que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando <code>i = 1</code> y <code>j = 1</code>.</p>
