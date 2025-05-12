@@ -34,7 +34,7 @@ Al crear o cargar una tabla, veremos la tabla en el panel de entorno. Desplegand
 
 Normalmente, las tablas se generan fuera del entorno R para ser luego importadas a R. La creación de tablas desde cero adquiere mayor relevancia para tareas mas posteriores del flujo de análisis, como veremos más adelante.
 
-Antes que nada, [descargue el archivo zip](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/dia2/data/data.zip) con los datos necesarios para realizar el práctico, y extraiga los archivos dentro de una carpeta llamada "data" en el directorio "dia2" del proyecto del curso.
+Antes que nada, [descargue el archivo zip](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad2/data/data.zip) con los datos necesarios para realizar el práctico, y extraiga los archivos dentro de una carpeta llamada "data" en el directorio "dia2" del proyecto del curso.
 
 ## Importación y exploración de tablas
 
@@ -187,7 +187,7 @@ iris <- read.table(file = "data/iris.csv")
 Genere nuevas tablas a partir de la tabla `iris` (utilizar nombres nuevos para cada tabla), para:
 
 -   La especie "setosa", y las columnas "Species" y "Petal.Width".
--   Las especies "setosa" y "versicolor". Deberá utilizar el operador `%in%` en vez del `==` (recordá de qué estamos hablando en [Vectores](../dia1/Vectores.qmd)).
+-   Las especies "setosa" y "versicolor". Deberá utilizar el operador `%in%` en vez del `==` (recordá de qué estamos hablando en [Vectores](../unidad1/Vectores.qmd)).
 -   Flores en donde "Petal.Length" es mayor o igual a 4.
 -   Flores en donde "Sepal.Width" es mayor a 3 o "Sepal.Length" \< 4.
 
@@ -233,7 +233,7 @@ iris$Sepal.width.cat2 <- factor(iris$Sepal.width.cat2)
 iris$Sepal.width.cat2
 ```
 
-Recordemos, como vimos en la clase de [Vectores](../dia1/Vectores.qmd), que al indicar un factor es posible también indicar el orden de sus niveles. Esto también aplica en el contexto de manipulación de tablas.
+Recordemos, como vimos en la clase de [Vectores](../unidad1/Vectores.qmd), que al indicar un factor es posible también indicar el orden de sus niveles. Esto también aplica en el contexto de manipulación de tablas.
 
 No obstante, a la hora de generar vectores (aquí asociados a una tabla), la función `cut()` es más adecuada. Esta función divide el rango de valores de un vector en intervalos específicos, y define nombres para cada intervalo. Por ejemplo:
 

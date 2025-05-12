@@ -166,7 +166,7 @@ Al indicar `height = 0`, los puntos mantendrán la ubicación original para la v
 
 ## Ejercicio 1
 
-Genere un gráfico idéntico al último expuesto, pero con un orden distinto para los niveles del eje x. El orden debe ser, de izquierda a derecha, *I. virginica*, *I. versicolor* e *I. setosa*. Para ello, debe redefinir la variable "Species" de la tabla como un factor con niveles en el orden indicado. Si no se acuerda como hacerlo, vuelva a la clase de [Vectores](../dia1/Vectores.qmd).
+Genere un gráfico idéntico al último expuesto, pero con un orden distinto para los niveles del eje x. El orden debe ser, de izquierda a derecha, *I. virginica*, *I. versicolor* e *I. setosa*. Para ello, debe redefinir la variable "Species" de la tabla como un factor con niveles en el orden indicado. Si no se acuerda como hacerlo, vuelva a la clase de [Vectores](../unidad1/Vectores.qmd).
 
 ## Funciones de tipo `theme`
 

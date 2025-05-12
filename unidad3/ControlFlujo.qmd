@@ -9,7 +9,7 @@ Como hemos visto hasta ahora, cuando escribimos código y lo ejecutamos el mismo
 
 En general podemos definir dos grandes tipos de estructuras para el control de flujo. Por un lado, aquellas estructuras que **evaluan condiciones** y ejecutan un código subsiguiente en función de si el resultado de esa evaluación es verdadero o falso, a estas estrucuturas las llamamos *condicionales*. Por otro lado, tenemos estructuras que **repiten iterativamente** una porción de código mientras se cumpla alguna condición dada, a estas estructuras las denominamos *bucles*.
 
-**Nota:** Antes de continuar es recomendable repasar los [operadores](../dia1/Operadores.qmd){target="_blank"} aprendidos en el primer día de clases.
+**Nota:** Antes de continuar es recomendable repasar los [operadores](../unidad1/Operadores.qmd){target="_blank"} aprendidos en el primer día de clases.
 
 ------------------------------------------------------------------------
 
@@ -270,7 +270,7 @@ Queda claro que, como hemos visto anteriormente en el práctico de tablas, esta 
 
 #### *La función `seq()` en un bucle `for`*
 
-Cuando trabajamos con bucles, es muy frecuente establecer un rango para definir la iteración. Allí entra en juego esta útil función que, como vimos en la [clase de Vectores](../dia1/Vectores.qmd){target="_blank"} devuelve una secuencia numérica y cuya sintaxis es: `seq(inicio,fin,paso)`, recordando que por defecto (es decir, si no explicitamos el valor del argumento), el inicio es "1" y el paso "1".
+Cuando trabajamos con bucles, es muy frecuente establecer un rango para definir la iteración. Allí entra en juego esta útil función que, como vimos en la [clase de Vectores](../unidad1/Vectores.qmd){target="_blank"} devuelve una secuencia numérica y cuya sintaxis es: `seq(inicio,fin,paso)`, recordando que por defecto (es decir, si no explicitamos el valor del argumento), el inicio es "1" y el paso "1".
 
 ```{r}
 # Secuencia de 1 a 3

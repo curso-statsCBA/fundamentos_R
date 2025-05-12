@@ -43,25 +43,25 @@ website:
       - section: "Unidad 1"
         contents:
           - text: Introducción a R
-            href: dia1/IntroR.qmd
-          - dia1/UsandoR.qmd
-          - dia1/FlujoTrabajo.qmd
-          - dia1/Operadores.qmd
-          - dia1/Vectores.qmd
+            href: unidad1/IntroR.qmd
+          - unidad1/UsandoR.qmd
+          - unidad1/FlujoTrabajo.qmd
+          - unidad1/Operadores.qmd
+          - unidad1/Vectores.qmd
       - section: "Unidad 2"
         contents:
-          - dia2/Tablas.qmd
+          - unidad2/Tablas.qmd
       - section: "Unidad 3"
         contents:
-          - dia3/ControlFlujo.qmd
+          - unidad3/ControlFlujo.qmd
       - section: "Unidad 4"
         contents:
-          - dia4/GraficosBase.qmd
+          - unidad4/GraficosBase.qmd
           - text: Gráficos con *ggplot2*
             href: ggplot2.qmd
       - section: "Unidad 5"
         contents:
-          - dia5/Funciones.qmd
+          - unidad5/Funciones.qmd
       - text: Código colaborativo!
         href: codigo_colab.qmd
 
