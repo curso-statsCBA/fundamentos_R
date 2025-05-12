@@ -340,8 +340,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#for-in" id="toc-for-in" class="nav-link" data-scroll-target="#for-in">For … in …</a></li>
   <li><a href="#algunos-consejos" id="toc-algunos-consejos" class="nav-link" data-scroll-target="#algunos-consejos">Algunos consejos…</a></li>
   <li><a href="#ejercicio-final" id="toc-ejercicio-final" class="nav-link" data-scroll-target="#ejercicio-final">Ejercicio Final</a></li>
-  <li><a href="#ejercicio-extra" id="toc-ejercicio-extra" class="nav-link" data-scroll-target="#ejercicio-extra">Ejercicio Extra</a></li>
   </ul></li>
+  <li><a href="#ejercicio-extra" id="toc-ejercicio-extra" class="nav-link" data-scroll-target="#ejercicio-extra">Ejercicio Extra</a></li>
   </ul>
 </nav>
     </div>
@@ -372,7 +372,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Como hemos visto hasta ahora, cuando escribimos código y lo ejecutamos el mismo será interpretando línea a línea, hasta que se ejecuta la última línea y el programa termina. <strong>Las estructuras de control de flujo permiten alterar este comportamiento para adecuarlo a nuestras necesidades</strong>.</p>
 <p>En general podemos definir dos grandes tipos de estructuras para el control de flujo. Por un lado, aquellas estructuras que <strong>evaluan condiciones</strong> y ejecutan un código subsiguiente en función de si el resultado de esa evaluación es verdadero o falso, a estas estrucuturas las llamamos <em>condicionales</em>. Por otro lado, tenemos estructuras que <strong>repiten iterativamente</strong> una porción de código mientras se cumpla alguna condición dada, a estas estructuras las denominamos <em>bucles</em>.</p>
 <p><strong>Nota:</strong> Antes de continuar es recomendable repasar los <a href="../unidad1/Operadores.html" target="_blank">operadores</a> aprendidos en el primer día de clases.</p>
-<hr>
 <section id="if-else" class="level3">
 <h3 class="anchored" data-anchor-id="if-else">If … else</h3>
 <p>El constructo <code>if ... else</code> es una estructura de tipo condicional. En pocas palabras, <code>if</code> evaluará una condición dada y si la misma se cumple (i.e.&nbsp;el resultado es <code>TRUE</code>), se ejecutará el código correspondiente. Para definir un bloque de código a ejecutarse si no se cumple la condición previamente establecida, utilizaremos <code>else</code>. Si además quisiéramos definir múltiples condiciones, en caso de que la primera no se cumpla y que deriven en diferentes ejecuciones, deberemos utilizar <code>else if</code>.</p>
@@ -501,7 +500,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Error in print.default("La variable vale", variable): invalid printing digits 25</code></pre>
 </div>
 </div>
-<hr>
 </section>
 <section id="while" class="level3">
 <h3 class="anchored" data-anchor-id="while">While …</h3>
@@ -605,7 +603,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<hr>
 </section>
 <section id="for-in" class="level3">
 <h3 class="anchored" data-anchor-id="for-in">For … in …</h3>
@@ -781,9 +778,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
-[1,]   58   32   30
-[2,]   51   69   47
-[3,]   79   83   50</code></pre>
+[1,]   16    2   26
+[2,]  100   65   86
+[3,]   76   64    8</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>( j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(mat)) {</span>
@@ -791,19 +788,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 58"
-[1] "El elemento de la fila 1 y columna 2 es igual a 32"
-[1] "El elemento de la fila 1 y columna 3 es igual a 30"
-[1] "El elemento de la fila 2 y columna 1 es igual a 51"
-[1] "El elemento de la fila 2 y columna 2 es igual a 69"
-[1] "El elemento de la fila 2 y columna 3 es igual a 47"
-[1] "El elemento de la fila 3 y columna 1 es igual a 79"
-[1] "El elemento de la fila 3 y columna 2 es igual a 83"
-[1] "El elemento de la fila 3 y columna 3 es igual a 50"</code></pre>
+<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 16"
+[1] "El elemento de la fila 1 y columna 2 es igual a 2"
+[1] "El elemento de la fila 1 y columna 3 es igual a 26"
+[1] "El elemento de la fila 2 y columna 1 es igual a 100"
+[1] "El elemento de la fila 2 y columna 2 es igual a 65"
+[1] "El elemento de la fila 2 y columna 3 es igual a 86"
+[1] "El elemento de la fila 3 y columna 1 es igual a 76"
+[1] "El elemento de la fila 3 y columna 2 es igual a 64"
+[1] "El elemento de la fila 3 y columna 3 es igual a 8"</code></pre>
 </div>
 </div>
 <p>¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de <em>repeticiones</em> que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando <code>i = 1</code> y <code>j = 1</code>.</p>
-<hr>
 </section>
 </section>
 <section id="algunos-consejos" class="level3">
@@ -818,7 +814,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Pensar en modo tabla</strong>. Si lo que quiero es obtener resultados en forma de tabla, una buena estrategia es generar la tabla con la o las columnas vacías. Luego, utilizamos un ciclo <code>for</code> para <em>ir rellenando</em> cada fila de las columnas creadas. Si lo pensamos así, nuestros ciclos <code>for</code> tendrán la siguiente forma general: <code>for (i in 1:nrow(mi_tabla)) {mi código a ejecutar}</code>.</p></li>
 <li><p><strong>El error como parte del proceso</strong>. Es normal que aparezcan errores todo el tiempo, pero es clave aprender a leer y comprender los mensajes de error. Estos mensajes suelen indicar exactamente qué está fallando y dónde.</p></li>
 </ul>
-<hr>
 </section>
 <section id="ejercicio-final" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-final">Ejercicio Final</h3>
@@ -837,19 +832,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Luego, evalúe modelos lineales que relacionen a la variable <code>Petal.Length</code> con la variable <code>Sepal.Length</code> en ese orden, para cada especie. Rellene la tabla generada anteriormente con los valores de los coeficientes (llamado <code>Estimate</code> o coeficiente de la variable predictora) y su valor-P (<code>P.value</code>) en cada caso. Para hacer esto, utilice alguna estructura de control de flujo aprendida!</p>
 <p><em>Ayuda</em>: utilice la función <code>lm()</code> para construir los modelos lineales. La salida de la función <code>summary()</code>, que actúa sobre el modelo (salida de <code>lm()</code>), contiene la información sobre los coeficientes que necesitamos.</p>
-<hr>
 <p align="center">
 </p><p><a href="pics/meme.jpg" target="_blank"> <img src="pics/meme.jpg" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a></p>
 <p></p>
-<hr>
 </section>
-<section id="ejercicio-extra" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-extra">Ejercicio Extra</h3>
+</section>
+<section id="ejercicio-extra" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-extra">Ejercicio Extra</h2>
 <p>Cuando vimos los condicionales, armamos un código para <a href="#anch1">evaluar en 3 escenarios diferentes</a> los gastos que realizaron Andrea y Ariel. Ahora que sabe usar bucles, escriba un código que evalué en una sola ejecución todos los escenarios planteados en ese ejercicio y que utilice todos los constructos aprendidos, es decir: <code>if</code>, <code>while</code> y <code>for</code>.</p>
 <p><em>Ayuda</em>: recuerde que los bucles <code>while</code> pueden ejecutarse indefinidamente si no imponemos condiciones para que finalicen.</p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
