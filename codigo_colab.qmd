@@ -22,7 +22,7 @@ Utilizá el siguiente formulario para enviarnos tu bloque de código de los ejer
     <input type="hidden" name="redirect" value="https://curso-statscba.github.io/fundamentos_R/success.html">
     <input type="hidden" name="access_key" value="3055f274-afac-4062-b381-0bd19e931dde" />
     <input type="hidden" name="subject" value="Se ha ingresado un nuevo código" />
-    <input type="hidden" name="from_name" value="Curso R: código entrante!" />
+    <input type="hidden" name="from_name" value="Curso R" />
     <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
 
     <div class="form-group-container">
