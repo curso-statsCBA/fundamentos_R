@@ -74,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,13 +105,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
 <link href="../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
+
 <script src="../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
+
 <script src="../site_libs/tippy-binding-0.1.0/tippy.js"></script>
+
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -391,8 +399,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Para crear una tabla desde cero, en R utilizamos la <u id="table_classes">clase</u> <code>data.frame</code>, y una función con el mismo nombre para generarla:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-98b704e57389f817745f" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-98b704e57389f817745f">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-a2f7c8092671d952eb77" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-a2f7c8092671d952eb77">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -491,6 +499,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>La función <code>rownames()</code> funciona de manera idéntica, pero para las filas.</p>
+<p>La función <code>table()</code> genera una tabla de contingencia, mostrando el número de ocurrencias de cada valor distinto en una columna. Por ejemplo, para la columna <code>Species</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(iris<span class="sc">$</span>Species)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    setosa versicolor  virginica 
+        50         50         50 </code></pre>
+</div>
+</div>
 <p>Al importar un dataset, una buena práctica es realizar una exploración inicial de la estructura de la tabla, especialmente sus columnas y nombres. La importación incorrecta de datasets es una fuente de error muy frecuente.</p>
 </section>
 <section id="manipulación-de-tablas" class="level2">
@@ -500,13 +517,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="indexación-y-filtrado">Indexación y filtrado</h3>
 <p>Los corchetes son muy versátiles para manipular y extraer datos de un <code>data.frame</code>. La sintaxis general es <code>data[filas, columnas]</code>, siendo posible indicar índices, expresiones lógicas o nombres de columnas para obtener un subconjunto de datos (i.e.&nbsp;un subset).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>iris_sub <span class="ot">&lt;-</span> iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>iris_sub <span class="ot">&lt;-</span> iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Aquí, generamos un nuevo dataset con sólo las 5 primeras filas de la tabla <code>iris</code>. Notar que al mismo tiempo que se realiza el filtrado, lo asigno a un nuevo objeto. Si la asignación no se realiza, el objeto no queda guardado en el entorno, pero es útil si queremos probar rápidamente alguna línea de código, sin necesidad de generar un nuevo objeto.</p>
 <p>Ahora, generamos un nuevo dataset que contiene sólo las columnas <code>"Species"</code> y <code>"Sepal.Length"</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>iris_sub2 <span class="ot">&lt;-</span> iris[, <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Sepal.Length"</span>)]</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_sub2)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>iris_sub2 <span class="ot">&lt;-</span> iris[, <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Sepal.Length"</span>)]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_sub2)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Species Sepal.Length
 1  setosa          5.1
@@ -520,8 +537,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Notar que la nueva tabla mantiene la identidad pero también el orden de las columnas indicadas en la sintaxis. Por lo tanto, esta sintaxis también puede utilizarse para cambiar el orden de las columnas, pudiendo indicar el nombre (como en el ejemplo) o los índices (para este ejemplo sería <code>c(5, 1)</code>).</p>
 <p>La función <code>order()</code> permite ordenar una tabla de acuerdo a los valores de una columna o más columnas:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> iris[<span class="fu">order</span>(iris<span class="sc">$</span>Sepal.Length), ]</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris, <span class="dv">10</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> iris[<span class="fu">order</span>(iris<span class="sc">$</span>Sepal.Length), ]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris, <span class="dv">10</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 14          4.3         3.0          1.1         0.1  setosa
@@ -536,12 +553,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 3           4.7         3.2          1.3         0.2  setosa</code></pre>
 </div>
 </div>
-<p>Para seleccionar una columna de una table utilizamos la sintaxis <code>tabla$columna</code>.</p>
+<p>Para seleccionar una columna de una tabla utilizamos la sintaxis <code>tabla$columna</code>.</p>
 <p>En esto contexto, la expresión <code>order(iris$Sepal.Length)</code> genera nuevos índices para cada fila, indicando que nueva posición deberían ocupar para que la tabla quede ordenada. Por defecto, <code>order()</code> ordena de manera creciente. Indicando <code>decreasing = TRUE</code> se ordena la tabla de manera decreciente.</p>
 <p>Es posible indicar una ordenación por más de una columna:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> iris[<span class="fu">order</span>(iris<span class="sc">$</span>Species, iris<span class="sc">$</span>Sepal.Length, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris, <span class="dv">10</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> iris[<span class="fu">order</span>(iris<span class="sc">$</span>Species, iris<span class="sc">$</span>Sepal.Length, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris, <span class="dv">10</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
 132          7.9         3.8          6.4         2.0 virginica
@@ -558,8 +575,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Es posible obtener subconjuntos de datos que cumplan con ciertas condiciones. Las condiciones, en general, serán sobre los datos contenidos en las filas.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>iris_sub3 <span class="ot">&lt;-</span> iris[iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>, ]</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_sub3)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>iris_sub3 <span class="ot">&lt;-</span> iris[iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>, ]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_sub3)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
 132          7.9         3.8          6.4         2.0 virginica
@@ -572,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Aquí estamos seleccionando aquellas filas para los cuales <code>Sepal.Length</code> es mayor a 5. ¿Por qué esta sintáxis tan rara? En realidad, lo que estamos haciendo es indicar una expresión lógica para las filas, especificando el nombre de la tabla y la columna (es un vector!) mediante el operador <code>$</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
  [13]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
@@ -591,8 +608,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Es posible, entonces, indicar cualquier expresión lógica referida a una o más columnas de la tabla. El mismo filtrado puede realizarse mediante la función <code>subset()</code>, siendo este método un poco menos “engorroso”:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>iris_sub3 <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_sub3)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>iris_sub3 <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_sub3)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
 132          7.9         3.8          6.4         2.0 virginica
@@ -606,8 +623,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>El primer argumento indica el conjunto de datos a utilizar, y el segundo argumento la expresión a aplicar para filtrar dicho conjunto de datos. Notar que no es necesario aclarar la sintaxis <code>iris$Sepal.Length</code>. Esto es hace más fácil la escritura cuando haya que indicar múltiples condiciones lógicas.</p>
 <p>El argumento <code>select</code> permite además seleccionar una o más columnas a dejar luego del filtro:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>iris_sub4 <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Sepal.Width"</span>))</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_sub4)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>iris_sub4 <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Sepal.Width"</span>))</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_sub4)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Species Sepal.Width
 132 virginica         3.8
@@ -620,13 +637,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>¿Cómo modificamos el contenido de una tabla? Para ello, debemos primero seleccionar qué campos queremos modificar, y luego asignarle el nuevo contenido. Por ejemplo, si quisiéramos cambiar el nombre de una de las especies por un sinónimo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Species[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span>] <span class="ot">&lt;-</span> <span class="st">"arctica"</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Species[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span>] <span class="ot">&lt;-</span> <span class="st">"arctica"</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Analicemos con cuidado esta expresión. La primera parte, <code>iris$Species</code>, indica la columna <code>Species</code>. Es decir, selecciono dicho el vector-columna. Entre corchetes indico una expresión lógica para seleccionar todos aquellos elementos del vector en donde dicha expresión sea verdadera. En este caso, donde el vector <code>iris$Species</code> sea igual (<code>==</code>) a <code>"setosa"</code>. Finalmente, le asignamos el valor <code>"arctica"</code>. Dado que queremos un único valor para todos los campos, no es necesario asignar un vector con elementos repetidos para <code>"arctica"</code>.</p>
 <p><strong>Para pensar:</strong> ¿Por qué no hay coma en la sintaxis de filtrado anterior?</p>
 <p>Podemos corroborar que se ha modificado la tabla con la función <code>unique()</code>, que devuelve los valores únicos para un objeto dado:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(iris<span class="sc">$</span>Species)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(iris<span class="sc">$</span>Species)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "virginica"  "versicolor" "arctica"   </code></pre>
 </div>
@@ -647,8 +664,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="creación-de-nuevas-columnas">Creación de nuevas columnas</h2>
 <p>Para agregar una nueva columna utilizamos la sintaxis <code>data$nueva_columna</code>. La columna debe asociarse a un contenido, las filas, mediante el operador de asignación. Lo que hacemos es agregar un nuevo vector-columna a la colección de vectores-columnas que es el <code>data.frame</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Seed.set <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Seed.set <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species Seed.set
 1          5.1         3.5          1.4         0.2  setosa       NA
@@ -662,8 +679,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Vemos que se ha generado una nueva columna con campos igual a <code>NA</code> (no dato). Crear una columna con datos vacíos de esta manera puede llegar a ser útil para luego <em>ir rellenando</em> cada fila de acuerdo al contenido de otras columnas. Spoiler: el control de flujo podría ser útil para esta tarea.</p>
 <p>La siguiente línea genera una nueva columna a partir del cociente de otras dos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.Petal.ratio <span class="ot">&lt;-</span> iris<span class="sc">$</span>Sepal.Length<span class="sc">/</span>iris<span class="sc">$</span>Petal.Length</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.Petal.ratio <span class="ot">&lt;-</span> iris<span class="sc">$</span>Sepal.Length<span class="sc">/</span>iris<span class="sc">$</span>Petal.Length</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species Seed.set
 1          5.1         3.5          1.4         0.2  setosa       NA
@@ -683,8 +700,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>La función <code>ifelse()</code> es útil para generar nuevas columnas basadas en la información de columnas ya existentes. Funciona de manera similar a un “SI()” de Excel/Calc. El primer argumento establece la condición, el segundo el valor devuelto si la condición es verdadera, y el tercero si es falsa:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"Corto"</span>, <span class="st">"Largo"</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">"Corto"</span>, <span class="st">"Largo"</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species Seed.set
 1          5.1         3.5          1.4         0.2  setosa       NA
@@ -704,9 +721,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Es posible anidar la función <code>ifelse()</code> para obtener más categorías:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">&lt;</span> <span class="fl">2.8</span>, <span class="st">"Corto"</span>,</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">ifelse</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">&gt;=</span> <span class="fl">2.8</span> <span class="sc">&amp;</span> iris<span class="sc">$</span>Sepal.Width <span class="sc">&lt;</span> <span class="fl">3.3</span>, <span class="st">"Mediano"</span>, <span class="st">"Largo"</span>))</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">&lt;</span> <span class="fl">2.8</span>, <span class="st">"Corto"</span>,</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">ifelse</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">&gt;=</span> <span class="fl">2.8</span> <span class="sc">&amp;</span> iris<span class="sc">$</span>Sepal.Width <span class="sc">&lt;</span> <span class="fl">3.3</span>, <span class="st">"Mediano"</span>, <span class="st">"Largo"</span>))</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species Seed.set
 1          5.1         3.5          1.4         0.2  setosa       NA
@@ -727,8 +744,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Traducción en palabras: Si el largo del sépalo es menor a 2.8, clasificarlo como “Corto”. En caso contrario, si es mayor o igual a 2.8 Y menor a 3.3, clasificarlo como “Mediano”; si no es así, clasificarlo como “Largo”.</p>
 <p>Con la función <code>factor()</code>, es posible aisgnarle a un vector-columna la clase de <code>factor</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(iris<span class="sc">$</span>Sepal.width.cat2)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat2</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(iris<span class="sc">$</span>Sepal.width.cat2)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat2</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1] Largo   Mediano Mediano Mediano Largo   Largo   Largo   Largo   Mediano
  [10] Mediano Largo   Largo   Mediano Mediano Largo   Largo   Largo   Largo  
@@ -753,8 +770,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Recordemos, como vimos en la clase de <a href="../unidad1/Vectores.html">Vectores</a>, que al indicar un factor es posible también indicar el orden de sus niveles. Esto también aplica en el contexto de manipulación de tablas.</p>
 <p>No obstante, a la hora de generar vectores (aquí asociados a una tabla), la función <code>cut()</code> es más adecuada. Esta función divide el rango de valores de un vector en intervalos específicos, y define nombres para cada intervalo. Por ejemplo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat4 <span class="ot">&lt;-</span> <span class="fu">cut</span>(<span class="at">x =</span> iris<span class="sc">$</span>Sepal.Width, <span class="at">breaks =</span> <span class="dv">3</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Corto"</span>, <span class="st">"Mediano"</span>, <span class="st">"Largo"</span>))</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat4 <span class="ot">&lt;-</span> <span class="fu">cut</span>(<span class="at">x =</span> iris<span class="sc">$</span>Sepal.Width, <span class="at">breaks =</span> <span class="dv">3</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Corto"</span>, <span class="st">"Mediano"</span>, <span class="st">"Largo"</span>))</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species Seed.set
 1          5.1         3.5          1.4         0.2  setosa       NA
@@ -775,7 +792,7 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Aquí, creamos una nueva columna, construida a partir de los valores de la columna <code>Sepal.Width</code>. Mediante <code>breaks = 3</code>, indicamos que el rango de valores de <code>Sepal.Width</code> se divida en 3 partes iguales, y definimos los nombres para cada intervalo en el argumento <code>labels</code>. El argumento <code>breaks</code> también admite un vector numérico con los valores que dividirán los intervalos generados.</p>
 <p>La función <code>cut()</code> devuelve un factor con niveles, adecuado en contextos de análisis estadísticos y graficación:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris<span class="sc">$</span>Sepal.width.cat4)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(iris<span class="sc">$</span>Sepal.width.cat4)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "factor"</code></pre>
 </div>
@@ -790,11 +807,11 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Las funciones <code>rbind()</code> y <code>cbind()</code> permiten añadir filas (“r” de “row”) y columnas (“c” de “column”) a un <code>data.frame</code>, respectivamente.</p>
 <p>A modo de ejemplo, importaremos un <code>data.frame</code> conteniendo las medidas de variables florales (inventadas para el ejemplo) para la especie <em>Iris florentina</em>. Asimismo, cargamos nuevamente la tavla <code>iris</code> con la estructura y datos originales:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos nuevamente la tabla con la estructura y datos originales</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris.csv"</span>)</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos la nueva tabla</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>iris_fl <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris_florentina.csv"</span>)</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_fl)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos nuevamente la tabla con la estructura y datos originales</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris.csv"</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos la nueva tabla</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>iris_fl <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris_florentina.csv"</span>)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_fl)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
 1          6.9         2.5          3.8         1.6 florentina
@@ -807,11 +824,11 @@ Levels: Corto Largo Mediano</code></pre>
 </div>
 <p>Podemos ver que tiene la misma cantidad de columnas y los mismos nombres que la tabla original con la que venimos trabajando. Lo lógico sería unir estas dos tablas mediante <code>rbind()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>iris_new <span class="ot">&lt;-</span> <span class="fu">rbind</span>(iris, iris_fl)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>iris_new <span class="ot">&lt;-</span> <span class="fu">rbind</span>(iris, iris_fl)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>La exploración de las últimas filas de la nueva tabla comprueban que hemos hecho la unión correctamente:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(iris_new)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(iris_new)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
 451          5.1         3.2          4.0         0.6 florentina
@@ -826,8 +843,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>De manera similar, la función <code>cbind()</code> une tablas a lo largo de sus columnas, y su sintaxis tiene la forma de <code>cbind(tabla1, tabla2)</code>. Lógicamente, el número de filas de ambas tablas debe ser el mismo, de lo contraria obtendremos una advertencia o un error.</p>
 <p>Usualmente, la información está repartida en más de una tabla. ¿Cómo generamos una nueva tabla que reúna toda la información junta? Para ello utilizamos la función <code>merge()</code> (fusionar/combinar). A modo de ejemplo, cargamos una nueva tabla con los nombres comunes de las especies de <em>Iris</em> con las que venimos trabajando:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>iris_names <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris_common_names.csv"</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>iris_names</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>iris_names <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris_common_names.csv"</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>iris_names</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Species           Common.name
 1     setosa Iris de punta erizada
@@ -838,8 +855,8 @@ Levels: Corto Largo Mediano</code></pre>
 </div>
 <p>Vemos que la tabla tiene dos columnas, una para la especie y otra para el nombre común. La idea sería agregar a la tabla generada anteriormente <code>iris_new</code> una nueva columna con los nombres comunes, repetidos para cada fila correspondiente. Hacerlo manualmente no es viable, siendo la función <code>merge()</code> la adecuada para esta tarea:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>iris_new2 <span class="ot">&lt;-</span> <span class="fu">merge</span>(iris_new, iris_names, <span class="at">by =</span> <span class="st">"Species"</span>)</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_new2)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>iris_new2 <span class="ot">&lt;-</span> <span class="fu">merge</span>(iris_new, iris_names, <span class="at">by =</span> <span class="st">"Species"</span>)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_new2)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Species Sepal.Length Sepal.Width Petal.Length Petal.Width Common.name
 1 florentina          6.9         2.5          3.8         1.6 Iris blanca
@@ -856,8 +873,8 @@ Levels: Corto Largo Mediano</code></pre>
 <h3 class="anchored" data-anchor-id="cálculo-de-estadísticas-sobre-tablas">Cálculo de estadísticas sobre tablas</h3>
 <p>La función <code>aggregate()</code> es útil para generar tablas con estadísticas de resumen de acuerdo a los niveles de un determinado factor. Por ejemplo, para calcular el valor medio de la longitud del sépalo para cada especie utilizamos la siguiente sintaxis:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>iris_mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(Sepal.Width <span class="sc">~</span> Species, <span class="at">data =</span> iris, <span class="at">FUN =</span> mean)</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>iris_mean</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>iris_mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(Sepal.Width <span class="sc">~</span> Species, <span class="at">data =</span> iris, <span class="at">FUN =</span> mean)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>iris_mean</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Species Sepal.Width
 1     setosa       3.428
@@ -868,8 +885,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>El primer argumento indica una fórmula con la sintaxis <code>variable ~ factor</code>, el segundo el <code>data.frame</code> de referencia y el tercero la función a aplicar. Esta función debe existir en el entorno, tanto por defecto (las cuales no aparecen visibles, como <code>mean()</code> o <code>sd()</code>) o programadas por el usuario.</p>
 <p>No es útil que la columna de esta nueva tabla se siga llamando <code>Sepal.Width</code>. Podemos cambiarla asignando un nuevo nombre al vector generado con la función <code>colnames()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris_mean) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Sepal.Width.mean"</span>)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>iris_mean</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris_mean) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Sepal.Width.mean"</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>iris_mean</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Species Sepal.Width.mean
 1     setosa            3.428
@@ -880,8 +897,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p><strong>Para pensar:</strong> Aquí debí aclarar “Species” para la primera columna, que no cambia de nombre. ¿Cuál podría ser la línea de código para cambiar únicamente la segunda columna?</p>
 <p>Para calcular la media de varias variables en una misma línea de código, utilizamos la función <code>cbind()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>iris_mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="fu">cbind</span>(Sepal.Length, Sepal.Width) <span class="sc">~</span> Species, <span class="at">data =</span> iris, <span class="at">FUN =</span> mean)</span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>iris_mean</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>iris_mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="fu">cbind</span>(Sepal.Length, Sepal.Width) <span class="sc">~</span> Species, <span class="at">data =</span> iris, <span class="at">FUN =</span> mean)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>iris_mean</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Species Sepal.Length Sepal.Width
 1     setosa        5.006       3.428
@@ -891,8 +908,8 @@ Levels: Corto Largo Mediano</code></pre>
 </div>
 <p>El uso del punto <code>.</code> es útil para hacer el cálculo sobre todas las columnas del dataset, a excepción de la definida a la derecha de <code>~</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>iris_mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> Species, <span class="at">data =</span> iris, <span class="at">FUN =</span> mean)</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>iris_mean</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>iris_mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> Species, <span class="at">data =</span> iris, <span class="at">FUN =</span> mean)</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>iris_mean</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Species Sepal.Length Sepal.Width Petal.Length Petal.Width
 1     setosa        5.006       3.428        1.462       0.246
@@ -910,7 +927,7 @@ Levels: Corto Largo Mediano</code></pre>
 <h2 class="anchored" data-anchor-id="exportación-de-tablas">Exportación de tablas</h2>
 <p>La exportación de un <code>data.frame</code> se realiza con <code>write.table</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(iris_mean, <span class="at">file =</span> <span class="st">"iris.mean.csv"</span>, <span class="at">row.names =</span> F)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(iris_mean, <span class="at">file =</span> <span class="st">"iris.mean.csv"</span>, <span class="at">row.names =</span> F)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Análogamente a las funciones de importación, también disponemos de las funciones <code>write.csv()</code> y <code>write.csv2</code>.</p>
 </section>
@@ -921,8 +938,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Las matrices en R pertenecen a la clase <code>matrix</code>. Es una colección de datos agrupados en filas y columnas y, si bien admiten objetos de distinto tipo, en general se utilizan para almacenar números. La utilidad principal de una matriz, a diferencia de un <code>data.frame</code>, es que permite operaciones matemáticas propias. Por ello, es un objeto fundamental para el análisis estadístico en múltiples disciplinas.</p>
 <p>Para crear una matriz en R, utilizamos la función <code>matrix()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">nrow =</span> <span class="dv">5</span>)</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">nrow =</span> <span class="dv">5</span>)</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
 [1,]    1    6   11   16   21
@@ -934,8 +951,8 @@ Levels: Corto Largo Mediano</code></pre>
 </div>
 <p>El primer argumento indica los elementos que contendrá la matriz. En este caso, se utiliza la sucesión de números enteros desde el 1 al 25. Los argumentos <code>ncol</code> y <code>nrow</code> indican el número de columnas y filas correspondientes para generar la matriz. Un detalle importante es la forma en la que los elementos de la matriz se van <em>rellenando</em>. Por defecto, los datos se van agregando por columnas. En cambio, si se indica <code>byrow = TRUE</code>, los datos se agregan por fila:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
 [1,]    1    2    3    4    5
@@ -947,7 +964,7 @@ Levels: Corto Largo Mediano</code></pre>
 </div>
 <p>La función <code>dim()</code> nos indica el número de filas y columnas de la matriz:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mat)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mat)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5 5</code></pre>
 </div>
@@ -955,7 +972,7 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Al igual que para la clase <code>data.frame</code>, las funciones <code>nrow()</code> y <code>ncol()</code> indican el número de filas y columnas de una matriz.</p>
 <p>Los corchetes son los operadores indicados para acceder a los elementos de una matriz, indicando los índices para las filas y las columnas separado por una coma:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>mat[<span class="dv">2</span>, <span class="dv">3</span>]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>mat[<span class="dv">2</span>, <span class="dv">3</span>]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8</code></pre>
 </div>
@@ -966,13 +983,13 @@ Levels: Corto Largo Mediano</code></pre>
 <h3 class="anchored" data-anchor-id="listas">Listas</h3>
 <p>Una gran parte de diversos paquetes de R contienen funciones cuyas salidas son estructuras más complejas que las aprendidas hasta ahora. Un tipo de estas estructuras es la lista; estos son objetos de clase <code>list</code>. Es una colección de objetos de cualquier tipo. Por ejemplo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>iris_info <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">data =</span> iris,</span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">mean_stats =</span> iris_mean,</span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">year_of_creation =</span> <span class="dv">2024</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>iris_info <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">data =</span> iris,</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">mean_stats =</span> iris_mean,</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">year_of_creation =</span> <span class="dv">2024</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>La información guardada en una lista se accede mediante el operador <code>$</code>, si es que los elementos de la lista a acceder tienen asociado un nombre:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>iris_info<span class="sc">$</span>mean_stats</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>iris_info<span class="sc">$</span>mean_stats</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Species Sepal.Length Sepal.Width Petal.Length Petal.Width
 1     setosa        5.006       3.428        1.462       0.246
@@ -982,7 +999,7 @@ Levels: Corto Largo Mediano</code></pre>
 </div>
 <p>También es posible acceder a la información de un elemento de una lista indicando el índice del elemento entre corchetes dobles:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>iris_info[[<span class="dv">3</span>]]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>iris_info[[<span class="dv">3</span>]]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2024</code></pre>
 </div>
@@ -990,8 +1007,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>La estructura y parte del contenido de una lista también puede desplegarse en el panel de entorno.</p>
 <p>Es posible modificar el contenido de un elemento de la lista, incluso indicando un elemento de otra clase:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>iris_info<span class="sc">$</span>year_of_creation <span class="ot">&lt;-</span> <span class="st">"Dos mil veinticuatro"</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>iris_info<span class="sc">$</span>year_of_creation</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>iris_info<span class="sc">$</span>year_of_creation <span class="ot">&lt;-</span> <span class="st">"Dos mil veinticuatro"</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>iris_info<span class="sc">$</span>year_of_creation</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Dos mil veinticuatro"</code></pre>
 </div>
@@ -999,13 +1016,13 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-b4bde5c236782fa4cd4c" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-b4bde5c236782fa4cd4c">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-f8dd40364f8823d24bb5" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-f8dd40364f8823d24bb5">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Sepal.Length <span class="sc">~</span> Petal.Length, <span class="at">data =</span> iris)</span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.list</span>(mod)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Sepal.Length <span class="sc">~</span> Petal.Length, <span class="at">data =</span> iris)</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.list</span>(mod)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -1013,8 +1030,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Aquí, en el primer argumento, indicamos para modelar la variable <code>Sepal.Length</code> en función de la variable <code>Petal.Length</code>. El símbolo <code>~</code> (virgulilla) es el indicado para expresar la fórmula. En el argumento <code>data</code> indicamos el <code>data.frame</code> de referencia. Por otro lado, la función <code>is.list()</code> devuelve <code>TRUE</code> si el objeto indicado es de clase <code>list</code>.</p>
 <p>La función <code>summary()</code> devuelve información relevante sobre el modelo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>mod_summ <span class="ot">&lt;-</span> <span class="fu">summary</span>(mod)</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>mod_summ</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>mod_summ <span class="ot">&lt;-</span> <span class="fu">summary</span>(mod)</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>mod_summ</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1038,14 +1055,14 @@ F-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>Que también guarda la información en una lista:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.list</span>(mod_summ)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.list</span>(mod_summ)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
 <p>Es posible acceder a los coeficientes del modelo, en forma de tabla, explorando la salida de <code>summary()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>mod_summ<span class="sc">$</span>coefficients</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>mod_summ<span class="sc">$</span>coefficients</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              Estimate Std. Error  t value      Pr(&gt;|t|)
 (Intercept)  4.3066034 0.07838896 54.93890 2.426713e-100
@@ -1076,6 +1093,7 @@ Petal.Length 0.4089223 0.01889134 21.64602  1.038667e-47</code></pre>
 <li>Cargue la tabla del archivo “analisis_tierra2.csv”, la cual muestra los resultados realizados por otra técnica (Claudia). Incorpore estos nuevos datos a la tabla anterior. Es necesario corregir algunos errores antes de hacer esto <img src="pics/emoticon1.png" width="20" height="20">. Entre ellos, los números asignados a cada muestra deben cambiarse, para que estos no coincidan con los números de muestra de la tabla anterior.</li>
 <li>Ordene la tabla según la Parcela (orden alfabético) y por valores crecientes en la cantidad de N, en ese orden!</li>
 <li>Exprese a la columna “Tecnico” como factor.</li>
+<li>Genere una tabla de contingencia considerando la variable “Tecnico” y “Parcela”.</li>
 <li>Genere una tabla resumen con los valores medios de N, C y Ca por Parcela, y otra con los valores de desviación estándar de N, C y Ca por Técnico. Exporte dichas tablas resumen.</li>
 </ol>
 <p><br></p>
