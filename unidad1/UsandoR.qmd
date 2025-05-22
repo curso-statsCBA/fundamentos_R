@@ -47,7 +47,7 @@ Como al usar R de esta forma solo podremos ir ejecutando de a una orden a la vez
 
 Finalmente, si deseamos salir de la sesión de R activa, podemos utilizar la función `quit()` (o su forma abreviada `q()`), a lo que R responderá preguntando si queremos guardar una <i>imagen del espacio de trabajo</i>, a lo que responderemos que NO ingresando `n`. Esto cerrara cualquier ventana gráfica que hubiera abierta, así como en nuestra terminal veremos que el <i>prompt</i> vuelve a ser el de nuestro sistema.
 
-####  {#anch1}
+<span id="anch1"></span>
 
 <p align="center">
 
@@ -111,7 +111,7 @@ Una de las primeras nociones sobre las <i>buenas prácticas</i> de trabajo es in
 
 Cuando trabajamos con RStudio, esto último puede ser muy sencillo de realizar utilizando los *proyectos*, que no son otra cosa más que una forma de mantener nuestro trabajo en un contexto dado, con su propio directorio de trabajo, historial, rutinas, entradas, salidas, etc. De esta forma, pensemos por ejemplo en una organización con una estructura hipotética similar a la siguiente:
 
-####  {#anch2}
+<span id="anch2"></span>
 
 ```         
 AnalisisTesis
@@ -405,7 +405,7 @@ A medida que usemos R nos surgirá la necesidad de instalar paquetes por fuera d
 
 La forma más sencilla de instalar paquetes es usando la función `install.packages()`, indicando en el argumento de la función el nombre del paquete. Si no recordamos exactamente el nombre, podemos hacer uso de la función de autocompletado (con la tecla `Tab ↹`). También podemos utilizar el botón ![](pics/r_inst_but.png){width="20"} para instalar paquetes, en el área correspondiente de RStudio. Si usamos esta última forma, se abrirá una ventana de diálogo, donde podemos indicar el nombre del paquete a instalar.
 
-####  {#anch3}
+<span id="anch3"></span>
 
 <p align="center">
 

@@ -104,8 +104,6 @@ if (a > 10) {
 
 **Para pensar:** ¿Qué sucede si ***a*** **\<= 10**? ¿Qué podemos aprender de esta situación? ¿Cómo podríamos salvar el inconveniente?
 
-####  {#anch1}
-
 ### Ejercicio 2
 
 Andrea y Ariel fueron a hacer compras, construya con código que indique quién gastó más dinero y de cuanto es la diferencia. El mismo código debe servir para evaluar los tres escenarios siguientes:
@@ -156,7 +154,7 @@ while (i < 4) {
 
 **Atención!!!** Si en el bucle precedente omitimos incrementar el contador `i`, nuestro bucle se ejecutará indefinidamente.
 
-####  {#anch2}
+<span id="anch2"></span>
 
 #### *While en vectores u otros iterables*
 
@@ -317,7 +315,24 @@ for (i in letras) {
 }
 ```
 
-#### <ins>Ejercicio 4</ins>
+#### *`for` anidados y matrices*
+
+El uso de `for` anidados es muy útil para trabajar con matrices:
+
+```{r}
+mat <- matrix(sample(1:100, size = 9), ncol = 3)
+mat
+
+for (i in 1:nrow(mat)) {
+  for( j in 1:ncol(mat)) {
+    print(paste("El elemento de la fila", i, "y columna", j, "es igual a", mat[i, j]))
+  }
+}
+```
+
+¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de *repeticiones* que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando `i = 1` y `j = 1`.
+
+### Ejercicio 4
 
 ```{r}
 all_num <- c(17, 6, -12, 38, -88, 147, 1, -140, -19, 24, 74, -36)
@@ -325,7 +340,27 @@ all_num <- c(17, 6, -12, 38, -88, 147, 1, -140, -19, 24, 74, -36)
 
 Escriba un código que separe los números positivos y los negativos del vector proporcionado en diferentes vectores. Imprima dichos vectores identificando su condición (positivo o negativo) y ordenados de menor a mayor.
 
-*Ayuda*: ejecute el siguiente código previamente y vea que aprende con ello.
+*Ayuda*: 
+
+Un vector numérico vacío puede generarse de la siguiente manera:
+
+```{r eval=FALSE}
+vec <- vector(mode = "numeric")
+```
+
+O de la siguiente forma:
+
+```{r eval=FALSE}
+vec <- numeric()
+```
+
+Luego, recordemos que, como vimos en la clase de vectores, un vector vacío puede rellenarse (y actualizar sus valores) con el operador `c()`. Por ejemplo:
+
+```{r eval=FALSE}
+vec <- c(vec, 42)
+```
+
+Ejecute el siguiente código previamente y vea que aprende con ello.
 
 ```{r eval=FALSE}
 ej1 <- c(3,1,2)
@@ -348,23 +383,6 @@ for (n in all_num) {
 }
 cat("Positivos:", sort(pos), "Negativos:", sort(neg))
 ```
-
-#### *`for` anidados y matrices*
-
-El uso de `for` anidados es muy útil para trabajar con matrices:
-
-```{r}
-mat <- matrix(sample(1:100, size = 9), ncol = 3)
-mat
-
-for (i in 1:nrow(mat)) {
-  for( j in 1:ncol(mat)) {
-    print(paste("El elemento de la fila", i, "y columna", j, "es igual a", mat[i, j]))
-  }
-}
-```
-
-¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de *repeticiones* que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando `i = 1` y `j = 1`.
 
 ### Algunos consejos...
 
@@ -424,7 +442,7 @@ for (sp in unique(iris$Species)){
 
 ## Ejercicio Extra
 
-Cuando vimos los condicionales, armamos un código para [evaluar en 3 escenarios diferentes](#anch1) los gastos que realizaron Andrea y Ariel. Ahora que sabe usar bucles, escriba un código que evalué en una sola ejecución todos los escenarios planteados en ese ejercicio y que utilice todos los constructos aprendidos, es decir: `if`, `while` y `for`.
+Cuando vimos los condicionales, armamos un código para [evaluar en 3 escenarios diferentes](#ejercicio-2) los gastos que realizaron Andrea y Ariel. Ahora que sabe usar bucles, escriba un código que evalué en una sola ejecución todos los escenarios planteados en ese ejercicio y que utilice todos los constructos aprendidos, es decir: `if`, `while` y `for`.
 
 *Ayuda*: recuerde que los bucles `while` pueden ejecutarse indefinidamente si no imponemos condiciones para que finalicen.
 
