@@ -90,6 +90,12 @@ colnames(iris)
 
 La función `rownames()` funciona de manera idéntica, pero para las filas.
 
+La función `table()` genera una tabla de contingencia, mostrando el número de ocurrencias de cada valor distinto en una columna. Por ejemplo, para la columna `Species`:
+
+```{r}
+table(iris$Species)
+```
+
 Al importar un dataset, una buena práctica es realizar una exploración inicial de la estructura de la tabla, especialmente sus columnas y nombres. La importación incorrecta de datasets es una fuente de error muy frecuente.
 
 ## Manipulación de tablas
@@ -122,7 +128,7 @@ iris <- iris[order(iris$Sepal.Length), ]
 head(iris, 10)
 ```
 
-Para seleccionar una columna de una table utilizamos la sintaxis `tabla$columna`.
+Para seleccionar una columna de una tabla utilizamos la sintaxis `tabla$columna`.
 
 En esto contexto, la expresión `order(iris$Sepal.Length)` genera nuevos índices para cada fila, indicando que nueva posición deberían ocupar para que la tabla quede ordenada. Por defecto, `order()` ordena de manera creciente. Indicando `decreasing = TRUE` se ordena la tabla de manera decreciente.
 
@@ -474,7 +480,8 @@ El presente curso está orientado a entender los fundamentos básicos del lengua
 5.  Cargue la tabla del archivo "analisis_tierra2.csv", la cual muestra los resultados realizados por otra técnica (Claudia). Incorpore estos nuevos datos a la tabla anterior. Es necesario corregir algunos errores antes de hacer esto <img src="pics/emoticon1.png" width="20" height="20"/>. Entre ellos, los números asignados a cada muestra deben cambiarse, para que estos no coincidan con los números de muestra de la tabla anterior.
 6.  Ordene la tabla según la Parcela (orden alfabético) y por valores crecientes en la cantidad de N, en ese orden!
 7.  Exprese a la columna "Tecnico" como factor.
-8.  Genere una tabla resumen con los valores medios de N, C y Ca por Parcela, y otra con los valores de desviación estándar de N, C y Ca por Técnico. Exporte dichas tablas resumen.
+8. Genere una tabla de contingencia considerando la variable "Tecnico" y "Parcela".
+9.  Genere una tabla resumen con los valores medios de N, C y Ca por Parcela, y otra con los valores de desviación estándar de N, C y Ca por Técnico. Exporte dichas tablas resumen.
 
 <br>
 

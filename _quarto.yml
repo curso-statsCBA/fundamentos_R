@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    -  "unidad2/data/"
 
 website:
   #title: "Fundamentos básicos del lenguaje R"
