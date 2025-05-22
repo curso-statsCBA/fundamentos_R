@@ -338,6 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while">While …</a></li>
   <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
   <li><a href="#for-in" id="toc-for-in" class="nav-link" data-scroll-target="#for-in">For … in …</a></li>
+  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4">Ejercicio 4</a></li>
   <li><a href="#algunos-consejos" id="toc-algunos-consejos" class="nav-link" data-scroll-target="#algunos-consejos">Algunos consejos…</a></li>
   <li><a href="#ejercicio-final" id="toc-ejercicio-final" class="nav-link" data-scroll-target="#ejercicio-final">Ejercicio Final</a></li>
   </ul></li>
@@ -473,9 +474,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Para pensar:</strong> ¿Qué sucede si <strong><em>a</em></strong> <strong>&lt;= 10</strong>? ¿Qué podemos aprender de esta situación? ¿Cómo podríamos salvar el inconveniente?</p>
 </section>
-<section id="anch1" class="level4">
-<h4 class="anchored" data-anchor-id="anch1"></h4>
-</section>
 </section>
 <section id="ejercicio-2" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
@@ -517,9 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>Atención!!!</strong> Si en el bucle precedente omitimos incrementar el contador <code>i</code>, nuestro bucle se ejecutará indefinidamente.</p>
-<section id="anch2" class="level4">
-<h4 class="anchored" data-anchor-id="anch2"></h4>
-</section>
+<p><span id="anch2"></span></p>
 <section id="while-en-vectores-u-otros-iterables" class="level4">
 <h4 class="anchored" data-anchor-id="while-en-vectores-u-otros-iterables"><em>While en vectores u otros iterables</em></h4>
 <p>Teniendo en cuenta lo que aprendimos sobre el acceso a elementos de un vector, podemos utilizar un bucle <code>while</code> para acceder a los mismos. No obstante, <u>existen formas más eficientes de hacer esto y lo veremos posteriormente</u>.</p>
@@ -754,53 +750,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="ejercicio-4" class="level4">
-<h4 class="anchored" data-anchor-id="ejercicio-4"><ins>Ejercicio 4</ins></h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>all_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">6</span>, <span class="sc">-</span><span class="dv">12</span>, <span class="dv">38</span>, <span class="sc">-</span><span class="dv">88</span>, <span class="dv">147</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">140</span>, <span class="sc">-</span><span class="dv">19</span>, <span class="dv">24</span>, <span class="dv">74</span>, <span class="sc">-</span><span class="dv">36</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Escriba un código que separe los números positivos y los negativos del vector proporcionado en diferentes vectores. Imprima dichos vectores identificando su condición (positivo o negativo) y ordenados de menor a mayor.</p>
-<p><em>Ayuda</em>: ejecute el siguiente código previamente y vea que aprende con ello.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>ej1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ordenados ej1:"</span>, <span class="fu">sort</span>(ej1)))</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ej1)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>ej2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">6</span>)</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Ordenados ej2:"</span>, <span class="fu">sort</span>(ej2))</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
 <section id="for-anidados-y-matrices" class="level4">
 <h4 class="anchored" data-anchor-id="for-anidados-y-matrices"><em><code>for</code> anidados y matrices</em></h4>
 <p>El uso de <code>for</code> anidados es muy útil para trabajar con matrices:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">9</span>), <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">9</span>), <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
-[1,]   24   70   81
-[2,]   96   67   86
-[3,]   32   64   78</code></pre>
+[1,]   27   81   49
+[2,]   66    4   10
+[3,]   29    2   40</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>( j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(mat)) {</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"El elemento de la fila"</span>, i, <span class="st">"y columna"</span>, j, <span class="st">"es igual a"</span>, mat[i, j]))</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>( j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(mat)) {</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"El elemento de la fila"</span>, i, <span class="st">"y columna"</span>, j, <span class="st">"es igual a"</span>, mat[i, j]))</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 24"
-[1] "El elemento de la fila 1 y columna 2 es igual a 70"
-[1] "El elemento de la fila 1 y columna 3 es igual a 81"
-[1] "El elemento de la fila 2 y columna 1 es igual a 96"
-[1] "El elemento de la fila 2 y columna 2 es igual a 67"
-[1] "El elemento de la fila 2 y columna 3 es igual a 86"
-[1] "El elemento de la fila 3 y columna 1 es igual a 32"
-[1] "El elemento de la fila 3 y columna 2 es igual a 64"
-[1] "El elemento de la fila 3 y columna 3 es igual a 78"</code></pre>
+<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 27"
+[1] "El elemento de la fila 1 y columna 2 es igual a 81"
+[1] "El elemento de la fila 1 y columna 3 es igual a 49"
+[1] "El elemento de la fila 2 y columna 1 es igual a 66"
+[1] "El elemento de la fila 2 y columna 2 es igual a 4"
+[1] "El elemento de la fila 2 y columna 3 es igual a 10"
+[1] "El elemento de la fila 3 y columna 1 es igual a 29"
+[1] "El elemento de la fila 3 y columna 2 es igual a 2"
+[1] "El elemento de la fila 3 y columna 3 es igual a 40"</code></pre>
 </div>
 </div>
 <p>¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de <em>repeticiones</em> que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando <code>i = 1</code> y <code>j = 1</code>.</p>
 </section>
+</section>
+<section id="ejercicio-4" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>all_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">6</span>, <span class="sc">-</span><span class="dv">12</span>, <span class="dv">38</span>, <span class="sc">-</span><span class="dv">88</span>, <span class="dv">147</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">140</span>, <span class="sc">-</span><span class="dv">19</span>, <span class="dv">24</span>, <span class="dv">74</span>, <span class="sc">-</span><span class="dv">36</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Escriba un código que separe los números positivos y los negativos del vector proporcionado en diferentes vectores. Imprima dichos vectores identificando su condición (positivo o negativo) y ordenados de menor a mayor.</p>
+<p><em>Ayuda</em>:</p>
+<p>Un vector numérico vacío puede generarse de la siguiente manera:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>O de la siguiente forma:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Luego, recordemos que, como vimos en la clase de vectores, un vector vacío puede rellenarse (y actualizar sus valores) con el operador <code>c()</code>. Por ejemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(vec, <span class="dv">42</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ejecute el siguiente código previamente y vea que aprende con ello.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>ej1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ordenados ej1:"</span>, <span class="fu">sort</span>(ej1)))</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ej1)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>ej2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">6</span>)</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Ordenados ej2:"</span>, <span class="fu">sort</span>(ej2))</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="algunos-consejos" class="level3">
 <h3 class="anchored" data-anchor-id="algunos-consejos">Algunos consejos…</h3>
@@ -819,10 +828,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="ejercicio-final">Ejercicio Final</h3>
 <p>Tomando de base el conjunto de datos <code>iris</code>, construya el siguiente <code>data.frame</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>model_outputs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Species =</span> <span class="fu">unique</span>(iris<span class="sc">$</span>Species),</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">Estimate =</span> <span class="cn">NA</span>,</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">P.value =</span> <span class="cn">NA</span>)</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>model_outputs</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>model_outputs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Species =</span> <span class="fu">unique</span>(iris<span class="sc">$</span>Species),</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">Estimate =</span> <span class="cn">NA</span>,</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">P.value =</span> <span class="cn">NA</span>)</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>model_outputs</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Species Estimate P.value
 1     setosa       NA      NA
@@ -839,7 +848,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejercicio-extra" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-extra">Ejercicio Extra</h2>
-<p>Cuando vimos los condicionales, armamos un código para <a href="#anch1">evaluar en 3 escenarios diferentes</a> los gastos que realizaron Andrea y Ariel. Ahora que sabe usar bucles, escriba un código que evalué en una sola ejecución todos los escenarios planteados en ese ejercicio y que utilice todos los constructos aprendidos, es decir: <code>if</code>, <code>while</code> y <code>for</code>.</p>
+<p>Cuando vimos los condicionales, armamos un código para <a href="#ejercicio-2">evaluar en 3 escenarios diferentes</a> los gastos que realizaron Andrea y Ariel. Ahora que sabe usar bucles, escriba un código que evalué en una sola ejecución todos los escenarios planteados en ese ejercicio y que utilice todos los constructos aprendidos, es decir: <code>if</code>, <code>while</code> y <code>for</code>.</p>
 <p><em>Ayuda</em>: recuerde que los bucles <code>while</code> pueden ejecutarse indefinidamente si no imponemos condiciones para que finalicen.</p>
 
 
