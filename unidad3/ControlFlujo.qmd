@@ -11,7 +11,7 @@ En general podemos definir dos grandes tipos de estructuras para el control de f
 
 **Nota:** Antes de continuar es recomendable repasar los [operadores](../unidad1/Operadores.qmd){target="_blank"} aprendidos en el primer día de clases.
 
-### If ... else
+## If ... else
 
 El constructo `if ... else` es una estructura de tipo condicional. En pocas palabras, `if` evaluará una condición dada y si la misma se cumple (i.e. el resultado es `TRUE`), se ejecutará el código correspondiente. Para definir un bloque de código a ejecutarse si no se cumple la condición previamente establecida, utilizaremos `else`. Si además quisiéramos definir múltiples condiciones, en caso de que la primera no se cumpla y que deriven en diferentes ejecuciones, deberemos utilizar `else if`.
 
@@ -30,7 +30,7 @@ if (!TRUE) {
 }
 ```
 
-#### *Múltiples condiciones*
+### *Múltiples condiciones*
 
 En ocasiones necesitamos establecer múltiples condiciones. Ejecute el codigo siguiente varias veces, pero cambiando cada vez el valor de `a`.
 
@@ -50,7 +50,7 @@ if (a >= 40) {
 
 **Para pensar:** ¿Qué pasa cuando, por ejemplo, `a = 35`? ¿Cuántas evaluaciones independientes serían `TRUE`? ¿Qué porción de código se ejecuta y por qué?
 
-#### *And / or*
+### *And / or*
 
 Es posible agrupar diferentes evaluaciones utilizando los operadores **Y** (`&`) y **O** (`|`). Ejecute el siguiente código varias veces cambiando los valores de `a`, `b` y `c`.
 
@@ -66,7 +66,7 @@ if (a < 40 & b > 10 | c > 50) {
 }
 ```
 
-### Ejercicio 1
+## Ejercicio 1
 
 Compare el código de la celda precedente con el de aquí abajo. ¿Qué diferencias nota? Ejecútelo y explique el resultado con el obtenido usando el código previo con los mismos valores para `a`, `b` y `c`.
 
@@ -82,7 +82,7 @@ if (a < 40 & (b > 10 | c > 50)) {
 }
 ```
 
-#### *If anidados*
+### *If anidados*
 
 Recién vimos como combinar varias evaluaciones en una misma expresión, pero frecuentemente lo que necesitaremos es realizar diferentes evaluaciones de forma secuencial y ejecutar código consecuentemente a los resultados obtenidos. Para ello podemos incoporar evaluaciones dentro de una evaluación previa, es decir, anidar las evaluaciones.
 
@@ -104,7 +104,7 @@ if (a > 10) {
 
 **Para pensar:** ¿Qué sucede si ***a*** **\<= 10**? ¿Qué podemos aprender de esta situación? ¿Cómo podríamos salvar el inconveniente?
 
-### Ejercicio 2
+## Ejercicio 2 {#ejercicio-2}
 
 Andrea y Ariel fueron a hacer compras, construya con código que indique quién gastó más dinero y de cuanto es la diferencia. El mismo código debe servir para evaluar los tres escenarios siguientes:
 
@@ -140,7 +140,7 @@ Si no usáramos `paste()` obtendríamos un error:
 print("La variable vale", variable)
 ```
 
-### While ...
+## While ...
 
 El constructo `while` es una estructura de tipo bucle. En pocas palabras, evaluará una condición y ejecutará repetitivamente una porción de código siempre y cuando la misma se cumpla (i.e. el resultado sea `TRUE`).
 
@@ -154,9 +154,7 @@ while (i < 4) {
 
 **Atención!!!** Si en el bucle precedente omitimos incrementar el contador `i`, nuestro bucle se ejecutará indefinidamente.
 
-<span id="anch2"></span>
-
-#### *While en vectores u otros iterables*
+### *While en vectores u otros iterables*
 
 Teniendo en cuenta lo que aprendimos sobre el acceso a elementos de un vector, podemos utilizar un bucle `while` para acceder a los mismos. No obstante, <u>existen formas más eficientes de hacer esto y lo veremos posteriormente</u>.
 
@@ -169,7 +167,7 @@ while (i <= length(carreras)) {
 }
 ```
 
-#### *Rompiendo un bucle*
+### *Rompiendo un bucle*
 
 Si fuera necesario, podemos utilizar la declaración `break` para interrumpir la ejecución de un bucle, dada una condición establecida.
 
@@ -184,7 +182,7 @@ while (i < 12) {
 }
 ```
 
-#### *Saltando dentro de un bucle*
+### *Saltando dentro de un bucle*
 
 De forma similar podemos, dada una condición, saltearnos ciertas ejecuciones dentro de un bucle. Para ello, utilizaremos la declaración `next`.
 
@@ -201,7 +199,7 @@ while (i < 9) {
 }
 ```
 
-### Ejercicio 3
+## Ejercicio 3
 
 Analice el siguiente código **SIN EJECUTARLO** e interprete cuál es la salida esperada explicando que sucede en cada iteración. Luego escriba *a mano* la salida exacta que dará este código.
 
@@ -223,7 +221,7 @@ while (i <= length(compras)) {
 }
 ```
 
-### For ... in ...
+## For ... in ...
 
 El constructo `for` es otra estructura de tipo bucle que permite iterar sobre una colección dada de elementos. En pocas palabras, repetirá la ejecución de un mismo bloque de código tantas veces como elementos existan en dicha secuencia. Por ello, es importante recordar que su sintaxis básica es:
 
@@ -240,7 +238,7 @@ for (nombre in asistentes) {
 
 **Para reflexionar:** Compare el código de la celda precedente con el que usamos para [listar las carreras](#anch2) usando un bucle `while`. ¿Que diferencias nota? ¿Cuando usaría uno u otro constructo?
 
-#### *`for` en conjunto con `data.frame`*
+### *`for` en conjunto con `data.frame`*
 
 El bucle `for` es ampliamente utilizado para trabajar sobre filas y columnas de un `data.frame`. Por ejemplo, podemos tomar la tabla `iris` (cargada por defecto en R) y generar una nueva columna llamada `Rel.SepPet.L`:
 
@@ -260,7 +258,7 @@ head(iris)
 
 Queda claro que, como hemos visto anteriormente en el práctico de tablas, esta no es la forma más eficiente de generar la nueva columna (¿cuál sería la forma más eficiente?). No obstante, este ejemplo sirve para entender como funciona un bucle `for` con un `data.frame`.
 
-#### *La función `seq()` en un bucle `for`*
+### *La función `seq()` en un bucle `for`*
 
 Cuando trabajamos con bucles, es muy frecuente establecer un rango para definir la iteración. Allí entra en juego esta útil función que, como vimos en la [clase de Vectores](../unidad1/Vectores.qmd){target="_blank"} devuelve una secuencia numérica y cuya sintaxis es: `seq(inicio,fin,paso)`, recordando que por defecto (es decir, si no explicitamos el valor del argumento), el inicio es "1" y el paso "1".
 
@@ -275,7 +273,7 @@ for (n in seq(2,8,2)){
 }
 ```
 
-#### *Break, next y condicionales*
+### *Break, next y condicionales*
 
 Al igual que vimos con `while`, podemos controlar el comportamiento de un bucle `for` de acuerdo a diferentes condiciones.
 
@@ -300,7 +298,7 @@ for (i in seq(1, 10)) {
 }
 ```
 
-#### *Bucles anidados*
+### *Bucles anidados*
 
 En muchas ocasiones, nos encontraremos con la necesidad de operar iterativamente sobre más de un conjunto de elementos, en esos casos podemos anidar los bucles.
 
@@ -315,7 +313,7 @@ for (i in letras) {
 }
 ```
 
-#### *`for` anidados y matrices*
+### *`for` anidados y matrices*
 
 El uso de `for` anidados es muy útil para trabajar con matrices:
 
@@ -332,7 +330,7 @@ for (i in 1:nrow(mat)) {
 
 ¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de *repeticiones* que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando `i = 1` y `j = 1`.
 
-### Ejercicio 4
+## Ejercicio 4
 
 ```{r}
 all_num <- c(17, 6, -12, 38, -88, 147, 1, -140, -19, 24, 74, -36)
@@ -340,7 +338,7 @@ all_num <- c(17, 6, -12, 38, -88, 147, 1, -140, -19, 24, 74, -36)
 
 Escriba un código que separe los números positivos y los negativos del vector proporcionado en diferentes vectores. Imprima dichos vectores identificando su condición (positivo o negativo) y ordenados de menor a mayor.
 
-*Ayuda*: 
+*Ayuda*
 
 Un vector numérico vacío puede generarse de la siguiente manera:
 
@@ -384,7 +382,7 @@ for (n in all_num) {
 cat("Positivos:", sort(pos), "Negativos:", sort(neg))
 ```
 
-### Algunos consejos...
+## Algunos consejos...
 
 Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situación más común si nuestra experiencia en lenguajes de programación es nula. A continuación, presentamos algunos consejos que pueden ayudarnos a programar nuestras primeras rutinas:
 
@@ -402,7 +400,7 @@ Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situació
 
 -   **El error como parte del proceso**. Es normal que aparezcan errores todo el tiempo, pero es clave aprender a leer y comprender los mensajes de error. Estos mensajes suelen indicar exactamente qué está fallando y dónde.
 
-### Ejercicio Final
+## Ejercicio Final
 
 Tomando de base el conjunto de datos `iris`, construya el siguiente `data.frame`:
 

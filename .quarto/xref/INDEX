@@ -40,5 +40,41 @@
   },
   "codigo_colab.qmd": {
     "codigo_colab.html": "efc18658"
+  },
+  "unidad3/ControlFlujo.qmd": {
+    "ControlFlujo.html": "bda50103"
+  },
+  "success.qmd": {
+    "success.html": "9c4e942e"
+  },
+  "unidad4/GraficosBase.qmd": {
+    "GraficosBase.html": "813552be"
+  },
+  "unidad4/ggplot2.qmd": {
+    "ggplot2.html": "cc8b95a9"
+  },
+  "unidad5/Funciones.qmd": {
+    "Funciones.html": "2bbc43a5"
+  },
+  "unidad1/Operadores.qmd": {
+    "Operadores.html": "33576651"
+  },
+  "unidad1/FlujoTrabajo.qmd": {
+    "FlujoTrabajo.html": "fe61e453"
+  },
+  "unidad1/Vectores.qmd": {
+    "Vectores.html": "a75dc461"
+  },
+  "unidad1/IntroR.qmd": {
+    "IntroR.html": "ba3d509d"
+  },
+  "unidad1/UsandoR.qmd": {
+    "UsandoR.html": "04e0840a"
+  },
+  "unidad2/Tablas.qmd": {
+    "Tablas.html": "f211357a"
+  },
+  "unidad5/copilot.qmd": {
+    "copilot.html": "ac8da283"
   }
 }

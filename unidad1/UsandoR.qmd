@@ -47,17 +47,9 @@ Como al usar R de esta forma solo podremos ir ejecutando de a una orden a la vez
 
 Finalmente, si deseamos salir de la sesión de R activa, podemos utilizar la función `quit()` (o su forma abreviada `q()`), a lo que R responderá preguntando si queremos guardar una <i>imagen del espacio de trabajo</i>, a lo que responderemos que NO ingresando `n`. Esto cerrara cualquier ventana gráfica que hubiera abierta, así como en nuestra terminal veremos que el <i>prompt</i> vuelve a ser el de nuestro sistema.
 
-<span id="anch1"></span>
-
 <p align="center">
-
 <a href="pics/r_inter5.png" target="_blank"> <img src="pics/r_inter5.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a><br><i><sup>Click en la imagen para agrandar.</sup></i>
-
 </p>
-
-## Ejercicio 1
-
-Abra R desde una terminal de su sistema operativo e intente replicar las líneas de código mostradas en la parte previa, de paso, sabremos que su sistema tiene correctamente instalado R.
 
 ## Presentando a RStudio
 
@@ -111,8 +103,6 @@ Una de las primeras nociones sobre las <i>buenas prácticas</i> de trabajo es in
 
 Cuando trabajamos con RStudio, esto último puede ser muy sencillo de realizar utilizando los *proyectos*, que no son otra cosa más que una forma de mantener nuestro trabajo en un contexto dado, con su propio directorio de trabajo, historial, rutinas, entradas, salidas, etc. De esta forma, pensemos por ejemplo en una organización con una estructura hipotética similar a la siguiente:
 
-<span id="anch2"></span>
-
 ```         
 AnalisisTesis
   |
@@ -143,7 +133,7 @@ En este caso, podríamos entonces pensar en crear un proyecto para todo el conju
 
 Existen múltiples formas de crear un nuevo proyecto. Podemos hacer "<i>File</i> \> <i>New Project...</i>"; podemos usar el botón ![](pics/r_proy_but.png){width="24"} en la esquina superior izquierda; o utilizar el menú de proyectos ![](pics/r_proy_but2.png){width="20"} `Project: (None)`, situado en la esquina superior derecha. A la hora de crear un nuevo proyecto, podemos elegir partir de un directorio nuevo o de uno previamente creado. Así mismo, podemos elegir un tipo específico de proyecto según si estemos haciendo un proyecto general, un proyecto para un nuevo paquete de R, una [aplicación Shiny](https://shiny.posit.co/){target="_blank"}, etc. Todo esto se realiza mediante una serie de menús gráficos que se nos irán presentado y que son sumamente intuitivos de seguir.
 
-## Ejercicio 2
+## Ejercicio 1
 
 Luego de ver la demostración del docente sobre la creación de proyectos en RStudio, abra una sesión propia de RStudio y cree un proyecto para este curso. La organización sugerida es la siguiente:
 
@@ -161,9 +151,18 @@ fundamentosR
 
 A medida que el curso avance, iremos completando estos directorios con datos, rutinas, etc.
 
-## Ejercicio 3
+## Ejercicio 2
 
-Cree una rutina dentro de `dia1`, como se muestra en la estructura precedente, que contenga el código ejecutado en el [Ejercicio 1](#anch1) para el mensaje de bienvenida y el gráfico. Corra esas líneas y explore las funciones del panel gráfico. Finalmente, guarde el mismo como un archivo `PNG` dentro del directorio `dia1`.
+Cree una rutina dentro de `dia1`, como se muestra en la estructura precedente, que contenga el siguiente código.
+```{r, eval=FALSE, echo=TRUE}
+# Imprimir un mensaje de bienvenida
+print("Bienvenides al curso!!!")
+
+# Realizar mi primer gráfico.
+plot(1:3, rep(1,3), pch=16, col=c("blue","red","black"), cex=5)
+```
+
+Corra esas líneas y explore las funciones del panel gráfico. Finalmente, guarde el mismo como un archivo `PNG` dentro del directorio `dia1`.
 
 ## El directorio de trabajo
 
@@ -192,7 +191,7 @@ Una ruta (en inglés <i>path</i>) en R o en cualquier otro sistema informático 
 
 Como ejemplo, tomando como referencia la [estructura sugerida](#anch2) para el proyecto de los analisis de la tesis, si el directorio de trabajo activo fuera `analisis` dentro de `CapII`, la ruta relativa a `CapIII` seria `../../CapIII`
 
-## Ejercicio 4
+## Ejercicio 3
 
 Imagine que dentro del directorio `/home/usuario/Documentos`, posee la siguiente estructura de directorios:
 
@@ -319,7 +318,7 @@ En RStudio, como ya mencionamos antes, disponemos de un área específica para m
 
 </p>
 
-## Ejercicio 5
+## Ejercicio 4
 
 En RStudio corra las siguientes líneas de a una y observe que salidas le brinda el programa. Anímese a explorar, no hay nada que pueda romper, haga click aquí y allá, vaya y vuelva. De igual forma, intente utilizar el autocompletado y las ayudas emergentes, fomente su creatividad buscando lo que se le ocurra, o intente averiguar como se usa esa función que hace 2 o 3 semanas que no logra ejecutar sin error. En clase discutiremos que partes componen la ayuda y como interpretarla.
 
@@ -405,8 +404,6 @@ A medida que usemos R nos surgirá la necesidad de instalar paquetes por fuera d
 
 La forma más sencilla de instalar paquetes es usando la función `install.packages()`, indicando en el argumento de la función el nombre del paquete. Si no recordamos exactamente el nombre, podemos hacer uso de la función de autocompletado (con la tecla `Tab ↹`). También podemos utilizar el botón ![](pics/r_inst_but.png){width="20"} para instalar paquetes, en el área correspondiente de RStudio. Si usamos esta última forma, se abrirá una ventana de diálogo, donde podemos indicar el nombre del paquete a instalar.
 
-<span id="anch3"></span>
-
 <p align="center">
 
 <a href="pics/r_install.png" target="_blank"> <img src="pics/r_install.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a><br><i><sup>Click en la imagen para agrandar.</sup></i>
@@ -448,11 +445,9 @@ detach("package:remotes", unload = TRUE)
 
 Todo esto en RStudio también puede ser realizado simplemente tildando o destildando el paquete correspondiente en la lista de paquetes.
 
-## Ejercicio 6
+## Ejercicio 5
 
-Instale con el medio que le sea conveniente el paquete `remotes`, tal como se muestra en la [imagen previa](#anch3). Luego use la función `library()` para cargarlo. Utilizando las ayudas internas de R responda: ¿para qué sirve este paquete?
-
-<br>
+Instale con el medio que le sea conveniente el paquete `remotes`, tal como se muestra en la [imagen previa](#instalación-desde-cran). Luego use la función `library()` para cargarlo. Utilizando las ayudas internas de R responda: ¿para qué sirve este paquete?
 
 #### *Llamando funciones de paquetes específicos*
 
@@ -460,7 +455,7 @@ En ocasiones, algunas funciones puede tener igual nombre en diferentes paquetes.
 
 ```{r, fig.align='center', fig.width=6}
 car::Anova(lm(hp ~ as.factor(cyl), data = mtcars))
-boxplot(hp ~ cyl, data = mtcars, main = "Relación entre caballos de fuerza (hp) y nº de cilindros (cyl)")
+boxplot(hp ~ cyl, data = mtcars, main = "Caballos de fuerza (hp) por nº de cilindros (cyl)")
 ```
 
 #### *Instalación desde otros repositorios*

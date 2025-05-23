@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,12 +70,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -336,18 +336,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#condicionales-y-bucles" id="toc-condicionales-y-bucles" class="nav-link active" data-scroll-target="#condicionales-y-bucles">Condicionales y Bucles</a>
+  <li><a href="#condicionales-y-bucles" id="toc-condicionales-y-bucles" class="nav-link active" data-scroll-target="#condicionales-y-bucles">Condicionales y Bucles</a></li>
+  <li><a href="#if-else" id="toc-if-else" class="nav-link" data-scroll-target="#if-else">If … else</a>
   <ul class="collapse">
-  <li><a href="#if-else" id="toc-if-else" class="nav-link" data-scroll-target="#if-else">If … else</a></li>
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
+  <li><a href="#múltiples-condiciones" id="toc-múltiples-condiciones" class="nav-link" data-scroll-target="#múltiples-condiciones"><em>Múltiples condiciones</em></a></li>
+  <li><a href="#and-or" id="toc-and-or" class="nav-link" data-scroll-target="#and-or"><em>And / or</em></a></li>
+  </ul></li>
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">Ejercicio 1</a>
+  <ul class="collapse">
+  <li><a href="#if-anidados" id="toc-if-anidados" class="nav-link" data-scroll-target="#if-anidados"><em>If anidados</em></a></li>
+  </ul></li>
   <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
-  <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while">While …</a></li>
+  <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while">While …</a>
+  <ul class="collapse">
+  <li><a href="#while-en-vectores-u-otros-iterables" id="toc-while-en-vectores-u-otros-iterables" class="nav-link" data-scroll-target="#while-en-vectores-u-otros-iterables"><em>While en vectores u otros iterables</em></a></li>
+  <li><a href="#rompiendo-un-bucle" id="toc-rompiendo-un-bucle" class="nav-link" data-scroll-target="#rompiendo-un-bucle"><em>Rompiendo un bucle</em></a></li>
+  <li><a href="#saltando-dentro-de-un-bucle" id="toc-saltando-dentro-de-un-bucle" class="nav-link" data-scroll-target="#saltando-dentro-de-un-bucle"><em>Saltando dentro de un bucle</em></a></li>
+  </ul></li>
   <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
-  <li><a href="#for-in" id="toc-for-in" class="nav-link" data-scroll-target="#for-in">For … in …</a></li>
+  <li><a href="#for-in" id="toc-for-in" class="nav-link" data-scroll-target="#for-in">For … in …</a>
+  <ul class="collapse">
+  <li><a href="#for-en-conjunto-con-data.frame" id="toc-for-en-conjunto-con-data.frame" class="nav-link" data-scroll-target="#for-en-conjunto-con-data.frame"><em><code>for</code> en conjunto con <code>data.frame</code></em></a></li>
+  <li><a href="#la-función-seq-en-un-bucle-for" id="toc-la-función-seq-en-un-bucle-for" class="nav-link" data-scroll-target="#la-función-seq-en-un-bucle-for"><em>La función <code>seq()</code> en un bucle <code>for</code></em></a></li>
+  <li><a href="#break-next-y-condicionales" id="toc-break-next-y-condicionales" class="nav-link" data-scroll-target="#break-next-y-condicionales"><em>Break, next y condicionales</em></a></li>
+  <li><a href="#bucles-anidados" id="toc-bucles-anidados" class="nav-link" data-scroll-target="#bucles-anidados"><em>Bucles anidados</em></a></li>
+  <li><a href="#for-anidados-y-matrices" id="toc-for-anidados-y-matrices" class="nav-link" data-scroll-target="#for-anidados-y-matrices"><em><code>for</code> anidados y matrices</em></a></li>
+  </ul></li>
   <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4">Ejercicio 4</a></li>
   <li><a href="#algunos-consejos" id="toc-algunos-consejos" class="nav-link" data-scroll-target="#algunos-consejos">Algunos consejos…</a></li>
   <li><a href="#ejercicio-final" id="toc-ejercicio-final" class="nav-link" data-scroll-target="#ejercicio-final">Ejercicio Final</a></li>
-  </ul></li>
   <li><a href="#ejercicio-extra" id="toc-ejercicio-extra" class="nav-link" data-scroll-target="#ejercicio-extra">Ejercicio Extra</a></li>
   </ul>
 </nav>
@@ -379,8 +396,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Como hemos visto hasta ahora, cuando escribimos código y lo ejecutamos el mismo será interpretando línea a línea, hasta que se ejecuta la última línea y el programa termina. <strong>Las estructuras de control de flujo permiten alterar este comportamiento para adecuarlo a nuestras necesidades</strong>.</p>
 <p>En general podemos definir dos grandes tipos de estructuras para el control de flujo. Por un lado, aquellas estructuras que <strong>evaluan condiciones</strong> y ejecutan un código subsiguiente en función de si el resultado de esa evaluación es verdadero o falso, a estas estrucuturas las llamamos <em>condicionales</em>. Por otro lado, tenemos estructuras que <strong>repiten iterativamente</strong> una porción de código mientras se cumpla alguna condición dada, a estas estructuras las denominamos <em>bucles</em>.</p>
 <p><strong>Nota:</strong> Antes de continuar es recomendable repasar los <a href="../unidad1/Operadores.html" target="_blank">operadores</a> aprendidos en el primer día de clases.</p>
-<section id="if-else" class="level3">
-<h3 class="anchored" data-anchor-id="if-else">If … else</h3>
+</section>
+<section id="if-else" class="level2">
+<h2 class="anchored" data-anchor-id="if-else">If … else</h2>
 <p>El constructo <code>if ... else</code> es una estructura de tipo condicional. En pocas palabras, <code>if</code> evaluará una condición dada y si la misma se cumple (i.e.&nbsp;el resultado es <code>TRUE</code>), se ejecutará el código correspondiente. Para definir un bloque de código a ejecutarse si no se cumple la condición previamente establecida, utilizaremos <code>else</code>. Si además quisiéramos definir múltiples condiciones, en caso de que la primera no se cumpla y que deriven en diferentes ejecuciones, deberemos utilizar <code>else if</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="cn">TRUE</span>) {</span>
@@ -401,8 +419,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] "Se ejecutará el código bajo 'else' dado que la condición resulta FALSE"</code></pre>
 </div>
 </div>
-<section id="múltiples-condiciones" class="level4">
-<h4 class="anchored" data-anchor-id="múltiples-condiciones"><em>Múltiples condiciones</em></h4>
+<section id="múltiples-condiciones" class="level3">
+<h3 class="anchored" data-anchor-id="múltiples-condiciones"><em>Múltiples condiciones</em></h3>
 <p>En ocasiones necesitamos establecer múltiples condiciones. Ejecute el codigo siguiente varias veces, pero cambiando cada vez el valor de <code>a</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">25</span></span>
@@ -422,8 +440,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Para pensar:</strong> ¿Qué pasa cuando, por ejemplo, <code>a = 35</code>? ¿Cuántas evaluaciones independientes serían <code>TRUE</code>? ¿Qué porción de código se ejecuta y por qué?</p>
 </section>
-<section id="and-or" class="level4">
-<h4 class="anchored" data-anchor-id="and-or"><em>And / or</em></h4>
+<section id="and-or" class="level3">
+<h3 class="anchored" data-anchor-id="and-or"><em>And / or</em></h3>
 <p>Es posible agrupar diferentes evaluaciones utilizando los operadores <strong>Y</strong> (<code>&amp;</code>) y <strong>O</strong> (<code>|</code>). Ejecute el siguiente código varias veces cambiando los valores de <code>a</code>, <code>b</code> y <code>c</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">35</span></span>
@@ -441,8 +459,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="ejercicio-1" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h3>
+<section id="ejercicio-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h2>
 <p>Compare el código de la celda precedente con el de aquí abajo. ¿Qué diferencias nota? Ejecútelo y explique el resultado con el obtenido usando el código previo con los mismos valores para <code>a</code>, <code>b</code> y <code>c</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">52</span></span>
@@ -455,8 +473,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"No se cumple ninguna condición"</span>)</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="if-anidados" class="level4">
-<h4 class="anchored" data-anchor-id="if-anidados"><em>If anidados</em></h4>
+<section id="if-anidados" class="level3">
+<h3 class="anchored" data-anchor-id="if-anidados"><em>If anidados</em></h3>
 <p>Recién vimos como combinar varias evaluaciones en una misma expresión, pero frecuentemente lo que necesitaremos es realizar diferentes evaluaciones de forma secuencial y ejecutar código consecuentemente a los resultados obtenidos. Para ello podemos incoporar evaluaciones dentro de una evaluación previa, es decir, anidar las evaluaciones.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">25</span></span>
@@ -481,8 +499,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Para pensar:</strong> ¿Qué sucede si <strong><em>a</em></strong> <strong>&lt;= 10</strong>? ¿Qué podemos aprender de esta situación? ¿Cómo podríamos salvar el inconveniente?</p>
 </section>
 </section>
-<section id="ejercicio-2" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
+<section id="ejercicio-2" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h2>
 <p>Andrea y Ariel fueron a hacer compras, construya con código que indique quién gastó más dinero y de cuanto es la diferencia. El mismo código debe servir para evaluar los tres escenarios siguientes:</p>
 <ul>
 <li><p>Escenario Nº 1: compra_andrea = 690 / compra_ariel = 730</p></li>
@@ -505,8 +523,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="while" class="level3">
-<h3 class="anchored" data-anchor-id="while">While …</h3>
+<section id="while" class="level2">
+<h2 class="anchored" data-anchor-id="while">While …</h2>
 <p>El constructo <code>while</code> es una estructura de tipo bucle. En pocas palabras, evaluará una condición y ejecutará repetitivamente una porción de código siempre y cuando la misma se cumpla (i.e.&nbsp;el resultado sea <code>TRUE</code>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
@@ -521,9 +539,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>Atención!!!</strong> Si en el bucle precedente omitimos incrementar el contador <code>i</code>, nuestro bucle se ejecutará indefinidamente.</p>
-<p><span id="anch2"></span></p>
-<section id="while-en-vectores-u-otros-iterables" class="level4">
-<h4 class="anchored" data-anchor-id="while-en-vectores-u-otros-iterables"><em>While en vectores u otros iterables</em></h4>
+<section id="while-en-vectores-u-otros-iterables" class="level3">
+<h3 class="anchored" data-anchor-id="while-en-vectores-u-otros-iterables"><em>While en vectores u otros iterables</em></h3>
 <p>Teniendo en cuenta lo que aprendimos sobre el acceso a elementos de un vector, podemos utilizar un bucle <code>while</code> para acceder a los mismos. No obstante, <u>existen formas más eficientes de hacer esto y lo veremos posteriormente</u>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>carreras <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'Biología'</span>, <span class="st">'Bioquímica'</span>, <span class="st">'Medicina'</span>, <span class="st">'Nutrición'</span>)</span>
@@ -540,8 +557,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="rompiendo-un-bucle" class="level4">
-<h4 class="anchored" data-anchor-id="rompiendo-un-bucle"><em>Rompiendo un bucle</em></h4>
+<section id="rompiendo-un-bucle" class="level3">
+<h3 class="anchored" data-anchor-id="rompiendo-un-bucle"><em>Rompiendo un bucle</em></h3>
 <p>Si fuera necesario, podemos utilizar la declaración <code>break</code> para interrumpir la ejecución de un bucle, dada una condición establecida.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
@@ -561,8 +578,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="saltando-dentro-de-un-bucle" class="level4">
-<h4 class="anchored" data-anchor-id="saltando-dentro-de-un-bucle"><em>Saltando dentro de un bucle</em></h4>
+<section id="saltando-dentro-de-un-bucle" class="level3">
+<h3 class="anchored" data-anchor-id="saltando-dentro-de-un-bucle"><em>Saltando dentro de un bucle</em></h3>
 <p>De forma similar podemos, dada una condición, saltearnos ciertas ejecuciones dentro de un bucle. Para ello, utilizaremos la declaración <code>next</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">0</span></span>
@@ -585,8 +602,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="ejercicio-3" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h3>
+<section id="ejercicio-3" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
 <p>Analice el siguiente código <strong>SIN EJECUTARLO</strong> e interprete cuál es la salida esperada explicando que sucede en cada iteración. Luego escriba <em>a mano</em> la salida exacta que dará este código.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>compras <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"pan"</span>, <span class="st">"queso"</span>, <span class="st">"jamón"</span>, <span class="st">"tomate"</span>, <span class="st">"lechuga"</span>)</span>
@@ -606,8 +623,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="for-in" class="level3">
-<h3 class="anchored" data-anchor-id="for-in">For … in …</h3>
+<section id="for-in" class="level2">
+<h2 class="anchored" data-anchor-id="for-in">For … in …</h2>
 <p>El constructo <code>for</code> es otra estructura de tipo bucle que permite iterar sobre una colección dada de elementos. En pocas palabras, repetirá la ejecución de un mismo bloque de código tantas veces como elementos existan en dicha secuencia. Por ello, es importante recordar que su sintaxis básica es:</p>
 <p><code>for</code> (<em>item</em> <code>in</code> <strong>colección</strong>) <code>{código a ejecutar}</code></p>
 <div class="cell">
@@ -639,8 +656,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>Para reflexionar:</strong> Compare el código de la celda precedente con el que usamos para <a href="#anch2">listar las carreras</a> usando un bucle <code>while</code>. ¿Que diferencias nota? ¿Cuando usaría uno u otro constructo?</p>
-<section id="for-en-conjunto-con-data.frame" class="level4">
-<h4 class="anchored" data-anchor-id="for-en-conjunto-con-data.frame"><em><code>for</code> en conjunto con <code>data.frame</code></em></h4>
+<section id="for-en-conjunto-con-data.frame" class="level3">
+<h3 class="anchored" data-anchor-id="for-en-conjunto-con-data.frame"><em><code>for</code> en conjunto con <code>data.frame</code></em></h3>
 <p>El bucle <code>for</code> es ampliamente utilizado para trabajar sobre filas y columnas de un <code>data.frame</code>. Por ejemplo, podemos tomar la tabla <code>iris</code> (cargada por defecto en R) y generar una nueva columna llamada <code>Rel.SepPet.L</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Rel.SepPet.L <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
@@ -673,8 +690,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Queda claro que, como hemos visto anteriormente en el práctico de tablas, esta no es la forma más eficiente de generar la nueva columna (¿cuál sería la forma más eficiente?). No obstante, este ejemplo sirve para entender como funciona un bucle <code>for</code> con un <code>data.frame</code>.</p>
 </section>
-<section id="la-función-seq-en-un-bucle-for" class="level4">
-<h4 class="anchored" data-anchor-id="la-función-seq-en-un-bucle-for"><em>La función <code>seq()</code> en un bucle <code>for</code></em></h4>
+<section id="la-función-seq-en-un-bucle-for" class="level3">
+<h3 class="anchored" data-anchor-id="la-función-seq-en-un-bucle-for"><em>La función <code>seq()</code> en un bucle <code>for</code></em></h3>
 <p>Cuando trabajamos con bucles, es muy frecuente establecer un rango para definir la iteración. Allí entra en juego esta útil función que, como vimos en la <a href="../unidad1/Vectores.html" target="_blank">clase de Vectores</a> devuelve una secuencia numérica y cuya sintaxis es: <code>seq(inicio,fin,paso)</code>, recordando que por defecto (es decir, si no explicitamos el valor del argumento), el inicio es “1” y el paso “1”.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Secuencia de 1 a 3</span></span>
@@ -698,8 +715,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="break-next-y-condicionales" class="level4">
-<h4 class="anchored" data-anchor-id="break-next-y-condicionales"><em>Break, next y condicionales</em></h4>
+<section id="break-next-y-condicionales" class="level3">
+<h3 class="anchored" data-anchor-id="break-next-y-condicionales"><em>Break, next y condicionales</em></h3>
 <p>Al igual que vimos con <code>while</code>, podemos controlar el comportamiento de un bucle <code>for</code> de acuerdo a diferentes condiciones.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>fruta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"banana"</span>, <span class="st">"manzana"</span>, <span class="st">"pera"</span>)</span>
@@ -731,8 +748,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="bucles-anidados" class="level4">
-<h4 class="anchored" data-anchor-id="bucles-anidados"><em>Bucles anidados</em></h4>
+<section id="bucles-anidados" class="level3">
+<h3 class="anchored" data-anchor-id="bucles-anidados"><em>Bucles anidados</em></h3>
 <p>En muchas ocasiones, nos encontraremos con la necesidad de operar iterativamente sobre más de un conjunto de elementos, en esos casos podemos anidar los bucles.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>letras <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)</span>
@@ -756,17 +773,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="for-anidados-y-matrices" class="level4">
-<h4 class="anchored" data-anchor-id="for-anidados-y-matrices"><em><code>for</code> anidados y matrices</em></h4>
+<section id="for-anidados-y-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="for-anidados-y-matrices"><em><code>for</code> anidados y matrices</em></h3>
 <p>El uso de <code>for</code> anidados es muy útil para trabajar con matrices:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">9</span>), <span class="at">ncol =</span> <span class="dv">3</span>)</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
-[1,]   62   92   48
-[2,]   76   63   41
-[3,]   90   40   66</code></pre>
+[1,]   84   34   85
+[2,]    1   29   77
+[3,]   27   52   67</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>( j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(mat)) {</span>
@@ -774,27 +791,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 62"
-[1] "El elemento de la fila 1 y columna 2 es igual a 92"
-[1] "El elemento de la fila 1 y columna 3 es igual a 48"
-[1] "El elemento de la fila 2 y columna 1 es igual a 76"
-[1] "El elemento de la fila 2 y columna 2 es igual a 63"
-[1] "El elemento de la fila 2 y columna 3 es igual a 41"
-[1] "El elemento de la fila 3 y columna 1 es igual a 90"
-[1] "El elemento de la fila 3 y columna 2 es igual a 40"
-[1] "El elemento de la fila 3 y columna 3 es igual a 66"</code></pre>
+<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 84"
+[1] "El elemento de la fila 1 y columna 2 es igual a 34"
+[1] "El elemento de la fila 1 y columna 3 es igual a 85"
+[1] "El elemento de la fila 2 y columna 1 es igual a 1"
+[1] "El elemento de la fila 2 y columna 2 es igual a 29"
+[1] "El elemento de la fila 2 y columna 3 es igual a 77"
+[1] "El elemento de la fila 3 y columna 1 es igual a 27"
+[1] "El elemento de la fila 3 y columna 2 es igual a 52"
+[1] "El elemento de la fila 3 y columna 3 es igual a 67"</code></pre>
 </div>
 </div>
 <p>¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de <em>repeticiones</em> que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando <code>i = 1</code> y <code>j = 1</code>.</p>
 </section>
 </section>
-<section id="ejercicio-4" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h3>
+<section id="ejercicio-4" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>all_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">6</span>, <span class="sc">-</span><span class="dv">12</span>, <span class="dv">38</span>, <span class="sc">-</span><span class="dv">88</span>, <span class="dv">147</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">140</span>, <span class="sc">-</span><span class="dv">19</span>, <span class="dv">24</span>, <span class="dv">74</span>, <span class="sc">-</span><span class="dv">36</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Escriba un código que separe los números positivos y los negativos del vector proporcionado en diferentes vectores. Imprima dichos vectores identificando su condición (positivo o negativo) y ordenados de menor a mayor.</p>
-<p><em>Ayuda</em>:</p>
+<p><em>Ayuda</em></p>
 <p>Un vector numérico vacío puede generarse de la siguiente manera:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"numeric"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -817,8 +834,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Ordenados ej2:"</span>, <span class="fu">sort</span>(ej2))</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="algunos-consejos" class="level3">
-<h3 class="anchored" data-anchor-id="algunos-consejos">Algunos consejos…</h3>
+<section id="algunos-consejos" class="level2">
+<h2 class="anchored" data-anchor-id="algunos-consejos">Algunos consejos…</h2>
 <p>Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situación más común si nuestra experiencia en lenguajes de programación es nula. A continuación, presentamos algunos consejos que pueden ayudarnos a programar nuestras primeras rutinas:</p>
 <ul>
 <li><p><strong>Paso a paso</strong>. No trates de programar la tarea propuesta entera de una sola vez, mejor descomponer la tarea en tareas más pequeñas concatenadas entre sí.</p></li>
@@ -830,8 +847,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>El error como parte del proceso</strong>. Es normal que aparezcan errores todo el tiempo, pero es clave aprender a leer y comprender los mensajes de error. Estos mensajes suelen indicar exactamente qué está fallando y dónde.</p></li>
 </ul>
 </section>
-<section id="ejercicio-final" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-final">Ejercicio Final</h3>
+<section id="ejercicio-final" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-final">Ejercicio Final</h2>
 <p>Tomando de base el conjunto de datos <code>iris</code>, construya el siguiente <code>data.frame</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>model_outputs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Species =</span> <span class="fu">unique</span>(iris<span class="sc">$</span>Species),</span>
@@ -850,7 +867,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p align="center">
 </p><p><a href="pics/meme.jpg" target="_blank"> <img src="pics/meme.jpg" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a></p>
 <p></p>
-</section>
 </section>
 <section id="ejercicio-extra" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-extra">Ejercicio Extra</h2>
@@ -1087,8 +1103,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1199,7 +1213,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

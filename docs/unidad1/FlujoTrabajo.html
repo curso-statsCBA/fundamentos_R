@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,12 +70,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -350,9 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#carga-de-funciones-externas" id="toc-carga-de-funciones-externas" class="nav-link" data-scroll-target="#carga-de-funciones-externas">Carga de funciones externas</a></li>
   <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
   <li><a href="#trabajando-sin-interfaz-gráfica" id="toc-trabajando-sin-interfaz-gráfica" class="nav-link" data-scroll-target="#trabajando-sin-interfaz-gráfica">Trabajando sin interfaz gráfica</a></li>
-  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
-  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4">Ejercicio 4</a></li>
-  <li><a href="#algunas-máximas-para-recordar-a-la-hora-de-programar-en-r" id="toc-algunas-máximas-para-recordar-a-la-hora-de-programar-en-r" class="nav-link" data-scroll-target="#algunas-máximas-para-recordar-a-la-hora-de-programar-en-r">Algunas máximas para recordar a la hora de programar en R</a></li>
+  <li><a href="#algunas-máximas-a-recordar-a-la-hora-de-programar-en-r" id="toc-algunas-máximas-a-recordar-a-la-hora-de-programar-en-r" class="nav-link" data-scroll-target="#algunas-máximas-a-recordar-a-la-hora-de-programar-en-r">Algunas máximas a recordar a la hora de programar en R</a></li>
   </ul>
 </nav>
     </div>
@@ -391,8 +389,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ademas del código propiamente dicho, <strong>ningún script está completo si no está correctamente anotado</strong>, es decir, si no contiene texto humanamente legible que permita seguir qué es lo que se está haciendo en el mismo. La forma de introducir un <u id="comentario">comentario</u> en el código es anteponer <code>#</code> a la linea en cuestión. De esta forma, el interprete de código evitará su ejecución.</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-b08a2ed73fc0b9573f0c" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-b08a2ed73fc0b9573f0c">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:16px;'>Todo texto explicativo que no deseamos que sea ejecutado por el interprete de R.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-1e66140cda0392d462a8" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-1e66140cda0392d462a8">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:16px;'>Todo texto explicativo que no deseamos que sea ejecutado por el interprete de R.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -414,7 +412,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ejercicio-1" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h2>
 <p>Cree una rutina dentro de <code>dia1</code> y cree un índice que contenga títulos de 1º, 3º, 5º y 6º nivel.</p>
-<hr>
 </section>
 <section id="carga-de-funciones-externas" class="level2">
 <h2 class="anchored" data-anchor-id="carga-de-funciones-externas">Carga de funciones externas</h2>
@@ -443,19 +440,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>De igual forma, también podríamos vincular directamente a un archivo <em>online</em>, pasándole a <code>source()</code> la URL al código fuente. En este caso sería:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>URL <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/pastornicolas/fundamentos_R/7abf94fd87129b5433c5ac70af1194e822b2afb6/dia1/mifuncion.R"</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>URL <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/pastornicolas/fundamentos_R/aece2a88d02111e609ab5e6ece9e0c3922b6fb95/unidad1/mifuncion.R"</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(URL)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
 </section>
 <section id="ejercicio-2" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h2>
-<p>Descargue <a href="https://raw.githubusercontent.com/pastornicolas/fundamentos_R/7abf94fd87129b5433c5ac70af1194e822b2afb6/dia1/mifuncion.R" target="_blank">el archivo con la función</a> al directorio de trabajo correspondiente a <code>dia1</code> y cárguela utilizando <code>source()</code>. Pruebe su correcto funcionamiento para los valores:</p>
+<p>Descargue <a href="https://raw.githubusercontent.com/pastornicolas/fundamentos_R/aece2a88d02111e609ab5e6ece9e0c3922b6fb95/unidad1/mifuncion.R" target="_blank">el archivo con la función</a> al directorio de trabajo correspondiente a <code>dia1</code> y cárguela utilizando <code>source()</code>. Pruebe su correcto funcionamiento para los valores:</p>
 <ul>
 <li><p>1, 2, 3, 4</p></li>
 <li><p>1, 10, 100</p></li>
 </ul>
-<hr>
 </section>
 <section id="trabajando-sin-interfaz-gráfica" class="level2">
 <h2 class="anchored" data-anchor-id="trabajando-sin-interfaz-gráfica">Trabajando sin interfaz gráfica</h2>
@@ -467,18 +462,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p align="center">
 </p><p><a href="pics/non_inter.png" target="_blank"> <img src="pics/non_inter.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
 <p></p>
+<p>Dado que esto último es un uso relativamente avanzado, no haremos un ejercicio relacionado. No obstante, si tiene curiosidad sobre como se vería un script como el usado en el ejemplo de arriba, puede <a href="https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad1/no_interactivo.R">descargarlo de aquí</a> e intentar correrlo en su sistema operativo.</p>
 </section>
-<section id="ejercicio-3" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
-<p>Descargue <a href="https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/dia1/no_interactivo.R" target="_blank">el archivo con el script</a> para graficar la función cuadrática al directorio de trabajo correspondiente a <code>dia1</code>. Ejecute el script en su sistema por fuera de RStudio y chequee el correcto funcionamiento (i.e.&nbsp;se debería ver en la consola los mensajes de salida y se debería crear un archivo PDF con el gráfico en el directorio donde se ejecutó).</p>
-</section>
-<section id="ejercicio-4" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h2>
-<p>Abra el script que recién ejecutó en el editor de RStudio. Intente interpretar que hace cada línea, recuerde usar las función <code>help()</code> o <code>?</code> para acceder a las ayudas internas de las funciones. No se preocupe si por el momento no lo entiende completamente, para cuando este curso termine no habrá ni una sola de esas líneas que no sea capaz de interpretar.</p>
-<hr>
-</section>
-<section id="algunas-máximas-para-recordar-a-la-hora-de-programar-en-r" class="level2">
-<h2 class="anchored" data-anchor-id="algunas-máximas-para-recordar-a-la-hora-de-programar-en-r">Algunas máximas para recordar a la hora de programar en R</h2>
+<section id="algunas-máximas-a-recordar-a-la-hora-de-programar-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="algunas-máximas-a-recordar-a-la-hora-de-programar-en-r">Algunas máximas a recordar a la hora de programar en R</h2>
 <ul>
 <li><p><u>Explícito es mejor que implícito</u>. Ante la duda, declaremos explícitamente todo lo que hacemos. Esto puede ser un poco engorroso, pero nos ayudara sobre todo en la etapa de aprendizaje inicial.</p></li>
 <li><p><u>Orden, orden, orden</u>… Intentar hacer el trabajo de forma sistemática desde el comienzo siempre es más fácil que luego intentar ordenar algo caótico cuando nos toque publicar y compartir nuestro código.</p></li>
@@ -491,7 +478,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>En ocasiones puede ser muy frustrante que algo no nos salga, evitemos la tentación de volver a esa planilla de cálculo, o a ese software donde antes nos salía todo. <u>Todo el tiempo que invirtamos va a dar muchísimos frutos en el futuro</u>.</p></li>
 <li><p>R, o el lenguaje que aprendamos a continuación, es una herramienta fantástica pero no reemplaza de ninguna manera la formación que tenemos. Por más sofisticados que sean nuestros análisis, al fin y al cabo, será nuestro criterio profesional el que decida si el resultado es o no interesante. Nunca nos olvidemos que <u>lo más importante en nuestro trabajo son las preguntas que intentamos responder, no los medios que usamos para hacerlo</u>.</p></li>
 </ul>
-<hr>
 <p align="center">
 </p><p><a href="pics/meme3.jpeg" target="_blank"> <img src="pics/meme3.jpeg" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a></p>
 <p></p>
@@ -726,8 +712,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -838,7 +822,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

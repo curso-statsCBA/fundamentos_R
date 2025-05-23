@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,12 +70,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -353,10 +353,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
   <li><a href="#creación-de-nuevas-columnas" id="toc-creación-de-nuevas-columnas" class="nav-link" data-scroll-target="#creación-de-nuevas-columnas">Creación de nuevas columnas</a></li>
   <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
-  <li><a href="#unión-de-tablas" id="toc-unión-de-tablas" class="nav-link" data-scroll-target="#unión-de-tablas">Unión de tablas</a>
-  <ul class="collapse">
+  <li><a href="#unión-de-tablas" id="toc-unión-de-tablas" class="nav-link" data-scroll-target="#unión-de-tablas">Unión de tablas</a></li>
   <li><a href="#cálculo-de-estadísticas-sobre-tablas" id="toc-cálculo-de-estadísticas-sobre-tablas" class="nav-link" data-scroll-target="#cálculo-de-estadísticas-sobre-tablas">Cálculo de estadísticas sobre tablas</a></li>
-  </ul></li>
   <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
   <li><a href="#exportación-de-tablas" id="toc-exportación-de-tablas" class="nav-link" data-scroll-target="#exportación-de-tablas">Exportación de tablas</a></li>
   <li><a href="#otras-estructuras-de-datos" id="toc-otras-estructuras-de-datos" class="nav-link" data-scroll-target="#otras-estructuras-de-datos">Otras estructuras de datos</a>
@@ -397,8 +395,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Para crear una tabla desde cero, en R utilizamos la <u id="table_classes">clase</u> <code>data.frame</code>, y una función con el mismo nombre para generarla:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-01f9c9069add3009dffc" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-01f9c9069add3009dffc">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-e40b5be270c0fde3e5ea" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-e40b5be270c0fde3e5ea">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -867,8 +865,9 @@ Levels: Corto Largo Mediano</code></pre>
 </div>
 <p>Los primeros dos argumentos indican las tablas a combinar, y el argumento <code>by</code> la columna común a ambas tablas (pueden indicarse más columnas con la sintaxis <code>c("columna1", "columna2")</code>). La función <em>busca</em> coincidencias de campos en la columna (o columnas) en ambas tablas, y <em>rellena</em> correspondientemente.</p>
 <p>La función <code>merge()</code> es una función muy útil para combinar tablas, pero debe utilizarse con cuidado, pensando qué tabla final es la que nos proponemos generar. Por ejemplo, obtendremos resultados distintos si los campos de la columna especificada en <code>by</code> (en el ejemplo, las especies) difieren de alguna manera, o si hay campos faltantes. Esto es particularmente importante para datasets muy grandes en donde no podemos corroborar que lo que se ha fusionado es lo que realmente nos proponíamos hacer. Es conveniente explorar las distintas opciones en <code>?merge</code>.</p>
-<section id="cálculo-de-estadísticas-sobre-tablas" class="level3">
-<h3 class="anchored" data-anchor-id="cálculo-de-estadísticas-sobre-tablas">Cálculo de estadísticas sobre tablas</h3>
+</section>
+<section id="cálculo-de-estadísticas-sobre-tablas" class="level2">
+<h2 class="anchored" data-anchor-id="cálculo-de-estadísticas-sobre-tablas">Cálculo de estadísticas sobre tablas</h2>
 <p>La función <code>aggregate()</code> es útil para generar tablas con estadísticas de resumen de acuerdo a los niveles de un determinado factor. Por ejemplo, para calcular el valor medio de la longitud del sépalo para cada especie utilizamos la siguiente sintaxis:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>iris_mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(Sepal.Width <span class="sc">~</span> Species, <span class="at">data =</span> iris, <span class="at">FUN =</span> mean)</span>
@@ -915,7 +914,6 @@ Levels: Corto Largo Mediano</code></pre>
 3  virginica        6.588       2.974        5.552       2.026</code></pre>
 </div>
 </div>
-</section>
 </section>
 <section id="ejercicio-3" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
@@ -1014,8 +1012,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-cd57e942e5fa8df4221a" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-cd57e942e5fa8df4221a">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-7339d96f7a3645cf8b6f" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-7339d96f7a3645cf8b6f">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -1329,8 +1327,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1441,7 +1437,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

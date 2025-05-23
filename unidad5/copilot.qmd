@@ -9,11 +9,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Utilizando IA en nuestros proyectos
 
-Es innegable el avance de las inteligencias artificiales (IAs) en todos los ámbitos de nuestra vida, especialmente en nuestro trabajo, y la programación no es la excepción. Actualmente, programar se ha vuelto una tarea más sencilla gracias al uso de estas herramientas. Sin embargo, es importante tener en cuenta que estas herramientas no reemplazan a l@s programadores, sino que l@s asisten en su trabajo. 
+Es innegable el avance de las inteligencias artificiales (IAs) en todos los ámbitos de nuestra vida, especialmente en nuestro trabajo, y la programación no es la excepción. Actualmente, programar se ha vuelto una tarea más sencilla gracias al uso de estas herramientas. Sin embargo, es importante tener en cuenta que estas herramientas no reemplazan a l\@s programadores, sino que l\@s asisten en su trabajo.
 
-Para utilizar estas herramientas correctamente, primero es fundamental comprender las nociones básicas de nuestro lenguaje de programación. Caso contrario, nos encontraremos con código generado por inteligencia artificial que puede ser, muchas veces, ineficiente o inadecuado para la tarea que nos proponemos realizar. En casos extremos de malos hábitos en el uso de IAs, nos podemos encontrar con que estas herramientas han sugerido directamente código erróneo para una determinada tarea. Consideramos que, en gran parte de estos casos, los errores aparecen porque los usuarios no piden correctamente cuál es la tarea exacta a realizar, no la contextualizan correctamente, o carecen de conceptos básicos necesarios para pedir un código que se adecúe a sus objetivos. 
+Para utilizar estas herramientas correctamente, primero es fundamental comprender las nociones básicas de nuestro lenguaje de programación. Caso contrario, nos encontraremos con código generado por inteligencia artificial que puede ser, muchas veces, ineficiente o inadecuado para la tarea que nos proponemos realizar. En casos extremos de malos hábitos en el uso de IAs, nos podemos encontrar con que estas herramientas han sugerido directamente código erróneo para una determinada tarea. Consideramos que, en gran parte de estos casos, los errores aparecen porque los usuarios no piden correctamente cuál es la tarea exacta a realizar, no la contextualizan correctamente, o carecen de conceptos básicos necesarios para pedir un código que se adecúe a sus objetivos.
 
-Por ello, creemos que, aunque el uso de las IAs es imparable, como científic@s o analistas de datos, es necesario conocer las nociones básicas de los lenguajes que utilizaremos. Recordemos, las IAs no reemplazan nuestras capacidades, simplemente nos facilitan el trabajo.
+Por ello, creemos que, aunque el uso de las IAs es imparable, como científic\@s o analistas de datos, es necesario conocer las nociones básicas de los lenguajes que utilizaremos. Recordemos, las IAs no reemplazan nuestras capacidades, simplemente nos facilitan el trabajo.
 
 ## GitHub Copilot
 
@@ -23,7 +23,7 @@ A diferencia de otras IA como ChatGPT, Gemini o DeepSeek, **GitHub Copilot** es 
 
 ### Instalación en RStudio
 
-La instalación de esta herramienta es muy simple. Como prerrequisito, debemos hacernos un usuario en GitHub. Luego, instalar o actualizar RStudio a una versión que soporte GitHub Copilot. Seguidamente, nos dirigimos a *Tools* > *Global Options* > *Copilot*. Allí, deberemos seguir las intrucciones, iniciar sesión con nuestro usuario y contraseña, y seguidamente activar la herramienta.
+La instalación de esta herramienta es muy simple. Como prerrequisito, debemos hacernos un usuario en GitHub. Luego, instalar o actualizar RStudio a una versión que soporte GitHub Copilot. Seguidamente, nos dirigimos a *Tools* \> *Global Options* \> *Copilot*. Allí, deberemos seguir las intrucciones, iniciar sesión con nuestro usuario y contraseña, y seguidamente activar la herramienta.
 
 ### Usando Copilot
 
@@ -39,7 +39,7 @@ El agente Copilot se vuelve más interesante cuando le pedimos ayuda para escrib
 
 <img src="pics/copilot_example2.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/>
 
-Como puede observarse, las posibilidades son prácticamente infinitas, desde pedir un gráfico, hasta generar una función de básica a mediana complejidad. Es cierto que, a medida que el nivel de complejidad, el agente Copilot puede ya no ser muy útil. Aún así, permite acortar el tiempo invertido en programar bloques de código simples o repetitivos. Observe, por ejemplo, como Copilot sugiere una nueva línea en este caso:
+Como puede observarse, las posibilidades son prácticamente infinitas, desde pedir un gráfico, hasta generar una función de básica a mediana complejidad. Es cierto que, a medida que aumenta el nivel de complejidad, el agente Copilot puede ya no ser muy útil. Aún así, permite acortar el tiempo invertido en programar bloques de código simples o repetitivos. Observe, por ejemplo, como Copilot sugiere una nueva línea en este caso:
 
 <img src="pics/copilot_example3.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/>
 
