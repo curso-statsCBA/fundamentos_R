@@ -1,0 +1,48 @@
+---
+title: "GitHub Copilot"
+pagetitle: "GitHub Copilot"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Utilizando IA en nuestros proyectos
+
+Es innegable el avance de las inteligencias artificiales (IAs) en todos los ámbitos de nuestra vida, especialmente en nuestro trabajo, y la programación no es la excepción. Actualmente, programar se ha vuelto una tarea más sencilla gracias al uso de estas herramientas. Sin embargo, es importante tener en cuenta que estas herramientas no reemplazan a l@s programadores, sino que l@s asisten en su trabajo. 
+
+Para utilizar estas herramientas correctamente, primero es fundamental comprender las nociones básicas de nuestro lenguaje de programación. Caso contrario, nos encontraremos con código generado por inteligencia artificial que puede ser, muchas veces, ineficiente o inadecuado para la tarea que nos proponemos realizar. En casos extremos de malos hábitos en el uso de IAs, nos podemos encontrar con que estas herramientas han sugerido directamente código erróneo para una determinada tarea. Consideramos que, en gran parte de estos casos, los errores aparecen porque los usuarios no piden correctamente cuál es la tarea exacta a realizar, no la contextualizan correctamente, o carecen de conceptos básicos necesarios para pedir un código que se adecúe a sus objetivos. 
+
+Por ello, creemos que, aunque el uso de las IAs es imparable, como científic@s o analistas de datos, es necesario conocer las nociones básicas de los lenguajes que utilizaremos. Recordemos, las IAs no reemplazan nuestras capacidades, simplemente nos facilitan el trabajo.
+
+## GitHub Copilot
+
+Siendo este un curso de fundamentos del lenguaje R, resulta pertinente comentar la existencia de una herramienta de IA especialmente útil para programadores de R, y esta herramienta es **GitHub Copilot**.
+
+A diferencia de otras IA como ChatGPT, Gemini o DeepSeek, **GitHub Copilot** es una herramienta de autocompletado de código impulsada por inteligencia artificial. Esta herramienta asiste a los usuarios de distintos lenguajes de programación (o tu *copiloto* de programación), entre ellos R, sugiriendo líneas completas o bloques de código mientras escriben, basándose en el contexto del archivo y del proyecto actual. Copilot puede generar código, escribir funciones y proporcionar documentación.
+
+### Instalación en RStudio
+
+La instalación de esta herramienta es muy simple. Como prerrequisito, debemos hacernos un usuario en GitHub. Luego, instalar o actualizar RStudio a una versión que soporte GitHub Copilot. Seguidamente, nos dirigimos a *Tools* > *Global Options* > *Copilot*. Allí, deberemos seguir las intrucciones, iniciar sesión con nuestro usuario y contraseña, y seguidamente activar la herramienta.
+
+### Usando Copilot
+
+Una vez instalada, la herramienta se activa automáticamente. A medida que escribimos código, Copilot sugiere líneas o bloques de código, mostrando el código sugerido como un "texto fantasma", en itálica y de otro color:
+
+<img src="pics/copilot_example1.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/>
+
+Para aceptar una sugerencia, simplemente presionamos `Tab`.
+
+En la esquina superior derecha de la ventana de la consola, se muestra en tiempo real el estado de Copilot: *"Copilot: Waiting for completions..."*, que indica que el agente esta esperando que el usuario termine de escribir; *"Copilot: Completion response received"*, que indica que el agente ya ha sugerido código; o *"Copilot: No completions found"*, que avisa que Copilot no tiene sugerencias particulares para dar.
+
+El agente Copilot se vuelve más interesante cuando le pedimos ayuda para escribir bloques de código más completo. Para ello, debemos contextualizar el pedido, mediante el uso de un comentario con `#`. Por ejemplo, imaginemos que deseamos realizar un gráfico de cajas (o boxplot) en *ggplot2*, para el dataset *iris*:
+
+<img src="pics/copilot_example2.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/>
+
+Como puede observarse, las posibilidades son prácticamente infinitas, desde pedir un gráfico, hasta generar una función de básica a mediana complejidad. Es cierto que, a medida que el nivel de complejidad, el agente Copilot puede ya no ser muy útil. Aún así, permite acortar el tiempo invertido en programar bloques de código simples o repetitivos. Observe, por ejemplo, como Copilot sugiere una nueva línea en este caso:
+
+<img src="pics/copilot_example3.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/>
+
+Es posible también hacer preguntas a Copilot, para una respuesta rápida a alguna duda que tengamos. Por ejemplo:
+
+<img src="pics/copilot_example4.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/>

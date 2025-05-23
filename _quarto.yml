@@ -64,6 +64,7 @@ website:
       - section: "Unidad 5"
         contents:
           - unidad5/Funciones.qmd
+          - unidad5/copilot.qmd
       - text: Código colaborativo!
         href: codigo_colab.qmd
 
