@@ -41,6 +41,7 @@
   "codigo_colab.qmd": {
     "codigo_colab.html": "efc18658"
   },
+<<<<<<< Updated upstream
   "unidad3/ControlFlujo.qmd": {
     "ControlFlujo.html": "bda50103"
   },
@@ -76,5 +77,42 @@
   },
   "unidad5/copilot.qmd": {
     "copilot.html": "ac8da283"
+=======
+  "unidad5/copilot.qmd": {
+    "copilot.html": "c4d965c2"
+  },
+  "unidad4/GraficosBase.qmd": {
+    "GraficosBase.html": "946c5f74"
+  },
+  "unidad4/ggplot2.qmd": {
+    "ggplot2.html": "6af1afb6"
+  },
+  "unidad1/Operadores.qmd": {
+    "Operadores.html": "80a203d2"
+  },
+  "unidad1/IntroR.qmd": {
+    "IntroR.html": "13288ba9"
+  },
+  "unidad1/UsandoR.qmd": {
+    "UsandoR.html": "885ec66f"
+  },
+  "unidad1/FlujoTrabajo.qmd": {
+    "FlujoTrabajo.html": "7d2c1706"
+  },
+  "unidad1/Vectores.qmd": {
+    "Vectores.html": "999015fa"
+  },
+  "success.qmd": {
+    "success.html": "58e50ed7"
+  },
+  "unidad3/ControlFlujo.qmd": {
+    "ControlFlujo.html": "4bb5bfec"
+  },
+  "unidad5/Funciones.qmd": {
+    "Funciones.html": "2f03f79e"
+  },
+  "unidad2/Tablas.qmd": {
+    "Tablas.html": "3ccdcd48"
+>>>>>>> Stashed changes
   }
 }
