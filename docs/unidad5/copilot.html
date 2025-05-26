@@ -345,20 +345,29 @@ ul.task-list li input[type="checkbox"] {
 <p>A diferencia de otras IA como ChatGPT, Gemini o DeepSeek, <strong>GitHub Copilot</strong> es una herramienta de autocompletado de código impulsada por inteligencia artificial. Esta herramienta asiste a los usuarios de distintos lenguajes de programación (o tu <em>copiloto</em> de programación), entre ellos R, sugiriendo líneas completas o bloques de código mientras escriben, basándose en el contexto del archivo y del proyecto actual. Copilot puede generar código, escribir funciones y proporcionar documentación.</p>
 <section id="instalación-en-rstudio" class="level3">
 <h3 class="anchored" data-anchor-id="instalación-en-rstudio">Instalación en RStudio</h3>
-<p>La instalación de esta herramienta es muy simple. Como prerrequisito, debemos hacernos un usuario en GitHub. Luego, instalar o actualizar RStudio a una versión que soporte GitHub Copilot. Seguidamente, nos dirigimos a <em>Tools</em> &gt; <em>Global Options</em> &gt; <em>Copilot</em>. Allí, deberemos seguir las intrucciones, iniciar sesión con nuestro usuario y contraseña, y seguidamente activar la herramienta.</p>
+<p>La instalación de esta herramienta es muy simple. Como prerrequisito, debemos hacernos un usuario en <a href="https://github.com/" target="_blank">GitHub</a>. Luego, instalar o actualizar RStudio a una versión que soporte GitHub Copilot. Seguidamente, nos dirigimos a <em>Tools</em> &gt; <em>Global Options</em> &gt; <em>Copilot</em>. Allí, deberemos seguir las intrucciones, iniciar sesión con nuestro usuario y contraseña, y seguidamente activar la herramienta.</p>
 </section>
 <section id="usando-copilot" class="level3">
 <h3 class="anchored" data-anchor-id="usando-copilot">Usando Copilot</h3>
 <p>Una vez instalada, la herramienta se activa automáticamente. A medida que escribimos código, Copilot sugiere líneas o bloques de código, mostrando el código sugerido como un “texto fantasma”, en itálica y de otro color:</p>
+<div style="text-align: center;">
 <p><img src="pics/copilot_example1.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></p>
+</div>
 <p>Para aceptar una sugerencia, simplemente presionamos <code>Tab</code>.</p>
 <p>En la esquina superior derecha de la ventana de la consola, se muestra en tiempo real el estado de Copilot: <em>“Copilot: Waiting for completions…”</em>, que indica que el agente esta esperando que el usuario termine de escribir; <em>“Copilot: Completion response received”</em>, que indica que el agente ya ha sugerido código; o <em>“Copilot: No completions found”</em>, que avisa que Copilot no tiene sugerencias particulares para dar.</p>
 <p>El agente Copilot se vuelve más interesante cuando le pedimos ayuda para escribir bloques de código más completo. Para ello, debemos contextualizar el pedido, mediante el uso de un comentario con <code>#</code>. Por ejemplo, imaginemos que deseamos realizar un gráfico de cajas (o boxplot) en <em>ggplot2</em>, para el dataset <em>iris</em>:</p>
+<div style="text-align: center;">
 <p><img src="pics/copilot_example2.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></p>
+</div>
 <p>Como puede observarse, las posibilidades son prácticamente infinitas, desde pedir un gráfico, hasta generar una función de básica a mediana complejidad. Es cierto que, a medida que aumenta el nivel de complejidad, el agente Copilot puede ya no ser muy útil. Aún así, permite acortar el tiempo invertido en programar bloques de código simples o repetitivos. Observe, por ejemplo, como Copilot sugiere una nueva línea en este caso:</p>
+<div style="text-align: center;">
 <p><img src="pics/copilot_example3.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></p>
-<p>Es posible también hacer preguntas a Copilot, para una respuesta rápida a alguna duda que tengamos. Por ejemplo:</p>
+</div>
+<p>Es posible también hacer preguntas a Copilot, para una respuesta rápida a alguna duda simple que surja Por ejemplo:</p>
+<div style="text-align: center;">
 <p><img src="pics/copilot_example4.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></p>
+</div>
+<p>Ante preguntas o consultas más complicadas, recomendamos el uso de foros online como <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>, así también como chatbots the preferencia, como <a href="https://chat.openai.com/" target="_blank">ChatGPT</a>, o incluso el mismo <a href="https://github.com/copilot" target="_blank">GitHub Copilot</a>, que también posee una versión de chat en el navegador.</p>
 <hr>
 <div style="text-align: center;">
 <p><img src="pics/R_IA.jpg" style="padding: 5px 0; max-width: 75%; height: auto; vertical-align: middle; border-style: none;"></p>
