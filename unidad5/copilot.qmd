@@ -46,3 +46,9 @@ Como puede observarse, las posibilidades son prácticamente infinitas, desde ped
 Es posible también hacer preguntas a Copilot, para una respuesta rápida a alguna duda que tengamos. Por ejemplo:
 
 <img src="pics/copilot_example4.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/>
+
+----------------------------------------------------------
+
+<div style="text-align: center;">
+  <img src="pics/R_IA.jpg" style="padding: 5px 0; max-width: 75%; height: auto; vertical-align: middle; border-style: none;" />
+</div>
