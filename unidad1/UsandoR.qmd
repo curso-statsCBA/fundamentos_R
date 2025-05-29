@@ -48,7 +48,9 @@ Como al usar R de esta forma solo podremos ir ejecutando de a una orden a la vez
 Finalmente, si deseamos salir de la sesión de R activa, podemos utilizar la función `quit()` (o su forma abreviada `q()`), a lo que R responderá preguntando si queremos guardar una <i>imagen del espacio de trabajo</i>, a lo que responderemos que NO ingresando `n`. Esto cerrara cualquier ventana gráfica que hubiera abierta, así como en nuestra terminal veremos que el <i>prompt</i> vuelve a ser el de nuestro sistema.
 
 <p align="center">
+
 <a href="pics/r_inter5.png" target="_blank"> <img src="pics/r_inter5.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a><br><i><sup>Click en la imagen para agrandar.</sup></i>
+
 </p>
 
 ## Presentando a RStudio
@@ -91,7 +93,11 @@ Archivos, Gráficos, Paquetes, Ayuda: [esta es una área de mucho uso ya que per
 
 </ol>
 
-Cuando tengamos una rutina (i.e. un *script*) creada, podremos ejecutar directamente desde la misma el código sin necesidad de "<i>copiar y pegar</i>" en la consola de R. Para ello, con el cursor de texto sobre la linea de código podemos utilizar el botón ![](pics/r_run.png){width="24"} `Run` ubicado en el sector superior derecho del panel *Fuente*, o utilizar el atajo de teclado `Ctrl + Enter`. Esto mismo podemos hacerlo sobre varias líneas, seleccionando con el cursor todas aquellas líneas que querramos ejecutar.
+Cuando tengamos una rutina (i.e. un *script*) creada, podremos ejecutar directamente desde la misma el código sin necesidad de "<i>copiar y pegar</i>" en la consola de R. Para ello, con el cursor de texto sobre la linea de código podemos utilizar el botón ![](pics/r_run.png){width="24"} `Run` ubicado en el sector superior derecho del panel *Fuente*, o utilizar el atajo de teclado `Ctrl + Enter`. Esto mismo podemos hacerlo sobre varias líneas, seleccionando con el cursor todas aquellas líneas que queramos ejecutar.
+
+En ocasiones, si no ingresamos de forma completa una línea de código y la ejecutamos, la consola quedará en un modo de espera, aguardando a que terminemos de ingresar el código que deseamos ejecutar. El modo en que esto se nos indica es mediante un cambio en el *prompt*, que pasará de `>` a `+`. Cuando esto suceda, bastará con completar las líneas o ingresar los elementos faltantes para completar la ejecución.
+
+Además, como veremos más adelante, algunas ejecuciones pueden llevar cierto tiempo, o poseer alguna falla en sus instrucciones que haga que la ejecución no termine. En estos casos, podemos interrumpir la ejecución utilizando el botón ![](pics/stopbutt.png){width="24"} que aparecerá en el área superior derecha del panel *Consola* o con la tecla `Esc`.
 
 **Para prestar atención:** un *script* no es más que una serie ordenada de órdenes que se ejecutan una tras otra. Por defecto, siempre que ejecutemos un *script* completo, no importa si lo hacemos <i>línea a línea</i> o seleccionado todo el conjunto, la ejecución subyacente es secuencial. Para romper este comportamiento existen estructuras especiales conocidas como "<i>Estructuras de control de flujo</i>", que estudiaremos más adelante.
 
@@ -154,6 +160,7 @@ A medida que el curso avance, iremos completando estos directorios con datos, ru
 ## Ejercicio 2
 
 Cree una rutina dentro de `dia1`, como se muestra en la estructura precedente, que contenga el siguiente código.
+
 ```{r, eval=FALSE, echo=TRUE}
 # Imprimir un mensaje de bienvenida
 print("Bienvenides al curso!!!")
@@ -189,7 +196,7 @@ Una ruta (en inglés <i>path</i>) en R o en cualquier otro sistema informático 
 
 -   Las **rutas relativas** por su parte, nos muestran la ubicación de un archivo o directorio en sentido relativo al directorio de trabajo activo. Generalmente, las mismas empiezan con uno o dos caracteres de punto ".", teniendo la expresión `./` el significado literal de "en este directorio", es decir, en el directorio actual; mientras que la expresión `../` indica el directorio superior en la jerarquía del directorio actual. Tener en cuenta que en sistemas Windows, el caracter que separa directorios es la "<i>barra inversa</i>", por lo que en esos sistemas será: `.\` y `..\`.
 
-Como ejemplo, tomando como referencia la [estructura sugerida](#anch2) para el proyecto de los analisis de la tesis, si el directorio de trabajo activo fuera `analisis` dentro de `CapII`, la ruta relativa a `CapIII` seria `../../CapIII`
+Como ejemplo, tomando como referencia la estructura hipotética para el proyecto de los análisis de la tesis, si el directorio de trabajo activo fuera `analisis` dentro de `CapII`, la ruta relativa a `CapIII` seria `../../CapIII`
 
 ## Ejercicio 3
 
@@ -400,7 +407,7 @@ O incluso podemos darle algún fragmento de código que falla, y pedirle que int
 
 A medida que usemos R nos surgirá la necesidad de instalar paquetes por fuera de la versión básica, para añadir funcionalidades extras a R. Esto se puede realizar sencillamente desde RStudio, ya sea utilizando la interfaz gráfica o con funciones especificas para la instalación; así como podemos realizar la instalación desde [CRAN](https://cran.r-project.org/){target="_blank"} o desde repositorios externos (e.g. [GitHub](https://github.com/){target="_blank"}).
 
-#### *Instalación desde CRAN*
+#### *Instalación desde CRAN* {#instalación-desde-cran}
 
 La forma más sencilla de instalar paquetes es usando la función `install.packages()`, indicando en el argumento de la función el nombre del paquete. Si no recordamos exactamente el nombre, podemos hacer uso de la función de autocompletado (con la tecla `Tab ↹`). También podemos utilizar el botón ![](pics/r_inst_but.png){width="20"} para instalar paquetes, en el área correspondiente de RStudio. Si usamos esta última forma, se abrirá una ventana de diálogo, donde podemos indicar el nombre del paquete a instalar.
 
