@@ -2,7 +2,7 @@
 title: ¡Código colaborativo!
 ---
 
-Enviá tu código para probarlo en la clase en vivo.
+Enviá tu código para probarlo en la clase en vivo
 
 Utilizá el siguiente formulario para enviarnos tu bloque de código de los ejercicios que realicemos durante la clase. Lo ejecutaremos en vivo frente a todos, revisando juntos cómo funciona y resolviendo dudas en tiempo real!
 
@@ -11,7 +11,7 @@ Utilizá el siguiente formulario para enviarnos tu bloque de código de los ejer
     This is a working contact form. To receive email, 
     Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
 
-    Create Access Key here 👉 https://web3forms.com/
+    Create Access Key here https://web3forms.com/
  -->
 
 <link rel="stylesheet" href="style_form.css">
