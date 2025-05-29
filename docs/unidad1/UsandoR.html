@@ -74,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,21 +105,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-
 <link href="../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
-
 <link href="../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
-
 <link href="../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
-
 <link href="../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
-
 <script src="../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
-
 <script src="../site_libs/tippy-binding-0.1.0/tippy.js"></script>
-
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -421,8 +413,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p></p>
 <p>Finalmente, si deseamos salir de la sesión de R activa, podemos utilizar la función <code>quit()</code> (o su forma abreviada <code>q()</code>), a lo que R responderá preguntando si queremos guardar una <i>imagen del espacio de trabajo</i>, a lo que responderemos que NO ingresando <code>n</code>. Esto cerrara cualquier ventana gráfica que hubiera abierta, así como en nuestra terminal veremos que el <i>prompt</i> vuelve a ser el de nuestro sistema.</p>
 <p align="center">
-<a href="pics/r_inter5.png" target="_blank"> <img src="pics/r_inter5.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i>
-</p>
+</p><p><a href="pics/r_inter5.png" target="_blank"> <img src="pics/r_inter5.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
+<p></p>
 </section>
 <section id="presentando-a-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="presentando-a-rstudio">Presentando a RStudio</h2>
@@ -445,7 +437,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Archivos, Gráficos, Paquetes, Ayuda: <span style="font-weight:normal;">esta es una área de mucho uso ya que permite ver y manipular el sistema de archivos dónde estamos trabajando [<strong>b</strong>], así como gestionar los paquetes de R gráficamente [<strong>c</strong>]. Además, cambiará automáticamente al área gráfica cuando realicemos un gráfico [<strong>d</strong>] y cambiará a las ayudas internas disponibles en caso de solicitarlo [<strong>e</strong>].</span></p>
 </li>
 </ol>
-<p>Cuando tengamos una rutina (i.e.&nbsp;un <em>script</em>) creada, podremos ejecutar directamente desde la misma el código sin necesidad de “<i>copiar y pegar</i>” en la consola de R. Para ello, con el cursor de texto sobre la linea de código podemos utilizar el botón <img src="pics/r_run.png" class="img-fluid" width="24"> <code>Run</code> ubicado en el sector superior derecho del panel <em>Fuente</em>, o utilizar el atajo de teclado <code>Ctrl + Enter</code>. Esto mismo podemos hacerlo sobre varias líneas, seleccionando con el cursor todas aquellas líneas que querramos ejecutar.</p>
+<p>Cuando tengamos una rutina (i.e.&nbsp;un <em>script</em>) creada, podremos ejecutar directamente desde la misma el código sin necesidad de “<i>copiar y pegar</i>” en la consola de R. Para ello, con el cursor de texto sobre la linea de código podemos utilizar el botón <img src="pics/r_run.png" class="img-fluid" width="24"> <code>Run</code> ubicado en el sector superior derecho del panel <em>Fuente</em>, o utilizar el atajo de teclado <code>Ctrl + Enter</code>. Esto mismo podemos hacerlo sobre varias líneas, seleccionando con el cursor todas aquellas líneas que queramos ejecutar.</p>
+<p>En ocasiones, si no ingresamos de forma completa una línea de código y la ejecutamos, la consola quedará en un modo de espera, aguardando a que terminemos de ingresar el código que deseamos ejecutar. El modo en que esto se nos indica es mediante un cambio en el <em>prompt</em>, que pasará de <code>&gt;</code> a <code>+</code>. Cuando esto suceda, bastará con completar las líneas o ingresar los elementos faltantes para completar la ejecución.</p>
+<p>Además, como veremos más adelante, algunas ejecuciones pueden llevar cierto tiempo, o poseer alguna falla en sus instrucciones que haga que la ejecución no termine. En estos casos, podemos interrumpir la ejecución utilizando el botón <img src="pics/stopbutt.png" class="img-fluid" width="24"> que aparecerá en el área superior derecha del panel <em>Consola</em> o con la tecla <code>Esc</code>.</p>
 <p><strong>Para prestar atención:</strong> un <em>script</em> no es más que una serie ordenada de órdenes que se ejecutan una tras otra. Por defecto, siempre que ejecutemos un <em>script</em> completo, no importa si lo hacemos <i>línea a línea</i> o seleccionado todo el conjunto, la ejecución subyacente es secuencial. Para romper este comportamiento existen estructuras especiales conocidas como “<i>Estructuras de control de flujo</i>”, que estudiaremos más adelante.</p>
 <p><strong>Para pensar:</strong> en el ejemplo de la figura previa existen líneas que comienzan con un carácter <code>#</code> (llamado de muchas formas: numeral, almohadilla, <i>hashtag</i>). Si presta atención, esas líneas están coloreadas de forma homogénea en el editor y, además, aparentan tener mensajes que explican el código. ¿Qué imagina que sucede cuando se ejecutan? ¿Cómo se llama y qué función cumplen esas líneas? Más adelante veremos otra forma adicional de utilizarlas para organizar nuestro código en RStudio.</p>
 <section id="proyectos-en-rstudio" class="level3">
@@ -511,7 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "D:/MEGA/Cursos/fundamentos_R/unidad1"</code></pre>
+<pre><code>[1] "/home/usuario/cursoR/repos/fundamentos_R/unidad1"</code></pre>
 </div>
 </div>
 <p>Si por algun motivo deseara cambiar el directorio de trabajo, puedo hacerlo desde el menú “<i>Session</i> &gt; <i>Set Working Directory</i> &gt; <i>Choose Directory</i>” o, de forma más sencilla, utilizar la función <code>setwd()</code>:</p>
@@ -528,7 +522,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Las <strong>rutas absolutas</strong> son aquellas en las que explícitamente se indica todo el trayecto realizado desde la ráiz del sistema hasta la ubicación en cuestión. En los sistemas GNU/Linux, la raíz del sistema es <code>/</code> (llamado <strong>root</strong>); mientras que en los sistemas Windows será el origen del disco que este utilizándose, típicamente <code>C:\</code>. Teniendo esto en cuenta, la ruta anterior al directorio de trabajo es una ruta absoluta, ya que en la misma se explicita toda la ruta desde la raíz hasta el archivo.</p></li>
 <li><p>Las <strong>rutas relativas</strong> por su parte, nos muestran la ubicación de un archivo o directorio en sentido relativo al directorio de trabajo activo. Generalmente, las mismas empiezan con uno o dos caracteres de punto “.”, teniendo la expresión <code>./</code> el significado literal de “en este directorio”, es decir, en el directorio actual; mientras que la expresión <code>../</code> indica el directorio superior en la jerarquía del directorio actual. Tener en cuenta que en sistemas Windows, el caracter que separa directorios es la “<i>barra inversa</i>”, por lo que en esos sistemas será: <code>.\</code> y <code>..\</code>.</p></li>
 </ul>
-<p>Como ejemplo, tomando como referencia la <a href="#anch2">estructura sugerida</a> para el proyecto de los analisis de la tesis, si el directorio de trabajo activo fuera <code>analisis</code> dentro de <code>CapII</code>, la ruta relativa a <code>CapIII</code> seria <code>../../CapIII</code></p>
+<p>Como ejemplo, tomando como referencia la estructura hipotética para el proyecto de los análisis de la tesis, si el directorio de trabajo activo fuera <code>analisis</code> dentro de <code>CapII</code>, la ruta relativa a <code>CapIII</code> seria <code>../../CapIII</code></p>
 </section>
 </section>
 <section id="ejercicio-3" class="level2">
@@ -658,7 +652,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>iris[iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="dv">3</span>]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in `[.data.frame`(iris, iris$Sepal.Length &gt; 3): undefined columns selected</code></pre>
+<pre><code>Error in `[.data.frame`(iris, iris$Sepal.Length &gt; 3): columnas no definidas seleccionadas</code></pre>
 </div>
 </div>
 <p align="center">
@@ -701,8 +695,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-fe8f178da496a8130ca2" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-fe8f178da496a8130ca2">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-6f095a4c65a7120f2ccc" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-6f095a4c65a7120f2ccc">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <ul>

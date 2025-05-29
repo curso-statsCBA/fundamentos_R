@@ -74,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,21 +105,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-
 <link href="../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
-
 <link href="../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
-
 <link href="../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
-
 <link href="../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
-
 <script src="../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
-
 <script src="../site_libs/tippy-binding-0.1.0/tippy.js"></script>
-
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -406,8 +398,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>La representación gráfica de datos y resultados es una parte importante de nuestro quehacer habitual en ámbitos académicos y científicos. Una de las razones de la gran popularidad de R yace en su excelente apartado gráfico, con el cual se pueden producir gráficos de buena calidad listos para publicar. De forma general, existen <u id="comentario">dos métodos principales</u> para realizar gráficos en R: el basado en el sistema básico de <code>R base</code> y el basado en el paquete <code>ggplot2</code>. Ambas opciones poseen sus propias ventajas y desventajas y generalmente son usados a la par. Es decir, en algunas ocasiones convendrá o será más cómodo, utilizar uno y, en otras ocasiones, será mejor opción el otro.</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-2ea7d4e34df308e6bedf" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-2ea7d4e34df308e6bedf">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:14px;'>Existen otros paquetes que profundizan funcionalidades específicas que trascienden los objetivos de este curso. Aquí puede encontrar <a href='https://www.geeksforgeeks.org/top-r-libraries-for-data-visualization/' target='_blank'>una lista de los paquetes top en 2024<\/a> según un sitio especializado.<\/span>","interactive":"true"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-77614d3ed1fb9ad895ee" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-77614d3ed1fb9ad895ee">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:14px;'>Existen otros paquetes que profundizan funcionalidades específicas que trascienden los objetivos de este curso. Aquí puede encontrar <a href='https://www.geeksforgeeks.org/top-r-libraries-for-data-visualization/' target='_blank'>una lista de los paquetes top en 2024<\/a> según un sitio especializado.<\/span>","interactive":"true"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>En esta clase veremos como construir gráficos con <code>R base</code>. Para empezar, definiremos un concepto relativo al <em>nivel</em> de la función utilizada. Cuando grafiquemos podremos utilizaremos funciones de <em>alto nivel</em>, que son aquellas funciones que crean nuevos gráficos, generalmente junto a los principales ejes, etiquetas ó títulos (e.g.&nbsp;<code>plot()</code>, <code>hist()</code>, etc.); y funciones de <em>bajo nivel</em>, que son aquellas con las que podremos añadir elementos extras a un gráfico ya creado, como puntos, líneas, flechas u otras etiquetas (e.g.&nbsp;<code>points()</code>, <code>text()</code>, etc.). La <strong>combinación de funciones de alto y bajo nivel nos permite realizar una enorme personalización del gráfico</strong>, aunque en algunas ocasiones esto puede llevar a que tengamos que definir cada aspecto del mismo. Este compromiso entre el nivel de personalización deseado y la cantidad de líneas de código necesarias puede parecer un poco abrumador al comienzo; pero, luego de un tiempo, en general optaremos siempre por una completa personalización. Sumado a esto, con el tiempo acumularemos plantillas propias para ciertos tipos de gráficos que realicemos frecuentemente, y solo nos bastará con cambiar los datos y algunos parámetros menores para obtener un nuevo gráfico listo para su publicación (o al menos su revisión 😬).</p>
@@ -631,16 +623,16 @@ Coefficients:
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>toplot[<span class="fu">sample</span>(<span class="fu">nrow</span>(toplot), <span class="dv">10</span>),]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Sepal.Length Petal.Length    Species   Spe.Color
-20           5.1          1.5     setosa forestgreen
-46           4.8          1.4     setosa forestgreen
-123          7.7          6.7  virginica         red
-118          7.7          6.7  virginica         red
-113          6.8          5.5  virginica         red
-3            4.7          1.3     setosa forestgreen
-66           6.7          4.4 versicolor  dodgerblue
-64           6.1          4.7 versicolor  dodgerblue
-149          6.2          5.4  virginica         red
-94           5.0          3.3 versicolor  dodgerblue</code></pre>
+126          7.2          6.0  virginica         red
+19           5.7          1.7     setosa forestgreen
+127          6.2          4.8  virginica         red
+73           6.3          4.9 versicolor  dodgerblue
+111          6.5          5.1  virginica         red
+108          7.3          6.3  virginica         red
+53           6.9          4.9 versicolor  dodgerblue
+139          6.0          4.8  virginica         red
+2            4.9          1.4     setosa forestgreen
+27           5.0          1.6     setosa forestgreen</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
