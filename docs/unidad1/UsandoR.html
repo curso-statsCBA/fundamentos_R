@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,12 +70,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,13 +105,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
 <link href="../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
+
 <script src="../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
+
 <script src="../site_libs/tippy-binding-0.1.0/tippy.js"></script>
+
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -503,7 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "/home/pablo/MEGA/Cursos/fundamentos_R_Linux/unidad1"</code></pre>
+<pre><code>[1] "D:/MEGA/Cursos/fundamentos_R/unidad1"</code></pre>
 </div>
 </div>
 <p>Si por algun motivo deseara cambiar el directorio de trabajo, puedo hacerlo desde el menú “<i>Session</i> &gt; <i>Set Working Directory</i> &gt; <i>Choose Directory</i>” o, de forma más sencilla, utilizar la función <code>setwd()</code>:</p>
@@ -650,7 +658,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>iris[iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="dv">3</span>]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in `[.data.frame`(iris, iris$Sepal.Length &gt; 3): columnas no definidas seleccionadas</code></pre>
+<pre><code>Error in `[.data.frame`(iris, iris$Sepal.Length &gt; 3): undefined columns selected</code></pre>
 </div>
 </div>
 <p align="center">
@@ -693,8 +701,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-b5ce8583f5b3f7642362" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-b5ce8583f5b3f7642362">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-fe8f178da496a8130ca2" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-fe8f178da496a8130ca2">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <ul>
@@ -988,8 +996,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1100,7 +1106,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
