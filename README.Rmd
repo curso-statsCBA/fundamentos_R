@@ -6,7 +6,7 @@ output: md_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Fundamentos básicos del lenguaje R
+# Fundamentos básicos del lenguaje RR
 
 <font size=5>Curso de posgrado \| FCEFyN - UNC</font>
 
