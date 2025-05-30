@@ -3,7 +3,7 @@
   max-width: 70rem;
   margin-left: 0;
   margin-right: auto;
-  padding: 1rem 1rem;
+  padding: 0rem 0rem;
 }
 
 .contact-intro > * + * {
@@ -61,7 +61,7 @@
 }
 
 .form-textarea {
-  min-height: 220px;
+  min-height: 150px;
   color: #6b7280;
   font-size: 1rem;
 }

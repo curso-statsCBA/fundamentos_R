@@ -406,8 +406,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>La representación gráfica de datos y resultados es una parte importante de nuestro quehacer habitual en ámbitos académicos y científicos. Una de las razones de la gran popularidad de R yace en su excelente apartado gráfico, con el cual se pueden producir gráficos de buena calidad listos para publicar. De forma general, existen <u id="comentario">dos métodos principales</u> para realizar gráficos en R: el basado en el sistema básico de <code>R base</code> y el basado en el paquete <code>ggplot2</code>. Ambas opciones poseen sus propias ventajas y desventajas y generalmente son usados a la par. Es decir, en algunas ocasiones convendrá o será más cómodo, utilizar uno y, en otras ocasiones, será mejor opción el otro.</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-b7a2e94b197a87fb59c0" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-b7a2e94b197a87fb59c0">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:14px;'>Existen otros paquetes que profundizan funcionalidades específicas que trascienden los objetivos de este curso. Aquí puede encontrar <a href='https://www.geeksforgeeks.org/top-r-libraries-for-data-visualization/' target='_blank'>una lista de los paquetes top en 2024<\/a> según un sitio especializado.<\/span>","interactive":"true"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-d52c4b9ee95cec7d357f" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-d52c4b9ee95cec7d357f">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:14px;'>Existen otros paquetes que profundizan funcionalidades específicas que trascienden los objetivos de este curso. Aquí puede encontrar <a href='https://www.geeksforgeeks.org/top-r-libraries-for-data-visualization/' target='_blank'>una lista de los paquetes top en 2024<\/a> según un sitio especializado.<\/span>","interactive":"true"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>En esta clase veremos como construir gráficos con <code>R base</code>. Para empezar, definiremos un concepto relativo al <em>nivel</em> de la función utilizada. Cuando grafiquemos podremos utilizaremos funciones de <em>alto nivel</em>, que son aquellas funciones que crean nuevos gráficos, generalmente junto a los principales ejes, etiquetas ó títulos (e.g.&nbsp;<code>plot()</code>, <code>hist()</code>, etc.); y funciones de <em>bajo nivel</em>, que son aquellas con las que podremos añadir elementos extras a un gráfico ya creado, como puntos, líneas, flechas u otras etiquetas (e.g.&nbsp;<code>points()</code>, <code>text()</code>, etc.). La <strong>combinación de funciones de alto y bajo nivel nos permite realizar una enorme personalización del gráfico</strong>, aunque en algunas ocasiones esto puede llevar a que tengamos que definir cada aspecto del mismo. Este compromiso entre el nivel de personalización deseado y la cantidad de líneas de código necesarias puede parecer un poco abrumador al comienzo; pero, luego de un tiempo, en general optaremos siempre por una completa personalización. Sumado a esto, con el tiempo acumularemos plantillas propias para ciertos tipos de gráficos que realicemos frecuentemente, y solo nos bastará con cambiar los datos y algunos parámetros menores para obtener un nuevo gráfico listo para su publicación (o al menos su revisión 😬).</p>
@@ -631,16 +631,16 @@ Coefficients:
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>toplot[<span class="fu">sample</span>(<span class="fu">nrow</span>(toplot), <span class="dv">10</span>),]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Sepal.Length Petal.Length    Species   Spe.Color
-37           5.5          1.3     setosa forestgreen
-31           4.8          1.6     setosa forestgreen
-72           6.1          4.0 versicolor  dodgerblue
-117          6.5          5.5  virginica         red
-94           5.0          3.3 versicolor  dodgerblue
-41           5.0          1.3     setosa forestgreen
-93           5.8          4.0 versicolor  dodgerblue
-46           4.8          1.4     setosa forestgreen
-24           5.1          1.7     setosa forestgreen
-78           6.7          5.0 versicolor  dodgerblue</code></pre>
+107          4.9          4.5  virginica         red
+57           6.3          4.7 versicolor  dodgerblue
+81           5.5          3.8 versicolor  dodgerblue
+10           4.9          1.5     setosa forestgreen
+50           5.0          1.4     setosa forestgreen
+133          6.4          5.6  virginica         red
+98           6.2          4.3 versicolor  dodgerblue
+101          6.3          6.0  virginica         red
+6            5.4          1.7     setosa forestgreen
+73           6.3          4.9 versicolor  dodgerblue</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
