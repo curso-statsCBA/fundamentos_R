@@ -497,7 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pesos_aleatorios <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>), <span class="fu">length</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">valor_promedio</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>, <span class="at">pesos =</span> pesos_aleatorios)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.15</code></pre>
+<pre><code>[1] 11.00833</code></pre>
 </div>
 </div>
 </section>
@@ -585,19 +585,20 @@ Se tomó el valor por defecto.</code></pre>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>lista_numeros</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
- [1] 225 928 733  14 185 861 545 206 333 812 850 395 265 544 485 811 781 385 646
-[20] 657 690 506 347 766 139 269 410 651 517 932 504 796 607 765 941 216 852 570
-[39] 521 560 164 888 586 927  60 844   1  94 150 962
+ [1] 109 395 726 314 471 340 507 562 318 631  80 895 813 996 129 272 454 534 817
+[20] 881 772 365 403 918 105 389 619 214 138 779 833 304 610 302 680 878 435 998
+[39]  91 604 136 499 128 177 563 463 470 143 768 247
 
 [[2]]
- [1] 787 589 443 915 291 243 953 801 195 879 973 492 530 591 160 642 272 136 665
-[20] 933 922 755 988 151 214 142  22 627  21   4 253  47  29 532 869 144 934 643
-[39] 366 100 355 330 952 521 357 201 541 277 745 245
+ [1] 869 455 987 750 528 539 573 109 221 694 275  46 205 586 609 481 714 830 445
+[20] 432 330 685 582 672  89  35 752  55  31 649 474 546  47 331 628 780 754 995
+[39] 744 212 789  96 132 375 886 511 770 576 735 822
 
 [[3]]
- [1]  24 420 289  69 934 221 904 689 975 281 203 310 782 919 918 901 735 177 355
-[20] 656 190 247 751 535 439 381 892 175 997  74  95 139 680 103 748 990 302 491
-[39] 435 236 726 455 434 493 591 460 365 564 920 677</code></pre>
+ [1]  143  388  635  826  770  714  582  371  607  187  799  628  592  322  992
+[16]  841  574  288  502  103    5  347  588  442  541  729  596  915  222  875
+[31]  339   56  813  378  719   74   75  479  939  916  483  743   83  461  286
+[46] 1000  609  537  393  458</code></pre>
 </div>
 </div>
 <p>La función <code>sapply()</code> aplica una función dada a un objeto de tipo <code>list()</code>, y devuelve un vector. En este ejemplo, utilizaremos la función recientemente creada (<code>valor_promedio()</code>), para calcular el promedio de cada conjunto de números de la lista (indicados en el primer argumento):</p>
@@ -605,7 +606,7 @@ Se tomó el valor por defecto.</code></pre>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> <span class="fu">sapply</span>(lista_numeros, <span class="at">FUN =</span> valor_promedio)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>promedios</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 537.92 475.54 506.94</code></pre>
+<pre><code>[1] 485.50 508.62 519.30</code></pre>
 </div>
 </div>
 <p>Notar que para el argumento <code>FUN</code> indicamos el nombre de la función sin los paréntesis, la cual debe existir en el entorno (cargada por el usuario o por defecto en R).</p>
@@ -615,7 +616,7 @@ Se tomó el valor por defecto.</code></pre>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> <span class="fu">sapply</span>(lista_numeros, <span class="at">FUN =</span> valor_promedio, <span class="at">pesos =</span> pesos_aleatorios)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>promedios</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 396.155 368.135 366.845</code></pre>
+<pre><code>[1] 353.935 387.040 396.490</code></pre>
 </div>
 </div>
 <p><strong>Para pensar:</strong> tal cual como está programada, la función <code>valor_promedio()</code> no es útil para ser utilizada con la función <code>sapply()</code>, especialmente en cuanto al argumento <code>pesos</code>. ¿Por qué?</p>
@@ -628,10 +629,10 @@ Se tomó el valor por defecto.</code></pre>
 <li>Cree una función que calcule el error estándar de un conjunto de números. El error estándar se calcula realizando el cociente entre el desvío estándar de la muestra y la raíz cuadrada de la cantidad de números evaluados.</li>
 <li>A partir de la función que calcula el error estándar, utilice la función <code>sapply()</code> para calcular el error estándar del conjunto de números <code>seq(1, 50, 20)</code>, <code>c(501, 920, 759, 233)</code> y <code>-14:28</code>.</li>
 </ol>
-<p><br></p>
-<p align="center">
-</p><p><a href="pics/meme_practico_funciones.png" target="_blank"><img src="pics/meme_practico_funciones.png" style="padding: 5px 0 5px 0;width: 40rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a></p>
-<p></p>
+<hr>
+<div style="text-align: center;">
+<p><a href="pics/meme_practico_funciones.png" target="_blank"><img src="pics/meme_practico_funciones.png" style="padding: 5px 0 5px 0;width: 40rem;max-width:50%;height:auto;vertical-align:middle;border-style: none;"></a></p>
+</div>
 
 
 </section>
