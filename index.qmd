@@ -31,6 +31,12 @@ A la izquierda de la pantalla se encuentran disponibles todos los recursos prác
 
 </p>
 
+<!--
+# Evaluación 2025
+
+[Haz click aquí para acceder a la evaluación del curso}(ponerlink){target="_blank"}
+-->
+
 # Otros cursos de interés
 
 En el Doctorado de Ciencias Biológicas (FCEFyN, Universidad Nacional de Córdoba), se dictan con regularidad cursos introductorios y avanzados de modelos estadísticos en R:
