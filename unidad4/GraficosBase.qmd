@@ -23,7 +23,7 @@ En cuanto a la **personalización de los gráficos**, intentaremos a continuaci�
 
 ### Un gráfico simple
 
-En el primer día de clases, ya realizamos nuestro primer gráfico sencillo. Podemos, con todo lo que sabemos ahora, entender perfectamente como funciona el siguiente código:
+En el primer día de clases, ya realizamos nuestro primer gráfico sencillo. Podemos, con todo lo que sabemos ahora, entender perfectamente cómo funciona el siguiente código:
 
 ```{r eval=F, echo=T, fig.align='center', fig.height=3, fig.width=4}
 plot(1:3, rep(1,3), pch=16, col=c("blue","red","black"), cex=5)
@@ -38,7 +38,7 @@ Empezando por los datos, ya sabemos que la expresión `1:3` genera un vector com
 
 #### *Los parámetros básicos* `pch`*,* `col` *y* `cex`
 
-Con estos tres parámetros básicos de la función `plot()` podemos indicar que tipo de **marcador** se graficará (`pch`), que **colores** queremos que estos marcadores tengan y que **tamaño relativo** queremos que tengan (`cex`). Debajo podemos ver un ejemplo, pero nunca esta de más tener a mano una carta de referencia descargada en nuestra PC o un sitio que podamos [consultar online](https://r-charts.com/){target="_bank"}. Notar que a los colores podemos indicarlos con un *número* del 1 al 8 (luego comienzan a ciclarse) como se muestra aquí abajo, o con sus *nombres* (e.g. '*black*', '*red*', etc.) como en el ejemplo previo; así como también podemos usar notación [hexadecimal o RGB](https://r-charts.com/colors/){target="\"_blank"}.
+Con estos tres parámetros básicos de la función `plot()` podemos indicar qué tipo de **marcador** se graficará (`pch`), qué **colores** queremos que estos marcadores tengan y qué **tamaño relativo** queremos que tengan (`cex`). Debajo podemos ver un ejemplo, pero nunca está de más tener a mano una carta de referencia descargada en nuestra PC o un sitio que podamos [consultar online](https://r-charts.com/){target="_bank"}. Notar que a los colores podemos indicarlos con un *número* del 1 al 8 (luego comienzan a ciclarse) como se muestra aquí abajo, o con sus *nombres* (e.g. '*black*', '*red*', etc.) como en el ejemplo previo; así como también podemos usar notación [hexadecimal o RGB](https://r-charts.com/colors/){target="\"_blank"}.
 
 ```{r eval=T, echo=F, fig.align='center', fig.height=5, fig.width=12}
 par(mar = c(2, 3, 1, 1))
@@ -74,7 +74,7 @@ plot(1:3, c(3,1,2), pch=23, col="black", bg=c("blue","yellow","red"), cex=c(1,2,
 
 ## Histogramas
 
-Los histogramas son gráficos que nos permiten visualizar la distribución de frecuencia de los datos. Son muy utilizados en el *análisis exploratorio* de los datos. Graficar histogramas en R es sumamente sencillo gracias a la función `hist()`, una función de alto nivel que permite realizarlos. Para el siguiente ejemplo, visualizaremos una distribución normal de 1.000 observaciones con `media = 0` y `desviación estandar = 0` .
+Los histogramas son gráficos que nos permiten visualizar la distribución de frecuencia de los datos. Son muy utilizados en el *análisis exploratorio* de los datos. Graficar histogramas en R es sumamente sencillo gracias a la función `hist()`, una función de alto nivel que permite realizarlos. Para el siguiente ejemplo, visualizaremos una distribución normal de 1.000 observaciones con `media = 0` y `desviación estándar = 0` .
 
 ```{r eval=T, echo=T, fig.align='center', fig.height=4, fig.width=5}
 hist(rnorm(1000))
@@ -133,13 +133,13 @@ with(iris, plot(Petal.Length, Sepal.Length,
                 ylim=c(0, 8)))
 ```
 
-**Para pensar:** En el código precedente apareció `with()`, una función que previamente no habíamos utilizado. Analice el código y trate de descifrar que ventajas tiene su uso. Por supuesto, siempre puede consultar la ayuda con `?with()`.
+**Para pensar:** En el código precedente apareció `with()`, una función que previamente no habíamos utilizado. Analice el código y trate de descifrar qué ventajas tiene su uso. Por supuesto, siempre puede consultar la ayuda con `?with()`.
 
 ### *Límites gráficos*
 
 En el código del gráfico previo, aparecieron algunas novedades: los parámetros `xlim` e `ylim`. Como puede imaginarse, se trata de los parámetros para fijar los límites de los ejes. Ambos parámetros esperan un vector de largo 2 con los rangos de las coordenadas de `x` e `y`, y son muy útiles a la hora de crear una base gráfica sin ningún contenido, para luego rellenar con nuestros datos. Esta forma de trabajo es muy extendida al trabajar con gráficos básicos en R, y para ello cuando llamamos a la función `plot()` debemos indicarle que el gráfico sea vacío, con el parámetro `typ = "n"`.
 
-Antes de probar su funcionamiento, prestemos atención al origen de coordenadas del gráfico (i.e. `(x,y)=(0,0)`). Si nos fijamos bien, veremos que esa coordenada no coincide exactamente con el ángulo inferior izquierdo del gráfico. Esto es debido a que, por defecto, R utiliza una función interna para extender levemente los ejes (ahora que lo notamos, podemos ver que sucede también en los extremos de los ejes). Si no deseamos este comportamiento, podemos utilizar los parámetros `xaxs` e `yaxs`. Estos parámetros tienen dos configuraciones posibles: `"r"` o `"i"` (de "regular" e "interno"), veamos como funcionan:
+Antes de probar su funcionamiento, prestemos atención al origen de coordenadas del gráfico (i.e. `(x,y)=(0,0)`). Si nos fijamos bien, veremos que esa coordenada no coincide exactamente con el ángulo inferior izquierdo del gráfico. Esto es debido a que, por defecto, R utiliza una función interna para extender levemente los ejes (ahora que lo notamos, podemos ver que sucede también en los extremos de los ejes). Si no deseamos este comportamiento, podemos utilizar los parámetros `xaxs` e `yaxs`. Estos parámetros tienen dos configuraciones posibles: `"r"` o `"i"` (de "regular" e "interno"), veamos cómo funcionan:
 
 ```{r eval=F, echo=T, fig.align='center', fig.height=3, fig.width=3}
 plot(0,0, xlim = c(0, 100), ylim = c(0, 50), typ = "n", xaxs = "r", yaxs = "i")
@@ -152,7 +152,7 @@ plot(0,0, xlim=c(0, 100), ylim=c(0, 50), typ='n', xaxs="r",yaxs="i")
 
 ### *Añadiendo otros elementos a nuestro gráfico*
 
-En el gráfico de dispersión, muchas veces es interesante mostrar el resultado de la correlación entre las variables de forma gráfica, es decir, la línea (o curva) resultante del ajuste de un modelo de regresión entre las variables. Teniendo en cuenta el mismo conjunto de datos con el que venimos trabajando, recordemos primero como podemos obtener la regresión lineal usando la función `lm()`.
+En el gráfico de dispersión, muchas veces es interesante mostrar el resultado de la correlación entre las variables de forma gráfica, es decir, la línea (o curva) resultante del ajuste de un modelo de regresión entre las variables. Teniendo en cuenta el mismo conjunto de datos con el que venimos trabajando, recordemos primero cómo podemos obtener la regresión lineal usando la función `lm()`.
 
 ```{r eval=T, echo=T}
 lm(Sepal.Length ~ Petal.Length, data = iris)
@@ -179,7 +179,7 @@ with(iris, plot(Petal.Length, Sepal.Length,
 with(iris, abline(lm(Sepal.Length ~ Petal.Length)))
 ```
 
-Así como añadimos la recta resultante de la regresión, con `abline()` podemos añadir tantas líneas verticales y horizontales como necesitemos, esto es muy útil para separar sectores del gráfico, hacer lineas de divisiones menores de los ejes, etc. Además, podemos llamar a otra función de bajo nivel como es `text()`, para agregar sobre el gráfico los valores que componen la ecuación de la recta:
+Así como añadimos la recta resultante de la regresión, con `abline()` podemos añadir tantas líneas verticales y horizontales como necesitemos, esto es muy útil para separar sectores del gráfico, hacer líneas de divisiones menores de los ejes, etc. Además, podemos llamar a otra función de bajo nivel como es `text()`, para agregar sobre el gráfico los valores que componen la ecuación de la recta:
 
 ```{r eval=F, echo=T, fig.align='center', fig.height=5, fig.width=5}
 # Primero guardemos los resultados de la regresión en un nuevo objeto
@@ -427,8 +427,7 @@ legend("bottom", horiz=TRUE, bty = "n",
 ```
 
 ## Ejercicio 3
-
-a)  Analice el código precedente sin ejecutarlo, intentando describir que hace cada línea. Luego, copie el mismo a un script dentro de `dia4` y ejecútelo por partes para entender el funcionamiento. Recuerde buscar en las ayudas interna de R y juegue con las opciones disponibles.
+a)  Analice el código precedente sin ejecutarlo, intentando describir qué hace cada línea. Luego, copie el mismo a un script dentro de `dia4` y ejecútelo por partes para entender el funcionamiento. Recuerde buscar en las ayudas interna de R y juegue con las opciones disponibles.
 b)  Repita el gráfico pero con una flecha azul que indique el valor de la mediana para la 0,5 mm/día del suplemento jugo de naranja. Además, ubique la leyenda en la posición `(x,y) = (2.5,5)`.
 
 <br>
@@ -437,7 +436,7 @@ b)  Repita el gráfico pero con una flecha azul que indique el valor de la media
 
 En muchas ocasiones, necesitamos mostrar en un solo panel varios gráficos diferentes. Para ello, debemos utilizar la función `par()`, que permite configurar todos los parámetros básicos del dispositivo gráfico que usa R. Esta función tiene un nivel jerárquico superior a todas las que vimos previamente, ya que con la misma podemos cambiar el comportamiento *por defecto* de todos los parámetros gráficos de forma semi-permanente (i.e. en el contexto de RStudio, durante toda la sesión en curso; y para dispositivos gráficos externos, hasta que se reinicie el mismo). Por esto, si realizamos un cambio con `par()` para mostrar dos gráficos en paralelo y, posteriormente, queremos realizar un nuevo gráfico solitario, debemos volver a configurar el dispositivo gráfico para mostrar un solo gráfico.
 
-A pesar de la gran cantidad de usos que posee la función par(), dentro de los mas comunes están la configuración de márgenes interiores (`mar`/`mai`) y exteriores (`oma` y `omi`), así como la configuración del emplazamiento de múltiples gráficos (`mfrow`).
+A pesar de la gran cantidad de usos que posee la función par(), dentro de los más comunes están la configuración de márgenes interiores (`mar`/`mai`) y exteriores (`oma` y `omi`), así como la configuración del emplazamiento de múltiples gráficos (`mfrow`).
 
 Para ver esto último en acción, pensemos que queremos realizar una regresión lineal y evaluar si los supuestos de la misma se cumplen. Para ellos, hagamos primero un modelo de regresión lineal entre las variables `Petal.Length` y `Sepal.Length`, para la especie *I. virginica* del conjunto de datos `iris`:
 
@@ -469,7 +468,7 @@ plot(regL)
 
 ## Ejercicio final
 
-Con el conjuntos de datos provisto, y ayudándose con la documentación de las funciones `points()`, `segments()` y `title()`, y buscando como funcionan los parámetros gráficos para líneas `lwd` y `lty`, realice un gráfico como el que se muestra a continuación.
+Con el conjunto de datos provisto, y ayudándose con la documentación de las funciones `points()`, `segments()` y `title()`, y buscando cómo funcionan los parámetros gráficos para líneas `lwd` y `lty`, realice un gráfico como el que se muestra a continuación.
 
 ```{r eval=T, echo=T}
 data <- data.frame(tipo = c("linea solida","linea guiones","linea punteada", rep("punto",4)),

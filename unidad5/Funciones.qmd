@@ -32,7 +32,7 @@ blabla <- function(nombre = "- inserte aquí su nombre -"){
 
 Al correr el bloque de código anterior, simplemente estamos *creando* la función, y no *corriendo* el código programado. Esta se carga como un objeto propio en el entorno, quedando disponible para su uso futuro.
 
-En este ejemplo, el argumento `nombre` se encuentra asignado a una línea de texto. De esta manera, la función entiende que el valor indicado es el **valor por defecto**, para los casos los que el usuario no define un valor particular para dicho argumento. La definición de valores por defecto no es obligatoria, pero puede ser útil en muchos casos. Si corremos dicha función suelta, sin definir nada en específico, podemos observar el resultado:
+En este ejemplo, el argumento `nombre` se encuentra asignado a una línea de texto. De esta manera, la función entiende que el valor indicado es el **valor por defecto**, para los casos en los que el usuario no define un valor particular para dicho argumento. La definición de valores por defecto no es obligatoria, pero puede ser útil en muchos casos. Si corremos dicha función suelta, sin definir nada en específico, podemos observar el resultado:
 
 ```{r}
 blabla()
@@ -46,7 +46,7 @@ blabla(nombre = "Lionel Scaloni")
 
 ### Unas palabritas sobre *entornos*
 
-Una cuestión a considerar en el contexto de creación de funciones es el uso que las mismas hacen de los *entornos*. Podemos definir a un entorno como al *espacio* en donde se guardan nuestros objetos. Cuando creamos un objeto, sea una tabla, un vector, una función o cualquier otro, estos se guardan en el *entorno global*, y de hecho aparecen visibles en el panel correspondiente de la interfaz de RStudio. Cuando creamos una función, se crea un *sub-entorno* contenido dentro de la función. ¿Por qué es esto relevante? Porque los entornos son los lugares en donde se guardan los objetos de los que haremos uso para nuestras funciones, y una función buscará *primero* en el entorno de la función, *luego* en el entorno que se encuentra un nivel por encima de este.
+Una cuestión a considerar en el contexto de creación de funciones es el uso que las mismas hacen de los *entornos*. Podemos definir a un entorno como el *espacio* en donde se guardan nuestros objetos. Cuando creamos un objeto, sea una tabla, un vector, una función o cualquier otro, estos se guardan en el *entorno global*, y de hecho aparecen visibles en el panel correspondiente de la interfaz de RStudio. Cuando creamos una función, se crea un *sub-entorno* contenido dentro de la función. ¿Por qué es esto relevante? Porque los entornos son los lugares en donde se guardan los objetos de los que haremos uso para nuestras funciones, y una función buscará *primero* en el entorno de la función, *luego* en el entorno que se encuentra un nivel por encima de este.
 
 Veámoslo con un ejemplo. La siguiente función toma un número y le suma 5:
 
@@ -93,7 +93,7 @@ x <- 9
 fff()
 ```
 
-¿Que pasó? La función *buscó* al objeto `x` dentro del entorno de la función, no lo encontró, pero luego buscó en el entorno un nivel por encima, que es el entorno global. Encontró un objeto con dicho nombre, y lo utilizó para su ejecución.
+¿Qué pasó? La función *buscó* al objeto `x` dentro del entorno de la función, no lo encontró, pero luego buscó en el entorno un nivel por encima, que es el entorno global. Encontró un objeto con dicho nombre, y lo utilizó para su ejecución.
 
 **Para testear:** ¿Qué sucedería si `x` está definido *por fuera* de la función pero también *dentro* de la misma?
 
@@ -116,7 +116,7 @@ valor_promedio <- function(x){
 }
 ```
 
-Notar que el contenido de la función es casi idéntico a como programaríamos por fuera del contexto de una función. La única diferencia es que la función permite realizar la tarea propuesta **para cualquier caso**, y no para solo uno en particular. Aquí, podemos definir cualquier vector numérico que quisiéramos, y calcular el promedio a partir del vector indicado.
+Notar que el contenido de la función es casi idéntico a como programaríamos por fuera del contexto de una función. La única diferencia es que la función permite realizar la tarea propuesta **para cualquier caso**, y no solo para uno en particular. Aquí, podemos definir cualquier vector numérico que quisiéramos, y calcular el promedio a partir del vector indicado.
 
 Otra diferencia que vemos aquí respecto de la función del ejemplo anterior (`blabla()`) es el uso de la función `return()`. Esta expresión indica el valor a devolver por la función, y su llamado termina la ejecución de la función en esa línea. Es decir, toda línea de código por debajo de un `return()` no se ejecutará. ¿De qué serviría esto? Por ejemplo, la función podría ejecutar un bloque de código si se cumple una condición, y otro bloque si no se cumple, justificando la presencia de más de un `return()`.
 
@@ -222,7 +222,7 @@ El uso de las funciones `stop()` y `warning()` en el contexto de funciones no es
 
 ## Funciones del tipo *apply*
 
-Las funciones de la familia *apply* se utilizan para aplicar una función determinada a una lista o a un vector. Es útil para realizar un mismo cálculo a un conjunto de elementos dado, evitando utilizar, por ejemplo, un ciclo `for`.
+Las funciones de la familia *apply* se utilizan para aplicar una función determinada a una lista o a un vector. Es útil para realizar un mismo cálculo a un conjunto de elementos, evitando utilizar, por ejemplo, un ciclo `for`.
 
 Por ejemplo, imaginemos una lista de 3 elementos, cada elemento un vector numérico:
 

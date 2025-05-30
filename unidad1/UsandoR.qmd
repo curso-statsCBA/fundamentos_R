@@ -13,7 +13,7 @@ R puede ser utilizado de forma interactiva iniciándolo directamente de cualquie
 
 </p>
 
-Cuando R es iniciado de esa forma, veremos un texto con una pequeña presentación de R, incluyendo la versión que se está ejecutando y algunas ayudas básicas. Luego de este texto, vemos una linea vacía comenzada por el carácter `>`. Este último carácter se conoce como <i>prompt</i> y nos indica que R está listo para recibir órdenes. Así pues, podríamos pedir que nos imprima una bienvenida al curso utilizando la función `print()`, haciendo por ejemplo:
+Cuando R es iniciado de esa forma, veremos un texto con una pequeña presentación de R, incluyendo la versión que se está ejecutando y algunas ayudas básicas. Luego de este texto, vemos una línea vacía comenzada por el carácter `>`. Este último carácter se conoce como <i>prompt</i> y nos indica que R está listo para recibir órdenes. Así pues, podríamos pedir que nos imprima una bienvenida al curso utilizando la función `print()`, haciendo por ejemplo:
 
 ```{r, eval=FALSE, echo=TRUE}
 print("Bienvenides al curso!!!")
@@ -37,7 +37,7 @@ plot(1:3, rep(1,3), pch=16, col=c("blue","red","black"), cex=5)
 
 </p>
 
-Como al usar R de esta forma solo podremos ir ejecutando de a una orden a la vez, puede ser conveniente disponer de algún editor de [texto plano](https://es.wikipedia.org/wiki/Archivo_de_texto){target="_blank"} para poder ir guardando nuestro código a medida que lo vamos escribiendo y ejecutando. Para ello podemos utilizar cualquier editor de texto plano (e.g., en GNU/Linux podemos usar "[gedit](https://help.gnome.org/users/gedit/stable/index.html.es){target="_blank"}" o el editor que traiga nuestra distribución; en Windows podemos utilizar "[Bloc de Notas](https://apps.microsoft.com/detail/9msmlrh6lzf3?hl=en-us&gl=US#activetab=pivot:overviewtab){target="_blank"}", "[Notepad++](https://notepad-plus-plus.org/){target="_blank"}", etc). Aprovechando el espacio del escritorio de nuestra PC podríamos entonces hacer una disposición con las ventanas abiertas de nuestra terminal donde ejecutamos R, la ventana gráfica donde se mostrarán nuestros gráficos, el archivo de texto plano con nuestro código y podríamos sumar también una ventana con las carpetas donde estamos guardando el trabajo y desde donde leeremos los datos que cargaremos a R. Algo parecido a lo siguiente:
+Como al usar R de esta forma sólo podremos ir ejecutando de a una orden a la vez, puede ser conveniente disponer de algún editor de [texto plano](https://es.wikipedia.org/wiki/Archivo_de_texto){target="_blank"} para poder ir guardando nuestro código a medida que lo vamos escribiendo y ejecutando. Para ello podemos utilizar cualquier editor de texto plano (e.g., en GNU/Linux podemos usar "[gedit](https://help.gnome.org/users/gedit/stable/index.html.es){target="_blank"}" o el editor que traiga nuestra distribución; en Windows podemos utilizar "[Bloc de Notas](https://apps.microsoft.com/detail/9msmlrh6lzf3?hl=en-us&gl=US#activetab=pivot:overviewtab){target="_blank"}", "[Notepad++](https://notepad-plus-plus.org/){target="_blank"}", etc). Aprovechando el espacio del escritorio de nuestra PC podríamos entonces hacer una disposición con las ventanas abiertas de nuestra terminal donde ejecutamos R, la ventana gráfica donde se mostrarán nuestros gráficos, el archivo de texto plano con nuestro código y podríamos sumar también una ventana con las carpetas donde estamos guardando el trabajo y desde donde leeremos los datos que cargaremos a R. Algo parecido a lo siguiente:
 
 <p align="center">
 
@@ -45,7 +45,7 @@ Como al usar R de esta forma solo podremos ir ejecutando de a una orden a la vez
 
 </p>
 
-Finalmente, si deseamos salir de la sesión de R activa, podemos utilizar la función `quit()` (o su forma abreviada `q()`), a lo que R responderá preguntando si queremos guardar una <i>imagen del espacio de trabajo</i>, a lo que responderemos que NO ingresando `n`. Esto cerrara cualquier ventana gráfica que hubiera abierta, así como en nuestra terminal veremos que el <i>prompt</i> vuelve a ser el de nuestro sistema.
+Finalmente, si deseamos salir de la sesión de R activa, podemos utilizar la función `quit()` (o su forma abreviada `q()`), a lo que R responderá preguntando si queremos guardar una <i>imagen del espacio de trabajo</i>, a lo que responderemos que NO ingresando `n`. Esto cerrará cualquier ventana gráfica que hubiera abierta, así como en nuestra terminal veremos que el <i>prompt</i> vuelve a ser el de nuestro sistema.
 
 <p align="center">
 
@@ -93,7 +93,7 @@ Archivos, Gráficos, Paquetes, Ayuda: [esta es una área de mucho uso ya que per
 
 </ol>
 
-Cuando tengamos una rutina (i.e. un *script*) creada, podremos ejecutar directamente desde la misma el código sin necesidad de "<i>copiar y pegar</i>" en la consola de R. Para ello, con el cursor de texto sobre la linea de código podemos utilizar el botón ![](pics/r_run.png){width="24"} `Run` ubicado en el sector superior derecho del panel *Fuente*, o utilizar el atajo de teclado `Ctrl + Enter`. Esto mismo podemos hacerlo sobre varias líneas, seleccionando con el cursor todas aquellas líneas que queramos ejecutar.
+Cuando tengamos una rutina (i.e. un *script*) creada, podremos ejecutar directamente desde la misma el código sin necesidad de "<i>copiar y pegar</i>" en la consola de R. Para ello, con el cursor de texto sobre la línea de código podemos utilizar el botón ![](pics/r_run.png){width="24"} `Run` ubicado en el sector superior derecho del panel *Fuente*, o utilizar el atajo de teclado `Ctrl + Enter`. Esto mismo podemos hacerlo sobre varias líneas, seleccionando con el cursor todas aquellas líneas que queramos ejecutar.
 
 En ocasiones, si no ingresamos de forma completa una línea de código y la ejecutamos, la consola quedará en un modo de espera, aguardando a que terminemos de ingresar el código que deseamos ejecutar. El modo en que esto se nos indica es mediante un cambio en el *prompt*, que pasará de `>` a `+`. Cuando esto suceda, bastará con completar las líneas o ingresar los elementos faltantes para completar la ejecución.
 
@@ -135,9 +135,9 @@ AnalisisTesis
  ...
 ```
 
-En este caso, podríamos entonces pensar en crear un proyecto para todo el conjunto de "AnalisisTesis" o podemos subdividir y crear un proyecto por cada capítulo que requiera realizar algun tipo de análisis. De nuevo, no hay una manera única, todo dependerá del contexto y lo que resulte -o parezca resultar- óptimo en cada situación.
+En este caso, podríamos entonces pensar en crear un proyecto para todo el conjunto de "AnalisisTesis" o podemos subdividir y crear un proyecto por cada capítulo que requiera realizar algún tipo de análisis. De nuevo, no hay una manera única, todo dependerá del contexto y lo que resulte -o parezca resultar- óptimo en cada situación.
 
-Existen múltiples formas de crear un nuevo proyecto. Podemos hacer "<i>File</i> \> <i>New Project...</i>"; podemos usar el botón ![](pics/r_proy_but.png){width="24"} en la esquina superior izquierda; o utilizar el menú de proyectos ![](pics/r_proy_but2.png){width="20"} `Project: (None)`, situado en la esquina superior derecha. A la hora de crear un nuevo proyecto, podemos elegir partir de un directorio nuevo o de uno previamente creado. Así mismo, podemos elegir un tipo específico de proyecto según si estemos haciendo un proyecto general, un proyecto para un nuevo paquete de R, una [aplicación Shiny](https://shiny.posit.co/){target="_blank"}, etc. Todo esto se realiza mediante una serie de menús gráficos que se nos irán presentado y que son sumamente intuitivos de seguir.
+Existen múltiples formas de crear un nuevo proyecto. Podemos hacer "<i>File</i> \> <i>New Project...</i>"; podemos usar el botón ![](pics/r_proy_but.png){width="24"} en la esquina superior izquierda; o utilizar el menú de proyectos ![](pics/r_proy_but2.png){width="20"} `Project: (None)`, situado en la esquina superior derecha. A la hora de crear un nuevo proyecto, podemos elegir partir de un directorio nuevo o de uno previamente creado. Así mismo, podemos elegir un tipo específico de proyecto según si estemos haciendo un proyecto general, un proyecto para un nuevo paquete de R, una [aplicación Shiny](https://shiny.posit.co/){target="_blank"}, etc. Todo esto se realiza mediante una serie de menús gráficos que se nos irán presentando y que son sumamente intuitivos de seguir.
 
 ## Ejercicio 1
 
@@ -173,13 +173,13 @@ Corra esas líneas y explore las funciones del panel gráfico. Finalmente, guard
 
 ## El directorio de trabajo
 
-Cuando trabajamos con R, implícitamente lo estamos haciendo en alguna ubicación de nuestro sistema de archivos. Los proyectos de RStudio facilitan esta cuestión haciendo que el *directorio de trabajo* sea aquel en el cual creamos el proyecto. Para conocer en donde estamos trabajando, podemos utilizar la función `getwd()`. Por ejemplo, mientras escribo esta guía puedo ver en qué ubicación se encuentra el proyecto en la cual la estoy realizando (Sí! R es tan versátil, que hasta podemos crear páginas web y cualquier otro tipo de documento con su propio formato, imágenes embebidas, vínculos de internet, etc.):
+Cuando trabajamos con R, implícitamente lo estamos haciendo en alguna ubicación de nuestro sistema de archivos. Los proyectos de RStudio facilitan esta cuestión haciendo que el *directorio de trabajo* sea aquel en el cual creamos el proyecto. Para conocer en donde estamos trabajando, podemos utilizar la función `getwd()`. Por ejemplo, mientras escribo esta guía puedo ver en qué ubicación se encuentra el proyecto en el cual la estoy realizando (Sí! R es tan versátil, que hasta podemos crear páginas web y cualquier otro tipo de documento con su propio formato, imágenes embebidas, vínculos de internet, etc.):
 
 ```{r}
 getwd()
 ```
 
-Si por algun motivo deseara cambiar el directorio de trabajo, puedo hacerlo desde el menú "<i>Session</i> \> <i>Set Working Directory</i> \> <i>Choose Directory</i>" o, de forma más sencilla, utilizar la función `setwd()`:
+Si por algún motivo deseara cambiar el directorio de trabajo, puedo hacerlo desde el menú "<i>Session</i> \> <i>Set Working Directory</i> \> <i>Choose Directory</i>" o, de forma más sencilla, utilizar la función `setwd()`:
 
 ```{r warning=FALSE}
 # setwd("/home/usuario/R/mi_proyecto_de_R") # ejecución sin salida en consola
@@ -192,11 +192,11 @@ Si por algun motivo deseara cambiar el directorio de trabajo, puedo hacerlo desd
 
 Una ruta (en inglés <i>path</i>) en R o en cualquier otro sistema informático es la "dirección" de cada archivo que existe en el sistema de archivos. De forma general, existen dos formas de representar a cualquier ruta:
 
--   Las **rutas absolutas** son aquellas en las que explícitamente se indica todo el trayecto realizado desde la ráiz del sistema hasta la ubicación en cuestión. En los sistemas GNU/Linux, la raíz del sistema es `/` (llamado **root**); mientras que en los sistemas Windows será el origen del disco que este utilizándose, típicamente `C:\`. Teniendo esto en cuenta, la ruta anterior al directorio de trabajo es una ruta absoluta, ya que en la misma se explicita toda la ruta desde la raíz hasta el archivo.
+-   Las **rutas absolutas** son aquellas en las que explícitamente se indica todo el trayecto realizado desde la raíz del sistema hasta la ubicación en cuestión. En los sistemas GNU/Linux, la raíz del sistema es `/` (llamado **root**); mientras que en los sistemas Windows será el origen del disco que esté utilizándose, típicamente `C:\`. Teniendo esto en cuenta, la ruta anterior al directorio de trabajo es una ruta absoluta, ya que en la misma se explicita toda la ruta desde la raíz hasta el archivo.
 
 -   Las **rutas relativas** por su parte, nos muestran la ubicación de un archivo o directorio en sentido relativo al directorio de trabajo activo. Generalmente, las mismas empiezan con uno o dos caracteres de punto ".", teniendo la expresión `./` el significado literal de "en este directorio", es decir, en el directorio actual; mientras que la expresión `../` indica el directorio superior en la jerarquía del directorio actual. Tener en cuenta que en sistemas Windows, el caracter que separa directorios es la "<i>barra inversa</i>", por lo que en esos sistemas será: `.\` y `..\`.
 
-Como ejemplo, tomando como referencia la estructura hipotética para el proyecto de los análisis de la tesis, si el directorio de trabajo activo fuera `analisis` dentro de `CapII`, la ruta relativa a `CapIII` seria `../../CapIII`
+Como ejemplo, tomando como referencia la estructura hipotética para el proyecto de los análisis de la tesis, si el directorio de trabajo activo fuera `analisis` dentro de `CapII`, la ruta relativa a `CapIII` sería `../../CapIII`
 
 ## Ejercicio 3
 
@@ -327,7 +327,7 @@ En RStudio, como ya mencionamos antes, disponemos de un área específica para m
 
 ## Ejercicio 4
 
-En RStudio corra las siguientes líneas de a una y observe que salidas le brinda el programa. Anímese a explorar, no hay nada que pueda romper, haga click aquí y allá, vaya y vuelva. De igual forma, intente utilizar el autocompletado y las ayudas emergentes, fomente su creatividad buscando lo que se le ocurra, o intente averiguar como se usa esa función que hace 2 o 3 semanas que no logra ejecutar sin error. En clase discutiremos que partes componen la ayuda y como interpretarla.
+En RStudio corra las siguientes líneas de a una y observe qué salidas le brinda el programa. Anímese a explorar, no hay nada que pueda romper, haga click aquí y allá, vaya y vuelva. De igual forma, intente utilizar el autocompletado y las ayudas emergentes, fomente su creatividad buscando lo que se le ocurra, o intente averiguar cómo se usa esa función que hace 2 o 3 semanas que no logra ejecutar sin error. En clase discutiremos qué partes componen la ayuda y cómo interpretarla.
 
 ```{r eval=FALSE}
 help(help)
@@ -338,7 +338,7 @@ help(help)
 
 #### *Foros y bitácoras de la comunidad*
 
-Además de estas útiles ayudas *offline*, si contamos con una conexión a internet, por supuesto no dudaremos en hacer uso extensivo de buscadores. Muchas veces, más que saber cómo opera una función en particular, queremos conocer como realizar una acción dada, con el método que sea. Aprender a buscar es en sí mismo un arte. La cantidad de sitios con información sobre R es inabarcable y muchas veces podemos perdernos en el afán de encontrar lo que buscamos, por ello a continuación veremos algunas recomendaciones.
+Además de estas útiles ayudas *offline*, si contamos con una conexión a internet, por supuesto no dudaremos en hacer uso extensivo de buscadores. Muchas veces, más que saber cómo opera una función en particular, queremos conocer cómo realizar una acción dada, con el método que sea. Aprender a buscar es en sí mismo un arte. La cantidad de sitios con información sobre R es inabarcable y muchas veces podemos perdernos en el afán de encontrar lo que buscamos, por ello a continuación veremos algunas recomendaciones.
 
 -   El idioma en que buscamos importa. Como para cualquier otra búsqueda, no encontraremos los mismos recursos si buscamos en español que si buscamos en inglés.
 
@@ -348,7 +348,7 @@ Además de estas útiles ayudas *offline*, si contamos con una conexión a inter
 
 </p>
 
--   Existen múltiples foros que incluyen hilos específicos para R, buscar en ellos muchas veces es una forma segura de aprender como hacer algo. La única recomendación en este sentido, aunque no podemos enfatizarla lo suficiente, es que **nunca debemos ejecutar código que no comprendamos**. Si creemos que cierto fragmento de código nos puede ser útil, primero intentemos entenderlo con un ejemplo de juguete, en una sesión nueva, lejos de nuestros scripts de los análisis en curso. Cuando pensemos que hemos podido entender como funciona, entonces ya estamos listos para trasladar ese código a nuestro script. Si no encontramos la respuesta al problema específico que tenemos, en estos foros también podemos realizar una pregunta y nos responderán bastante rápido. La clave es poder expresar concretamente el problema, el resultado esperado y, en la medida de lo posible, brindar un conjunto de datos mínimo que sirva de ejemplo al que realmente queremos procesar. A continuación un ejemplo de [Stack Overflow](https://stackoverflow.com/){target="_blank"}
+-   Existen múltiples foros que incluyen hilos específicos para R, y buscar en ellos muchas veces es una forma segura de aprender como hacer algo. La única recomendación en este sentido, aunque no podemos enfatizarla lo suficiente, es que **nunca debemos ejecutar código que no comprendamos**. Si creemos que cierto fragmento de código nos puede ser útil, primero intentemos entenderlo con un ejemplo de juguete, en una sesión nueva, lejos de nuestros scripts de los análisis en curso. Cuando pensemos que hemos podido entender cómo funciona, entonces ya estamos listos para trasladar ese código a nuestro script. Si no encontramos la respuesta al problema específico que tenemos, en estos foros también podemos realizar una pregunta y nos responderán bastante rápido. La clave es poder expresar concretamente el problema, el resultado esperado y, en la medida de lo posible, brindar un conjunto de datos mínimo que sirva de ejemplo al que realmente queremos procesar. A continuación un ejemplo de [Stack Overflow](https://stackoverflow.com/){target="_blank"}
 
 <p align="center">
 
@@ -356,7 +356,7 @@ Además de estas útiles ayudas *offline*, si contamos con una conexión a inter
 
 </p>
 
--   Ademas de los foros, existe una cantidad inmensa de artículos en sitios webs dedicados a R, así como en blogs personales. Muchas personas, que de hecho investigan en problemas similares a los nuestros, dedican mucho tiempo a publicar métodos de análisis en R, incluyendo muchas veces apartados con explicaciones teóricas sobre ciertos tópicos. Nunca está de más tomarse el tiempo para ver que encontramos. Debajo un ejemplo correspondiente a los materiales de un sitio sobre [Analisis en ecologia de comunidades en R](https://www.davidzeleny.net/anadat-r/doku.php/en:start){target="_blank"}.
+-   Además de los foros, existe una cantidad inmensa de artículos en sitios webs dedicados a R, así como en blogs personales. Muchas personas, que de hecho investigan sobre problemas similares a los nuestros, dedican mucho tiempo a publicar métodos de análisis en R, incluyendo muchas veces apartados con explicaciones teóricas sobre ciertos tópicos. Nunca está de más tomarse el tiempo para ver qué encontramos. Debajo un ejemplo correspondiente a los materiales de un sitio sobre [Analisis en ecologia de comunidades en R](https://www.davidzeleny.net/anadat-r/doku.php/en:start){target="_blank"}.
 
 <p align="center">
 
@@ -366,7 +366,7 @@ Además de estas útiles ayudas *offline*, si contamos con una conexión a inter
 
 #### *Los errores como una oportunidad de aprendizaje*
 
-Muy frecuentemente nos encontraremos con errores en la ejecución de alguna línea. Lejos de desanimarnos y/o frustrarnos, debemos pensar que los errores son una oportunidad de aprendizaje. Los errores puede ir desde pequeños errores de tipeo, hasta la falta de memoria de cómputo para la acción requerida, pasando por operaciones imposibles de realizar o falta de argumentos obligatorios en las funciones. En cualquier caso, lo primero que debemos hacer es mantener la calma e intentar **interpretar el mensaje de error**. Si no logramos solucionarlo por nuestra cuenta, siempre podemos copiar el mensaje y ver que ayuda obtenemos en línea.
+Muy frecuentemente nos encontraremos con errores en la ejecución de alguna línea. Lejos de desanimarnos y/o frustrarnos, debemos pensar que los errores son una oportunidad de aprendizaje. Los errores pueden ir desde pequeños errores de tipeo, hasta la falta de memoria de cómputo para la acción requerida, pasando por operaciones imposibles de realizar o falta de argumentos obligatorios en las funciones. En cualquier caso, lo primero que debemos hacer es mantener la calma e intentar **interpretar el mensaje de error**. Si no logramos solucionarlo por nuestra cuenta, siempre podemos copiar el mensaje y ver que ayuda obtenemos en línea.
 
 ```{r error=TRUE}
 data(iris)
@@ -393,7 +393,7 @@ Fuera de estas consideraciones, podemos preguntar directamente como hacer algo, 
 
 </p>
 
-O incluso podemos darle algún fragmento de código que falla, y pedirle que intente encontrar el error y explicarnos que es lo que lo esta generando:
+O incluso podemos darle algún fragmento de código que falla, y pedirle que intente encontrar el error y explicarnos qué es lo que lo esta generando:
 
 <p align="center">
 
@@ -405,7 +405,7 @@ O incluso podemos darle algún fragmento de código que falla, y pedirle que int
 
 ## Instalación y carga de paquetes
 
-A medida que usemos R nos surgirá la necesidad de instalar paquetes por fuera de la versión básica, para añadir funcionalidades extras a R. Esto se puede realizar sencillamente desde RStudio, ya sea utilizando la interfaz gráfica o con funciones especificas para la instalación; así como podemos realizar la instalación desde [CRAN](https://cran.r-project.org/){target="_blank"} o desde repositorios externos (e.g. [GitHub](https://github.com/){target="_blank"}).
+A medida que usemos R nos surgirá la necesidad de instalar paquetes por fuera de la versión básica, para añadir funcionalidades extras a R. Esto se puede realizar sencillamente desde RStudio, ya sea utilizando la interfaz gráfica o con funciones específicas para la instalación; así como podemos realizar la instalación desde [CRAN](https://cran.r-project.org/){target="_blank"} o desde repositorios externos (e.g. [GitHub](https://github.com/){target="_blank"}).
 
 #### *Instalación desde CRAN* {#instalación-desde-cran}
 
@@ -417,7 +417,7 @@ La forma más sencilla de instalar paquetes es usando la función `install.packa
 
 </p>
 
-Es importante recordar que cuando realicemos la instalación, muchas veces será necesario instalar otros paquetes que son requeridos para que funcione correctamente el paquete que queremos usar. Estos *paquetes necesarios* se conocen como **dependencias** y por defecto R instalará todas las dependencias necesarias. En la siguiente imagen se muestra la descripción de [`vegan`](https://cran.r-project.org/web/packages/vegan/index.html){target="_blank"}, un paquete muy popular para Ecología de Comunidades, dónde podemos ver que *depende* de los paquetes `permute`y `lattice`, en sus versiones mínimas 0.9 y 4.1 respectivamente, así como "*importa*" los paquetes `MASS`, `cluster` y `mgcv`.
+Es importante recordar que cuando realicemos la instalación, muchas veces será necesario instalar otros paquetes que son requeridos para que funcione correctamente el paquete que queremos usar. Estos *paquetes necesarios* se conocen como **dependencias** y por defecto R instalará todas las dependencias necesarias. En la siguiente imagen se muestra la descripción de [`vegan`](https://cran.r-project.org/web/packages/vegan/index.html){target="_blank"}, un paquete muy popular para Ecología de Comunidades, dónde podemos ver que *depende* de los paquetes `permute` y `lattice`, en sus versiones mínimas 0.9 y 4.1 respectivamente, así como "*importa*" los paquetes `MASS`, `cluster` y `mgcv`.
 
 <p align="center">
 
@@ -437,7 +437,7 @@ Dentro de los errores comunes que podemos encontrar tenemos:
 tippy::tippy_this(elementId = "manteniendo", tooltip = "<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.</span>")
 ```
 
--   Alguna *dependencia* no puede ser instalada y por ende falla la instalación del paquete objetivo. Esto puede deberse a un problema de compatibilidad entre versiones de las dependencias o de algún conflicto entre la dependencia necesaria y otra que exista (o falte) en nuestro Sistema Operativo. Muchas veces este problema se debe a que faltan los *compiladores* (`gcc`, `gfortran`, `g++`, etc) necesarios para compilar el nuevo paquete. Resolver estos conflictos puede requerir un poco de tiempo, en tanto necesitamos identificar cuál es la librería que esta generando el conflicto, pero suelen resolverse simplemente luego de haber instalado la dependencia correcta en nuestro Sistema Operativo.
+-   Alguna *dependencia* no puede ser instalada y por ende falla la instalación del paquete objetivo. Esto puede deberse a un problema de compatibilidad entre versiones de las dependencias o de algún conflicto entre la dependencia necesaria y otra que exista (o falte) en nuestro Sistema Operativo. Muchas veces este problema se debe a que faltan los *compiladores* (`gcc`, `gfortran`, `g++`, etc) necesarios para compilar el nuevo paquete. Resolver estos conflictos puede requerir un poco de tiempo, en tanto necesitamos identificar cuál es la librería que está generando el conflicto, pero suelen resolverse simplemente luego de haber instalado la dependencia correcta en nuestro Sistema Operativo.
 
 #### *Cargando paquetes*
 
@@ -458,7 +458,7 @@ Instale con el medio que le sea conveniente el paquete `remotes`, tal como se mu
 
 #### *Llamando funciones de paquetes específicos*
 
-En ocasiones, algunas funciones puede tener igual nombre en diferentes paquetes. Por defecto, cuando llamamos a una función R intentará utilizar la función del paquete que más recientemente se haya cargado. Si deseamos referirnos a una función de un paquete específico podemos hacerlo utilizando la expresión `paquete::funcion()`. Por ejemplo:
+En ocasiones, algunas funciones pueden tener igual nombre en diferentes paquetes. Por defecto, cuando llamamos a una función R intentará utilizar la función del paquete que más recientemente se haya cargado. Si deseamos referirnos a una función de un paquete específico podemos hacerlo utilizando la expresión `paquete::funcion()`. Por ejemplo:
 
 ```{r, fig.align='center', fig.width=6}
 car::Anova(lm(hp ~ as.factor(cyl), data = mtcars))

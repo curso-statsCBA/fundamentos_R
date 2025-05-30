@@ -5,7 +5,7 @@ pagetitle: "Flujo de Trabajo en R"
 
 ## Ante todo, orden y organización
 
-Cuando trabajamos con R (pero esto es válido también para cualquier otro proyecto de código o análisis de datos) debemos intentar ser sumamente organizados. Disponer de un sistema que permita identificar rápidamente cuales son las entradas (datos) y las salidas (resultados de análisis, gráficos, etc.), así como los pasos intermedios, si existieran, nos facilitará mucho nuestro trabajo. Ya hemos visto que en RStudio podemos crear *Proyectos* que nos ayudarán a mantener todo más organizado. A continuación veremos algunas otras formas de comentar e indexar el código en sí mismo para poder lograr una mayor organización y claridad.
+Cuando trabajamos con R (pero esto es válido también para cualquier otro proyecto de código o análisis de datos) debemos intentar ser sumamente organizados. Disponer de un sistema que permita identificar rápidamente cuáles son las entradas (datos) y las salidas (resultados de análisis, gráficos, etc.), así como los pasos intermedios, si existieran, nos facilitará mucho nuestro trabajo. Ya hemos visto que en RStudio podemos crear *Proyectos* que nos ayudarán a mantener todo más organizado. A continuación veremos algunas otras formas de comentar e indexar el código en sí mismo para poder lograr una mayor organización y claridad.
 
 <p align="center">
 
@@ -17,7 +17,7 @@ Cuando trabajamos con R (pero esto es válido también para cualquier otro proye
 
 Como hemos visto previamente, cuando estemos trabajando dentro de RStudio la mayor parte del tiempo estaremos editando un archivo de texto con nuestro código. A este archivo que contiene todas las instrucciones, desde la carga de paquetes necesarios, la carga de datos, la manipulación de los mismos, la ejecución de análisis, las instrucciones para realizar gráficos y la exportación de los mismos, etcétera, lo llamamos ***script*** o ***rutina***.
 
-Ademas del código propiamente dicho, **ningún script está completo si no está correctamente anotado**, es decir, si no contiene texto humanamente legible que permita seguir qué es lo que se está haciendo en el mismo. La forma de introducir un <u id='comentario'>comentario</u> en el código es anteponer `#` a la linea en cuestión. De esta forma, el interprete de código evitará su ejecución.
+Además del código propiamente dicho, **ningún script está completo si no está correctamente anotado**, es decir, si no contiene texto humanamente legible que permita seguir qué es lo que se está haciendo en el mismo. La forma de introducir un <u id='comentario'>comentario</u> en el código es anteponer `#` a la línea en cuestión. De esta forma, el intérprete de código evitará su ejecución.
 
 ```{r, echo=FALSE}
 tippy::tippy_this(elementId = "comentario", tooltip = "<span style='font-size:16px;'>Todo texto explicativo que no deseamos que sea ejecutado por el interprete de R.</span>")
@@ -36,7 +36,7 @@ Otra función interesante relacionada a los comentarios, es que dentro de RStudi
 
 </p>
 
-De igual forma, cada entrada del índice nos permitirá *plegar* o *colapsar*, las líneas de código que contenga. Esto puede ser útil para ocultar algunas secciones extremadamente largas o para secciones que, al momento de editar el script, no sean de interés. Esta funcionalidad de colapsar líneas, también estará disponible para bloques de código de *control de flujo* y para bloques que definan *funciones*. En el `día 3` veremos específicamente como usar estas estructuras de control de flujo y como crear funciones, por el momento, prestemos atención en la captura siguiente a los números de línea del editor y a las lineas dónde vemos el botón ![](pics/but_colaps.png){width="20"}, indicando que es un bloque de código colapsado.
+De igual forma, cada entrada del índice nos permitirá *plegar* o *colapsar* las líneas de código que contenga. Esto puede ser útil para ocultar algunas secciones extremadamente largas o para secciones que, al momento de editar el script, no sean de interés. Esta funcionalidad de colapsar líneas también estará disponible para bloques de código de *control de flujo* y para bloques que definan *funciones*. En el `día 3` veremos específicamente cómo usar estas estructuras de control de flujo y como crear funciones, por el momento, prestemos atención en la captura siguiente a los números de línea del editor y a las líneas dónde vemos el botón ![](pics/but_colaps.png){width="20"}, indicando que es un bloque de código colapsado.
 
 <p align="center">
 
@@ -48,10 +48,9 @@ De igual forma, cada entrada del índice nos permitirá *plegar* o *colapsar*, l
 
 Cree una rutina dentro de `dia1` y cree un índice que contenga títulos de 1º, 3º, 5º y 6º nivel.
 
-
 ## Carga de funciones externas
 
-Más adelante veremos en profundidad como se construye una función, por el momento solo digamos que una función es una forma de personalizar la ejecución de código para una función específica que nosotros diseñamos. Para evitar repetir en todos nuestros scripts estas funciones *personalizadas*, podemos generar una **biblioteca propia de funciones** desde donde las cargaremos. Así mismo, puede que algún/a colega haya diseñado una función y nos la envíe, en cuyo caso también podemos cargarla sin necesidad de *copiar y pegar* la misma en nuestro script.
+Más adelante veremos en profundidad cómo se construye una función, por el momento solo digamos que una función es una forma de personalizar la ejecución de código para una función específica que nosotros diseñamos. Para evitar repetir en todos nuestros scripts estas funciones *personalizadas*, podemos generar una **biblioteca propia de funciones** desde donde las cargaremos. Así mismo, puede que algún/a colega haya diseñado una función y nos la envíe, en cuyo caso también podemos cargarla sin necesidad de *copiar y pegar* la misma en nuestro script.
 
 Para cargar una función externa, por supuesto, primero debemos disponer de una. Para esta demostración utilizaremos una función muy sencilla que calcula una [función cuadrática](https://es.wikipedia.org/wiki/Funci%C3%B3n_cuadr%C3%A1tica){target="_blank"} con un solo término, es decir, es una función de tipo `y(x) = x²`:
 
@@ -97,12 +96,11 @@ fun_cuad(1:4)
 fun_cuad(c(1,10,100))
 ```
 
-
 ## Trabajando sin interfaz gráfica
 
 En algunas ocasiones deberemos usar R de una forma no interactiva, esto es, daremos la instrucción para que se ejecute un script dado pero ya no viéndolo dentro de RStudio y corriendo línea por línea, sino desde alguna herramienta propia del Sistema Operativo. Una situación típica de esto es si alguna vez trabajamos con R dentro de un [cluster de cómputo de alto rendimiento](https://en.wikipedia.org/wiki/High-performance_computing){target="_blank"}, como por ejemplo en el [CCAD (Centro de Cómputo de Alto Desempeño)](https://ccad.unc.edu.ar/equipamiento/){target="_blank"} de la UNC. Otras situaciones puede ser incorporar algún procesamiento con R dentro un [*pipeline*](https://en.wikipedia.org/wiki/Pipeline_(software)){target="_blank"} de análisis que utilice otros lenguajes en combinación a R (e.g. [BASH](https://es.wikipedia.org/wiki/Bash){target="_blank"}, [python](https://www.python.org/about/){target="_blank"}, etc.)
 
-Existen múltiples formas, dependiendo del Sistema Operativo que estemos utilizando, para ejecutar un script de R desde el propio sistema, pero la forma más sencilla es invocar al archivo ejecutable de R llamado **Rscript**. En sistemas Windows, típicamente se encuentra en *"C:\\Program Files\\R\\R-version\\bin\\x64\\"* y debemos ejecutarlo desde el ["Simbolo del sistema"](https://es.wikipedia.org/wiki/S%C3%ADmbolo_del_sistema_de_Windows){target="_blank"}. En sistemas GNU/Linux basta con abrir la terminal de nuestra preferencia y ejecutar:
+Existen múltiples formas, dependiendo del Sistema Operativo que estemos utilizando, para ejecutar un script de R desde el propio sistema, pero la forma más sencilla es invocar al archivo ejecutable de R llamado **Rscript**. En sistemas Windows, típicamente se encuentra en *"C:\\Program Files\\R\\R-version\\bin\\x64\\"* y debemos ejecutarlo desde el ["Símbolo del sistema"](https://es.wikipedia.org/wiki/S%C3%ADmbolo_del_sistema_de_Windows){target="_blank"}. En sistemas GNU/Linux basta con abrir la terminal de nuestra preferencia y ejecutar:
 
 ```{bash, eval=FALSE}
 Rscript mi_script.R
@@ -114,11 +112,11 @@ Rscript mi_script.R
 
 </p>
 
-Dado que esto último es un uso relativamente avanzado, no haremos un ejercicio relacionado. No obstante, si tiene curiosidad sobre como se vería un script como el usado en el ejemplo de arriba, puede [descargarlo de aquí](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad1/no_interactivo.R) e intentar correrlo en su sistema operativo.
+Dado que esto último es un uso relativamente avanzado, no haremos un ejercicio relacionado. No obstante, si tiene curiosidad sobre cómo se vería un script como el usado en el ejemplo de arriba, puede [descargarlo de aquí](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad1/no_interactivo.R) e intentar correrlo en su sistema operativo.
 
 ## Algunas máximas a recordar a la hora de programar en R
 
--   <u>Explícito es mejor que implícito</u>. Ante la duda, declaremos explícitamente todo lo que hacemos. Esto puede ser un poco engorroso, pero nos ayudara sobre todo en la etapa de aprendizaje inicial.
+-   <u>Explícito es mejor que implícito</u>. Ante la duda, declaremos explícitamente todo lo que hacemos. Esto puede ser un poco engorroso, pero nos ayudará sobre todo en la etapa de aprendizaje inicial.
 
 -   <u>Orden, orden, orden</u>... Intentar hacer el trabajo de forma sistemática desde el comienzo siempre es más fácil que luego intentar ordenar algo caótico cuando nos toque publicar y compartir nuestro código.
 
@@ -137,7 +135,6 @@ Dado que esto último es un uso relativamente avanzado, no haremos un ejercicio 
 -   En ocasiones puede ser muy frustrante que algo no nos salga, evitemos la tentación de volver a esa planilla de cálculo, o a ese software donde antes nos salía todo. <u>Todo el tiempo que invirtamos va a dar muchísimos frutos en el futuro</u>.
 
 -   R, o el lenguaje que aprendamos a continuación, es una herramienta fantástica pero no reemplaza de ninguna manera la formación que tenemos. Por más sofisticados que sean nuestros análisis, al fin y al cabo, será nuestro criterio profesional el que decida si el resultado es o no interesante. Nunca nos olvidemos que <u>lo más importante en nuestro trabajo son las preguntas que intentamos responder, no los medios que usamos para hacerlo</u>.
-
 
 <p align="center">
 

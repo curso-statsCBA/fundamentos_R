@@ -40,12 +40,12 @@ str(vec)
 Un vector puede componerse de cinco clases principales de elementos:
 
 |  |  |
-|------------------------|------------------------------------------------|
+|------------------------|-----------------------------------------------|
 | numeric | Contienen números reales (decimales). Por ejemplo: `c(1.2, 1.5, 1.7)`. |
 | integer | Contienen números enteros. Debemos indicarse con la letra `L` luego del número. Por ejemplo: `c(1L, -5L, 16L, 17L)`. |
 | logical | Contienen valores booleanos o lógicos. Por ejemplo: `c(TRUE, FALSE, NA)` o `c(T, F, T)`. |
 | character | Contienen texto, el cual debe explicitarse con comillas simples o dobles. Por ejemplo: `c("Algarrobo", "Quebracho", "Espinillo")`. |
-| NULL | Representa un vector vacío. Se genera al crear el vector: `vec <- NULL`. |
+| NULL | Representa un objeto vacío. Se genera al crear el vector: `vec <- NULL`. |
 
 Recordemos que al crear un vector, este puede componerse de un solo tipo de elementos. Por ello, debemos tener cuidado a la hora de generar nuestros vectores, y asegurarnos de que estamos generando un vector con elementos de la clase deseada. El uso de vectores con elementos de una clase incorrecta es un error muy común en distintos contextos del flujo de trabajo. Por ejemplo:
 
@@ -82,7 +82,7 @@ suc <- 5:30
 suc
 ```
 
-Para generar vectores con una lógica más compleja, las funciones `seq()` y `rep()` son adecuadas. La función `seq()` genera un sucesión de números (i.e. un vector de clase `numeric` o `integer`):
+Para generar vectores con una lógica más compleja, las funciones `seq()` y `rep()` son adecuadas. La función `seq()` genera una sucesión de números (i.e. un vector de clase `numeric` o `integer`):
 
 ```{r}
 seq(from = 1, to = 10, by = 2)
@@ -125,7 +125,7 @@ Además de las expuestas, existen numerosas funciones nativas de R para generar 
 
 ## Ejercicio
 
-Dado el vector `rep(x = 3:1, each = 5)`, explore qué hacen las siguientes funciones: `length()`, `sort()`, `rev()` y `unique()`.
+Dado el vector `c(8, 45, 9, 3, -2, 9, 7, 14, 45)`, explore qué hacen las siguientes funciones: `length()`, `sort()`, `rev()` y `unique()`.
 
 ## Vectores y expresiones lógicas
 
@@ -271,7 +271,7 @@ vec[is.na(vec)] <- 0
 vec
 ```
 
-En el contexto de valores `NA`, es útil la función `na.omit()`, que remuevo todos los elementos que sean `NA`:
+En el contexto de valores `NA`, es útil la función `na.omit()`, que remueve todos los elementos que sean `NA`:
 
 ```{r}
 vec <- c(5, 8, 16, NA, 3, 8, NA)
@@ -308,7 +308,7 @@ especies <- c(especies, "Yuchan", "Tusca")
 especies
 ```
 
-**Para explorar:** La función `append()` es una forma de general de hacer esto. Explore `?append`.
+**Para explorar:** La función `append()` es una forma general de hacer esto. Explore `?append`.
 
 ## Funciones básicas para vectores numéricos
 

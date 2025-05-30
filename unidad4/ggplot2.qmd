@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 El paquete *ggplot2* ofrece una nutrida biblioteca de funciones para la creación de gráficos de diversos tipos en R. La diversidad de gráficos y formas de personalización es enorme -es un curso en sí mismo- y aquí simplemente desarrollaremos los fundamentos básicos para su comprensión. Existen varias páginas web útiles para aprender sobre el desarrollo de gráficos con *ggplot2*, incluyendo a [The R Graph Gallery](https://r-graph-gallery.com/ggplot2-package.html){target="_blank"} y [R Charts](https://r-charts.com/colors/){target="_blank"}. En esta [página](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf){target="_blank"} se muestra una tabla de colores junto con su nombre a utilizar dentro del entorno R.
 
-A diferencia de otros paquetes de graficación, incluyendo a las funciones nativas de R que ya hemos visto, la creación de gráficos con *ggplot2* sigue una lógica diferente. Se trabaja mediante la apilación de "capas gráficas" a través de un lenguaje propio del paquete. Si tradujéramos el código en palabras, sería algo así:
+A diferencia de otros paquetes de graficación, incluyendo a las funciones nativas de R que ya hemos visto, la creación de gráficos con *ggplot2* sigue una lógica diferente. Se trabaja mediante la concatenación de "capas gráficas" a través de un lenguaje propio del paquete. Si traducimos el código en palabras, sería algo así:
 
 *creo espacio de graficación →*<br>   *añado capa gráfica nº1 (e.g. puntos) →*<br>   *añado capa gráfica nº2 (e.g. líneas) →*<br>   *configuro eje x →*<br>   *configuro eje y →*<br>   *configuro parámetros generales del gráfico*
 
@@ -34,7 +34,7 @@ ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Length)) +
 
 La primera línea llama a la función `ggplot()`. Esta función será el inicio de todos nuestros gráficos con *ggplot2*. Allí, indicamos el conjunto de datos que se utilizará para obtener los datos de graficación, típicamente un `data.frame`, en el argumento llamado `data`. El argumento `mapping` debe definirse a través de la función <u id='aes'>`aes()`</u>, dentro de la cual definimos las variables a graficar y su asociación a las columnas del `data.frame` indicado. Aquí indicamos que la variable `x` será "Sepal.Length" y la variable `y` "Petal.Length". Ambas son columnas del dataset `iris` indicado en el argumento `data`.
 
-Seguidamente a la primera línea observamos un `+`, y esta es la gran diferencia de la lógica de *ggplot2* respecto de otros paquetes. El operador `+` indica que seguido a él se añadirá una nueva *capa* al gráfico. Aquí, en la segunda línea (y está en la segunda línea por simple prolijidad, pero podría ir seguido en la primera línea), la función `geom_point()` indica que se añadirá un gráfico de nube de puntos (o scatterplot). En general, todas las funciones que comienzan con`geom_` refieren a tipos de gráficos particulares, entre ellas:
+Al final de la primera línea observamos un `+`, y esta es la gran diferencia de la lógica de *ggplot2* respecto de otros paquetes. El operador `+` indica que seguido a él se añadirá una nueva *capa* al gráfico. Aquí, en la segunda línea (y está en la segunda línea por simple prolijidad, pero podría ir seguido en la primera línea), la función `geom_point()` indica que se añadirá un gráfico de nube de puntos (o scatterplot). En general, todas las funciones que comienzan con `geom_` refieren a tipos de gráficos particulares, entre ellas:
 
 -   `geom_point()`: puntos.
 -   `geom_line()`: líneas.
@@ -133,7 +133,7 @@ Dentro de `aes()` definimos para `x` la variable discreta "Species" y para `y` l
 
 **Para jugar:** Cambie `fill` por `col` y observe los resultados.
 
-Para configurar aspectos del eje x de un boxplot, `scale_x_continuos()` no servirá, porque la variable definida para `x` no es continua (son especies). La función adecuada es `scale_x_discrete()`:
+Para configurar aspectos del eje x de un boxplot, `scale_x_continuous()` no servirá, porque la variable definida para `x` no es continua (son especies). La función adecuada es `scale_x_discrete()`:
 
 ```{r fig.align='center', fig.width=4, fig.height=4}
 ggplot(data = iris, mapping = aes(x = Species, y = Petal.Length, fill = Species)) +
@@ -166,11 +166,11 @@ Al indicar `height = 0`, los puntos mantendrán la ubicación original para la v
 
 ## Ejercicio 1
 
-Genere un gráfico idéntico al último expuesto, pero con un orden distinto para los niveles del eje x. El orden debe ser, de izquierda a derecha, *I. virginica*, *I. versicolor* e *I. setosa*. Para ello, debe redefinir la variable "Species" de la tabla como un factor con niveles en el orden indicado. Si no se acuerda como hacerlo, vuelva a la clase de [Vectores](../unidad1/Vectores.qmd).
+Genere un gráfico idéntico al último expuesto, pero con un orden distinto para los niveles del eje x. El orden debe ser, de izquierda a derecha, *I. virginica*, *I. versicolor* e *I. setosa*. Para ello, debe redefinir la variable "Species" de la tabla como un factor con niveles en el orden indicado. Si no se acuerda cómo hacerlo, vuelva a la clase de [Vectores](../unidad1/Vectores.qmd).
 
 ## Funciones de tipo `theme`
 
-Las funciones que inician con `theme` permiten la personalización general del gráfico. Por un lado, contamos con funciones como `theme_light()`, las cuales vienen asociadas con configuraciones gráficas preestablecidas. Por otro lado, la función `theme()` permite un grado de personalización del gráfico muy alta. Por ejemplo:
+Las funciones que inician con `theme` permiten la personalización general del gráfico. Por un lado, contamos con funciones como `theme_light()`, las cuales vienen asociadas con configuraciones gráficas preestablecidas. Por otro lado, la función `theme()` permite un grado de personalización del gráfico muy alto. Por ejemplo:
 
 ```{r fig.align='center', fig.width=5, fig.height=4}
 ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
@@ -196,7 +196,7 @@ Vale la pena mencionar la nueva capa añadida mediante `annotate()`, la cual sir
 
 **Para observar:** Además de lo ya explicado, ¿qué otras cosas cambiaron en el último gráfico respecto del anterior? ¿Qué líneas de código son las responsables de ello?
 
-**Para jugar:** Cambie `theme_light()` por otras funciones del tipo con otras configuraciones preestablecida y observe los distintos resultados.
+**Para jugar:** Cambie `theme_light()` por otras funciones del tipo con otras configuraciones preestablecidas y observe los distintos resultados.
 
 ### Ejemplo de caso típico: gráficos de barras con error
 

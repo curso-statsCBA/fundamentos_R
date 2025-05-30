@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Creación de tablas desde cero
 
-La tabla será posiblemente el objeto de R más utilizado en el contexto de nuestro trabajo científico. Consiste en una estructura de datos que organiza la información en filas y columnas. Desde un punto de vista programático es útil considerar a las tablas como una *colección de vectores*. Consideradas de esta manera, veremos que la manipulación de las filas y columnas de una tabla es análoga a la manipulación de vectores individuales. En una tabla, *cada columna es un vector*, pudiendo haber vectores de distintos tipos en una misma tabla (por ejemplo, vectores numéricos y de texto).
+La tabla será posiblemente el objeto de R más utilizado en el contexto de nuestro trabajo científico. Consiste en una estructura de datos que organiza la información en filas y columnas. Desde un punto de vista programático, es útil considerar a las tablas como una *colección de vectores*. De esta manera, veremos que manipular las filas y columnas de una tabla es similar a manipular vectores individuales. En una tabla, *cada columna es un vector*, pudiendo haber vectores de distintos tipos en una misma tabla (por ejemplo, vectores numéricos y de texto).
 
 Para crear una tabla desde cero, en R utilizamos la <u id='table_classes'>clase</u> `data.frame`, y una función con el mismo nombre para generarla:
 
@@ -32,7 +32,7 @@ Aquí, generamos un objeto de tipo `data.frame`, definiendo el nombre de cada co
 
 Al crear o cargar una tabla, veremos la tabla en el panel de entorno. Desplegando la flechita azul podemos obtener información sobre las columnas de la tabla. Además, haciendo click sobre el nombre del objeto, podemos visualizar la tabla entera en otra pestaña.
 
-Normalmente, las tablas se generan fuera del entorno R para ser luego importadas a R. La creación de tablas desde cero adquiere mayor relevancia para tareas mas posteriores del flujo de análisis, como veremos más adelante.
+Normalmente, las tablas se generan fuera del entorno R para ser luego importadas a R. La creación de tablas desde cero adquiere mayor relevancia para tareas posteriores en el flujo de trabajo. Ahondaremos en esto más adelante.
 
 Antes que nada, [descargue el archivo zip](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad2/data/data.zip) con los datos necesarios para realizar el práctico, y extraiga los archivos dentro de una carpeta llamada "data" en el directorio "dia2" del proyecto del curso.
 
@@ -80,7 +80,7 @@ La función `dim()` imprime las dimensiones de la tabla (número de filas y de c
 dim(iris)
 ```
 
-La funciones `nrow()` y `ncol()` devuelven dichos valores individualmente.
+Las funciones `nrow()` y `ncol()` devuelven dichos valores individualmente.
 
 La función `colnames()` devuelve los nombres de las columnas en un vector de texto:
 
@@ -110,7 +110,7 @@ Los corchetes son muy versátiles para manipular y extraer datos de un `data.fra
 iris_sub <- iris[1:5, ]
 ```
 
-Aquí, generamos un nuevo dataset con sólo las 5 primeras filas de la tabla `iris`. Notar que al mismo tiempo que se realiza el filtrado, lo asigno a un nuevo objeto. Si la asignación no se realiza, el objeto no queda guardado en el entorno, pero es útil si queremos probar rápidamente alguna línea de código, sin necesidad de generar un nuevo objeto.
+Aquí, generamos un nuevo dataset con sólo las 5 primeras filas de la tabla `iris`. Notar que al mismo tiempo que se realiza el filtrado, se asigna a un nuevo objeto. Si la asignación no se realiza, el objeto no queda guardado en el entorno, pero es útil si queremos probar rápidamente alguna línea de código, sin necesidad de generar un nuevo objeto.
 
 Ahora, generamos un nuevo dataset que contiene sólo las columnas `"Species"` y `"Sepal.Length"`.
 
@@ -130,7 +130,7 @@ head(iris, 10)
 
 Para seleccionar una columna de una tabla utilizamos la sintaxis `tabla$columna`.
 
-En esto contexto, la expresión `order(iris$Sepal.Length)` genera nuevos índices para cada fila, indicando que nueva posición deberían ocupar para que la tabla quede ordenada. Por defecto, `order()` ordena de manera creciente. Indicando `decreasing = TRUE` se ordena la tabla de manera decreciente.
+En este contexto, la expresión `order(iris$Sepal.Length)` genera nuevos índices para cada fila, indicando que nueva posición deberían ocupar para que la tabla quede ordenada. Por defecto, `order()` ordena de manera creciente. Indicando `decreasing = TRUE` se ordena la tabla de manera decreciente.
 
 Es posible indicar una ordenación por más de una columna:
 
@@ -146,7 +146,7 @@ iris_sub3 <- iris[iris$Sepal.Length > 5, ]
 head(iris_sub3)
 ```
 
-Aquí estamos seleccionando aquellas filas para los cuales `Sepal.Length` es mayor a 5. ¿Por qué esta sintáxis tan rara? En realidad, lo que estamos haciendo es indicar una expresión lógica para las filas, especificando el nombre de la tabla y la columna (es un vector!) mediante el operador `$`:
+Aquí estamos seleccionando aquellas filas para los cuales `Sepal.Length` es mayor a 5. ¿Por qué esta sintaxis tan rara? En realidad, lo que estamos haciendo es indicar una expresión lógica para las filas, especificando el nombre de la tabla y la columna (es un vector!) mediante el operador `$`:
 
 ```{r}
 iris$Sepal.Length > 5
@@ -159,7 +159,7 @@ iris_sub3 <- subset(iris, Sepal.Length > 5)
 head(iris_sub3)
 ```
 
-El primer argumento indica el conjunto de datos a utilizar, y el segundo argumento la expresión a aplicar para filtrar dicho conjunto de datos. Notar que no es necesario aclarar la sintaxis `iris$Sepal.Length`. Esto es hace más fácil la escritura cuando haya que indicar múltiples condiciones lógicas.
+El primer argumento indica el conjunto de datos a utilizar, y el segundo argumento la expresión a aplicar para filtrar dicho conjunto de datos. Notar que no es necesario aclarar la sintaxis `iris$Sepal.Length`. Esto hace más fácil la escritura ante la necesidad de indicar múltiples condiciones lógicas.
 
 El argumento `select` permite además seleccionar una o más columnas a dejar luego del filtro:
 
@@ -232,7 +232,7 @@ head(iris)
 
 Traducción en palabras: Si el largo del sépalo es menor a 2.8, clasificarlo como "Corto". En caso contrario, si es mayor o igual a 2.8 Y menor a 3.3, clasificarlo como "Mediano"; si no es así, clasificarlo como "Largo".
 
-Con la función `factor()`, es posible aisgnarle a un vector-columna la clase de `factor`:
+Con la función `factor()`, es posible asignarle a un vector-columna la clase de `factor`:
 
 ```{r}
 iris$Sepal.width.cat2 <- factor(iris$Sepal.width.cat2)
@@ -258,13 +258,13 @@ class(iris$Sepal.width.cat4)
 
 ## Ejercicio 2
 
-Genere una nueva columna para la tabla `iris` llamada "Flower.color". Para las especie *Iris setosa* y *Iris versicolor*, asignarle "Purple". Para la especie *Iris virginica* asignarle "Blue".
+Genere una nueva columna para la tabla `iris` llamada "Flower.color". Para las especies *Iris setosa* y *Iris versicolor*, asignarle "Purple". Para la especie *Iris virginica* asignarle "Blue".
 
 ## Unión de tablas
 
 Las funciones `rbind()` y `cbind()` permiten añadir filas ("r" de "row") y columnas ("c" de "column") a un `data.frame`, respectivamente.
 
-A modo de ejemplo, importaremos un `data.frame` conteniendo las medidas de variables florales (inventadas para el ejemplo) para la especie *Iris florentina*. Asimismo, cargamos nuevamente la tavla `iris` con la estructura y datos originales:
+A modo de ejemplo, importaremos un `data.frame` conteniendo las medidas de variables florales (inventadas para el ejemplo) para la especie *Iris florentina*. Asimismo, cargamos nuevamente la tabla `iris` con la estructura y datos originales:
 
 ```{r}
 # Cargamos nuevamente la tabla con la estructura y datos originales
@@ -288,7 +288,7 @@ tail(iris_new)
 
 Al utilizar `rbind()`, debemos asegurarnos de que la cantidad de columnas y sus nombres sean idénticos. De lo contrario, R devuelve un error.
 
-De manera similar, la función `cbind()` une tablas a lo largo de sus columnas, y su sintaxis tiene la forma de `cbind(tabla1, tabla2)`. Lógicamente, el número de filas de ambas tablas debe ser el mismo, de lo contraria obtendremos una advertencia o un error.
+De manera similar, la función `cbind()` une tablas a lo largo de sus columnas, y su sintaxis tiene la forma de `cbind(tabla1, tabla2)`. Lógicamente, el número de filas de ambas tablas debe ser el mismo, de lo contrario obtendremos una advertencia o un error.
 
 Usualmente, la información está repartida en más de una tabla. ¿Cómo generamos una nueva tabla que reúna toda la información junta? Para ello utilizamos la función `merge()` (fusionar/combinar). A modo de ejemplo, cargamos una nueva tabla con los nombres comunes de las especies de *Iris* con las que venimos trabajando:
 
