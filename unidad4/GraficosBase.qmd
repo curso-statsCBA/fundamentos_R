@@ -427,6 +427,7 @@ legend("bottom", horiz=TRUE, bty = "n",
 ```
 
 ## Ejercicio 3
+
 a)  Analice el código precedente sin ejecutarlo, intentando describir qué hace cada línea. Luego, copie el mismo a un script dentro de `dia4` y ejecútelo por partes para entender el funcionamiento. Recuerde buscar en las ayudas interna de R y juegue con las opciones disponibles.
 b)  Repita el gráfico pero con una flecha azul que indique el valor de la mediana para la 0,5 mm/día del suplemento jugo de naranja. Además, ubique la leyenda en la posición `(x,y) = (2.5,5)`.
 
@@ -500,8 +501,10 @@ with(subset(data, tipo != "punto"),
 title("Graficando con R base")
 ```
 
-<p align="center">
+-----------------------------------------------------------------------------
 
-<a href="pics/plotbasememe.jpeg" target="_blank"> <img src="pics/plotbasememe.jpeg" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a>
+::: {style="text-align: center;"}
 
-</p>
+<a href="pics/plotbasememe.jpeg" target="_blank"> <img src="pics/plotbasememe.jpeg" style="padding: 5px 0 5px 0;width: 50rem;max-width:75%;height:auto;vertical-align:middle;border-style: none;"/></a>
+
+:::

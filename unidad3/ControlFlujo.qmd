@@ -432,11 +432,13 @@ for (sp in unique(iris$Species)){
 }
 ```
 
-<p align="center">
+-----------------------------------------------------------------------------
 
-<a href="pics/meme.jpg" target="_blank"> <img src="pics/meme.jpg" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a>
+::: {style="text-align: center;"}
 
-</p>
+<a href="pics/meme.jpg" target="_blank"> <img src="pics/meme.jpg" style="padding: 5px 0 5px 0;width: 50rem;max-width:50%;height:auto;vertical-align:middle;border-style: none;"/></a>
+
+:::
 
 ## Ejercicio Extra
 

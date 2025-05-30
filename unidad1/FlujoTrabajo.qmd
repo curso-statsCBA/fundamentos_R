@@ -136,8 +136,10 @@ Dado que esto último es un uso relativamente avanzado, no haremos un ejercicio 
 
 -   R, o el lenguaje que aprendamos a continuación, es una herramienta fantástica pero no reemplaza de ninguna manera la formación que tenemos. Por más sofisticados que sean nuestros análisis, al fin y al cabo, será nuestro criterio profesional el que decida si el resultado es o no interesante. Nunca nos olvidemos que <u>lo más importante en nuestro trabajo son las preguntas que intentamos responder, no los medios que usamos para hacerlo</u>.
 
-<p align="center">
+-----------------------------------------------------------------------------
 
-<a href="pics/meme3.jpeg" target="_blank"> <img src="pics/meme3.jpeg" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a>
+::: {style="text-align: center;"}
 
-</p>
+<a href="pics/meme3.jpeg" target="_blank"> <img src="pics/meme3.jpeg" style="padding: 5px 0 5px 0;width: 66rem;max-width:50%;height:auto;vertical-align:middle;border-style: none;"/></a>
+
+:::

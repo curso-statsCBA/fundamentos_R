@@ -337,10 +337,10 @@ Los niveles de la columna "Subject" están desordenados. ¿Por qué? Arreglar es
 tippy::tippy_this(elementId = "ppi", tooltip = '<span style="font-size:16px;">"points per inch" o "puntos por pulgada" en español. Análogo a "dpi" ("dots per inch").</span>')
 ```
 
-<br>
+-----------------------------------------------------------------------------
 
-<p align="center">
+::: {style="text-align: center;"}
 
-<a href="pics/meme_practico_ggplot2.png" target="_blank"><img src="pics/meme_practico_ggplot2.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a>
+<a href="pics/meme_practico_ggplot2.png" target="_blank"><img src="pics/meme_practico_ggplot2.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:75%;height:auto;vertical-align:middle;border-style: none;"/></a>
 
-</p>
+::: 

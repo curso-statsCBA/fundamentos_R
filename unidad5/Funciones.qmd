@@ -260,10 +260,10 @@ Existen otras variantes a la función `sapply()`, como por ejemplo `lapply()`, q
 2.  Cree una función que calcule el error estándar de un conjunto de números. El error estándar se calcula realizando el cociente entre el desvío estándar de la muestra y la raíz cuadrada de la cantidad de números evaluados.
 3.  A partir de la función que calcula el error estándar, utilice la función `sapply()` para calcular el error estándar del conjunto de números `seq(1, 50, 20)`, `c(501, 920, 759, 233)` y `-14:28`.
 
-<br>
+-----------------------------------------------------------------------------
 
-<p align="center">
+::: {style="text-align: center;"}
 
-<a href="pics/meme_practico_funciones.png" target="_blank"><img src="pics/meme_practico_funciones.png" style="padding: 5px 0 5px 0;width: 40rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a>
+<a href="pics/meme_practico_funciones.png" target="_blank"><img src="pics/meme_practico_funciones.png" style="padding: 5px 0 5px 0;width: 40rem;max-width:50%;height:auto;vertical-align:middle;border-style: none;"/></a>
 
-</p>
+:::

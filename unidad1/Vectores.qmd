@@ -40,7 +40,7 @@ str(vec)
 Un vector puede componerse de cinco clases principales de elementos:
 
 |  |  |
-|------------------------|-----------------------------------------------|
+|-------------------------|-----------------------------------------------|
 | numeric | Contienen números reales (decimales). Por ejemplo: `c(1.2, 1.5, 1.7)`. |
 | integer | Contienen números enteros. Debemos indicarse con la letra `L` luego del número. Por ejemplo: `c(1L, -5L, 16L, 17L)`. |
 | logical | Contienen valores booleanos o lógicos. Por ejemplo: `c(TRUE, FALSE, NA)` o `c(T, F, T)`. |
@@ -342,10 +342,10 @@ R también provee de numerosas funciones nativas para obtener medidas de resumen
 
 3.  Genere un vector de 500 números provenientes de una distribución normal, de media 15 y desvío estándar 4. Para ello, utilice la función `rnorm()` (explore la ayuda mediante `?rnorm`). Seguidamente, verifique los valores de media, mediana y desvío estándar de la muestra. Calcule los cuantiles tradicionales mediante `quantile()`. Calculo el percentil 5% y el 95%.
 
-<br>
+-----------------------------------------------------------------------------
 
-<p align="center">
+::: {style="text-align: center;"}
 
-<a href="pics/meme_practico_vectores.png" target="_blank"><img src="pics/meme_practico_vectores.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a>
+<a href="pics/meme_practico_vectores.png" target="_blank"><img src="pics/meme_practico_vectores.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:75%;height:auto;vertical-align:middle;border-style: none;"/></a>
 
-</p>
+:::

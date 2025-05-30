@@ -7,7 +7,7 @@ Verificar que en .gitignore, se ignoran los siguientes archivos/directorio, de l
 /local/
 /.quarto/
 
-En el caso de local, es un directorio local para probar cosas.
+En el caso de 'local', es un directorio local para probar cosas.
 
 1) Hacer commit sobre archivos .qmd y archivos usados para la página. Luego Pushear.
 

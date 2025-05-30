@@ -483,10 +483,10 @@ El presente curso está orientado a entender los fundamentos básicos del lengua
 8.  Genere una tabla de contingencia considerando la variable "Tecnico" y "Parcela".
 9.  Genere una tabla resumen con los valores medios de N, C y Ca por Parcela, y otra con los valores de desviación estándar de N, C y Ca por Técnico. Exporte dichas tablas resumen.
 
-<br>
+-----------------------------------------------------------------------------
 
-<p align="center">
+::: {style="text-align: center;"}
 
-<a href="pics/meme_practico_tablas.png" target="_blank"><img src="pics/meme_practico_tablas.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a>
+<a href="pics/meme_practico_tablas.png" target="_blank"><img src="pics/meme_practico_tablas.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:75%;height:auto;vertical-align:middle;border-style: none;"/></a>
 
-</p>
+:::
