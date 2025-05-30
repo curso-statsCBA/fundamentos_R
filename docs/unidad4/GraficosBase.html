@@ -74,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,13 +105,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
 <link href="../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
+
 <script src="../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
+
 <script src="../site_libs/tippy-binding-0.1.0/tippy.js"></script>
+
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -398,8 +406,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>La representación gráfica de datos y resultados es una parte importante de nuestro quehacer habitual en ámbitos académicos y científicos. Una de las razones de la gran popularidad de R yace en su excelente apartado gráfico, con el cual se pueden producir gráficos de buena calidad listos para publicar. De forma general, existen <u id="comentario">dos métodos principales</u> para realizar gráficos en R: el basado en el sistema básico de <code>R base</code> y el basado en el paquete <code>ggplot2</code>. Ambas opciones poseen sus propias ventajas y desventajas y generalmente son usados a la par. Es decir, en algunas ocasiones convendrá o será más cómodo, utilizar uno y, en otras ocasiones, será mejor opción el otro.</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-77614d3ed1fb9ad895ee" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-77614d3ed1fb9ad895ee">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:14px;'>Existen otros paquetes que profundizan funcionalidades específicas que trascienden los objetivos de este curso. Aquí puede encontrar <a href='https://www.geeksforgeeks.org/top-r-libraries-for-data-visualization/' target='_blank'>una lista de los paquetes top en 2024<\/a> según un sitio especializado.<\/span>","interactive":"true"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-5eb1c48fedfa53675251" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-5eb1c48fedfa53675251">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:14px;'>Existen otros paquetes que profundizan funcionalidades específicas que trascienden los objetivos de este curso. Aquí puede encontrar <a href='https://www.geeksforgeeks.org/top-r-libraries-for-data-visualization/' target='_blank'>una lista de los paquetes top en 2024<\/a> según un sitio especializado.<\/span>","interactive":"true"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>En esta clase veremos como construir gráficos con <code>R base</code>. Para empezar, definiremos un concepto relativo al <em>nivel</em> de la función utilizada. Cuando grafiquemos podremos utilizaremos funciones de <em>alto nivel</em>, que son aquellas funciones que crean nuevos gráficos, generalmente junto a los principales ejes, etiquetas ó títulos (e.g.&nbsp;<code>plot()</code>, <code>hist()</code>, etc.); y funciones de <em>bajo nivel</em>, que son aquellas con las que podremos añadir elementos extras a un gráfico ya creado, como puntos, líneas, flechas u otras etiquetas (e.g.&nbsp;<code>points()</code>, <code>text()</code>, etc.). La <strong>combinación de funciones de alto y bajo nivel nos permite realizar una enorme personalización del gráfico</strong>, aunque en algunas ocasiones esto puede llevar a que tengamos que definir cada aspecto del mismo. Este compromiso entre el nivel de personalización deseado y la cantidad de líneas de código necesarias puede parecer un poco abrumador al comienzo; pero, luego de un tiempo, en general optaremos siempre por una completa personalización. Sumado a esto, con el tiempo acumularemos plantillas propias para ciertos tipos de gráficos que realicemos frecuentemente, y solo nos bastará con cambiar los datos y algunos parámetros menores para obtener un nuevo gráfico listo para su publicación (o al menos su revisión 😬).</p>
@@ -412,7 +420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>En cuanto a la <strong>personalización de los gráficos</strong>, intentaremos a continuación abordarlo desde una perspectiva progresiva, partiendo de los gráficos simples elaborados con funciones de alto nivel, para luego ir sumando parámetros y funciones de bajo nivel, haciendo más complejo nuestro código para definir los principales elementos que componen un gráfico.</p>
 <section id="un-gráfico-simple" class="level3">
 <h3 class="anchored" data-anchor-id="un-gráfico-simple">Un gráfico simple</h3>
-<p>En el primer día de clases, ya realizamos nuestro primer gráfico sencillo. Podemos, con todo lo que sabemos ahora, entender perfectamente como funciona el siguiente código:</p>
+<p>En el primer día de clases, ya realizamos nuestro primer gráfico sencillo. Podemos, con todo lo que sabemos ahora, entender perfectamente cómo funciona el siguiente código:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"red"</span>,<span class="st">"black"</span>), <span class="at">cex=</span><span class="dv">5</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -428,7 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Empezando por los datos, ya sabemos que la expresión <code>1:3</code> genera un vector compuesto por <code>1,2,3</code>, así mismo <code>rep(1,3)</code> está generando una repetición de 1, tres veces, es decir: <code>1,1,1</code>. La función <code>plot()</code> espera 2 argumentos posicionales correspondientes a las coordenadas <code>x</code> e <code>y</code>, respectivamente. Por ende, lo que estamos haciendo es indicar que las posiciones para el eje <code>x=(1,2,3)</code> y las posiciones para el eje <code>y=(1,1,1)</code>. De allí que los 3 puntos graficados se ubiquen en las coordenadas <code>(x,y)=(1,1),(1,2),(1,3)</code>.</p>
 <section id="los-parámetros-básicos-pch-col-y-cex" class="level4">
 <h4 class="anchored" data-anchor-id="los-parámetros-básicos-pch-col-y-cex"><em>Los parámetros básicos</em> <code>pch</code><em>,</em> <code>col</code> <em>y</em> <code>cex</code></h4>
-<p>Con estos tres parámetros básicos de la función <code>plot()</code> podemos indicar que tipo de <strong>marcador</strong> se graficará (<code>pch</code>), que <strong>colores</strong> queremos que estos marcadores tengan y que <strong>tamaño relativo</strong> queremos que tengan (<code>cex</code>). Debajo podemos ver un ejemplo, pero nunca esta de más tener a mano una carta de referencia descargada en nuestra PC o un sitio que podamos <a href="https://r-charts.com/" target="_bank">consultar online</a>. Notar que a los colores podemos indicarlos con un <em>número</em> del 1 al 8 (luego comienzan a ciclarse) como se muestra aquí abajo, o con sus <em>nombres</em> (e.g.&nbsp;‘<em>black</em>’, ‘<em>red</em>’, etc.) como en el ejemplo previo; así como también podemos usar notación <a href="https://r-charts.com/colors/" target="&quot;_blank">hexadecimal o RGB</a>.</p>
+<p>Con estos tres parámetros básicos de la función <code>plot()</code> podemos indicar qué tipo de <strong>marcador</strong> se graficará (<code>pch</code>), qué <strong>colores</strong> queremos que estos marcadores tengan y qué <strong>tamaño relativo</strong> queremos que tengan (<code>cex</code>). Debajo podemos ver un ejemplo, pero nunca está de más tener a mano una carta de referencia descargada en nuestra PC o un sitio que podamos <a href="https://r-charts.com/" target="_bank">consultar online</a>. Notar que a los colores podemos indicarlos con un <em>número</em> del 1 al 8 (luego comienzan a ciclarse) como se muestra aquí abajo, o con sus <em>nombres</em> (e.g.&nbsp;‘<em>black</em>’, ‘<em>red</em>’, etc.) como en el ejemplo previo; así como también podemos usar notación <a href="https://r-charts.com/colors/" target="&quot;_blank">hexadecimal o RGB</a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -457,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="histogramas" class="level2">
 <h2 class="anchored" data-anchor-id="histogramas">Histogramas</h2>
-<p>Los histogramas son gráficos que nos permiten visualizar la distribución de frecuencia de los datos. Son muy utilizados en el <em>análisis exploratorio</em> de los datos. Graficar histogramas en R es sumamente sencillo gracias a la función <code>hist()</code>, una función de alto nivel que permite realizarlos. Para el siguiente ejemplo, visualizaremos una distribución normal de 1.000 observaciones con <code>media = 0</code> y <code>desviación estandar = 0</code> .</p>
+<p>Los histogramas son gráficos que nos permiten visualizar la distribución de frecuencia de los datos. Son muy utilizados en el <em>análisis exploratorio</em> de los datos. Graficar histogramas en R es sumamente sencillo gracias a la función <code>hist()</code>, una función de alto nivel que permite realizarlos. Para el siguiente ejemplo, visualizaremos una distribución normal de 1.000 observaciones con <code>media = 0</code> y <code>desviación estándar = 0</code> .</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>))</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -527,11 +535,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><strong>Para pensar:</strong> En el código precedente apareció <code>with()</code>, una función que previamente no habíamos utilizado. Analice el código y trate de descifrar que ventajas tiene su uso. Por supuesto, siempre puede consultar la ayuda con <code>?with()</code>.</p>
+<p><strong>Para pensar:</strong> En el código precedente apareció <code>with()</code>, una función que previamente no habíamos utilizado. Analice el código y trate de descifrar qué ventajas tiene su uso. Por supuesto, siempre puede consultar la ayuda con <code>?with()</code>.</p>
 <section id="límites-gráficos" class="level3">
 <h3 class="anchored" data-anchor-id="límites-gráficos"><em>Límites gráficos</em></h3>
 <p>En el código del gráfico previo, aparecieron algunas novedades: los parámetros <code>xlim</code> e <code>ylim</code>. Como puede imaginarse, se trata de los parámetros para fijar los límites de los ejes. Ambos parámetros esperan un vector de largo 2 con los rangos de las coordenadas de <code>x</code> e <code>y</code>, y son muy útiles a la hora de crear una base gráfica sin ningún contenido, para luego rellenar con nuestros datos. Esta forma de trabajo es muy extendida al trabajar con gráficos básicos en R, y para ello cuando llamamos a la función <code>plot()</code> debemos indicarle que el gráfico sea vacío, con el parámetro <code>typ = "n"</code>.</p>
-<p>Antes de probar su funcionamiento, prestemos atención al origen de coordenadas del gráfico (i.e.&nbsp;<code>(x,y)=(0,0)</code>). Si nos fijamos bien, veremos que esa coordenada no coincide exactamente con el ángulo inferior izquierdo del gráfico. Esto es debido a que, por defecto, R utiliza una función interna para extender levemente los ejes (ahora que lo notamos, podemos ver que sucede también en los extremos de los ejes). Si no deseamos este comportamiento, podemos utilizar los parámetros <code>xaxs</code> e <code>yaxs</code>. Estos parámetros tienen dos configuraciones posibles: <code>"r"</code> o <code>"i"</code> (de “regular” e “interno”), veamos como funcionan:</p>
+<p>Antes de probar su funcionamiento, prestemos atención al origen de coordenadas del gráfico (i.e.&nbsp;<code>(x,y)=(0,0)</code>). Si nos fijamos bien, veremos que esa coordenada no coincide exactamente con el ángulo inferior izquierdo del gráfico. Esto es debido a que, por defecto, R utiliza una función interna para extender levemente los ejes (ahora que lo notamos, podemos ver que sucede también en los extremos de los ejes). Si no deseamos este comportamiento, podemos utilizar los parámetros <code>xaxs</code> e <code>yaxs</code>. Estos parámetros tienen dos configuraciones posibles: <code>"r"</code> o <code>"i"</code> (de “regular” e “interno”), veamos cómo funcionan:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span>,<span class="dv">0</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>), <span class="at">typ =</span> <span class="st">"n"</span>, <span class="at">xaxs =</span> <span class="st">"r"</span>, <span class="at">yaxs =</span> <span class="st">"i"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -547,7 +555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="añadiendo-otros-elementos-a-nuestro-gráfico" class="level3">
 <h3 class="anchored" data-anchor-id="añadiendo-otros-elementos-a-nuestro-gráfico"><em>Añadiendo otros elementos a nuestro gráfico</em></h3>
-<p>En el gráfico de dispersión, muchas veces es interesante mostrar el resultado de la correlación entre las variables de forma gráfica, es decir, la línea (o curva) resultante del ajuste de un modelo de regresión entre las variables. Teniendo en cuenta el mismo conjunto de datos con el que venimos trabajando, recordemos primero como podemos obtener la regresión lineal usando la función <code>lm()</code>.</p>
+<p>En el gráfico de dispersión, muchas veces es interesante mostrar el resultado de la correlación entre las variables de forma gráfica, es decir, la línea (o curva) resultante del ajuste de un modelo de regresión entre las variables. Teniendo en cuenta el mismo conjunto de datos con el que venimos trabajando, recordemos primero cómo podemos obtener la regresión lineal usando la función <code>lm()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(Sepal.Length <span class="sc">~</span> Petal.Length, <span class="at">data =</span> iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -579,7 +587,7 @@ Coefficients:
 </div>
 </div>
 </div>
-<p>Así como añadimos la recta resultante de la regresión, con <code>abline()</code> podemos añadir tantas líneas verticales y horizontales como necesitemos, esto es muy útil para separar sectores del gráfico, hacer lineas de divisiones menores de los ejes, etc. Además, podemos llamar a otra función de bajo nivel como es <code>text()</code>, para agregar sobre el gráfico los valores que componen la ecuación de la recta:</p>
+<p>Así como añadimos la recta resultante de la regresión, con <code>abline()</code> podemos añadir tantas líneas verticales y horizontales como necesitemos, esto es muy útil para separar sectores del gráfico, hacer líneas de divisiones menores de los ejes, etc. Además, podemos llamar a otra función de bajo nivel como es <code>text()</code>, para agregar sobre el gráfico los valores que componen la ecuación de la recta:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Primero guardemos los resultados de la regresión en un nuevo objeto</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>reg_l <span class="ot">&lt;-</span> <span class="fu">lm</span>(Sepal.Length <span class="sc">~</span> Petal.Length, <span class="at">data =</span> iris)</span>
@@ -623,16 +631,16 @@ Coefficients:
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>toplot[<span class="fu">sample</span>(<span class="fu">nrow</span>(toplot), <span class="dv">10</span>),]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Sepal.Length Petal.Length    Species   Spe.Color
-126          7.2          6.0  virginica         red
-19           5.7          1.7     setosa forestgreen
-127          6.2          4.8  virginica         red
-73           6.3          4.9 versicolor  dodgerblue
-111          6.5          5.1  virginica         red
-108          7.3          6.3  virginica         red
-53           6.9          4.9 versicolor  dodgerblue
-139          6.0          4.8  virginica         red
-2            4.9          1.4     setosa forestgreen
-27           5.0          1.6     setosa forestgreen</code></pre>
+144          6.8          5.9  virginica         red
+98           6.2          4.3 versicolor  dodgerblue
+124          6.3          4.9  virginica         red
+140          6.9          5.4  virginica         red
+35           4.9          1.5     setosa forestgreen
+142          6.9          5.1  virginica         red
+65           5.6          3.6 versicolor  dodgerblue
+135          6.1          5.6  virginica         red
+79           6.0          4.5 versicolor  dodgerblue
+63           6.0          4.0 versicolor  dodgerblue</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -773,7 +781,7 @@ Coefficients:
 <section id="ejercicio-3" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
 <ol type="a">
-<li>Analice el código precedente sin ejecutarlo, intentando describir que hace cada línea. Luego, copie el mismo a un script dentro de <code>dia4</code> y ejecútelo por partes para entender el funcionamiento. Recuerde buscar en las ayudas interna de R y juegue con las opciones disponibles.</li>
+<li>Analice el código precedente sin ejecutarlo, intentando describir qué hace cada línea. Luego, copie el mismo a un script dentro de <code>dia4</code> y ejecútelo por partes para entender el funcionamiento. Recuerde buscar en las ayudas interna de R y juegue con las opciones disponibles.</li>
 <li>Repita el gráfico pero con una flecha azul que indique el valor de la mediana para la 0,5 mm/día del suplemento jugo de naranja. Además, ubique la leyenda en la posición <code>(x,y) = (2.5,5)</code>.</li>
 </ol>
 <p><br></p>
@@ -781,7 +789,7 @@ Coefficients:
 <section id="panel-de-múltiples-gráficos" class="level2">
 <h2 class="anchored" data-anchor-id="panel-de-múltiples-gráficos">Panel de múltiples gráficos</h2>
 <p>En muchas ocasiones, necesitamos mostrar en un solo panel varios gráficos diferentes. Para ello, debemos utilizar la función <code>par()</code>, que permite configurar todos los parámetros básicos del dispositivo gráfico que usa R. Esta función tiene un nivel jerárquico superior a todas las que vimos previamente, ya que con la misma podemos cambiar el comportamiento <em>por defecto</em> de todos los parámetros gráficos de forma semi-permanente (i.e.&nbsp;en el contexto de RStudio, durante toda la sesión en curso; y para dispositivos gráficos externos, hasta que se reinicie el mismo). Por esto, si realizamos un cambio con <code>par()</code> para mostrar dos gráficos en paralelo y, posteriormente, queremos realizar un nuevo gráfico solitario, debemos volver a configurar el dispositivo gráfico para mostrar un solo gráfico.</p>
-<p>A pesar de la gran cantidad de usos que posee la función par(), dentro de los mas comunes están la configuración de márgenes interiores (<code>mar</code>/<code>mai</code>) y exteriores (<code>oma</code> y <code>omi</code>), así como la configuración del emplazamiento de múltiples gráficos (<code>mfrow</code>).</p>
+<p>A pesar de la gran cantidad de usos que posee la función par(), dentro de los más comunes están la configuración de márgenes interiores (<code>mar</code>/<code>mai</code>) y exteriores (<code>oma</code> y <code>omi</code>), así como la configuración del emplazamiento de múltiples gráficos (<code>mfrow</code>).</p>
 <p>Para ver esto último en acción, pensemos que queremos realizar una regresión lineal y evaluar si los supuestos de la misma se cumplen. Para ellos, hagamos primero un modelo de regresión lineal entre las variables <code>Petal.Length</code> y <code>Sepal.Length</code>, para la especie <em>I. virginica</em> del conjunto de datos <code>iris</code>:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando y viendo el resultado del modelo de regresión lineal</span></span>
@@ -840,7 +848,7 @@ F-statistic: 141.6 on 1 and 48 DF,  p-value: 6.298e-16</code></pre>
 </section>
 <section id="ejercicio-final" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-final">Ejercicio final</h2>
-<p>Con el conjuntos de datos provisto, y ayudándose con la documentación de las funciones <code>points()</code>, <code>segments()</code> y <code>title()</code>, y buscando como funcionan los parámetros gráficos para líneas <code>lwd</code> y <code>lty</code>, realice un gráfico como el que se muestra a continuación.</p>
+<p>Con el conjunto de datos provisto, y ayudándose con la documentación de las funciones <code>points()</code>, <code>segments()</code> y <code>title()</code>, y buscando cómo funcionan los parámetros gráficos para líneas <code>lwd</code> y <code>lty</code>, realice un gráfico como el que se muestra a continuación.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">tipo =</span> <span class="fu">c</span>(<span class="st">"linea solida"</span>,<span class="st">"linea guiones"</span>,<span class="st">"linea punteada"</span>, <span class="fu">rep</span>(<span class="st">"punto"</span>,<span class="dv">4</span>)),</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">lposy =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>, <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="dv">4</span>)),</span>

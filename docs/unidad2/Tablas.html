@@ -74,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,13 +105,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
 <link href="../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
+
 <script src="../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
+
 <script src="../site_libs/tippy-binding-0.1.0/tippy.js"></script>
+
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -391,12 +399,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="creación-de-tablas-desde-cero" class="level2">
 <h2 class="anchored" data-anchor-id="creación-de-tablas-desde-cero">Creación de tablas desde cero</h2>
-<p>La tabla será posiblemente el objeto de R más utilizado en el contexto de nuestro trabajo científico. Consiste en una estructura de datos que organiza la información en filas y columnas. Desde un punto de vista programático es útil considerar a las tablas como una <em>colección de vectores</em>. Consideradas de esta manera, veremos que la manipulación de las filas y columnas de una tabla es análoga a la manipulación de vectores individuales. En una tabla, <em>cada columna es un vector</em>, pudiendo haber vectores de distintos tipos en una misma tabla (por ejemplo, vectores numéricos y de texto).</p>
+<p>La tabla será posiblemente el objeto de R más utilizado en el contexto de nuestro trabajo científico. Consiste en una estructura de datos que organiza la información en filas y columnas. Desde un punto de vista programático, es útil considerar a las tablas como una <em>colección de vectores</em>. De esta manera, veremos que manipular las filas y columnas de una tabla es similar a manipular vectores individuales. En una tabla, <em>cada columna es un vector</em>, pudiendo haber vectores de distintos tipos en una misma tabla (por ejemplo, vectores numéricos y de texto).</p>
 <p>Para crear una tabla desde cero, en R utilizamos la <u id="table_classes">clase</u> <code>data.frame</code>, y una función con el mismo nombre para generarla:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-81e7f318ea3a3653e898" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-81e7f318ea3a3653e898">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-438885e7c4930c3f8957" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-438885e7c4930c3f8957">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -412,7 +420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Evitar el uso de espacios, y reemplazarlos por punto, guión medio o guión bajo.</li>
 </ul>
 <p>Al crear o cargar una tabla, veremos la tabla en el panel de entorno. Desplegando la flechita azul podemos obtener información sobre las columnas de la tabla. Además, haciendo click sobre el nombre del objeto, podemos visualizar la tabla entera en otra pestaña.</p>
-<p>Normalmente, las tablas se generan fuera del entorno R para ser luego importadas a R. La creación de tablas desde cero adquiere mayor relevancia para tareas mas posteriores del flujo de análisis, como veremos más adelante.</p>
+<p>Normalmente, las tablas se generan fuera del entorno R para ser luego importadas a R. La creación de tablas desde cero adquiere mayor relevancia para tareas posteriores en el flujo de trabajo. Ahondaremos en esto más adelante.</p>
 <p>Antes que nada, <a href="https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad2/data/data.zip">descargue el archivo zip</a> con los datos necesarios para realizar el práctico, y extraiga los archivos dentro de una carpeta llamada “data” en el directorio “dia2” del proyecto del curso.</p>
 </section>
 <section id="importación-y-exploración-de-tablas" class="level2">
@@ -486,7 +494,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 150   5</code></pre>
 </div>
 </div>
-<p>La funciones <code>nrow()</code> y <code>ncol()</code> devuelven dichos valores individualmente.</p>
+<p>Las funciones <code>nrow()</code> y <code>ncol()</code> devuelven dichos valores individualmente.</p>
 <p>La función <code>colnames()</code> devuelve los nombres de las columnas en un vector de texto:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -515,7 +523,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>iris_sub <span class="ot">&lt;-</span> iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ]</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Aquí, generamos un nuevo dataset con sólo las 5 primeras filas de la tabla <code>iris</code>. Notar que al mismo tiempo que se realiza el filtrado, lo asigno a un nuevo objeto. Si la asignación no se realiza, el objeto no queda guardado en el entorno, pero es útil si queremos probar rápidamente alguna línea de código, sin necesidad de generar un nuevo objeto.</p>
+<p>Aquí, generamos un nuevo dataset con sólo las 5 primeras filas de la tabla <code>iris</code>. Notar que al mismo tiempo que se realiza el filtrado, se asigna a un nuevo objeto. Si la asignación no se realiza, el objeto no queda guardado en el entorno, pero es útil si queremos probar rápidamente alguna línea de código, sin necesidad de generar un nuevo objeto.</p>
 <p>Ahora, generamos un nuevo dataset que contiene sólo las columnas <code>"Species"</code> y <code>"Sepal.Length"</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>iris_sub2 <span class="ot">&lt;-</span> iris[, <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Sepal.Length"</span>)]</span>
@@ -550,7 +558,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Para seleccionar una columna de una tabla utilizamos la sintaxis <code>tabla$columna</code>.</p>
-<p>En esto contexto, la expresión <code>order(iris$Sepal.Length)</code> genera nuevos índices para cada fila, indicando que nueva posición deberían ocupar para que la tabla quede ordenada. Por defecto, <code>order()</code> ordena de manera creciente. Indicando <code>decreasing = TRUE</code> se ordena la tabla de manera decreciente.</p>
+<p>En este contexto, la expresión <code>order(iris$Sepal.Length)</code> genera nuevos índices para cada fila, indicando que nueva posición deberían ocupar para que la tabla quede ordenada. Por defecto, <code>order()</code> ordena de manera creciente. Indicando <code>decreasing = TRUE</code> se ordena la tabla de manera decreciente.</p>
 <p>Es posible indicar una ordenación por más de una columna:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> iris[<span class="fu">order</span>(iris<span class="sc">$</span>Species, iris<span class="sc">$</span>Sepal.Length, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
@@ -583,7 +591,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 106          7.6         3.0          6.6         2.1 virginica</code></pre>
 </div>
 </div>
-<p>Aquí estamos seleccionando aquellas filas para los cuales <code>Sepal.Length</code> es mayor a 5. ¿Por qué esta sintáxis tan rara? En realidad, lo que estamos haciendo es indicar una expresión lógica para las filas, especificando el nombre de la tabla y la columna (es un vector!) mediante el operador <code>$</code>:</p>
+<p>Aquí estamos seleccionando aquellas filas para los cuales <code>Sepal.Length</code> es mayor a 5. ¿Por qué esta sintaxis tan rara? En realidad, lo que estamos haciendo es indicar una expresión lógica para las filas, especificando el nombre de la tabla y la columna (es un vector!) mediante el operador <code>$</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span></span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -616,7 +624,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 106          7.6         3.0          6.6         2.1 virginica</code></pre>
 </div>
 </div>
-<p>El primer argumento indica el conjunto de datos a utilizar, y el segundo argumento la expresión a aplicar para filtrar dicho conjunto de datos. Notar que no es necesario aclarar la sintaxis <code>iris$Sepal.Length</code>. Esto es hace más fácil la escritura cuando haya que indicar múltiples condiciones lógicas.</p>
+<p>El primer argumento indica el conjunto de datos a utilizar, y el segundo argumento la expresión a aplicar para filtrar dicho conjunto de datos. Notar que no es necesario aclarar la sintaxis <code>iris$Sepal.Length</code>. Esto hace más fácil la escritura ante la necesidad de indicar múltiples condiciones lógicas.</p>
 <p>El argumento <code>select</code> permite además seleccionar una o más columnas a dejar luego del filtro:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>iris_sub4 <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Sepal.Width"</span>))</span>
@@ -738,7 +746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Traducción en palabras: Si el largo del sépalo es menor a 2.8, clasificarlo como “Corto”. En caso contrario, si es mayor o igual a 2.8 Y menor a 3.3, clasificarlo como “Mediano”; si no es así, clasificarlo como “Largo”.</p>
-<p>Con la función <code>factor()</code>, es posible aisgnarle a un vector-columna la clase de <code>factor</code>:</p>
+<p>Con la función <code>factor()</code>, es posible asignarle a un vector-columna la clase de <code>factor</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(iris<span class="sc">$</span>Sepal.width.cat2)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Sepal.width.cat2</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -796,12 +804,12 @@ Levels: Corto Largo Mediano</code></pre>
 </section>
 <section id="ejercicio-2" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h2>
-<p>Genere una nueva columna para la tabla <code>iris</code> llamada “Flower.color”. Para las especie <em>Iris setosa</em> y <em>Iris versicolor</em>, asignarle “Purple”. Para la especie <em>Iris virginica</em> asignarle “Blue”.</p>
+<p>Genere una nueva columna para la tabla <code>iris</code> llamada “Flower.color”. Para las especies <em>Iris setosa</em> y <em>Iris versicolor</em>, asignarle “Purple”. Para la especie <em>Iris virginica</em> asignarle “Blue”.</p>
 </section>
 <section id="unión-de-tablas" class="level2">
 <h2 class="anchored" data-anchor-id="unión-de-tablas">Unión de tablas</h2>
 <p>Las funciones <code>rbind()</code> y <code>cbind()</code> permiten añadir filas (“r” de “row”) y columnas (“c” de “column”) a un <code>data.frame</code>, respectivamente.</p>
-<p>A modo de ejemplo, importaremos un <code>data.frame</code> conteniendo las medidas de variables florales (inventadas para el ejemplo) para la especie <em>Iris florentina</em>. Asimismo, cargamos nuevamente la tavla <code>iris</code> con la estructura y datos originales:</p>
+<p>A modo de ejemplo, importaremos un <code>data.frame</code> conteniendo las medidas de variables florales (inventadas para el ejemplo) para la especie <em>Iris florentina</em>. Asimismo, cargamos nuevamente la tabla <code>iris</code> con la estructura y datos originales:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos nuevamente la tabla con la estructura y datos originales</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris.csv"</span>)</span>
@@ -836,7 +844,7 @@ Levels: Corto Largo Mediano</code></pre>
 </div>
 </div>
 <p>Al utilizar <code>rbind()</code>, debemos asegurarnos de que la cantidad de columnas y sus nombres sean idénticos. De lo contrario, R devuelve un error.</p>
-<p>De manera similar, la función <code>cbind()</code> une tablas a lo largo de sus columnas, y su sintaxis tiene la forma de <code>cbind(tabla1, tabla2)</code>. Lógicamente, el número de filas de ambas tablas debe ser el mismo, de lo contraria obtendremos una advertencia o un error.</p>
+<p>De manera similar, la función <code>cbind()</code> une tablas a lo largo de sus columnas, y su sintaxis tiene la forma de <code>cbind(tabla1, tabla2)</code>. Lógicamente, el número de filas de ambas tablas debe ser el mismo, de lo contrario obtendremos una advertencia o un error.</p>
 <p>Usualmente, la información está repartida en más de una tabla. ¿Cómo generamos una nueva tabla que reúna toda la información junta? Para ello utilizamos la función <code>merge()</code> (fusionar/combinar). A modo de ejemplo, cargamos una nueva tabla con los nombres comunes de las especies de <em>Iris</em> con las que venimos trabajando:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>iris_names <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris_common_names.csv"</span>)</span>
@@ -1012,8 +1020,8 @@ Levels: Corto Largo Mediano</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-976731b133e4cb99a598" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-976731b133e4cb99a598">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-87c45e0a6dc86ddd1eaf" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-87c45e0a6dc86ddd1eaf">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">

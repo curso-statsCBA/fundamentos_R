@@ -74,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,13 +105,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
 <link href="../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
+
 <script src="../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
+
 <script src="../site_libs/tippy-binding-0.1.0/tippy.js"></script>
+
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -378,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="ante-todo-orden-y-organización" class="level2">
 <h2 class="anchored" data-anchor-id="ante-todo-orden-y-organización">Ante todo, orden y organización</h2>
-<p>Cuando trabajamos con R (pero esto es válido también para cualquier otro proyecto de código o análisis de datos) debemos intentar ser sumamente organizados. Disponer de un sistema que permita identificar rápidamente cuales son las entradas (datos) y las salidas (resultados de análisis, gráficos, etc.), así como los pasos intermedios, si existieran, nos facilitará mucho nuestro trabajo. Ya hemos visto que en RStudio podemos crear <em>Proyectos</em> que nos ayudarán a mantener todo más organizado. A continuación veremos algunas otras formas de comentar e indexar el código en sí mismo para poder lograr una mayor organización y claridad.</p>
+<p>Cuando trabajamos con R (pero esto es válido también para cualquier otro proyecto de código o análisis de datos) debemos intentar ser sumamente organizados. Disponer de un sistema que permita identificar rápidamente cuáles son las entradas (datos) y las salidas (resultados de análisis, gráficos, etc.), así como los pasos intermedios, si existieran, nos facilitará mucho nuestro trabajo. Ya hemos visto que en RStudio podemos crear <em>Proyectos</em> que nos ayudarán a mantener todo más organizado. A continuación veremos algunas otras formas de comentar e indexar el código en sí mismo para poder lograr una mayor organización y claridad.</p>
 <p align="center">
 </p><p><a href="pics/meme2.jpg" target="_blank"> <img src="pics/meme2.jpg" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a></p>
 <p></p>
@@ -386,11 +394,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="comentarios-e-índices" class="level2">
 <h2 class="anchored" data-anchor-id="comentarios-e-índices">Comentarios e índices</h2>
 <p>Como hemos visto previamente, cuando estemos trabajando dentro de RStudio la mayor parte del tiempo estaremos editando un archivo de texto con nuestro código. A este archivo que contiene todas las instrucciones, desde la carga de paquetes necesarios, la carga de datos, la manipulación de los mismos, la ejecución de análisis, las instrucciones para realizar gráficos y la exportación de los mismos, etcétera, lo llamamos <strong><em>script</em></strong> o <strong><em>rutina</em></strong>.</p>
-<p>Ademas del código propiamente dicho, <strong>ningún script está completo si no está correctamente anotado</strong>, es decir, si no contiene texto humanamente legible que permita seguir qué es lo que se está haciendo en el mismo. La forma de introducir un <u id="comentario">comentario</u> en el código es anteponer <code>#</code> a la linea en cuestión. De esta forma, el interprete de código evitará su ejecución.</p>
+<p>Además del código propiamente dicho, <strong>ningún script está completo si no está correctamente anotado</strong>, es decir, si no contiene texto humanamente legible que permita seguir qué es lo que se está haciendo en el mismo. La forma de introducir un <u id="comentario">comentario</u> en el código es anteponer <code>#</code> a la línea en cuestión. De esta forma, el intérprete de código evitará su ejecución.</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-44d704c5738b31202bb3" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-44d704c5738b31202bb3">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:16px;'>Todo texto explicativo que no deseamos que sea ejecutado por el interprete de R.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-00129aea7fbf6224760f" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-00129aea7fbf6224760f">{"x":{"element":"comentario","opts":{"content":"<span style='font-size:16px;'>Todo texto explicativo que no deseamos que sea ejecutado por el interprete de R.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -404,7 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p align="center">
 </p><p><a href="pics/rstud_idxoutl.png" target="_blank"> <img src="pics/rstud_idxoutl.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
 <p></p>
-<p>De igual forma, cada entrada del índice nos permitirá <em>plegar</em> o <em>colapsar</em>, las líneas de código que contenga. Esto puede ser útil para ocultar algunas secciones extremadamente largas o para secciones que, al momento de editar el script, no sean de interés. Esta funcionalidad de colapsar líneas, también estará disponible para bloques de código de <em>control de flujo</em> y para bloques que definan <em>funciones</em>. En el <code>día 3</code> veremos específicamente como usar estas estructuras de control de flujo y como crear funciones, por el momento, prestemos atención en la captura siguiente a los números de línea del editor y a las lineas dónde vemos el botón <img src="pics/but_colaps.png" class="img-fluid" width="20">, indicando que es un bloque de código colapsado.</p>
+<p>De igual forma, cada entrada del índice nos permitirá <em>plegar</em> o <em>colapsar</em> las líneas de código que contenga. Esto puede ser útil para ocultar algunas secciones extremadamente largas o para secciones que, al momento de editar el script, no sean de interés. Esta funcionalidad de colapsar líneas también estará disponible para bloques de código de <em>control de flujo</em> y para bloques que definan <em>funciones</em>. En el <code>día 3</code> veremos específicamente cómo usar estas estructuras de control de flujo y como crear funciones, por el momento, prestemos atención en la captura siguiente a los números de línea del editor y a las líneas dónde vemos el botón <img src="pics/but_colaps.png" class="img-fluid" width="20">, indicando que es un bloque de código colapsado.</p>
 <p align="center">
 </p><p><a href="pics/rstud_fold.png" target="_blank"> <img src="pics/rstud_fold.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
 <p></p>
@@ -415,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="carga-de-funciones-externas" class="level2">
 <h2 class="anchored" data-anchor-id="carga-de-funciones-externas">Carga de funciones externas</h2>
-<p>Más adelante veremos en profundidad como se construye una función, por el momento solo digamos que una función es una forma de personalizar la ejecución de código para una función específica que nosotros diseñamos. Para evitar repetir en todos nuestros scripts estas funciones <em>personalizadas</em>, podemos generar una <strong>biblioteca propia de funciones</strong> desde donde las cargaremos. Así mismo, puede que algún/a colega haya diseñado una función y nos la envíe, en cuyo caso también podemos cargarla sin necesidad de <em>copiar y pegar</em> la misma en nuestro script.</p>
+<p>Más adelante veremos en profundidad cómo se construye una función, por el momento solo digamos que una función es una forma de personalizar la ejecución de código para una función específica que nosotros diseñamos. Para evitar repetir en todos nuestros scripts estas funciones <em>personalizadas</em>, podemos generar una <strong>biblioteca propia de funciones</strong> desde donde las cargaremos. Así mismo, puede que algún/a colega haya diseñado una función y nos la envíe, en cuyo caso también podemos cargarla sin necesidad de <em>copiar y pegar</em> la misma en nuestro script.</p>
 <p>Para cargar una función externa, por supuesto, primero debemos disponer de una. Para esta demostración utilizaremos una función muy sencilla que calcula una <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_cuadr%C3%A1tica" target="_blank">función cuadrática</a> con un solo término, es decir, es una función de tipo <code>y(x) = x²</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Función cuadrática</span></span>
@@ -455,19 +463,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="trabajando-sin-interfaz-gráfica" class="level2">
 <h2 class="anchored" data-anchor-id="trabajando-sin-interfaz-gráfica">Trabajando sin interfaz gráfica</h2>
 <p>En algunas ocasiones deberemos usar R de una forma no interactiva, esto es, daremos la instrucción para que se ejecute un script dado pero ya no viéndolo dentro de RStudio y corriendo línea por línea, sino desde alguna herramienta propia del Sistema Operativo. Una situación típica de esto es si alguna vez trabajamos con R dentro de un <a href="https://en.wikipedia.org/wiki/High-performance_computing" target="_blank">cluster de cómputo de alto rendimiento</a>, como por ejemplo en el <a href="https://ccad.unc.edu.ar/equipamiento/" target="_blank">CCAD (Centro de Cómputo de Alto Desempeño)</a> de la UNC. Otras situaciones puede ser incorporar algún procesamiento con R dentro un <a href="https://en.wikipedia.org/wiki/Pipeline_(software)" target="_blank"><em>pipeline</em></a> de análisis que utilice otros lenguajes en combinación a R (e.g.&nbsp;<a href="https://es.wikipedia.org/wiki/Bash" target="_blank">BASH</a>, <a href="https://www.python.org/about/" target="_blank">python</a>, etc.)</p>
-<p>Existen múltiples formas, dependiendo del Sistema Operativo que estemos utilizando, para ejecutar un script de R desde el propio sistema, pero la forma más sencilla es invocar al archivo ejecutable de R llamado <strong>Rscript</strong>. En sistemas Windows, típicamente se encuentra en <em>“C:\Program Files\R\R-version\bin\x64\”</em> y debemos ejecutarlo desde el <a href="https://es.wikipedia.org/wiki/S%C3%ADmbolo_del_sistema_de_Windows" target="_blank">“Simbolo del sistema”</a>. En sistemas GNU/Linux basta con abrir la terminal de nuestra preferencia y ejecutar:</p>
+<p>Existen múltiples formas, dependiendo del Sistema Operativo que estemos utilizando, para ejecutar un script de R desde el propio sistema, pero la forma más sencilla es invocar al archivo ejecutable de R llamado <strong>Rscript</strong>. En sistemas Windows, típicamente se encuentra en <em>“C:\Program Files\R\R-version\bin\x64\”</em> y debemos ejecutarlo desde el <a href="https://es.wikipedia.org/wiki/S%C3%ADmbolo_del_sistema_de_Windows" target="_blank">“Símbolo del sistema”</a>. En sistemas GNU/Linux basta con abrir la terminal de nuestra preferencia y ejecutar:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> mi_script.R</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p align="center">
 </p><p><a href="pics/non_inter.png" target="_blank"> <img src="pics/non_inter.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
 <p></p>
-<p>Dado que esto último es un uso relativamente avanzado, no haremos un ejercicio relacionado. No obstante, si tiene curiosidad sobre como se vería un script como el usado en el ejemplo de arriba, puede <a href="https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad1/no_interactivo.R">descargarlo de aquí</a> e intentar correrlo en su sistema operativo.</p>
+<p>Dado que esto último es un uso relativamente avanzado, no haremos un ejercicio relacionado. No obstante, si tiene curiosidad sobre cómo se vería un script como el usado en el ejemplo de arriba, puede <a href="https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad1/no_interactivo.R">descargarlo de aquí</a> e intentar correrlo en su sistema operativo.</p>
 </section>
 <section id="algunas-máximas-a-recordar-a-la-hora-de-programar-en-r" class="level2">
 <h2 class="anchored" data-anchor-id="algunas-máximas-a-recordar-a-la-hora-de-programar-en-r">Algunas máximas a recordar a la hora de programar en R</h2>
 <ul>
-<li><p><u>Explícito es mejor que implícito</u>. Ante la duda, declaremos explícitamente todo lo que hacemos. Esto puede ser un poco engorroso, pero nos ayudara sobre todo en la etapa de aprendizaje inicial.</p></li>
+<li><p><u>Explícito es mejor que implícito</u>. Ante la duda, declaremos explícitamente todo lo que hacemos. Esto puede ser un poco engorroso, pero nos ayudará sobre todo en la etapa de aprendizaje inicial.</p></li>
 <li><p><u>Orden, orden, orden</u>… Intentar hacer el trabajo de forma sistemática desde el comienzo siempre es más fácil que luego intentar ordenar algo caótico cuando nos toque publicar y compartir nuestro código.</p></li>
 <li><p>Un breve descanso a tiempo puede significar un ahorro de horas de frustración. En ocasiones algo no anda y no podemos encontrar el error fácilmente. En esos momentos, cuando ya leímos de arriba a abajo varias veces nuestro código y seguimos sin poder encontrar el error, mejor es ir a prepararse un mate, dar una vuelta a la manzana, o lo que fuera. <u>La gran mayoría de estos errores difíciles se encuentran y resuelven luego de descansar un poco</u>.</p></li>
 <li><p><u>No estamos solos/as</u>. Si lo anterior no funciona, recordemos que siempre podemos acudir a un foro web, a una IA, o a un/a colega que pueda revisar nuestro código. Generalmente el problema que hace días no podemos solucionar, un par de ojos frescos y sin frustración acumulada lo encuentran en cuestión de minutos, o incluso en un simple golpe de vista.</p></li>

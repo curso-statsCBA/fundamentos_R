@@ -74,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,13 +105,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
 <link href="../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
+
 <link href="../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
+
 <script src="../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
+
 <script src="../site_libs/tippy-binding-0.1.0/tippy.js"></script>
+
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -386,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="otra-lógica-de-programación" class="level2">
 <h2 class="anchored" data-anchor-id="otra-lógica-de-programación">Otra lógica de programación</h2>
 <p>El paquete <em>ggplot2</em> ofrece una nutrida biblioteca de funciones para la creación de gráficos de diversos tipos en R. La diversidad de gráficos y formas de personalización es enorme -es un curso en sí mismo- y aquí simplemente desarrollaremos los fundamentos básicos para su comprensión. Existen varias páginas web útiles para aprender sobre el desarrollo de gráficos con <em>ggplot2</em>, incluyendo a <a href="https://r-graph-gallery.com/ggplot2-package.html" target="_blank">The R Graph Gallery</a> y <a href="https://r-charts.com/colors/" target="_blank">R Charts</a>. En esta <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" target="_blank">página</a> se muestra una tabla de colores junto con su nombre a utilizar dentro del entorno R.</p>
-<p>A diferencia de otros paquetes de graficación, incluyendo a las funciones nativas de R que ya hemos visto, la creación de gráficos con <em>ggplot2</em> sigue una lógica diferente. Se trabaja mediante la apilación de “capas gráficas” a través de un lenguaje propio del paquete. Si tradujéramos el código en palabras, sería algo así:</p>
+<p>A diferencia de otros paquetes de graficación, incluyendo a las funciones nativas de R que ya hemos visto, la creación de gráficos con <em>ggplot2</em> sigue una lógica diferente. Se trabaja mediante la concatenación de “capas gráficas” a través de un lenguaje propio del paquete. Si traducimos el código en palabras, sería algo así:</p>
 <p><em>creo espacio de graficación →</em><br> &nbsp;&nbsp;<em>añado capa gráfica nº1 (e.g.&nbsp;puntos) →</em><br> &nbsp;&nbsp;<em>añado capa gráfica nº2 (e.g.&nbsp;líneas) →</em><br> &nbsp;&nbsp;<em>configuro eje x →</em><br> &nbsp;&nbsp;<em>configuro eje y →</em><br> &nbsp;&nbsp;<em>configuro parámetros generales del gráfico</em></p>
 <p>Mejor que explicarlo, es mostrarlo!</p>
 <p>Antes que nada, es necesario cargar el paquete al entorno de R:</p>
@@ -408,7 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>La primera línea llama a la función <code>ggplot()</code>. Esta función será el inicio de todos nuestros gráficos con <em>ggplot2</em>. Allí, indicamos el conjunto de datos que se utilizará para obtener los datos de graficación, típicamente un <code>data.frame</code>, en el argumento llamado <code>data</code>. El argumento <code>mapping</code> debe definirse a través de la función <u id="aes"><code>aes()</code></u>, dentro de la cual definimos las variables a graficar y su asociación a las columnas del <code>data.frame</code> indicado. Aquí indicamos que la variable <code>x</code> será “Sepal.Length” y la variable <code>y</code> “Petal.Length”. Ambas son columnas del dataset <code>iris</code> indicado en el argumento <code>data</code>.</p>
-<p>Seguidamente a la primera línea observamos un <code>+</code>, y esta es la gran diferencia de la lógica de <em>ggplot2</em> respecto de otros paquetes. El operador <code>+</code> indica que seguido a él se añadirá una nueva <em>capa</em> al gráfico. Aquí, en la segunda línea (y está en la segunda línea por simple prolijidad, pero podría ir seguido en la primera línea), la función <code>geom_point()</code> indica que se añadirá un gráfico de nube de puntos (o scatterplot). En general, todas las funciones que comienzan con<code>geom_</code> refieren a tipos de gráficos particulares, entre ellas:</p>
+<p>Al final de la primera línea observamos un <code>+</code>, y esta es la gran diferencia de la lógica de <em>ggplot2</em> respecto de otros paquetes. El operador <code>+</code> indica que seguido a él se añadirá una nueva <em>capa</em> al gráfico. Aquí, en la segunda línea (y está en la segunda línea por simple prolijidad, pero podría ir seguido en la primera línea), la función <code>geom_point()</code> indica que se añadirá un gráfico de nube de puntos (o scatterplot). En general, todas las funciones que comienzan con <code>geom_</code> refieren a tipos de gráficos particulares, entre ellas:</p>
 <ul>
 <li><code>geom_point()</code>: puntos.</li>
 <li><code>geom_line()</code>: líneas.</li>
@@ -418,8 +426,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Para probar</strong>: Escriba en la consola <code>geom_</code>, y espera a observar las sugerencias de funciones disponibles para la generación de distintos tipos de gráficos en <em>ggplot2</em>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-2f8fffdd9b4ca70a0983" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-2f8fffdd9b4ca70a0983">{"x":{"element":"aes","opts":{"content":"<span style=\"font-size:16px;\">El término viene del inglés \"aesthetic mappings\", lo que más o menos se traduce como \"mapeo gráfico de las variables\".<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-ebb7af2d49b8856c2e8c" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-ebb7af2d49b8856c2e8c">{"x":{"element":"aes","opts":{"content":"<span style=\"font-size:16px;\">El término viene del inglés \"aesthetic mappings\", lo que más o menos se traduce como \"mapeo gráfico de las variables\".<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>El grado de personalización de los gráficos con <em>ggplot2</em> es inmenso. Por ejemplo, podemos cambiar el color, tamaño, forma y transparencia:</p>
@@ -546,7 +554,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Dentro de <code>aes()</code> definimos para <code>x</code> la variable discreta “Species” y para <code>y</code> la variable continua “Petal.Length”. La incorporación del argumento <code>fill</code> indica colores distintos para cada especie.</p>
 <p><strong>Para jugar:</strong> Cambie <code>fill</code> por <code>col</code> y observe los resultados.</p>
-<p>Para configurar aspectos del eje x de un boxplot, <code>scale_x_continuos()</code> no servirá, porque la variable definida para <code>x</code> no es continua (son especies). La función adecuada es <code>scale_x_discrete()</code>:</p>
+<p>Para configurar aspectos del eje x de un boxplot, <code>scale_x_continuous()</code> no servirá, porque la variable definida para <code>x</code> no es continua (son especies). La función adecuada es <code>scale_x_discrete()</code>:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Petal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.3</span>, <span class="at">staplewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
@@ -589,11 +597,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejercicio-1" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h2>
-<p>Genere un gráfico idéntico al último expuesto, pero con un orden distinto para los niveles del eje x. El orden debe ser, de izquierda a derecha, <em>I. virginica</em>, <em>I. versicolor</em> e <em>I. setosa</em>. Para ello, debe redefinir la variable “Species” de la tabla como un factor con niveles en el orden indicado. Si no se acuerda como hacerlo, vuelva a la clase de <a href="../unidad1/Vectores.html">Vectores</a>.</p>
+<p>Genere un gráfico idéntico al último expuesto, pero con un orden distinto para los niveles del eje x. El orden debe ser, de izquierda a derecha, <em>I. virginica</em>, <em>I. versicolor</em> e <em>I. setosa</em>. Para ello, debe redefinir la variable “Species” de la tabla como un factor con niveles en el orden indicado. Si no se acuerda cómo hacerlo, vuelva a la clase de <a href="../unidad1/Vectores.html">Vectores</a>.</p>
 </section>
 <section id="funciones-de-tipo-theme" class="level2">
 <h2 class="anchored" data-anchor-id="funciones-de-tipo-theme">Funciones de tipo <code>theme</code></h2>
-<p>Las funciones que inician con <code>theme</code> permiten la personalización general del gráfico. Por un lado, contamos con funciones como <code>theme_light()</code>, las cuales vienen asociadas con configuraciones gráficas preestablecidas. Por otro lado, la función <code>theme()</code> permite un grado de personalización del gráfico muy alta. Por ejemplo:</p>
+<p>Las funciones que inician con <code>theme</code> permiten la personalización general del gráfico. Por un lado, contamos con funciones como <code>theme_light()</code>, las cuales vienen asociadas con configuraciones gráficas preestablecidas. Por otro lado, la función <code>theme()</code> permite un grado de personalización del gráfico muy alto. Por ejemplo:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
@@ -620,7 +628,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Dentro de <code>theme()</code>, es posible indicar una gran cantidad de argumentos (ver <code>?theme</code>). Entre ellos, el argumento <code>aspect.ratio</code> es muy útil, ya que permite establecer la relación de aspecto de la figura. Asimismo, con <code>legend.position = "bottom"</code> se indica que la leyenda se ubique en la parte baja de la figura.</p>
 <p>Vale la pena mencionar la nueva capa añadida mediante <code>annotate()</code>, la cual sirve para añadir información al gráfico de manera directa (sin necesidad de referencias a un dataset). En el ejemplo, se utilizó para agregar texto, pero también sirve para agregar líneas o segmentos, entre otros.</p>
 <p><strong>Para observar:</strong> Además de lo ya explicado, ¿qué otras cosas cambiaron en el último gráfico respecto del anterior? ¿Qué líneas de código son las responsables de ello?</p>
-<p><strong>Para jugar:</strong> Cambie <code>theme_light()</code> por otras funciones del tipo con otras configuraciones preestablecida y observe los distintos resultados.</p>
+<p><strong>Para jugar:</strong> Cambie <code>theme_light()</code> por otras funciones del tipo con otras configuraciones preestablecidas y observe los distintos resultados.</p>
 <section id="ejemplo-de-caso-típico-gráficos-de-barras-con-error" class="level3">
 <h3 class="anchored" data-anchor-id="ejemplo-de-caso-típico-gráficos-de-barras-con-error">Ejemplo de caso típico: gráficos de barras con error</h3>
 <p>Un gráfico muy popular es el gráfico de barras con error asociado. Usualmente, la barra indica un valor promedio y la barra de error el error estándar o la desviación estándar. ¿Cómo haríamos este gráfico en <em>ggplot2</em>? Primero, es necesario generar un <code>data.frame</code> con los valores promedio y de error asociados (en este ejemplo, la desviación estándar). Lo haremos para cada especie del género <em>Iris</em>:</p>
@@ -761,8 +769,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-33ad21df33775add63c0" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-33ad21df33775add63c0">{"x":{"element":"ppi","opts":{"content":"<span style=\"font-size:16px;\">\"points per inch\" o \"puntos por pulgada\" en español. Análogo a \"dpi\" (\"dots per inch\").<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-642802e0f3ef92ccaf77" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-642802e0f3ef92ccaf77">{"x":{"element":"ppi","opts":{"content":"<span style=\"font-size:16px;\">\"points per inch\" o \"puntos por pulgada\" en español. Análogo a \"dpi\" (\"dots per inch\").<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><br></p>

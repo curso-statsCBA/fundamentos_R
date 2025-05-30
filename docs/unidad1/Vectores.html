@@ -74,8 +74,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -432,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td>NULL</td>
-<td>Representa un vector vacío. Se genera al crear el vector: <code>vec &lt;- NULL</code>.</td>
+<td>Representa un objeto vacío. Se genera al crear el vector: <code>vec &lt;- NULL</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -478,7 +478,7 @@ Levels: Quebracho Espinillo Algarrobo</code></pre>
 [26] 30</code></pre>
 </div>
 </div>
-<p>Para generar vectores con una lógica más compleja, las funciones <code>seq()</code> y <code>rep()</code> son adecuadas. La función <code>seq()</code> genera un sucesión de números (i.e.&nbsp;un vector de clase <code>numeric</code> o <code>integer</code>):</p>
+<p>Para generar vectores con una lógica más compleja, las funciones <code>seq()</code> y <code>rep()</code> son adecuadas. La función <code>seq()</code> genera una sucesión de números (i.e.&nbsp;un vector de clase <code>numeric</code> o <code>integer</code>):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -527,7 +527,7 @@ Levels: Quebracho Espinillo Algarrobo</code></pre>
 </section>
 <section id="ejercicio" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio">Ejercicio</h2>
-<p>Dado el vector <code>rep(x = 3:1, each = 5)</code>, explore qué hacen las siguientes funciones: <code>length()</code>, <code>sort()</code>, <code>rev()</code> y <code>unique()</code>.</p>
+<p>Dado el vector <code>c(8, 45, 9, 3, -2, 9, 7, 14, 45)</code>, explore qué hacen las siguientes funciones: <code>length()</code>, <code>sort()</code>, <code>rev()</code> y <code>unique()</code>.</p>
 </section>
 <section id="vectores-y-expresiones-lógicas" class="level2">
 <h2 class="anchored" data-anchor-id="vectores-y-expresiones-lógicas">Vectores y expresiones lógicas</h2>
@@ -696,7 +696,7 @@ Levels: Quebracho Espinillo Algarrobo</code></pre>
 <pre><code>[1]  5  8 16  0  3</code></pre>
 </div>
 </div>
-<p>En el contexto de valores <code>NA</code>, es útil la función <code>na.omit()</code>, que remuevo todos los elementos que sean <code>NA</code>:</p>
+<p>En el contexto de valores <code>NA</code>, es útil la función <code>na.omit()</code>, que remueve todos los elementos que sean <code>NA</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="cn">NA</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="cn">NA</span>)</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>vec2 <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(vec)</span>
@@ -743,7 +743,7 @@ attr(,"class")
 <pre><code>[1] "Algarrobo" "Quebracho" "Espinillo" "Yuchan"    "Tusca"    </code></pre>
 </div>
 </div>
-<p><strong>Para explorar:</strong> La función <code>append()</code> es una forma de general de hacer esto. Explore <code>?append</code>.</p>
+<p><strong>Para explorar:</strong> La función <code>append()</code> es una forma general de hacer esto. Explore <code>?append</code>.</p>
 </section>
 <section id="funciones-básicas-para-vectores-numéricos" class="level2">
 <h2 class="anchored" data-anchor-id="funciones-básicas-para-vectores-numéricos">Funciones básicas para vectores numéricos</h2>

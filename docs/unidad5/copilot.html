@@ -40,8 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5f088323684dd023ebdd4dad63575474.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-77d60e1c1751ecde63f93beee004d04a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c45797c302523b209169824dfeb752ad.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-504a4020bc178be2a89c0a7e80c48040.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,7 +337,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="utilizando-ia-en-nuestros-proyectos">Utilizando IA en nuestros proyectos</h2>
 <p>Es innegable el avance de las inteligencias artificiales (IAs) en todos los ámbitos de nuestra vida, especialmente en nuestro trabajo, y la programación no es la excepción. Actualmente, programar se ha vuelto una tarea más sencilla gracias al uso de estas herramientas. Sin embargo, es importante tener en cuenta que estas herramientas no reemplazan a l@s programadores, sino que l@s asisten en su trabajo.</p>
 <p>Para utilizar estas herramientas correctamente, primero es fundamental comprender las nociones básicas de nuestro lenguaje de programación. Caso contrario, nos encontraremos con código generado por inteligencia artificial que puede ser, muchas veces, ineficiente o inadecuado para la tarea que nos proponemos realizar. En casos extremos de malos hábitos en el uso de IAs, nos podemos encontrar con que estas herramientas han sugerido directamente código erróneo para una determinada tarea. Consideramos que, en gran parte de estos casos, los errores aparecen porque los usuarios no piden correctamente cuál es la tarea exacta a realizar, no la contextualizan correctamente, o carecen de conceptos básicos necesarios para pedir un código que se adecúe a sus objetivos.</p>
-<p>Por ello, creemos que, aunque el uso de las IAs es imparable, como científic@s o analistas de datos, es necesario conocer las nociones básicas de los lenguajes que utilizaremos. Recordemos, las IAs no reemplazan nuestras capacidades, simplemente nos facilitan el trabajo.</p>
+<p>Por ello, creemos que, aunque el uso de las IAs es imparable, como científic@s o analistas de datos, es necesario conocer las nociones básicas de los lenguajes que utilizamos. Recordemos, las IAs no reemplazan nuestras capacidades, simplemente nos facilitan el trabajo.</p>
 </section>
 <section id="github-copilot" class="level2">
 <h2 class="anchored" data-anchor-id="github-copilot">GitHub Copilot</h2>
@@ -345,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
 <p>A diferencia de otras IA como ChatGPT, Gemini o DeepSeek, <strong>GitHub Copilot</strong> es una herramienta de autocompletado de código impulsada por inteligencia artificial. Esta herramienta asiste a los usuarios de distintos lenguajes de programación (o tu <em>copiloto</em> de programación), entre ellos R, sugiriendo líneas completas o bloques de código mientras escriben, basándose en el contexto del archivo y del proyecto actual. Copilot puede generar código, escribir funciones y proporcionar documentación.</p>
 <section id="instalación-en-rstudio" class="level3">
 <h3 class="anchored" data-anchor-id="instalación-en-rstudio">Instalación en RStudio</h3>
-<p>La instalación de esta herramienta es muy simple. Como prerrequisito, debemos hacernos un usuario en <a href="https://github.com/" target="_blank">GitHub</a>. Luego, instalar o actualizar RStudio a una versión que soporte GitHub Copilot. Seguidamente, nos dirigimos a <em>Tools</em> &gt; <em>Global Options</em> &gt; <em>Copilot</em>. Allí, deberemos seguir las intrucciones, iniciar sesión con nuestro usuario y contraseña, y seguidamente activar la herramienta.</p>
+<p>La instalación de esta herramienta es muy simple. Como prerrequisito, debemos hacernos un usuario en <a href="https://github.com/" target="_blank">GitHub</a>. Luego, instalar o actualizar RStudio a una versión que soporte GitHub Copilot. Seguidamente, nos dirigimos a <em>Tools</em> &gt; <em>Global Options</em> &gt; <em>Copilot</em>. Allí, deberemos seguir las instrucciones, iniciar sesión con nuestro usuario y contraseña, y seguidamente activar la herramienta.</p>
 </section>
 <section id="usando-copilot" class="level3">
 <h3 class="anchored" data-anchor-id="usando-copilot">Usando Copilot</h3>
@@ -354,8 +354,8 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="pics/copilot_example1.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></p>
 </div>
 <p>Para aceptar una sugerencia, simplemente presionamos <code>Tab</code>.</p>
-<p>En la esquina superior derecha de la ventana de la consola, se muestra en tiempo real el estado de Copilot: <em>“Copilot: Waiting for completions…”</em>, que indica que el agente esta esperando que el usuario termine de escribir; <em>“Copilot: Completion response received”</em>, que indica que el agente ya ha sugerido código; o <em>“Copilot: No completions found”</em>, que avisa que Copilot no tiene sugerencias particulares para dar.</p>
-<p>El agente Copilot se vuelve más interesante cuando le pedimos ayuda para escribir bloques de código más completo. Para ello, debemos contextualizar el pedido, mediante el uso de un comentario con <code>#</code>. Por ejemplo, imaginemos que deseamos realizar un gráfico de cajas (o boxplot) en <em>ggplot2</em>, para el dataset <em>iris</em>:</p>
+<p>En la esquina superior derecha de la ventana de la consola, se muestra en tiempo real el estado de Copilot: <em>“Copilot: Waiting for completions…”</em>, que indica que el agente está esperando que el usuario termine de escribir; <em>“Copilot: Completion response received”</em>, que indica que el agente ya ha sugerido código; o <em>“Copilot: No completions found”</em>, que avisa que Copilot no tiene sugerencias particulares para dar.</p>
+<p>El agente Copilot se vuelve más interesante cuando le pedimos ayuda para escribir bloques de código más completos. Para ello, debemos contextualizar el pedido, mediante el uso de un comentario con <code>#</code>. Por ejemplo, imaginemos que deseamos realizar un gráfico de cajas (o boxplot) en <em>ggplot2</em>, para el dataset <em>iris</em>:</p>
 <div style="text-align: center;">
 <p><img src="pics/copilot_example2.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></p>
 </div>
@@ -367,7 +367,7 @@ ul.task-list li input[type="checkbox"] {
 <div style="text-align: center;">
 <p><img src="pics/copilot_example4.png" style="padding: 5px 0 5px 0;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></p>
 </div>
-<p>Ante preguntas o consultas más complicadas, recomendamos el uso de foros online como <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>, así también como chatbots the preferencia, como <a href="https://chat.openai.com/" target="_blank">ChatGPT</a>, o incluso el mismo <a href="https://github.com/copilot" target="_blank">GitHub Copilot</a>, que también posee una versión de chat en el navegador.</p>
+<p>Ante preguntas o consultas más complicadas, recomendamos el uso de foros online como <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>, así también como chatbots de preferencia, como <a href="https://chat.openai.com/" target="_blank">ChatGPT</a>, o incluso el mismo <a href="https://github.com/copilot" target="_blank">GitHub Copilot</a>, que también posee una versión de chat en el navegador.</p>
 <hr>
 <div style="text-align: center;">
 <p><img src="pics/R_IA.jpg" style="padding: 5px 0; max-width: 75%; height: auto; vertical-align: middle; border-style: none;"></p>
