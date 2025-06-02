@@ -17,7 +17,11 @@ Bienvenid\@s al curso de **Fundamentos básicos del lenguaje R**, dictado por el
 
 A la izquierda de la pantalla se encuentran disponibles todos los recursos prácticos y teóricos que utilizaremos durante el desarrollo del curso.
 
-# Objetivos específicos
+<!--
+[Click aquí](https://github.com/curso-statscba/fundamentos_R/archive/refs/heads/main.zip) para clonar el repositorio del curso, y descargar el mismo para su acceso sin conexión a internet. Para acceder a la página del curso de manera local, abra el archivo "index.html" con su navegador de internet, ubicado dentro de la carpeta "docs" del directorio descargado.
+-->
+
+# Objetivos del curso
 
 -   Que l\@s estudiantes adquieran conceptos teóricos fundamentales y habilidades prácticas básicas del lenguaje R.
 -   Que l\@s estudiantes desarrollen un pensamiento programático en relación al uso del lenguaje R.
@@ -31,11 +35,13 @@ A la izquierda de la pantalla se encuentran disponibles todos los recursos prác
 
 </p>
 
+```{=html}
 <!--
 # Evaluación 2025
 
 [Haz click aquí para acceder a la evaluación del curso}(ponerlink){target="_blank"}
 -->
+```
 
 # Otros cursos de interés
 
