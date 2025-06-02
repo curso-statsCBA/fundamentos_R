@@ -4,10 +4,10 @@ Verificar que en .gitignore, se ignoran los siguientes archivos/directorio, de l
 .Rhistory
 .RData
 .Ruserdata
-/local/
+/_internal/
 /.quarto/
 
-En el caso de 'local', es un directorio local para probar cosas.
+En el caso de '_internal', es un directorio local para probar cosas. Al empezar con _, es ignorado en el renderizado
 
 1) Hacer commit sobre archivos .qmd y archivos usados para la página. Luego Pushear.
 
