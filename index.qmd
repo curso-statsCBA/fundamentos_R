@@ -35,9 +35,13 @@ A la izquierda de la pantalla se encuentran disponibles todos los recursos prác
 
 </p>
 
+<!---
+
 # Evaluación 2025
 
 [Haz click aquí para acceder a la evaluación del curso](unidad5/Evaluacion.html){target="_blank"}
+
+--->
 
 # Otros cursos de interés
 
