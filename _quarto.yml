@@ -1,0 +1,82 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    -  "unidad2/data/"
+
+website:
+  #title: "Fundamentos básicos del lenguaje R"
+  favicon: favicon.png
+  back-to-top-navigation: true
+  reader-mode: false
+  bread-crumbs: false
+  page-footer: "<span class='footer-space'>Doctorado en Ciencias Biológicas | FCEFyN - UNC</span>"
+  navbar:
+    background: "#375a7f"
+    logo: pics/logo.png
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: index.qmd#cronograma
+        text: Cronograma
+      - href: codigo_colab.qmd
+        text: Código colaborativo
+      - text: Recursos útiles
+        menu:
+          - text: R for Data Science
+            href: https://r4ds.had.co.nz/
+            target: "_blank"
+          - text: The R Graph Gallery
+            href: https://r-graph-gallery.com
+            target: "_blank"
+          - text: R Charts
+            href: https://r-charts.com/
+            target: "_blank"
+          - text: R Colors
+            href: https://sites.stat.columbia.edu/tzheng/files/Rcolor.pdf
+            target: "_blank"
+  sidebar:
+    style: "floating"
+    search: true
+    collapse-level: 2
+    contents:
+      - text: "Inicio"
+        href: index.qmd
+      - section: "Unidad 1"
+        contents:
+          - text: Introducción a R
+            href: unidad1/IntroR.qmd
+          - unidad1/UsandoR.qmd
+          - unidad1/FlujoTrabajo.qmd
+          - unidad1/Operadores.qmd
+          - unidad1/Vectores.qmd
+      - section: "Unidad 2"
+        contents:
+          - unidad2/Tablas.qmd
+      - section: "Unidad 3"
+        contents:
+          - unidad3/ControlFlujo.qmd
+      - section: "Unidad 4"
+        contents:
+          - unidad4/GraficosBase.qmd
+          - text: Gráficos con *ggplot2*
+            href: unidad4/ggplot2.qmd
+      - section: "Unidad 5"
+        contents:
+          - unidad5/Funciones.qmd
+          - unidad5/copilot.qmd
+      - text: Código colaborativo!
+        href: codigo_colab.qmd
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: [cosmo, cosmo-dark.scss]
+    css: styles.css
+    smooth-scroll: true
+    toc: true
+    toc-depth: 3
+
+editor: visual
+

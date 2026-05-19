@@ -1,0 +1,19 @@
+---
+title: "Introducción a R"
+format: html
+---
+
+```{=html}
+<iframe id="pdf-frame" src="IntroR.pdf" style="width:100%" frameborder="0"></iframe>
+
+<script>
+  function adjustPDFSize() {
+    var iframe = document.getElementById('pdf-frame');
+    var width = iframe.clientWidth;
+    iframe.style.height = (width * (3/4))+ 45 + "px"; // Height = 3 X × Width
+  }
+
+  window.onload = adjustPDFSize;
+  window.onresize = adjustPDFSize;
+</script>
+```
