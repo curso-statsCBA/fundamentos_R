@@ -213,6 +213,12 @@ Todas las condiciones son verdaderas, por lo que devuelve `TRUE`. Si en cambio a
 all(a > 3, b > 8, c > 21)
 ```
 
+Si todas las condiciones son falses, también obtenemos `FALSE`:
+
+```{r}
+all(a == 7, b < 8, c > 21)
+```
+
 La función `any()` devuelve `TRUE` si al menos una condición es verdadera. Su comportamiento es análogo al operador `|` utilizado de manera secuencial. Por ejemplo:
 
 ```{r}
@@ -250,14 +256,14 @@ y <- 90
 round(x = 6.756)
 round(6.756, digits = 2)
 trunc(6.756)
+trunc(-6.756)
 ceiling(6.356)
 floor(x = 6.756)
+floor(x = -6.756)
 ```
 
------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ::: {style="text-align: center;"}
-
 <a href="pics/meme_practico_operadores.png" target="_blank"><img src="pics/meme_practico_operadores.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:75%;height:auto;vertical-align:middle;border-style: none;"/></a>
-
 :::

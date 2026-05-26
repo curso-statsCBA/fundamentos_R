@@ -276,6 +276,40 @@ Simplemente se indican los objetos asociados a los gráficos, junto con la canti
 
 La función `ggarrange()` del paquete `egg` es una de muchas formas de generar paneles con gráficos de *ggplot2*. También podemos mencionar a la función `plot_grid()` del paquete `cowplot` y a `grid.arrange()` del paquete `gridExtra`.
 
+## Gráficos en paneles o facetas
+
+Las facetas permiten dividir un gráfico en múltiples paneles según los niveles de una variable categórica, facilitando la comparación entre grupos. `ggplot2` ofrece dos funciones para esto: `facet_wrap()` y `facet_grid()`.
+
+`facet_wrap()` toma una sola variable y distribuye los paneles en una grilla que se acomoda automáticamente. Con el argumento `ncol` o `nrow` podemos controlar cuántas columnas o filas tendrá la grilla.
+
+En el siguiente ejemplo graficamos la relación entre el largo y el ancho del sépalo, con un panel para cada especie:
+
+```{r}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point() +
+  facet_wrap(~ Species)
+```
+
+Los tres paneles comparten los mismos ejes, lo que facilita comparar la dispersión y los rangos entre especies.
+
+`facet_grid()` cruza **dos variables**: una define las filas y otra las columnas de la grilla. Esto permite ver simultáneamente cómo varía una relación en función de dos factores a la vez.
+
+Como `iris` solo tiene una variable categórica natural (`Species`), creamos una segunda clasificando el tamaño del pétalo:
+
+```{r}
+iris$petal_size <- ifelse(iris$Petal.Length <= 4, "petalo chico", "petalo grande")
+```
+
+Luego usamos `facet_grid()` con `petal_size` en las filas y `Species` en las columnas:
+
+```{r}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point() +
+  facet_grid(petal_size ~ Species)
+```
+
+La grilla resultante tiene 2 filas × 3 columnas = 6 paneles. Puede observarse que *setosa* directamente no tiene "pétalos grandes", por lo que ese panel queda vacío. Esto en sí mismo es un resultado informativo.
+
 ## Exportación de gráficos
 
 Existen varias formas de exportar los gráficos de *ggplot2*. Una de ellas es a través de la interfaz gráfica de RStudio, en el panel de gráficos. Otra opción es encerrar el bloque de código de la siguiente manera, y correr todo el bloque a la vez, bloque de código que también es válido para gráficos en `R base`:
@@ -337,10 +371,8 @@ Los niveles de la columna "Subject" están desordenados. ¿Por qué? Arreglar es
 tippy::tippy_this(elementId = "ppi", tooltip = '<span style="font-size:16px;">"points per inch" o "puntos por pulgada" en español. Análogo a "dpi" ("dots per inch").</span>')
 ```
 
------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ::: {style="text-align: center;"}
-
 <a href="pics/meme_practico_ggplot2.png" target="_blank"><img src="pics/meme_practico_ggplot2.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:75%;height:auto;vertical-align:middle;border-style: none;"/></a>
-
-::: 
+:::

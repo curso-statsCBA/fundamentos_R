@@ -402,7 +402,7 @@ Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situació
 
 ### Ejercicio Final
 
-Tomando de base el conjunto de datos `iris`, construya el siguiente `data.frame`:
+Tomando de base el conjunto de datos `iris_more.csv`, la cual es idéntica al dataset iris pero contiene los datos de un total de 15 especies, construya el siguiente `data.frame` vacío:
 
 ```{r}
 model_outputs <- data.frame(Species = unique(iris$Species),
@@ -411,9 +411,15 @@ model_outputs <- data.frame(Species = unique(iris$Species),
 model_outputs
 ```
 
-Luego, evalúe modelos lineales que relacionen a la variable `Petal.Length` con la variable `Sepal.Length` en ese orden, para cada especie. Rellene la tabla generada anteriormente con los valores de los coeficientes (llamado `Estimate` o coeficiente de la variable predictora) y su valor-P (`P.value`) en cada caso. Para hacer esto, utilice alguna estructura de control de flujo aprendida!
+Luego, evalúe modelos lineales que relacionen a la variable `Petal.Length` con la variable `Sepal.Length` en ese orden, para cada especie. Rellene la tabla generada anteriormente con los valores de los coeficientes (llamado `Estimate` o coeficiente de la variable predictora) y su valor-P (`P.value`) en cada caso. La idea no es hacer esto manualmente, sino utilizar alguna estructura de control de flujo aprendida!
 
 *Ayuda*: utilice la función `lm()` para construir los modelos lineales. La salida de la función `summary()`, que actúa sobre el modelo (salida de `lm()`), contiene la información sobre los coeficientes que necesitamos.
+
+*Ayudas extra*: 
+
+- Intente rellenar los datos de una sola especie. Luego intente replicarlo al resto mediante una estructura de control de flujo.
+- Utilice "pseudocógigo" para descifrar los pasos a seguir: con palabras, describa cada pequeño paso de la estructura a generar. Luego, traduzca el pseudocódigo a código R.
+
 
 ```{r, echo = FALSE}
 # Respuesta verPablo
@@ -432,12 +438,10 @@ for (sp in unique(iris$Species)){
 }
 ```
 
------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ::: {style="text-align: center;"}
-
 <a href="pics/meme.jpg" target="_blank"> <img src="pics/meme.jpg" style="padding: 5px 0 5px 0;width: 50rem;max-width:50%;height:auto;vertical-align:middle;border-style: none;"/></a>
-
 :::
 
 ## Ejercicio Extra

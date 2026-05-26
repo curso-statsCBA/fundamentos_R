@@ -192,9 +192,11 @@ Si por algún motivo deseara cambiar el directorio de trabajo, puedo hacerlo des
 
 Una ruta (en inglés <i>path</i>) en R o en cualquier otro sistema informático es la "dirección" de cada archivo que existe en el sistema de archivos. De forma general, existen dos formas de representar a cualquier ruta:
 
--   Las **rutas absolutas** son aquellas en las que explícitamente se indica todo el trayecto realizado desde la raíz del sistema hasta la ubicación en cuestión. En los sistemas GNU/Linux, la raíz del sistema es `/` (llamado **root**); mientras que en los sistemas Windows será el origen del disco que esté utilizándose, típicamente `C:\`. Teniendo esto en cuenta, la ruta anterior al directorio de trabajo es una ruta absoluta, ya que en la misma se explicita toda la ruta desde la raíz hasta el archivo.
+-   Las **rutas absolutas** son aquellas en las que explícitamente se indica todo el trayecto realizado desde la raíz del sistema hasta la ubicación en cuestión. En los sistemas Windows la raíz del sistema será el origen del disco que esté utilizándose, típicamente `C:\`, mientras que en los sitemas GNU/Linux será `/` (llamado **root**). Teniendo esto en cuenta, la ruta anterior al directorio de trabajo es una ruta absoluta, ya que en la misma se explicita toda la ruta desde la raíz hasta el archivo.
 
--   Las **rutas relativas** por su parte, nos muestran la ubicación de un archivo o directorio en sentido relativo al directorio de trabajo activo. Generalmente, las mismas empiezan con uno o dos caracteres de punto ".", teniendo la expresión `./` el significado literal de "en este directorio", es decir, en el directorio actual; mientras que la expresión `../` indica el directorio superior en la jerarquía del directorio actual. Tener en cuenta que en sistemas Windows, el caracter que separa directorios es la "<i>barra inversa</i>", por lo que en esos sistemas será: `.\` y `..\`.
+-   Las **rutas relativas** por su parte, nos muestran la ubicación de un archivo o directorio en sentido relativo al directorio de trabajo activo. Generalmente, las mismas empiezan con uno o dos caracteres de punto ".", teniendo la expresión `./` el significado literal de "en este directorio", es decir, en el directorio actual; mientras que la expresión `../` indica el directorio superior en la jerarquía del directorio actual. 
+
+Tener en cuenta que en sistemas Windows, el caracter que separa directorios es la "<i>barra inversa</i>", por lo que en esos sistemas será `\`. No obstante, en el entorno R las rutas (absolutas o relativas) utilizan la barra lateral común `/`.
 
 Como ejemplo, tomando como referencia la estructura hipotética para el proyecto de los análisis de la tesis, si el directorio de trabajo activo fuera `analisis` dentro de `CapII`, la ruta relativa a `CapIII` sería `../../CapIII`
 
@@ -479,7 +481,7 @@ library(multilandr)
 
 Instale el paquete `ggplot2`. Una vez instalado, cárguelo y realice algún gráfico de los ejemplos disponibles en su *vignette*. Finalmente, guarde el gráfico en el directorio de trabajo.
 
------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ::: {style="text-align: center;"}
 <a href="pics/meme.jpg" target="_blank"> <img src="pics/meme.jpg" style="padding: 5px 0 5px 0;width: 50rem;max-width:50%;height:auto;vertical-align:middle;border-style: none;"/></a>
