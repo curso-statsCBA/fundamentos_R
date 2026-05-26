@@ -6,8 +6,10 @@ pagetitle: "Inicio"
 <font size=5>Curso de posgrado \| Doctorado en Cs. Biológicas \| FCEFyN - UNC</font>
 
 <p align="center" style="margin: 0; padding: 0;">
-
-<img src="pics/foto_2025.jpg" id="main-photo" style="
+<img 
+  id="main-photo"
+  src="pics/foto_2025.jpg"
+  style="
     padding: 5px 0 5px 0;
     width: 66rem;
     max-width: 100%;
@@ -16,9 +18,10 @@ pagetitle: "Inicio"
     border-style: none;
     opacity: 1;
     transition: opacity 0.4s ease-in-out;
-  "/>
-
-::: {style="
+  "
+/>
+<div
+  style="
     width: 66rem;
     max-width: 100%;
     margin: 0 auto;
@@ -28,19 +31,23 @@ pagetitle: "Inicio"
     justify-content: flex-end;
     align-items: center;
     gap: 4px;
-  "}
-<a href="#"
+  "
+>
+  <a href="#"
      id="btn2025"
      onclick="changePhoto('2025'); return false;"
-     style="text-decoration: none; font-weight: bold; color: #444441; display: inline;"> <i><sup>Edición 2025</sup></i> </a> [  ]{style="display: inline; color: #444441;"} <a href="#"
+     style="text-decoration: none; font-weight: bold; color: #444441; display: inline;">
+     <i><sup>Edición 2025</sup></i>
+  </a>
+  <span style="display: inline; color: #444441;">&nbsp;&nbsp;</span>
+  <a href="#"
      id="btn2024"
      onclick="changePhoto('2024'); return false;"
-     style="text-decoration: none; font-weight: normal; color: #444441; display: inline;"> <i><sup>Edición 2024</sup></i> </a>
-:::
-
+     style="text-decoration: none; font-weight: normal; color: #444441; display: inline;">
+     <i><sup>Edición 2024</sup></i>
+  </a>
+</div>
 </p>
-
-```{=html}
 <script>
 function changePhoto(year) {
   const img = document.getElementById("main-photo");
@@ -64,7 +71,6 @@ function changePhoto(year) {
   }, 400);
 }
 </script>
-```
 
 # ¡Bienvenid\@s al curso!
 
