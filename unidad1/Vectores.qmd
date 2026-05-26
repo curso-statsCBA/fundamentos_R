@@ -40,12 +40,14 @@ str(vec)
 Un vector puede componerse de cinco clases principales de elementos:
 
 |  |  |
-|-------------------------|-----------------------------------------------|
+|-------------------------|----------------------------------------------|
 | numeric | Contienen números reales (decimales). Por ejemplo: `c(1.2, 1.5, 1.7)`. |
 | integer | Contienen números enteros. Debemos indicarse con la letra `L` luego del número. Por ejemplo: `c(1L, -5L, 16L, 17L)`. |
 | logical | Contienen valores booleanos o lógicos. Por ejemplo: `c(TRUE, FALSE, NA)` o `c(T, F, T)`. |
 | character | Contienen texto, el cual debe explicitarse con comillas simples o dobles. Por ejemplo: `c("Algarrobo", "Quebracho", "Espinillo")`. |
 | NULL | Representa un objeto vacío. Se genera al crear el vector: `vec <- NULL`. |
+
+Las funciones `is.numeric()`, `is.integer()`, `is.logical()`, `is.character()` e `is.null()` "preguntan" si la clase del objeto entre paréntesis es numeric, integer, logical, character o NULL, respectivamente.
 
 Recordemos que al crear un vector, este puede componerse de un solo tipo de elementos. Por ello, debemos tener cuidado a la hora de generar nuestros vectores, y asegurarnos de que estamos generando un vector con elementos de la clase deseada. El uso de vectores con elementos de una clase incorrecta es un error muy común en distintos contextos del flujo de trabajo. Por ejemplo:
 
@@ -342,10 +344,8 @@ R también provee de numerosas funciones nativas para obtener medidas de resumen
 
 3.  Genere un vector de 500 números provenientes de una distribución normal, de media 15 y desvío estándar 4. Para ello, utilice la función `rnorm()` (explore la ayuda mediante `?rnorm`). Seguidamente, verifique los valores de media, mediana y desvío estándar de la muestra. Calcule los cuantiles tradicionales mediante `quantile()`. Calcule el percentil 5% y el 95%.
 
------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ::: {style="text-align: center;"}
-
 <a href="pics/meme_practico_vectores.png" target="_blank"><img src="pics/meme_practico_vectores.png" style="padding: 5px 0 5px 0;width: 50rem;max-width:75%;height:auto;vertical-align:middle;border-style: none;"/></a>
-
 :::
