@@ -364,6 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejemplo-de-caso-típico-gráficos-de-barras-con-error" id="toc-ejemplo-de-caso-típico-gráficos-de-barras-con-error" class="nav-link" data-scroll-target="#ejemplo-de-caso-típico-gráficos-de-barras-con-error">Ejemplo de caso típico: gráficos de barras con error</a></li>
   </ul></li>
   <li><a href="#asignación-de-gráficos-a-objetos" id="toc-asignación-de-gráficos-a-objetos" class="nav-link" data-scroll-target="#asignación-de-gráficos-a-objetos">Asignación de gráficos a objetos</a></li>
+  <li><a href="#gráficos-en-paneles-o-facetas" id="toc-gráficos-en-paneles-o-facetas" class="nav-link" data-scroll-target="#gráficos-en-paneles-o-facetas">Gráficos en paneles o facetas</a></li>
   <li><a href="#exportación-de-gráficos" id="toc-exportación-de-gráficos" class="nav-link" data-scroll-target="#exportación-de-gráficos">Exportación de gráficos</a></li>
   <li><a href="#ejercicio-final" id="toc-ejercicio-final" class="nav-link" data-scroll-target="#ejercicio-final">Ejercicio final</a></li>
   </ul>
@@ -429,8 +430,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Para probar</strong>: Escriba en la consola <code>geom_</code>, y espera a observar las sugerencias de funciones disponibles para la generación de distintos tipos de gráficos en <em>ggplot2</em>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-2c667061cde7cc60ba04" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-2c667061cde7cc60ba04">{"x":{"element":"aes","opts":{"content":"<span style=\"font-size:16px;\">El término viene del inglés \"aesthetic mappings\", lo que más o menos se traduce como \"mapeo gráfico de las variables\".<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-6af5142af240e7ed5aa6" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-6af5142af240e7ed5aa6">{"x":{"element":"aes","opts":{"content":"<span style=\"font-size:16px;\">El término viene del inglés \"aesthetic mappings\", lo que más o menos se traduce como \"mapeo gráfico de las variables\".<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>El grado de personalización de los gráficos con <em>ggplot2</em> es inmenso. Por ejemplo, podemos cambiar el color, tamaño, forma y transparencia:</p>
@@ -721,41 +722,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Simplemente se indican los objetos asociados a los gráficos, junto con la cantidad de columnas y filas, como si fuera una <em>matriz</em> con espacios vacíos a ser rellenados por cada gráfico (aquí, una matriz de 2x2).</p>
 <p>La función <code>ggarrange()</code> del paquete <code>egg</code> es una de muchas formas de generar paneles con gráficos de <em>ggplot2</em>. También podemos mencionar a la función <code>plot_grid()</code> del paquete <code>cowplot</code> y a <code>grid.arrange()</code> del paquete <code>gridExtra</code>.</p>
 </section>
+<section id="gráficos-en-paneles-o-facetas" class="level2">
+<h2 class="anchored" data-anchor-id="gráficos-en-paneles-o-facetas">Gráficos en paneles o facetas</h2>
+<p>Las facetas permiten dividir un gráfico en múltiples paneles según los niveles de una variable categórica, facilitando la comparación entre grupos. <code>ggplot2</code> ofrece dos funciones para esto: <code>facet_wrap()</code> y <code>facet_grid()</code>.</p>
+<p><code>facet_wrap()</code> toma una sola variable y distribuye los paneles en una grilla que se acomoda automáticamente. Con el argumento <code>ncol</code> o <code>nrow</code> podemos controlar cuántas columnas o filas tendrá la grilla.</p>
+<p>En el siguiente ejemplo graficamos la relación entre el largo y el ancho del sépalo, con un panel para cada especie:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Species)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Los tres paneles comparten los mismos ejes, lo que facilita comparar la dispersión y los rangos entre especies.</p>
+<p><code>facet_grid()</code> cruza <strong>dos variables</strong>: una define las filas y otra las columnas de la grilla. Esto permite ver simultáneamente cómo varía una relación en función de dos factores a la vez.</p>
+<p>Como <code>iris</code> solo tiene una variable categórica natural (<code>Species</code>), creamos una segunda clasificando el tamaño del pétalo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>petal_size <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(iris<span class="sc">$</span>Petal.Length <span class="sc">&lt;=</span> <span class="dv">4</span>, <span class="st">"petalo chico"</span>, <span class="st">"petalo grande"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Luego usamos <code>facet_grid()</code> con <code>petal_size</code> en las filas y <code>Species</code> en las columnas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(petal_size <span class="sc">~</span> Species)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>La grilla resultante tiene 2 filas × 3 columnas = 6 paneles. Puede observarse que <em>setosa</em> directamente no tiene “pétalos grandes”, por lo que ese panel queda vacío. Esto en sí mismo es un resultado informativo.</p>
+</section>
 <section id="exportación-de-gráficos" class="level2">
 <h2 class="anchored" data-anchor-id="exportación-de-gráficos">Exportación de gráficos</h2>
 <p>Existen varias formas de exportar los gráficos de <em>ggplot2</em>. Una de ellas es a través de la interfaz gráfica de RStudio, en el panel de gráficos. Otra opción es encerrar el bloque de código de la siguiente manera, y correr todo el bloque a la vez, bloque de código que también es válido para gráficos en <code>R base</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">filename =</span> <span class="st">"dia4/scatterplot.png"</span>, <span class="at">width =</span> <span class="dv">1200</span>, <span class="at">height =</span> <span class="dv">1000</span>, <span class="at">res =</span> <span class="dv">300</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Scatterplot de ejemplo"</span>) <span class="sc">+</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Longitud del sépalo"</span>) <span class="sc">+</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Longitud del pétalo"</span>) <span class="sc">+</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">"Especie"</span>, </span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"I. setosa"</span>, <span class="st">"I. versicolor"</span>, <span class="st">"I. virginica"</span>), </span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"forestgreen"</span>, <span class="st">"firebrick"</span>, <span class="st">"blue3"</span>))</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">filename =</span> <span class="st">"dia4/scatterplot.png"</span>, <span class="at">width =</span> <span class="dv">1200</span>, <span class="at">height =</span> <span class="dv">1000</span>, <span class="at">res =</span> <span class="dv">300</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Scatterplot de ejemplo"</span>) <span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Longitud del sépalo"</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Longitud del pétalo"</span>) <span class="sc">+</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">"Especie"</span>, </span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"I. setosa"</span>, <span class="st">"I. versicolor"</span>, <span class="st">"I. virginica"</span>), </span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"forestgreen"</span>, <span class="st">"firebrick"</span>, <span class="st">"blue3"</span>))</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Como podemos observar, entre otros argumentos, es posible indicar el ancho, largo y la resolución (en <u id="ppi">ppi</u>). Otras alternativas a <code>png()</code> son <code>jpeg()</code> y <code>tiff()</code>.</p>
 <p>Otra alternativa es utilizar la función <code>ggsave()</code>, por ejemplo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"dia4/scatterplot.png"</span>, <span class="at">dpi =</span> <span class="dv">600</span>, <span class="at">units =</span> <span class="st">"px"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"dia4/scatterplot.png"</span>, <span class="at">dpi =</span> <span class="dv">600</span>, <span class="at">units =</span> <span class="st">"px"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Al no especificar qué gráfico exportar, se exporta el último gráfico devuelto en el panel de gráficos. De lo contrario, es posible indicar explícitamente qué gráfico exportar:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plot5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Scatterplot de ejemplo"</span>) <span class="sc">+</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Longitud del sépalo"</span>) <span class="sc">+</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Longitud del pétalo"</span>) <span class="sc">+</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">"Especie"</span>, </span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"I. setosa"</span>, <span class="st">"I. versicolor"</span>, <span class="st">"I. virginica"</span>), </span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"forestgreen"</span>, <span class="st">"firebrick"</span>, <span class="st">"blue3"</span>)) <span class="sc">+</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>)</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"scatterplot.png"</span>, <span class="at">plot =</span> plot5, <span class="at">dpi =</span> <span class="dv">600</span>, <span class="at">units =</span> <span class="st">"px"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plot5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Scatterplot de ejemplo"</span>) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Longitud del sépalo"</span>) <span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Longitud del pétalo"</span>) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">"Especie"</span>, </span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"I. setosa"</span>, <span class="st">"I. versicolor"</span>, <span class="st">"I. virginica"</span>), </span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"forestgreen"</span>, <span class="st">"firebrick"</span>, <span class="st">"blue3"</span>)) <span class="sc">+</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">aspect.ratio =</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>)</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"scatterplot.png"</span>, <span class="at">plot =</span> plot5, <span class="at">dpi =</span> <span class="dv">600</span>, <span class="at">units =</span> <span class="st">"px"</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="ejercicio-final" class="level2">
@@ -772,8 +811,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-49c1b4f526a389bda12d" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-49c1b4f526a389bda12d">{"x":{"element":"ppi","opts":{"content":"<span style=\"font-size:16px;\">\"points per inch\" o \"puntos por pulgada\" en español. Análogo a \"dpi\" (\"dots per inch\").<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-5b0db8439d07994159d3" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-5b0db8439d07994159d3">{"x":{"element":"ppi","opts":{"content":"<span style=\"font-size:16px;\">\"points per inch\" o \"puntos por pulgada\" en español. Análogo a \"dpi\" (\"dots per inch\").<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <hr>

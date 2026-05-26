@@ -764,9 +764,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
-[1,]   21   23   24
-[2,]   35   58   29
-[3,]   60   11   79</code></pre>
+[1,]   85   53    6
+[2,]   71   89    2
+[3,]   20   50   48</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>( j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(mat)) {</span>
@@ -774,15 +774,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 21"
-[1] "El elemento de la fila 1 y columna 2 es igual a 23"
-[1] "El elemento de la fila 1 y columna 3 es igual a 24"
-[1] "El elemento de la fila 2 y columna 1 es igual a 35"
-[1] "El elemento de la fila 2 y columna 2 es igual a 58"
-[1] "El elemento de la fila 2 y columna 3 es igual a 29"
-[1] "El elemento de la fila 3 y columna 1 es igual a 60"
-[1] "El elemento de la fila 3 y columna 2 es igual a 11"
-[1] "El elemento de la fila 3 y columna 3 es igual a 79"</code></pre>
+<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 85"
+[1] "El elemento de la fila 1 y columna 2 es igual a 53"
+[1] "El elemento de la fila 1 y columna 3 es igual a 6"
+[1] "El elemento de la fila 2 y columna 1 es igual a 71"
+[1] "El elemento de la fila 2 y columna 2 es igual a 89"
+[1] "El elemento de la fila 2 y columna 3 es igual a 2"
+[1] "El elemento de la fila 3 y columna 1 es igual a 20"
+[1] "El elemento de la fila 3 y columna 2 es igual a 50"
+[1] "El elemento de la fila 3 y columna 3 es igual a 48"</code></pre>
 </div>
 </div>
 <p>¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de <em>repeticiones</em> que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando <code>i = 1</code> y <code>j = 1</code>.</p>
@@ -832,7 +832,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejercicio-final" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-final">Ejercicio Final</h3>
-<p>Tomando de base el conjunto de datos <code>iris</code>, construya el siguiente <code>data.frame</code>:</p>
+<p>Tomando de base el conjunto de datos <code>iris_more.csv</code>, la cual es idéntica al dataset iris pero contiene los datos de un total de 15 especies, construya el siguiente <code>data.frame</code> vacío:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>model_outputs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Species =</span> <span class="fu">unique</span>(iris<span class="sc">$</span>Species),</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">Estimate =</span> <span class="cn">NA</span>,</span>
@@ -845,8 +845,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 3  virginica       NA      NA</code></pre>
 </div>
 </div>
-<p>Luego, evalúe modelos lineales que relacionen a la variable <code>Petal.Length</code> con la variable <code>Sepal.Length</code> en ese orden, para cada especie. Rellene la tabla generada anteriormente con los valores de los coeficientes (llamado <code>Estimate</code> o coeficiente de la variable predictora) y su valor-P (<code>P.value</code>) en cada caso. Para hacer esto, utilice alguna estructura de control de flujo aprendida!</p>
+<p>Luego, evalúe modelos lineales que relacionen a la variable <code>Petal.Length</code> con la variable <code>Sepal.Length</code> en ese orden, para cada especie. Rellene la tabla generada anteriormente con los valores de los coeficientes (llamado <code>Estimate</code> o coeficiente de la variable predictora) y su valor-P (<code>P.value</code>) en cada caso. La idea no es hacer esto manualmente, sino utilizar alguna estructura de control de flujo aprendida!</p>
 <p><em>Ayuda</em>: utilice la función <code>lm()</code> para construir los modelos lineales. La salida de la función <code>summary()</code>, que actúa sobre el modelo (salida de <code>lm()</code>), contiene la información sobre los coeficientes que necesitamos.</p>
+<p><em>Ayudas extra</em>:</p>
+<ul>
+<li>Intente rellenar los datos de una sola especie. Luego intente replicarlo al resto mediante una estructura de control de flujo.</li>
+<li>Utilice “pseudocógigo” para descifrar los pasos a seguir: con palabras, describa cada pequeño paso de la estructura a generar. Luego, traduzca el pseudocódigo a código R.</li>
+</ul>
 <hr>
 <div style="text-align: center;">
 <p><a href="pics/meme.jpg" target="_blank"> <img src="pics/meme.jpg" style="padding: 5px 0 5px 0;width: 50rem;max-width:50%;height:auto;vertical-align:middle;border-style: none;"></a></p>

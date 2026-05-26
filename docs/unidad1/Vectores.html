@@ -410,8 +410,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Un vector puede componerse de cinco clases principales de elementos:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 34%">
-<col style="width: 65%">
+<col style="width: 35%">
+<col style="width: 64%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -436,6 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+<p>Las funciones <code>is.numeric()</code>, <code>is.integer()</code>, <code>is.logical()</code>, <code>is.character()</code> e <code>is.null()</code> “preguntan” si la clase del objeto entre paréntesis es numeric, integer, logical, character o NULL, respectivamente.</p>
 <p>Recordemos que al crear un vector, este puede componerse de un solo tipo de elementos. Por ello, debemos tener cuidado a la hora de generar nuestros vectores, y asegurarnos de que estamos generando un vector con elementos de la clase deseada. El uso de vectores con elementos de una clase incorrecta es un error muy común en distintos contextos del flujo de trabajo. Por ejemplo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1985</span>, <span class="st">"Algarrobo"</span>, <span class="st">"Quebracho"</span>)</span>

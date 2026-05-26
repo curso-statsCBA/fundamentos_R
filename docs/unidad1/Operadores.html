@@ -728,16 +728,23 @@ window.Quarto = {
 <pre><code>[1] FALSE</code></pre>
 </div>
 </div>
+<p>Si todas las condiciones son falses, también obtenemos <code>FALSE</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all</span>(a <span class="sc">==</span> <span class="dv">7</span>, b <span class="sc">&lt;</span> <span class="dv">8</span>, c <span class="sc">&gt;</span> <span class="dv">21</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
 <p>La función <code>any()</code> devuelve <code>TRUE</code> si al menos una condición es verdadera. Su comportamiento es análogo al operador <code>|</code> utilizado de manera secuencial. Por ejemplo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(a <span class="sc">&gt;</span> <span class="dv">7</span>, b <span class="sc">&gt;</span> <span class="dv">12</span>, c <span class="sc">&gt;</span> <span class="dv">13</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(a <span class="sc">&gt;</span> <span class="dv">7</span>, b <span class="sc">&gt;</span> <span class="dv">12</span>, c <span class="sc">&gt;</span> <span class="dv">13</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
 <p>En cambio, si todas las condiciones son falsas, <code>any()</code> devuelve <code>FALSE</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(a <span class="sc">&gt;</span> <span class="dv">7</span>, b <span class="sc">&gt;</span> <span class="dv">12</span>, c <span class="sc">&gt;</span> <span class="dv">23</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(a <span class="sc">&gt;</span> <span class="dv">7</span>, b <span class="sc">&gt;</span> <span class="dv">12</span>, c <span class="sc">&gt;</span> <span class="dv">23</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -755,22 +762,24 @@ window.Quarto = {
 <li>Sin correr las siguientes líneas, ¿cuál es el resultado de cada expresión?</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">90</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>(x <span class="sc">&lt;=</span> <span class="dv">10</span>) <span class="sc">&amp;</span> (y <span class="sc">&gt;</span> <span class="dv">40</span>)</span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>(x <span class="sc">==</span> <span class="dv">10</span>) <span class="sc">|</span> (y <span class="sc">==</span> <span class="dv">89</span>)</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>((x <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">&amp;</span> (y <span class="sc">!=</span> <span class="dv">70</span>)) <span class="sc">&amp;</span> (x<span class="sc">*</span>y <span class="sc">&gt;</span> <span class="dv">1000</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">90</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>(x <span class="sc">&lt;=</span> <span class="dv">10</span>) <span class="sc">&amp;</span> (y <span class="sc">&gt;</span> <span class="dv">40</span>)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>(x <span class="sc">==</span> <span class="dv">10</span>) <span class="sc">|</span> (y <span class="sc">==</span> <span class="dv">89</span>)</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>((x <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">&amp;</span> (y <span class="sc">!=</span> <span class="dv">70</span>)) <span class="sc">&amp;</span> (x<span class="sc">*</span>y <span class="sc">&gt;</span> <span class="dv">1000</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>¿Qué hacen las funciones <code>round()</code>, <code>floor()</code>, <code>ceiling()</code> y <code>trunc()</code>?</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> <span class="fl">6.756</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">6.756</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">trunc</span>(<span class="fl">6.756</span>)</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fl">6.356</span>)</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">floor</span>(<span class="at">x =</span> <span class="fl">6.756</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> <span class="fl">6.756</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">6.756</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">trunc</span>(<span class="fl">6.756</span>)</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="fu">trunc</span>(<span class="sc">-</span><span class="fl">6.756</span>)</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(<span class="fl">6.356</span>)</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="fu">floor</span>(<span class="at">x =</span> <span class="fl">6.756</span>)</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="fu">floor</span>(<span class="at">x =</span> <span class="sc">-</span><span class="fl">6.756</span>)</span></code><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <div style="text-align: center;">
