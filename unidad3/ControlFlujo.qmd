@@ -408,7 +408,7 @@ Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situació
 iris_more <- read.table("data/iris_more.csv")
 ```
 
-Esta tabla es idéntica al dataset iris con el que hemos estado trabajando, pero contiene los datos de un total de 15 especies. En primer lugar, construya el siguiente `data.frame` vacío:
+Estaa tabla es idéntica al dataset iris con el que hemos estado trabajando, pero contiene los datos de un total de 15 especies. En primer lugar, construya el siguiente `data.frame` vacío:
 
 ```{r}
 model_outputs <- data.frame(Species = unique(iris_more$Species),
