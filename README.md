@@ -46,7 +46,7 @@ modelos estadísticos en R:
 
 # Licencia
 
-© 2024 Pablo Y. Huais & Nicolás Pastor. Bajo licencia [Creative Commons
+© 2024-2026 Pablo Y. Huais & Nicolás Pastor. Bajo licencia [Creative Commons
 Attribution-NonCommercial-ShareAlike 4.0 International
 License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
