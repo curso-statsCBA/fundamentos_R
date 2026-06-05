@@ -149,7 +149,7 @@ En el Doctorado de Ciencias Biológicas (FCEFyN, Universidad Nacional de Córdob
 
 -   **Introducción al lenguaje R. Modelos lineales y fundamentos de programación** <br>Dictado por el Dr. Santiago Benitez-Vieyra. [Ver curso](https://curso-statscba.github.io/curso-R/){target="_blank"}
 -   **Modelos Estadísticos Avanzados** <br>Dictado por el Dr. Santiago Benitez-Vieyra. [Ver curso](https://curso-statscba.github.io/modelos_avanzados/){target="_blank"}
--   **Gráficos para publicaciones en R con énfasis en *ggplot2*** <br>Dictado por el Dr. Andrés Blanco. [Ver curso](https://andresblanco-unc.github.io/curso_graficos_ggplot/){target="_blank"}
+-   **Gráficos para publicaciones en R con énfasis en *ggplot2*** <br>Dictado por el Dr. Andrés Blanco. [Ver curso](https://andresblanco-unc.github.io/curso_graficos_ggplot_2026/){target="_blank"}
 
 # Licencia
 

@@ -16,7 +16,7 @@
 # ¡Bienvenid@s al curso!
 
 Bienvenid@s al curso de **Fundamentos básicos del lenguaje R**, dictado
-por el Dr. Pablo Yair Huais y el Biól. Nicolás Pastor. El curso fue
+por el Dr. Pablo Yair Huais y el Dr. Nicolás Pastor. El curso fue
 diseñado para proveer a l@s estudiantes con las herramientas necesarias
 para iniciarse en el uso del lenguaje R, mediante el aprendizaje de su
 lógica programática, y orientado a resolver problemas específicos de sus
@@ -41,7 +41,7 @@ modelos estadísticos en R:
     target="_blank">Ver curso</a>
 -   **Gráficos para publicaciones en R con énfasis en *ggplot2***
     <br>Dictado por el Dr. Andrés Blanco.
-    <a href="https://andresblanco-unc.github.io/curso_graficos_ggplot/"
+    <a href="https://andresblanco-unc.github.io/curso_graficos_ggplot_2026/"
     target="_blank">Ver curso</a>
 
 # Licencia
