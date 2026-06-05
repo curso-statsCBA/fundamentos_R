@@ -39,17 +39,19 @@ pagetitle: "Inicio"
   "
 >
   <a href="#"
-     id="btn2025"
-     onclick="changePhoto('2025', true); return false;"
-     style="text-decoration: none; font-weight: bold; color: #444441; display: inline;">
-     <i><sup>Edición 2025</sup></i>
+    id="btn2025"
+    onclick="changePhoto('2025', true); return false;"
+    style="text-decoration: none; font-weight: bold; display: inline; color: var(--carousel-btn-color);"
+    >
+    <i><sup>Edición 2025</sup></i>
   </a>
-  <span style="display: inline; color: #444441;">&nbsp;&nbsp;</span>
+  <span style="display: inline; color: var(--carousel-btn-color);">&nbsp;&nbsp;</span>
   <a href="#"
-     id="btn2024"
-     onclick="changePhoto('2024', true); return false;"
-     style="text-decoration: none; font-weight: normal; color: #444441; display: inline;">
-     <i><sup>Edición 2024</sup></i>
+    id="btn2024"
+    onclick="changePhoto('2024', true); return false;"
+    style="text-decoration: none; font-weight: normal; display: inline; color: var(--carousel-btn-color);"
+    >
+    <i><sup>Edición 2024</sup></i>
   </a>
 </div>
 </p>

@@ -49,7 +49,7 @@ $enable-rounded: false !default;
 // Body
 
 $body-bg: #181818;
-$body-color: white;
+$body-color: $gray-400;
 $link-color: #75AADB;
 
 // Code blocks
@@ -121,5 +121,8 @@ body {
   }
 }
 
+:root {
+  --carousel-btn-color: #B4B2A9;
+}
 
 // quarto-scss-analysis-annotation { "origin": null }
