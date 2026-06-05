@@ -705,7 +705,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejercicio-3" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
-<p>Imagine que dentro del directorio <code>/home/usuario/Documentos</code>, posee la siguiente estructura de directorios:</p>
+<p>Imagine que dentro de <code>/home/usuario/Documentos</code>, posee la siguiente estructura de directorios:</p>
 <pre><code>carpeta0/
 ├── archivo0_a
 ├── archivo0_b
@@ -724,7 +724,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>¿Cuál sería la ruta absoluta al archivo “archivo1_c”?</li>
 </ul>
 <div id="app">
-<p><label for="userText">Su respuesta:</label> <input type="text" id="userText" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer()">OK</button></p>
+<p><label for="userText">Su respuesta:</label> <input type="text" id="userText" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer()">Enviar</button></p>
 <p id="result">
 </p>
 </div>
@@ -749,7 +749,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>¿Cómo sería la ruta relativa desde el directorio “carpeta2b” hacia el archivo “archivo1_c”?</li>
 </ul>
 <div>
-<p><label for="userText">Su respuesta:</label> <input type="text" id="userText2" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer2()">OK</button></p>
+<p><label for="userText">Su respuesta:</label> <input type="text" id="userText2" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer2()">Enviar</button></p>
 <p id="result2">
 </p>
 </div>
@@ -770,6 +770,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   }
 </script>
+<ul>
+<li>Si nos encontráramos en “carpeta2”, cómo sería la ruta relativa hasta el archivo “archivo2a_a”?</li>
+</ul>
+<div>
+<p><label for="userText">Su respuesta:</label> <input type="text" id="userText3" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer3()">Enviar</button></p>
+<p id="result3">
+</p>
+</div>
+<script>
+  // Use the correct answer defined in R
+  const correctAnswer3 = "./carpeta2a/archivo2a_a";
+
+  function checkAnswer3() {
+    // Get the user's input text
+    const userText3 = document.getElementById("userText3").value;
+    // Check if the input matches the correct answer
+    if (userText3 === correctAnswer3) {
+      document.getElementById("result3").innerText = "Correcto!";
+      result3.style.color = "green"; result3.style.fontWeight = "bold"; 
+    } else {
+      document.getElementById("result3").innerText = "Incorrecto. Por favor, intente nuevamente.";
+      result3.style.color = "red"; result3.style.fontWeight = "bold";
+    }
+  }
+</script>
 </section>
 <section id="las-rutas-en-los-proyectos-de-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="las-rutas-en-los-proyectos-de-rstudio"><em>Las rutas en los proyectos de RStudio</em></h2>
@@ -777,7 +802,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p align="center">
 </p><p><a href="pics/r_paths.png" target="_blank"> <img src="pics/r_paths.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
 <p></p>
-<p>Por cierto, Alexandra es, ni más ni menos, la creadora del sitio <a href="https://www.sci-hub.se/" target="_blank">Sci-Hub</a> y esa captura corresponde a una guía básica para voluntarias/os de <a href="https://es.wikipedia.org/wiki/Archivo_de_Anna" target="_blank">Anna’s Archive</a>.</p>
+<p>Por cierto, Alexandra es, ni más ni menos, la creadora del sitio <a href="https://www.sci-hub.pub/" target="_blank">Sci-Hub</a> y esa captura corresponde a una guía básica para voluntarias/os de <a href="https://es.wikipedia.org/wiki/Archivo_de_Anna" target="_blank">Anna’s Archive</a>.</p>
 </section>
 <section id="buscando-ayuda-en-r" class="level2">
 <h2 class="anchored" data-anchor-id="buscando-ayuda-en-r">Buscando ayuda en R</h2>
@@ -796,10 +821,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h2>
 <p>En RStudio corra las siguientes líneas de a una y observe qué salidas le brinda el programa. Anímese a explorar, no hay nada que pueda romper, haga click aquí y allá, vaya y vuelva. De igual forma, intente utilizar el autocompletado y las ayudas emergentes, fomente su creatividad buscando lo que se le ocurra, o intente averiguar cómo se usa esa función que hace 2 o 3 semanas que no logra ejecutar sin error. En clase discutiremos qué partes componen la ayuda y cómo interpretarla.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(help)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>?help</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>??distance</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>?plot</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(sd)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>?sd</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>??sd</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>??distance</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>?mean</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="foros-y-bitácoras-de-la-comunidad" class="level4">
 <h4 class="anchored" data-anchor-id="foros-y-bitácoras-de-la-comunidad"><em>Foros y bitácoras de la comunidad</em></h4>
@@ -837,7 +863,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p align="center">
 </p><p><a href="pics/r_help6.png" target="_blank"> <img src="pics/r_help6.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
 <p></p>
-<p><strong>Sobre los <em>warnings</em></strong>: ocasionalmente R no producirá un mensaje de error, sino una <ins><em>advertencia</em></ins>. En estos casos, también es importante que intentemos entender que está ocasionando este mensaje para saber si es algo crítico o no, sobre todo en cuanto a resultados de análisis se refiere.</p>
+<p><strong>Sobre los <em>warnings</em></strong>: ocasionalmente R no producirá un mensaje de error, sino una <ins><em>advertencia</em></ins>. En estos casos, también es <em>importante que intentemos entender que está ocasionando este mensaje</em> para saber si es algo crítico o no, sobre todo en cuanto a resultados de análisis se refiere. Si analizamos el ejemplo que sigue podremos ver que R nos brinda una advertencia, pero opera y realiza la acción de la forma en que está programado sin fallar.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(iris<span class="sc">$</span>Species)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(iris$Species): argument is not numeric or logical:
+returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
 </section>
 <section id="uso-de-ia" class="level4">
 <h4 class="anchored" data-anchor-id="uso-de-ia"><em>Uso de IA</em></h4>
@@ -850,7 +886,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p align="center">
 </p><p><a href="pics/r_help8.png" target="_blank"> <img src="pics/r_help8.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"></a><br><i><sup>Click en la imagen para agrandar.</sup></i></p>
 <p></p>
-<p><strong>Para pensar:</strong> más adelante aprenderemos efectivamente a filtrar una tabla basados en una condición. Recuerde la respuesta brindada por la IA en este ejemplo y veremos luego si es una “buena” respuesta.</p>
 </section>
 </section>
 <section id="instalación-y-carga-de-paquetes" class="level2">
@@ -874,8 +909,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-d37ba14e5a9a8d6aa0ce" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-d37ba14e5a9a8d6aa0ce">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-497ab0855caa3f1d65db" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-497ab0855caa3f1d65db">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <ul>
@@ -886,10 +921,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="cargando-paquetes"><em>Cargando paquetes</em></h4>
 <p>Por defecto, cuando abrimos una nueva sesión de R o apenas luego de que instalamos un nuevo paquete, estos no se encuentran disponibles en la memoria de trabajo. Para que un paquete particular (y todas las funciones que este contiene), se carguen en la memoria de trabajo, debemos llamarlo usando la función <code>library()</code>. Así mismo, si lo deseamos podemos “descargar” un paquete a fin de liberar memoria, utilizando la función <code>detach()</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga de paquetes</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Descarga de paquetes</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(<span class="st">"package:remotes"</span>, <span class="at">unload =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga de paquetes</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Descarga de paquetes</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(<span class="st">"package:remotes"</span>, <span class="at">unload =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Todo esto en RStudio también puede ser realizado simplemente tildando o destildando el paquete correspondiente en la lista de paquetes.</p>
 </section>
@@ -901,7 +936,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="llamando-funciones-de-paquetes-específicos"><em>Llamando funciones de paquetes específicos</em></h4>
 <p>En ocasiones, algunas funciones pueden tener igual nombre en diferentes paquetes. Por defecto, cuando llamamos a una función R intentará utilizar la función del paquete que más recientemente se haya cargado. Si deseamos referirnos a una función de un paquete específico podemos hacerlo utilizando la expresión <code>paquete::funcion()</code>. Por ejemplo:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">Anova</span>(<span class="fu">lm</span>(hp <span class="sc">~</span> <span class="fu">as.factor</span>(cyl), <span class="at">data =</span> mtcars))</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">Anova</span>(<span class="fu">lm</span>(hp <span class="sc">~</span> <span class="fu">as.factor</span>(cyl), <span class="at">data =</span> mtcars))</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Anova Table (Type II tests)
 
@@ -912,11 +947,11 @@ Residuals       41696 29
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(hp <span class="sc">~</span> cyl, <span class="at">data =</span> mtcars, <span class="at">main =</span> <span class="st">"Caballos de fuerza (hp) por nº de cilindros (cyl)"</span>)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(hp <span class="sc">~</span> cyl, <span class="at">data =</span> mtcars, <span class="at">main =</span> <span class="st">"Caballos de fuerza (hp) por nº de cilindros (cyl)"</span>)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="UsandoR_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+<p><img src="UsandoR_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -926,15 +961,16 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <h4 class="anchored" data-anchor-id="instalación-desde-otros-repositorios"><em>Instalación desde otros repositorios</em></h4>
 <p>Así como instalamos paquetes desde CRAN, también podemos instalar paquetes directamente desde los repositorios de código en los que se encuentran. Existen múltiples paquetes que permiten interactuar con diferentes repositorios, uno de ellos es el paquete <code>remotes</code> que instalamos en el ejercicio previo. Si por ejemplo queremos instalar el paquete <code>multilandr</code> que se encuentra en <a href="https://github.com/phuais/multilandr" target="_blank">este repositorio</a>, podemos hacer:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL al repositorio: https://github.com/phuais/multilandr</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="at">repo =</span> <span class="st">"phuais/multilandr"</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multilandr)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL al repositorio: https://github.com/phuais/multilandr</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="at">repo =</span> <span class="st">"phuais/multilandr"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multilandr)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="ejercicio-final" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-final">Ejercicio Final</h2>
 <p>Instale el paquete <code>ggplot2</code>. Una vez instalado, cárguelo y realice algún gráfico de los ejemplos disponibles en su <em>vignette</em>. Finalmente, guarde el gráfico en el directorio de trabajo.</p>
+<p><em>Ayuda</em>: no hemos hablado de las <em>vignettes</em> todavía. Puede buscar la ayuda nativa de la función <code>vignette()</code> para entender como abrir la correspondiente a este paquete, o buscarla en la <a href="https://cran.r-project.org/web/packages/ggplot2/" target="_blank">descripción <em>online</em> del mismo</a>.</p>
 <hr>
 <div style="text-align: center;">
 <p><a href="pics/meme.jpg" target="_blank"> <img src="pics/meme.jpg" style="padding: 5px 0 5px 0;width: 50rem;max-width:50%;height:auto;vertical-align:middle;border-style: none;"></a></p>

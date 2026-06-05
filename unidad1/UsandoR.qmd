@@ -194,7 +194,7 @@ Una ruta (en inglés <i>path</i>) en R o en cualquier otro sistema informático 
 
 -   Las **rutas absolutas** son aquellas en las que explícitamente se indica todo el trayecto realizado desde la raíz del sistema hasta la ubicación en cuestión. En los sistemas Windows la raíz del sistema será el origen del disco que esté utilizándose, típicamente `C:\`, mientras que en los sitemas GNU/Linux será `/` (llamado **root**). Teniendo esto en cuenta, la ruta anterior al directorio de trabajo es una ruta absoluta, ya que en la misma se explicita toda la ruta desde la raíz hasta el archivo.
 
--   Las **rutas relativas** por su parte, nos muestran la ubicación de un archivo o directorio en sentido relativo al directorio de trabajo activo. Generalmente, las mismas empiezan con uno o dos caracteres de punto ".", teniendo la expresión `./` el significado literal de "en este directorio", es decir, en el directorio actual; mientras que la expresión `../` indica el directorio superior en la jerarquía del directorio actual. 
+-   Las **rutas relativas** por su parte, nos muestran la ubicación de un archivo o directorio en sentido relativo al directorio de trabajo activo. Generalmente, las mismas empiezan con uno o dos caracteres de punto ".", teniendo la expresión `./` el significado literal de "en este directorio", es decir, en el directorio actual; mientras que la expresión `../` indica el directorio superior en la jerarquía del directorio actual.
 
 Tener en cuenta que en sistemas Windows, el caracter que separa directorios es la "<i>barra inversa</i>", por lo que en esos sistemas será `\`. No obstante, en el entorno R las rutas (absolutas o relativas) utilizan la barra lateral común `/`.
 
@@ -202,7 +202,7 @@ Como ejemplo, tomando como referencia la estructura hipotética para el proyecto
 
 ## Ejercicio 3
 
-Imagine que dentro del directorio `/home/usuario/Documentos`, posee la siguiente estructura de directorios:
+Imagine que dentro de `/home/usuario/Documentos`, posee la siguiente estructura de directorios:
 
 ```         
 carpeta0/
@@ -229,7 +229,7 @@ correct_answer <- "/home/usuario/Documentos/carpeta0/carpeta1/archivo1_c"
 ```
 
 ::: {#app}
-<label for="userText">Su respuesta:</label> <input type="text" id="userText" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer()">OK</button>
+<label for="userText">Su respuesta:</label> <input type="text" id="userText" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer()">Enviar</button>
 
 <p id="result">
 
@@ -265,7 +265,7 @@ correct_answer2 <- "../../../carpeta1/archivo1_c"
 
 <div>
 
-<label for="userText">Su respuesta:</label> <input type="text" id="userText2" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer2()">OK</button>
+<label for="userText">Su respuesta:</label> <input type="text" id="userText2" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer2()">Enviar</button>
 
 <p id="result2">
 
@@ -293,6 +293,43 @@ correct_answer2 <- "../../../carpeta1/archivo1_c"
 </script>
 ```
 
+-   Si nos encontráramos en “carpeta2”, cómo sería la ruta relativa hasta el archivo "archivo2a_a"?
+
+```{r, echo=FALSE}
+# Define the correct answer in R
+correct_answer3 <- "./carpeta2a/archivo2a_a"
+```
+
+<div>
+
+<label for="userText">Su respuesta:</label> <input type="text" id="userText3" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer3()">Enviar</button>
+
+<p id="result3">
+
+</p>
+
+</div>
+
+```{=html}
+<script>
+  // Use the correct answer defined in R
+  const correctAnswer3 = "`r correct_answer3`";
+
+  function checkAnswer3() {
+    // Get the user's input text
+    const userText3 = document.getElementById("userText3").value;
+    // Check if the input matches the correct answer
+    if (userText3 === correctAnswer3) {
+      document.getElementById("result3").innerText = "Correcto!";
+      result3.style.color = "green"; result3.style.fontWeight = "bold"; 
+    } else {
+      document.getElementById("result3").innerText = "Incorrecto. Por favor, intente nuevamente.";
+      result3.style.color = "red"; result3.style.fontWeight = "bold";
+    }
+  }
+</script>
+```
+
 ## *Las rutas en los proyectos de RStudio*
 
 Cuando trabajamos dentro de un proyecto de RStudio, todas las rutas son relativas a la raíz del proyecto. Esto tiene algunas ventajas, como por ejemplo si compartimos nuestro proyecto con colaboradores, estos no necesitarán configurar las rutas para su sistema, ya que las rutas se mantienen relativas al proyecto. Por otro lado, no es necesario que anonimicemos nuestras rutas, ya que si trabajamos exclusivamente dentro de la carpeta raíz del proyecto, no debería aparecer ninguna ruta absoluta. Las razones por las que quisiéramos mantener nuestras *otras* carpetas internas privadas son muchas, y variarán en cada caso, pero para un ejemplo interesante podemos considerar el siguiente caso:
@@ -303,7 +340,7 @@ Cuando trabajamos dentro de un proyecto de RStudio, todas las rutas son relativa
 
 </p>
 
-Por cierto, Alexandra es, ni más ni menos, la creadora del sitio [Sci-Hub](https://www.sci-hub.se/){target="_blank"} y esa captura corresponde a una guía básica para voluntarias/os de [Anna's Archive](https://es.wikipedia.org/wiki/Archivo_de_Anna){target="_blank"}.
+Por cierto, Alexandra es, ni más ni menos, la creadora del sitio [Sci-Hub](https://www.sci-hub.pub/){target="_blank"} y esa captura corresponde a una guía básica para voluntarias/os de [Anna's Archive](https://es.wikipedia.org/wiki/Archivo_de_Anna){target="_blank"}.
 
 ## Buscando ayuda en R
 
@@ -332,10 +369,11 @@ En RStudio, como ya mencionamos antes, disponemos de un área específica para m
 En RStudio corra las siguientes líneas de a una y observe qué salidas le brinda el programa. Anímese a explorar, no hay nada que pueda romper, haga click aquí y allá, vaya y vuelva. De igual forma, intente utilizar el autocompletado y las ayudas emergentes, fomente su creatividad buscando lo que se le ocurra, o intente averiguar cómo se usa esa función que hace 2 o 3 semanas que no logra ejecutar sin error. En clase discutiremos qué partes componen la ayuda y cómo interpretarla.
 
 ```{r eval=FALSE}
-help(help)
-?help
+help(sd)
+?sd
+??sd
 ??distance
-?plot
+?mean
 ```
 
 #### *Foros y bitácoras de la comunidad*
@@ -381,7 +419,12 @@ iris[iris$Sepal.Length > 3]
 
 </p>
 
-**Sobre los *warnings***: ocasionalmente R no producirá un mensaje de error, sino una <ins>*advertencia*</ins>. En estos casos, también es importante que intentemos entender que está ocasionando este mensaje para saber si es algo crítico o no, sobre todo en cuanto a resultados de análisis se refiere.
+**Sobre los *warnings***: ocasionalmente R no producirá un mensaje de error, sino una <ins>*advertencia*</ins>. En estos casos, también es *importante que intentemos entender que está ocasionando este mensaje* para saber si es algo crítico o no, sobre todo en cuanto a resultados de análisis se refiere. Si analizamos el ejemplo que sigue podremos ver que R nos brinda una advertencia, pero opera y realiza la acción de la forma en que está programado sin fallar.
+
+```{r warning=T}
+mean(iris$Species)
+```
+
 
 #### *Uso de IA*
 
@@ -402,8 +445,6 @@ O incluso podemos darle algún fragmento de código que falla, y pedirle que int
 <a href="pics/r_help8.png" target="_blank"> <img src="pics/r_help8.png" style="padding: 5px 0 5px 0;width: 66rem;max-width:100%;height:auto;vertical-align:middle;border-style: none;"/></a><br><i><sup>Click en la imagen para agrandar.</sup></i>
 
 </p>
-
-**Para pensar:** más adelante aprenderemos efectivamente a filtrar una tabla basados en una condición. Recuerde la respuesta brindada por la IA en este ejemplo y veremos luego si es una "buena" respuesta.
 
 ## Instalación y carga de paquetes
 
@@ -480,6 +521,8 @@ library(multilandr)
 ## Ejercicio Final
 
 Instale el paquete `ggplot2`. Una vez instalado, cárguelo y realice algún gráfico de los ejemplos disponibles en su *vignette*. Finalmente, guarde el gráfico en el directorio de trabajo.
+
+*Ayuda*: no hemos hablado de las *vignettes* todavía. Puede buscar la ayuda nativa de la función `vignette()` para entender como abrir la correspondiente a este paquete, o buscarla en la [descripción *online* del mismo](https://cran.r-project.org/web/packages/ggplot2/){target="_blank"}.  
 
 ------------------------------------------------------------------------
 

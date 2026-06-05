@@ -95,7 +95,7 @@ A la izquierda de la pantalla se encuentran disponibles todos los recursos prác
 ```{=html}
 <!---
 
-# Evaluación 2025
+# Evaluación 2026
 
 [Haz click aquí para acceder a la evaluación del curso](unidad5/Evaluacion.html){target="_blank"}
 
@@ -116,6 +116,6 @@ En el Doctorado de Ciencias Biológicas (FCEFyN, Universidad Nacional de Córdob
 
 # Licencia
 
-© 2024-2025 Pablo Y. Huais & Nicolás Pastor. Bajo licencia [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+© 2024-2026 Pablo Y. Huais & Nicolás Pastor. Bajo licencia [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"> <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"/></a>

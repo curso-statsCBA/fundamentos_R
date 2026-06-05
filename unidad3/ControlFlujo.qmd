@@ -402,10 +402,16 @@ Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situació
 
 ### Ejercicio Final
 
-Tomando de base el conjunto de datos `iris_more.csv`, la cual es idéntica al dataset iris pero contiene los datos de un total de 15 especies, construya el siguiente `data.frame` vacío:
+[Descargue el archivo](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad2/data/data.zip) denominado "iris_more.csv", y cargue la tabla:
 
 ```{r}
-model_outputs <- data.frame(Species = unique(iris$Species),
+iris_more <- read.table("data/iris_more.csv")
+```
+
+Esta tabla es idéntica al dataset iris con el que hemos estado trabajando, pero contiene los datos de un total de 15 especies. En primer lugar, construya el siguiente `data.frame` vacío:
+
+```{r}
+model_outputs <- data.frame(Species = unique(iris_more$Species),
                             Estimate = NA,
                             P.value = NA)
 model_outputs
@@ -424,14 +430,14 @@ Luego, evalúe modelos lineales que relacionen a la variable `Petal.Length` con 
 ```{r, echo = FALSE}
 # Respuesta verPablo
 for(i in 1:nrow(model_outputs)){
-  mod <- lm(Petal.Length ~ Sepal.Length, data = iris[iris$Species == model_outputs$Species[i], ])
+  mod <- lm(Petal.Length ~ Sepal.Length, data = iris_more[iris_more$Species == model_outputs$Species[i], ])
   summ <- summary(mod)
   model_outputs$Est[i] <- summ$coefficients[2, 1]
   model_outputs$P.value[i] <- summ$coefficients[2, 4]
 }
 # Respuesta verNico
-for (sp in unique(iris$Species)){ 
-  mod <- with(iris[iris$Species == sp,], lm(Petal.Length ~ Sepal.Length))
+for (sp in unique(iris_more$Species)){ 
+  mod <- with(iris_more[iris_more$Species == sp,], lm(Petal.Length ~ Sepal.Length))
   smod <- as.data.frame(summary(mod)$coefficients)
   model_outputs[model_outputs$Species == sp,]$Estimate <- smod$Estimate[2]
   model_outputs[model_outputs$Species == sp,]$P.value <- smod$`Pr(>|t|)`[2]
