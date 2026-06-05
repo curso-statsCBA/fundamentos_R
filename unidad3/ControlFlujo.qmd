@@ -402,7 +402,7 @@ Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situació
 
 ### Ejercicio Final
 
-[Descargue el archivo](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/refs/heads/main/unidad2/data/data.zip) denominado "iris_more.csv", y cargue la tabla:
+[Descargue el archivo](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/bc66515696d691eba6ced8feb4ee12b66b2b7d56/unidad3/data/iris_more.csv) denominado "iris_more.csv", y cargue la tabla:
 
 ```{r}
 iris_more <- read.table("data/iris_more.csv")
