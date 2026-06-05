@@ -402,13 +402,13 @@ Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situació
 
 ### Ejercicio Final
 
-[Descargue el archivo](https://raw.githubusercontent.com/pastornicolas/fundamentos_R/bc66515696d691eba6ced8feb4ee12b66b2b7d56/unidad3/data/iris_more.csv) denominado "iris_more.csv", y cargue la tabla:
+[Descargue el archivo](https://github.com/pastornicolas/fundamentos_R/raw/6263d3cc456bb84cce07ce2d28bef5068cf2b6dd/unidad3/data/iris_more.zip) denominado "iris_more.csv", y cargue la tabla:
 
 ```{r}
 iris_more <- read.table("data/iris_more.csv")
 ```
 
-Estaa tabla es idéntica al dataset iris con el que hemos estado trabajando, pero contiene los datos de un total de 15 especies. En primer lugar, construya el siguiente `data.frame` vacío:
+Esta tabla es idéntica al dataset iris con el que hemos estado trabajando, pero contiene los datos de un total de 15 especies. En primer lugar, construya el siguiente `data.frame` vacío:
 
 ```{r}
 model_outputs <- data.frame(Species = unique(iris_more$Species),
