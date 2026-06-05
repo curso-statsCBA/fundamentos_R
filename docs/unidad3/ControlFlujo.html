@@ -933,9 +933,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>mat</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
-[1,]   92   15   85
-[2,]    7   45   96
-[3,]   20   16   51</code></pre>
+[1,]   35   89    6
+[2,]   56   31   74
+[3,]   68   30   81</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>( j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(mat)) {</span>
@@ -943,15 +943,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 92"
-[1] "El elemento de la fila 1 y columna 2 es igual a 15"
-[1] "El elemento de la fila 1 y columna 3 es igual a 85"
-[1] "El elemento de la fila 2 y columna 1 es igual a 7"
-[1] "El elemento de la fila 2 y columna 2 es igual a 45"
-[1] "El elemento de la fila 2 y columna 3 es igual a 96"
-[1] "El elemento de la fila 3 y columna 1 es igual a 20"
-[1] "El elemento de la fila 3 y columna 2 es igual a 16"
-[1] "El elemento de la fila 3 y columna 3 es igual a 51"</code></pre>
+<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 35"
+[1] "El elemento de la fila 1 y columna 2 es igual a 89"
+[1] "El elemento de la fila 1 y columna 3 es igual a 6"
+[1] "El elemento de la fila 2 y columna 1 es igual a 56"
+[1] "El elemento de la fila 2 y columna 2 es igual a 31"
+[1] "El elemento de la fila 2 y columna 3 es igual a 74"
+[1] "El elemento de la fila 3 y columna 1 es igual a 68"
+[1] "El elemento de la fila 3 y columna 2 es igual a 30"
+[1] "El elemento de la fila 3 y columna 3 es igual a 81"</code></pre>
 </div>
 </div>
 <p>¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de <em>repeticiones</em> que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando <code>i = 1</code> y <code>j = 1</code>.</p>
@@ -1001,19 +1001,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejercicio-final" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-final">Ejercicio Final</h3>
-<p>Tomando de base el conjunto de datos <code>iris_more.csv</code> (archivo incluido en la carpeta de descarga para la Unidad 2), la cual es idéntica al dataset iris pero contiene los datos de un total de 15 especies, construya el siguiente <code>data.frame</code> vacío:</p>
+<p><a href="https://raw.githubusercontent.com/pastornicolas/fundamentos_R/bc66515696d691eba6ced8feb4ee12b66b2b7d56/unidad3/data/iris_more.csv">Descargue el archivo</a> denominado “iris_more.csv”, y cargue la tabla:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>iris_more <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris_more.csv"</span>)</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">unique</span>(iris_more<span class="sc">$</span>Species))</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "setosa"     "versicolor" "virginica"  "chrysantha" "montana"   
- [6] "lacustris"  "pallida"    "rubicunda"  "sylvestris" "alpina"    
-[11] "maritima"   "fluvialis"  "desertorum" "borealis"   "tropicalis"</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>iris_more <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris_more.csv"</span>)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>model_outputs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Species =</span> <span class="fu">unique</span>(iris_more<span class="sc">$</span>Species),</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">Estimate =</span> <span class="cn">NA</span>,</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">P.value =</span> <span class="cn">NA</span>)</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>model_outputs</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Esta tabla es idéntica al dataset iris con el que hemos estado trabajando, pero contiene los datos de un total de 15 especies. En primer lugar, construya el siguiente <code>data.frame</code> vacío:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>model_outputs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Species =</span> <span class="fu">unique</span>(iris_more<span class="sc">$</span>Species),</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">Estimate =</span> <span class="cn">NA</span>,</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">P.value =</span> <span class="cn">NA</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>model_outputs</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Species Estimate P.value
 1      setosa       NA      NA
