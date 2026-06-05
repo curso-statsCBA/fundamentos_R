@@ -288,10 +288,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="https://r-charts.com/" target="_blank">
  <span class="dropdown-text">R Charts</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="https://sites.stat.columbia.edu/tzheng/files/Rcolor.pdf" target="_blank">
- <span class="dropdown-text">R Colors</span></a>
-  </li>  
     </ul>
   </li>
 </ul>
@@ -503,6 +499,8 @@ ul.task-list li input[type="checkbox"] {
 
 <p><font size="4">Curso de posgrado | Doctorado en Cs. Biológicas | FCEFyN - UNC</font></p>
 <p align="center" style="margin: 0; padding: 0;">
+<!-- Precarga de imágenes -->
+</p><p><link rel="preload" as="image" href="pics/foto_2025.jpg"> <link rel="preload" as="image" href="pics/foto_2024.jpg"></p>
 <img id="main-photo" src="pics/foto_2025.jpg" style="
     padding: 5px 0 5px 0;
     width: 66rem;
@@ -513,7 +511,7 @@ ul.task-list li input[type="checkbox"] {
     opacity: 1;
     transition: opacity 0.4s ease-in-out;
   ">
-</p><div style="
+<div style="
     width: 66rem;
     max-width: 100%;
     margin: 0 auto;
@@ -524,19 +522,32 @@ ul.task-list li input[type="checkbox"] {
     align-items: center;
     gap: 4px;
   ">
-<p><a href="#" id="btn2025" onclick="changePhoto('2025'); return false;" style="text-decoration: none; font-weight: bold; color: #444441; display: inline;"> <i><sup>Edición 2025</sup></i> </a> <span style="display: inline; color: #444441;">&nbsp;&nbsp;</span> <a href="#" id="btn2024" onclick="changePhoto('2024'); return false;" style="text-decoration: none; font-weight: normal; color: #444441; display: inline;"> <i><sup>Edición 2024</sup></i> </a></p>
+<p><a href="#" id="btn2025" onclick="changePhoto('2025', true); return false;" style="text-decoration: none; font-weight: bold; color: #444441; display: inline;"> <i><sup>Edición 2025</sup></i> </a> <span style="display: inline; color: #444441;">&nbsp;&nbsp;</span> <a href="#" id="btn2024" onclick="changePhoto('2024', true); return false;" style="text-decoration: none; font-weight: normal; color: #444441; display: inline;"> <i><sup>Edición 2024</sup></i> </a></p>
 </div>
 <p></p>
 <script>
-function changePhoto(year) {
-  const img = document.getElementById("main-photo");
-  const btn2024 = document.getElementById("btn2024");
-  const btn2025 = document.getElementById("btn2025");
+// Precarga via JS como respaldo
+(function() {
+  var img2025 = new Image(); img2025.src = "pics/foto_2025.jpg";
+  var img2024 = new Image(); img2024.src = "pics/foto_2024.jpg";
+})();
+
+var currentYear = "2025";
+var carouselTimer = null;
+var INTERVAL = 5000;
+
+function changePhoto(year, resetTimer) {
+  var img    = document.getElementById("main-photo");
+  var btn2024 = document.getElementById("btn2024");
+  var btn2025 = document.getElementById("btn2025");
+
+  currentYear = year;
+
   // Fade out
   img.style.opacity = 0;
-  setTimeout(() => {
-    // Cambiar imagen
-    if(year === "2025") {
+
+  setTimeout(function() {
+    if (year === "2025") {
       img.src = "pics/foto_2025.jpg";
       btn2025.style.fontWeight = "bold";
       btn2024.style.fontWeight = "normal";
@@ -548,7 +559,25 @@ function changePhoto(year) {
     // Fade in
     img.style.opacity = 1;
   }, 400);
+
+  // Reiniciar timer si fue click manual
+  if (resetTimer) {
+    clearInterval(carouselTimer);
+    startCarousel();
+  }
 }
+
+function nextPhoto() {
+  var next = currentYear === "2025" ? "2024" : "2025";
+  changePhoto(next, false);
+}
+
+function startCarousel() {
+  carouselTimer = setInterval(nextPhoto, INTERVAL);
+}
+
+// Arrancar al cargar la página
+startCarousel();
 </script>
 <section id="bienvenids-al-curso" class="level1">
 <h1>¡Bienvenid@s al curso!</h1>
@@ -597,7 +626,7 @@ function changePhoto(year) {
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Ir arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

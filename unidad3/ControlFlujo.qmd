@@ -62,7 +62,7 @@ c <- 65
 if (a < 40 & b > 10 | c > 50) {
   print("'a' es menor a 40 y 'b' mayor a 10 ó 'c' es mayor a 50")
 } else {
-  print("No se cumple ninguna condición")
+  print("No se cumple la condición")
 }
 ```
 
@@ -78,7 +78,7 @@ c <- 65
 if (a < 40 & (b > 10 | c > 50)) {
   print("'a' es menor a 40 y 'b' mayor a 10 ó 'c' es mayor a 50")
 } else {
-  print("No se cumple ninguna condición")
+  print("No se cumple la condición")
 }
 ```
 
@@ -193,9 +193,7 @@ while (i < 9) {
   if (i > 2 & i < 7) {
     next
   }
-  else {
-    print(paste("Repetición nº:", i))
-  }
+  print(paste("Repetición nº:", i))
 }
 ```
 
@@ -258,7 +256,7 @@ head(iris)
 
 Queda claro que, como hemos visto anteriormente en el práctico de tablas, esta no es la forma más eficiente de generar la nueva columna (¿cuál sería la forma más eficiente?). No obstante, este ejemplo sirve para entender cómo funciona un bucle `for` con un `data.frame`.
 
-#### *La función `seq()` en un bucle `for`*
+#### *La función `seq()` y `seq_along()` en un bucle `for`*
 
 Cuando trabajamos con bucles, es muy frecuente establecer un rango para definir la iteración. Allí entra en juego esta útil función que, como vimos en la [clase de Vectores](../unidad1/Vectores.qmd){target="_blank"} devuelve una secuencia numérica y cuya sintaxis es: `seq(inicio,fin,paso)`, recordando que por defecto (es decir, si no explicitamos el valor del argumento), el inicio es "1" y el paso "1".
 
@@ -270,6 +268,16 @@ for (n in seq(3)){
 # Secuencia de 2 a 8, cada 2
 for (n in seq(2,8,2)){
   print(n)
+}
+```
+
+La función `seq_along()` también es útil en este context, cuando se desea iterar sobre los elementos de un vector ya creado previamente:
+
+```{r}
+especies <- c("Algarrobo", "Quebracho", "Espinillo") 
+# Secuencia de 1 a 3, utilizando un vector generado previamente
+for (i in seq_along(especies)){
+  print(especies[i])
 }
 ```
 
@@ -426,24 +434,6 @@ Luego, evalúe modelos lineales que relacionen a la variable `Petal.Length` con 
 - Intente rellenar los datos de una sola especie. Luego intente replicarlo al resto mediante una estructura de control de flujo.
 - Utilice "pseudocógigo" para descifrar los pasos a seguir: con palabras, describa cada pequeño paso de la estructura a generar. Luego, traduzca el pseudocódigo a código R.
 
-
-```{r, echo = FALSE}
-# Respuesta verPablo
-for(i in 1:nrow(model_outputs)){
-  mod <- lm(Petal.Length ~ Sepal.Length, data = iris_more[iris_more$Species == model_outputs$Species[i], ])
-  summ <- summary(mod)
-  model_outputs$Est[i] <- summ$coefficients[2, 1]
-  model_outputs$P.value[i] <- summ$coefficients[2, 4]
-}
-# Respuesta verNico
-for (sp in unique(iris_more$Species)){ 
-  mod <- with(iris_more[iris_more$Species == sp,], lm(Petal.Length ~ Sepal.Length))
-  smod <- as.data.frame(summary(mod)$coefficients)
-  model_outputs[model_outputs$Species == sp,]$Estimate <- smod$Estimate[2]
-  model_outputs[model_outputs$Species == sp,]$P.value <- smod$`Pr(>|t|)`[2]
-}
-```
-
 ------------------------------------------------------------------------
 
 ::: {style="text-align: center;"}
@@ -452,10 +442,70 @@ for (sp in unique(iris_more$Species)){
 
 ## Ejercicio Extra
 
+Se dispone de un archivo de texto llamado `secuencias.txt` que contiene una secuencia de ADN por línea:
+
+```text
+ATGCGGAAGTA
+ATGCGAAGCTA
+TTGCGAATGTA
+CGTAGCTAGCA
+CGTAGCTACCA
+ATGCGTACGTA
+GGGCGGAAGTA
+CTGCGGACGTC
+```
+
+**Lea el siguiente código:**
+
+```r
+con <- file("secuencias.txt", "r")
+linea <- readLines(con, n = 1)
+n_linea <- 1
+
+while(length(linea) > 0) {
+  if(grepl("GTAC", linea)) {
+    cat("GTAC encontrada en:\n")
+    cat(linea, "\n")
+    cat("Número de línea:", n_linea)
+    break
+  }
+  linea <- readLines(con, n = 1)
+  n_linea <- n_linea + 1
+}
+
+close(con)
+```
+
+En el código se muestran algunas funciones que no hemos visto:
+
+- `file()`
+
+Abre una conexión con el archivo. El argumento `"r"` indica que el archivo se abrirá en modo lectura (*read*). El objeto `con` almacena la conexión que permite acceder al contenido del archivo.
+
+- `readLines()`
+
+Lee líneas desde la conexión. El argumento `n = 1` indica que se debe leer una sola línea cada vez. Cada nueva llamada a `readLines()` continúa leyendo desde donde quedó la lectura anterior.
+
+- `grepl()`
+
+Busca un patrón de texto dentro de una cadena de caracteres. Devuelve `TRUE` si encuentra el patrón y `FALSE` en caso contrario.
+
+- `close()`
+
+Cierra la conexión con el archivo una vez finalizada la lectura. Es una buena práctica cerrar las conexiones abiertas para liberar recursos del sistema.
+
+**Consignas:**
+
+- Inteprete el código, línea por línea.
+- ¿Qué resultado obtendré en la consola al correr el bloque entero de código?
+- En este caso, tiene más sentido usar `while` que `for`. ¿Por qué? Imagine que el archivo `secuencias.txt` tuviese cientos de miles de líneas.
+
+<!--
 Cuando vimos los condicionales, armamos un código para [evaluar en 3 escenarios diferentes](#ejercicio-2) los gastos que realizaron Andrea y Ariel. Ahora que sabe usar bucles, escriba un código que evalúe en una sola ejecución todos los escenarios planteados en ese ejercicio y que utilice todos los constructos aprendidos, es decir: `if`, `while` y `for`.
 
 *Ayuda*: recuerde que los bucles `while` pueden ejecutarse indefinidamente si no imponemos condiciones para que finalicen.
 
+<-
 ```{r eval=F, echo=F}
 compra_andrea = c(690,745,890) 
 compra_ariel = c(730,745,730)
@@ -476,3 +526,4 @@ for (j in 1:length(compra_andrea)){
   }
 }
 ```
+-->

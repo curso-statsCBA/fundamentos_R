@@ -336,7 +336,7 @@ with(toplot, plot(Sepal.Length, Petal.Length,
                 )
      )
 axis(side = 1, at = c(0,4:8))
-axis(side = 2, at = c(seq(0,8,2)), las = 1, labels = c("cero", "dos", 4, "seis", 8))
+axis(side = 2, at = seq(0,8,2), las = 1, labels = c("cero", "dos", 4, "seis", 8))
 box(bty = "l")
 ```
 
@@ -354,7 +354,7 @@ with(toplot, plot(Sepal.Length, Petal.Length,
      )
 # Añadimos los ejes y el recuadro
 axis(side=1, at=c(0,4:8))
-axis(side=2, at=c(seq(0,8,2)), las=1, labels=c("cero", "dos", 4, "seis", 8))
+axis(side=2, at=seq(0,8,2), las=1, labels=c("cero", "dos", 4, "seis", 8))
 box(bty="l")
 ```
 

@@ -4,12 +4,12 @@
 
 <p align="center" style="margin: 0; padding: 0;">
 
-<img src="pics/foto_2024.jpg" style="padding: 5px 0 5px 0; width: 66rem; max-width: 100%; height: auto; vertical-align: middle; border-style: none;"/>
+<img src="pics/foto_2025.jpg" style="padding: 5px 0 5px 0; width: 66rem; max-width: 100%; height: auto; vertical-align: middle; border-style: none;"/>
 
 </p>
 <p align="right" style="margin: 0; padding: 0;">
 
-<i><sup>Edición 2024</sup></i>
+<i><sup>Edición 2025</sup></i>
 
 </p>
 
@@ -46,8 +46,8 @@ modelos estadísticos en R:
 
 # Licencia
 
-© 2024-2026 Pablo Y. Huais & Nicolás Pastor. Bajo licencia [Creative Commons
-Attribution-NonCommercial-ShareAlike 4.0 International
+© 2024-2026 Pablo Y. Huais & Nicolás Pastor. Bajo licencia [Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
 License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 <font size=3 color = "gray">CC BY-NC-SA 4.0</font>

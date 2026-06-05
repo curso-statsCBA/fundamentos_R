@@ -22,6 +22,42 @@ Como ya vimos anteriormente, R es un lenguaje orientado a objetos y existe una g
 
 Un operador es una expresión, compuesta por uno o más símbolos, que realiza una operación específica sobre uno o más valores para producir un resultado.
 
+### Operadores de asignación
+
+Es el operador que utilizamos para crear objetos en R. En R, utilizamos la combinación `<-`. Por ejemplo, el siguiente código crea un objeto llamado `a` al que le asignamos en número 5:
+
+```{r}
+a <- 5
+```
+
+Aunque no es común, el orden de la asignación puede escribirse al revés, invirtiendo el sentido de asignación (`->`):
+
+```{r}
+5 -> a
+```
+
+Esta combinación de símbolos puede interpretarse como una "flecha" que indica el valor que asignamos (el número 5) a un objeto al que le ponemos nombre (`a`).
+
+Si además de crear el objeto, lo escribimos entre paréntesis, el objeto es impreso en la consola:
+
+```{r}
+(a <- 5)
+```
+
+Es posible asignar el mismo valor a varios objetos simultáneamente:
+
+```{r}
+a <- b <- c <- 5
+```
+
+En R, también podemos utilizar el símbolo `=` para las asignaciones:
+
+```{r}
+a = 5
+```
+
+Sin embargo, para asignaciones siempre recomendamos utilizar el símbolo tradicional `<-`, y así evitar confusiones con el símbolo `=` que se utiliza al definir argumentos o parámetros de funciones, o con el símbolo `==`, que es un [operador relacional](#op_relacionales).
+
 ### Operadores aritméticos
 
 Relacionan dos números para generar un resultado.
@@ -60,7 +96,7 @@ El uso de paréntesis muchas veces es necesario:
 10 %% 3
 ```
 
-### Operadores relacionales
+### Operadores relacionales {#op_relacionales}
 
 Relacionan un valor con otro y devuelven una constante lógica (`TRUE` o `FALSE`).
 

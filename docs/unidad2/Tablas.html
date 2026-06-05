@@ -339,10 +339,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="https://r-charts.com/" target="_blank">
  <span class="dropdown-text">R Charts</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="https://sites.stat.columbia.edu/tzheng/files/Rcolor.pdf" target="_blank">
- <span class="dropdown-text">R Colors</span></a>
-  </li>  
     </ul>
   </li>
 </ul>
@@ -574,8 +570,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Para crear una tabla desde cero, en R utilizamos la <u id="table_classes">clase</u> <code>data.frame</code>, y una función con el mismo nombre para generarla:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-b7f1d10bbcaab73ae474" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-b7f1d10bbcaab73ae474">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-6e379cd3d7eb3d8cdf1b" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-6e379cd3d7eb3d8cdf1b">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -1248,8 +1244,8 @@ Pedro       lengua      8</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-80613dac87b165a8f03c" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-80613dac87b165a8f03c">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-38ac05a6957ed815c13f" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-38ac05a6957ed815c13f">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -1319,7 +1315,9 @@ Petal.Length 0.4089223 0.01889134 21.64602  1.038667e-47</code></pre>
 <section id="ejercicio-final" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-final">Ejercicio final</h2>
 <ol type="1">
-<li>Cargue la tabla del archivo “analisis_tierra.csv”, la cual muestra los resultados de un análisis de muestras de tierra, detallando las concentraciones de N, C y Ca. Explore su estructura y contenido utilizando las funciones <code>head()</code>, <code>tail()</code>, <code>str()</code> y <code>dim()</code>.</li>
+<li>Cargue la tabla del archivo “analisis_tierra.csv”, la cual muestra los resultados de un análisis de muestras de tierra, detallando las concentraciones de N, C y Ca.</li>
+<li>Explore su estructura con <code>str()</code> y las primeras filas con <code>head()</code>. ¿Nota algún error? Ayuda: para cargar la tabla, deberá utilizar <code>read.table()</code> con los argumentos <code>sep</code> (que indica qué caracter separa los datos entre columnas) y <code>dec</code> (que indica qué caracter se utiliza como símbolo decimal).</li>
+<li>Explore nuevamente su estructura y contenido utilizando las funciones <code>head()</code>, <code>tail()</code>, <code>str()</code> y <code>dim()</code>.</li>
 <li>Explore los nombres de las columnas. Corrija el error en la segunda columna, que debería llamarse “Parcela”.</li>
 <li>Hay valores negativos para la concentración de Ca, lo cual no tiene sentido. Cambie estos valores por ceros.</li>
 <li>Hay valores <code>NA</code> en la columna que indica la concentración de N. Genere una nueva tabla, utilizando el mismo nombre que antes, que no contenga estas observaciones (filas). Puede utilizar la expresión <code>is.na()</code>, pero explore también la ayuda de <code>na.omit()</code>. Ayuda: <code>is.na(objeto)</code> pregunta si el objeto es igual a <code>NA</code>, mientras que <code>!is.na(objeti)</code>pregunta si NO es igual a <code>NA</code>.</li>
@@ -1337,7 +1335,7 @@ Petal.Length 0.4089223 0.01889134 21.64602  1.038667e-47</code></pre>
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Ir arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

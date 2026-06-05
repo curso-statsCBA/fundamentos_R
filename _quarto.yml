@@ -33,9 +33,6 @@ website:
           - text: R Charts
             href: https://r-charts.com/
             target: "_blank"
-          - text: R Colors
-            href: https://sites.stat.columbia.edu/tzheng/files/Rcolor.pdf
-            target: "_blank"
   sidebar:
     style: "floating"
     search: true

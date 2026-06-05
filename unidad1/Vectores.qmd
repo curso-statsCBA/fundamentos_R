@@ -104,6 +104,13 @@ Al correr la función con un único número, obtenemos una sucesión de números
 seq(10)
 ```
 
+La función `seq_along()` admite un único argumento (`along.with`), para el que espera un objeto (típicamente un vector, pero admite otros tipos). Esta función genera una secuencia de números enteros, desde el 1 hasta la longitud del objeto provisto. Por ejemplo:
+
+```{r}
+especies <- c("Algarrobo", "Quebracho", "Espinillo")
+seq_along(especies)
+```
+
 La función `rep()` genera un nuevo vector a partir de la repetición de los elementos de un vector dado:
 
 ```{r}
@@ -327,10 +334,11 @@ R también provee de numerosas funciones nativas para obtener medidas de resumen
 
 ## Ejercicio final
 
-1.  Utilice las funciones `rep()` y `seq()` para generar los siguientes vectores:
+1.  Utilice las funciones `rep()`, `seq()` y `seq_along()` para generar los siguientes vectores:
 
 -   Una sucesión de números pares de 15 elementos.
 -   Una sucesión de números decimales, con un incremento de 0.15.
+-   Una sucesión de números enteros que comience con el 1 y continúe hasta el número igual la longitud del vector `c(25, 78, 41, 79, 11, 6, 8)`.
 -   Un vector tipo `character`, que indique 4 categorías discretas, repetidas de a 3 cada una.
 -   Un vector que repita 5 veces el siguiente vector: `c(F, T, F, T)`.
 

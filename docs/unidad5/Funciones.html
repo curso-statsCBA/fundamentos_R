@@ -323,10 +323,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="https://r-charts.com/" target="_blank">
  <span class="dropdown-text">R Charts</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="https://sites.stat.columbia.edu/tzheng/files/Rcolor.pdf" target="_blank">
- <span class="dropdown-text">R Colors</span></a>
-  </li>  
     </ul>
   </li>
 </ul>
@@ -668,7 +664,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pesos_aleatorios <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>), <span class="fu">length</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">valor_promedio</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>, <span class="at">pesos =</span> pesos_aleatorios)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.13333</code></pre>
+<pre><code>[1] 12.16667</code></pre>
 </div>
 </div>
 </section>
@@ -758,20 +754,19 @@ Se tomó el valor por defecto.</code></pre>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>lista_numeros</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
- [1] 304 485 893 301 683 755 515 941 165 572 182 961 289 427 544  16 141 687  35
-[20]  99 505 136 163 324 866 823 859 737 960  83  50  53 405 179 277 172 339  27
-[39] 452 584 829 706 340 508 903 249 887 422 929 561
+ [1] 934 790 884 683 317 242 669 241 881 585 922 980 798 864 579 114 136 867 576
+[20] 547 427 370 236 887 795 174 982 954 166 639 904 607 209 132 471 604 168 177
+[39] 852 575 712 876 939 208 997 515 636 165  22 878
 
 [[2]]
- [1]   31  906  729  994  610  316  360  706  638  731  920  231  987  717  454
-[16]  814  923   24  655  790  560  641  845  738   51   86  705  721  150  787
-[31]  644  438   22   77  768  877  539  917  909  435  478 1000  247  455  156
-[46]  227  766  173  899  572
+ [1] 735  12 820 458 569 284 515 917 586 182 847 417 922 554 833   1 276 428 503
+[20] 264 722 285 366 103 420 654 666 907 860 123 197 795 300 883 887 304 566 208
+[39] 190 800 448 721 695 405 752 657 622  34 229 209
 
 [[3]]
- [1] 247 942 890 152 580 235  92 173 954  54 433 840 896 667 626 994 355 585 568
-[20] 876 848 786 477 640 344 329 735 411  28 478 353  51 424 326 988 974 449 696
-[39] 310 809 342 190 592 333 467 934 142 245 135  69</code></pre>
+ [1] 869 918 479 881 376 628 929 551 650 793 101 925  37 856 894 897 841 221 787
+[20] 155 716 639 182 619 496 370 654  89 320 200 314 872 351 422 413 738 122 302
+[39] 455 936 236 676 433 749 231 463 912 242  18 295</code></pre>
 </div>
 </div>
 <p>La función <code>sapply()</code> aplica una función dada a un objeto de tipo <code>list()</code>, y devuelve un vector. En este ejemplo, utilizaremos la función recientemente creada (<code>valor_promedio()</code>), para calcular el promedio de cada conjunto de números de la lista (indicados en el primer argumento):</p>
@@ -779,7 +774,7 @@ Se tomó el valor por defecto.</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> <span class="fu">sapply</span>(lista_numeros, <span class="at">FUN =</span> valor_promedio)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>promedios</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 466.46 568.38 501.28</code></pre>
+<pre><code>[1] 577.72 502.62 525.06</code></pre>
 </div>
 </div>
 <p>Notar que para el argumento <code>FUN</code> indicamos el nombre de la función sin los paréntesis, la cual debe existir en el entorno (cargada por el usuario o por defecto en R).</p>
@@ -789,7 +784,7 @@ Se tomó el valor por defecto.</code></pre>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> <span class="fu">sapply</span>(lista_numeros, <span class="at">FUN =</span> valor_promedio, <span class="at">pesos =</span> pesos_aleatorios)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>promedios</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 354.945 415.215 382.990</code></pre>
+<pre><code>[1] 433.360 390.205 403.490</code></pre>
 </div>
 </div>
 <p><strong>Para pensar:</strong> tal cual como está programada, la función <code>valor_promedio()</code> no es útil para ser utilizada con la función <code>sapply()</code>, especialmente en cuanto al argumento <code>pesos</code>. ¿Por qué?</p>
@@ -810,7 +805,7 @@ Se tomó el valor por defecto.</code></pre>
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Ir arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
