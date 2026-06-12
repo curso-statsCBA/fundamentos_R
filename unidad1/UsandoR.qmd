@@ -298,28 +298,23 @@ correct_answer2 <- "../../../carpeta1/archivo1_c"
 ```{r, echo=FALSE}
 # Define the correct answer in R
 correct_answer3 <- "./carpeta2a/archivo2a_a"
+correct_answer3b <- "carpeta2a/archivo2a_a"
 ```
 
 <div>
-
 <label for="userText">Su respuesta:</label> <input type="text" id="userText3" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer3()">Enviar</button>
-
 <p id="result3">
-
 </p>
-
 </div>
 
 ```{=html}
 <script>
-  // Use the correct answer defined in R
   const correctAnswer3 = "`r correct_answer3`";
+  const correctAnswer3b = "`r correct_answer3b`";
 
   function checkAnswer3() {
-    // Get the user's input text
     const userText3 = document.getElementById("userText3").value;
-    // Check if the input matches the correct answer
-    if (userText3 === correctAnswer3) {
+    if (userText3 === correctAnswer3 || userText3 === correctAnswer3b) {
       document.getElementById("result3").innerText = "Correcto!";
       result3.style.color = "green"; result3.style.fontWeight = "bold"; 
     } else {

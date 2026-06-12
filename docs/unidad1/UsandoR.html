@@ -770,19 +770,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Si nos encontráramos en “carpeta2”, cómo sería la ruta relativa hasta el archivo “archivo2a_a”?</li>
 </ul>
 <div>
-<p><label for="userText">Su respuesta:</label> <input type="text" id="userText3" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer3()">Enviar</button></p>
+<label for="userText">Su respuesta:</label> <input type="text" id="userText3" placeholder="Escriba su respuesta aquí" size="80%"> <button onclick="checkAnswer3()">Enviar</button>
 <p id="result3">
 </p>
 </div>
 <script>
-  // Use the correct answer defined in R
   const correctAnswer3 = "./carpeta2a/archivo2a_a";
+  const correctAnswer3b = "carpeta2a/archivo2a_a";
 
   function checkAnswer3() {
-    // Get the user's input text
     const userText3 = document.getElementById("userText3").value;
-    // Check if the input matches the correct answer
-    if (userText3 === correctAnswer3) {
+    if (userText3 === correctAnswer3 || userText3 === correctAnswer3b) {
       document.getElementById("result3").innerText = "Correcto!";
       result3.style.color = "green"; result3.style.fontWeight = "bold"; 
     } else {
@@ -905,8 +903,8 @@ returning NA</code></pre>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-90b028538cbe889b5959" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-90b028538cbe889b5959">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-2c5d4f3357949b98027b" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-2c5d4f3357949b98027b">{"x":{"element":"manteniendo","opts":{"content":"<span style='font-size:16px;'>i.e. los desarrolladores ya no trabajan en el paquete y no lo actualizan, corrigen, etc.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <ul>

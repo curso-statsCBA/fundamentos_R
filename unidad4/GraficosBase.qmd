@@ -7,19 +7,128 @@ pagetitle: "Gráficos con R base"
 
 La representación gráfica de datos y resultados es una parte importante de nuestro quehacer habitual en ámbitos académicos y científicos. Una de las razones de la gran popularidad de R yace en su excelente apartado gráfico, con el cual se pueden producir gráficos de buena calidad listos para publicar. De forma general, existen <u id='comentario'>dos métodos principales</u> para realizar gráficos en R: el basado en el sistema básico de `R base` y el basado en el paquete `ggplot2`. Ambas opciones poseen sus propias ventajas y desventajas y generalmente son usados a la par. Es decir, en algunas ocasiones convendrá o será más cómodo, utilizar uno y, en otras ocasiones, será mejor opción el otro.
 
+A pesar del alto nivel de personalización que se puede lograr con el apartado gráfico de `R base`, generalmente lo usaremos para realizar gráficos exploratorios o como parte de las funciones gráficas de otros paquetes, reservando a paquetes especializados en representación gráfica para elaborar figuras *finales*.
+
 ```{r, echo=FALSE}
-tippy::tippy_this(elementId = 'comentario', interactive= 'true', tooltip = "<span style='font-size:14px;'>Existen otros paquetes que profundizan funcionalidades específicas que trascienden los objetivos de este curso. Aquí puede encontrar <a href='https://www.geeksforgeeks.org/top-r-libraries-for-data-visualization/' target='_blank'>una lista de los paquetes top en 2024</a> según un sitio especializado.</span>")
+tippy::tippy_this(elementId = 'comentario', interactive= 'true', tooltip = "<span style='font-size:14px;'>Existen otros paquetes que profundizan funcionalidades específicas que trascienden los objetivos de este curso. Aquí puede encontrar <a href='https://www.geeksforgeeks.org/top-r-libraries-for-data-visualization/' target='_blank'>una lista de los paquetes top en 2025</a> según un sitio especializado.</span>")
 ```
 
-En esta clase veremos como construir gráficos con `R base`. Para empezar, definiremos un concepto relativo al *nivel* de la función utilizada. Cuando grafiquemos podremos utilizaremos funciones de *alto nivel*, que son aquellas funciones que crean nuevos gráficos, generalmente junto a los principales ejes, etiquetas ó títulos (e.g. `plot()`, `hist()`, etc.); y funciones de *bajo nivel*, que son aquellas con las que podremos añadir elementos extras a un gráfico ya creado, como puntos, líneas, flechas u otras etiquetas (e.g. `points()`, `text()`, etc.). La **combinación de funciones de alto y bajo nivel nos permite realizar una enorme personalización del gráfico**, aunque en algunas ocasiones esto puede llevar a que tengamos que definir cada aspecto del mismo. Este compromiso entre el nivel de personalización deseado y la cantidad de líneas de código necesarias puede parecer un poco abrumador al comienzo; pero, luego de un tiempo, en general optaremos siempre por una completa personalización. Sumado a esto, con el tiempo acumularemos plantillas propias para ciertos tipos de gráficos que realicemos frecuentemente, y solo nos bastará con cambiar los datos y algunos parámetros menores para obtener un nuevo gráfico listo para su publicación (o al menos su revisión 😬).
+Para entender el apartado gráfico nativo, definiremos un concepto relativo al *nivel* de la función utilizada. Cuando realicemos gráficos podremos utilizars funciones de *alto nivel*, que son aquellas funciones que crean nuevos gráficos, generalmente junto a los principales ejes, etiquetas ó títulos (e.g. `plot()`, `hist()`, etc.); y funciones de *bajo nivel*, que son aquellas con las que podremos añadir elementos extras a un gráfico ya creado, como puntos, líneas, flechas u otras etiquetas (e.g. `points()`, `text()`, etc.). En `R base`, la **combinación de funciones de alto y bajo nivel es la que permite realizar una enorme personalización de los gráficos**.
 
-En cuanto a los **tipos de gráficos**, las posibilidades que ofrece R son realmente ilimitadas y podrían constituir en sí mismo un curso de representación gráfica. Por ello, para aprender los fundamentos del funcionamiento del apartado gráfico, veremos a continuación dos tipos de gráficos:
+En cuanto a los **tipos de gráficos**, las posibilidades que ofrece R son realmente ilimitadas y podrían constituir en sí mismo un curso de representación gráfica. Pero de forma general podemos mencionar a:
 
--   **Histogramas**: nos permiten ver la distribución de frecuencia en nuestros datos.
 -   **Gráficos de dispersión (*scatterplots*)**: nos permiten evaluar la relación entre variables cuantitativas.
+-   **Histogramas**: nos permiten ver la distribución de frecuencia en nuestros datos.
 -   **Gráficos de caja (*boxplot*)**: posibilitan comparar, entre categorías, la distribución cuantitativa de los datos basada en sus cuartiles y mostrando, además, intervalos de confianza y valores atípicos (*outliers*).
 
-En cuanto a la **personalización de los gráficos**, intentaremos a continuación abordarlo desde una perspectiva progresiva, partiendo de los gráficos simples elaborados con funciones de alto nivel, para luego ir sumando parámetros y funciones de bajo nivel, haciendo más complejo nuestro código para definir los principales elementos que componen un gráfico.
+### Explorando graficamente los datos
+
+Cuando trabajamos con datos, es deseable que nos familiaricemos con las variables que estamos utilizando en nuestros análisis. Explorar gráficamente las características de nuestras variables puede proveernos de mucha información, incluso antes de realizar análisis estadísticos puntuales. Realizar estas exploraciones en `R`resulta extremadamente sencillo, para ver gráficamente una variable, bastará con que usemos la función `plot()`.
+
+```{r eval=F, echo=T, fig.align='center', fig.height=5, fig.width=5}
+plot(iris$Sepal.Width)
+```
+```{r eval=T, echo=F, fig.align='center', fig.height=5, fig.width=5}
+par(mar=c(5,5,1,1))
+plot(iris$Sepal.Width)
+```
+
+Como podemos ver, lo que obtuvimos fue un gráfico de dispersión representando todos los valores numéricos de la variable "Ancho de sépalo" para el conjunto de datos *Iris*. Siguiendo con este ejemplo, si quisiéramos ver la forma de la distribución de nuestros datos, podríamos utilizar la función `hist()` para realizar un histograma.
+
+```{r eval=F, echo=T, fig.align='center', fig.height=5, fig.width=5}
+hist(iris$Sepal.Width)
+```
+```{r eval=T, echo=F, fig.align='center', fig.height=5, fig.width=5}
+par(mar=c(5,5,1,1))
+hist(iris$Sepal.Width)
+```
+
+O también, podríamos estar interesados en estudiar la relación de 2 variables que tengamos en nuestro conjunto de datos.
+
+```{r eval=F, echo=T, fig.align='center', fig.height=5, fig.width=5}
+plot(iris$Sepal.Length ~ iris$Petal.Length)
+```
+```{r eval=T, echo=F, fig.align='center', fig.height=5, fig.width=5}
+par(mar=c(5,5,1,1))
+plot(iris$Sepal.Length ~ iris$Petal.Length)
+```
+
+Notemos como en la expresión precedente, utilizamos lo que en R se conoce como *sintaxis de fórmula*, en donde el operador `~` significa "*en función de*". En este caso sería "largo de sépalo *en función de* largo de pétalo", es decir, el ancho en el eje de las ordenas y el largo en el eje de las abscisas.
+
+Esta forma de solicitar gráficos a R tiene la ventaja de detectar automáticamente el tipo de dato, y reaccionar dela forma indicada según los mismo. Por ejemplo, veamos que pasa si queremos ver como se relaciona una variable numérica con una categórica.
+
+```{r eval=F, echo=T, fig.align='center', fig.height=5, fig.width=5}
+plot(iris$Sepal.Length ~ iris$Species)
+```
+```{r eval=T, echo=F, fig.align='center', fig.height=5, fig.width=5}
+par(mar=c(5,5,1,1))
+plot(iris$Sepal.Length ~ iris$Species)
+```
+
+### La función `plot()` sobre salidas de otros paquetes
+
+La gran mayoría de paquetes de análisis disponibles en R poseen alguna salida gráfica asociada. Muchas veces, estos gráficos no son potencialmente usables como versiones finales, pero permiten evaluar cuestiones del análisis vinculadas al funcionamiento del paquete específico. Cuando la salida de la ejecución de un paquete tiene información para realizar representaciones gráficas, se puede acceder a esta con la misma función `plot()` del apartado gráfico básico.
+
+Para ejemplificar esto, pensemos que queremos realizar una regresión lineal y evaluar si los supuestos de la misma se cumplen. Para ellos, hagamos primero un modelo de regresión lineal entre las variables `Petal.Length` y `Sepal.Length`, para la especie *I. virginica* del conjunto de datos `Iris`:
+
+```{r eval=T, echo=T}
+# Creando y viendo el resultado del modelo de regresión lineal
+regL <- lm(Petal.Length ~ Sepal.Length, data = subset(iris, Species == "virginica"))
+summary(regL)
+```
+
+Como podemos ver, el objeto `regL` es dónde guardamos la salida de la función `lm()` que realiza el ajuste del modelo lineal. Para acceder a los resultados de este análisis usamos la función `summary()`, pero ¿qué sucedería si pasamos este mismo objeto a la función `plot()`?
+
+```{r eval=F, echo=T, fig.align='center', fig.height=4, fig.width=4}
+# Gráficos de diagnóstico del modelo de regresión lineal
+plot(regL)
+```
+```{r eval=T, echo=F, fig.align='center', fig.height=8, fig.width=8}
+par(mfrow=c(2,2), mar=c(5,5,1.5,1))
+plot(regL)
+```
+
+En este caso, **la función gráfica invoca a un método específico relativo al tipo (*clase*) de objeto sobre el que está operando**. Esto produce una serie de gráficos que en este caso sirven para evaluar los supuestos matemáticos de la regresión lineal. Esto es, además, un ejemplo de la característica de *polimorfismo* que vimos en la [clase introductoria](../unidad1/IntroR.qmd){target="_blank"}.
+
+Si bien el análisis y explicación de cada uno de estos gráficos excede este curso, puede encontrar [en este vínculo](https://library.virginia.edu/data/articles/diagnostic-plots){target="_blank"} una buena explicación con ejemplos. Además, **puede inscribirse en la próxima edición del excelente curso dictado por Santiago Benitez-Vieyra**: [Introducción al lenguaje R. Modelos lineales y fundamentos de programación.](https://curso-statscba.github.io/curso-R/){target="_blank"}
+
+### Panel de múltiples gráficos
+
+En el ejemplo de sección pasada, la función `plot()` genera una salida compuesta por 4 gráficos independientes. Si quisiéramos mostrar en un solo panel varios gráficos (como en la figura precedente), debemos utilizar previamente la función `par()`, que permite configurar todos los parámetros básicos del dispositivo gráfico que usa R. Esta función tiene un nivel jerárquico superior y con la misma podemos cambiar el comportamiento *por defecto* de todos los parámetros gráficos de forma semi-permanente (i.e. en el contexto de RStudio, durante toda la sesión en curso; y para dispositivos gráficos externos, hasta que se reinicie el mismo). Por esto, si realizamos un cambio con `par()` para mostrar dos gráficos en paralelo y posteriormente queremos realizar un nuevo gráfico solitario, debemos volver a configurar el dispositivo gráfico para mostrar un solo gráfico.
+
+A pesar de la gran cantidad de usos que posee la función `par()`, dentro de los más comunes están la configuración de márgenes interiores (`mar`/`mai`) y exteriores (`oma` y `omi`), así como la configuración del **emplazamiento de múltiples gráficos** (`mfrow`).
+
+
+Siguiendo con nuestro ejemplo, para mostrar los 4 gráficos juntos configuraremos con `par()` la posibilidad de tener un panel de 4 gráficos, con 2 filas y 2 columnas, esto es: `mfrow = c(2,2)`.
+
+```{r eval=F, echo=T, fig.align='center', fig.height=8, fig.width=8}
+# Gráficos de diagnóstico del modelo de regresión lineal
+par(mfrow = c(2,2))
+plot(regL)
+```
+```{r eval=T, echo=F, fig.align='center', fig.height=8, fig.width=8}
+# Gráficos de diagnóstico del modelo de regresión lineal
+par(mfrow=c(2,2), mar=c(5,5,1.5,1))
+plot(regL)
+```
+
+La sintaxis a recordar es que el argumento del parámetro `mfrow` es siempre un vector de dos elementos, que se corresponden con el número de filas y columnas deseadas. Así podemos, por ejemplo, solicitar que los 4 gráficos se dispongan en una misma fila y cuatro columnas:
+
+```{r eval=F, echo=T, fig.align='center', fig.height=4, fig.width=10}
+# Gráficos de diagnóstico del modelo de regresión lineal
+par(mfrow = c(1,4))
+plot(regL)
+```
+```{r eval=T, echo=F, fig.align='center', fig.height=4, fig.width=10}
+# Gráficos de diagnóstico del modelo de regresión lineal
+par(mfrow = c(1,4), mar=c(5,5,1.5,1))
+plot(regL)
+```
+
+
+## Personalización de gráficos (sección opcional para consulta futura)
+
+Las posiblidades de personalización utilizando el sistema gráfico de `R base` son muy amplias. Intentaremos a continuación abordarlo desde una perspectiva progresiva, partiendo de los gráficos simples elaborados con funciones de alto nivel, para luego ir sumando parámetros y funciones de bajo nivel, haciendo más complejo nuestro código para definir los principales elementos que componen un gráfico.
 
 ### Un gráfico simple
 
@@ -61,7 +170,7 @@ axis(2, at = c(1,2,3), labels = c("pch" , "col" , "cex"),
      tick = TRUE, col = "black", las = 1, cex.axis = 1, font.axis=2)
 ```
 
-## Ejercicio 1
+### Ejercicio Opcional 1
 
 Utilizando como molde el código del gráfico previo, intente realizar uno que posea 3 puntos en las coordenadas `(x,y)=(1,3),(2,1),(3,2)`, que estos puntos sean rombos de color azul, amarillo y rojo, respectivamente, todos con borde negro, y que su tamaño relativo sea distinto y creciente, como se muestra a continuación:
 
@@ -72,7 +181,7 @@ plot(1:3, c(3,1,2), pch=23, col="black", bg=c("blue","yellow","red"), cex=c(1,2,
 
 *Ayuda*: los valores de `cex` recomendados son `1,2,3`. Para las formas con borde y relleno, `col` solo especifica el color del borde. Busque por sus medios qué parámetro permite indicar el color de relleno.
 
-## Histogramas
+### Histogramas
 
 Los histogramas son gráficos que nos permiten visualizar la distribución de frecuencia de los datos. Son muy utilizados en el *análisis exploratorio* de los datos. Graficar histogramas en R es sumamente sencillo gracias a la función `hist()`, una función de alto nivel que permite realizarlos. Para el siguiente ejemplo, visualizaremos una distribución normal de 1.000 observaciones con `media = 0` y `desviación estándar = 0` .
 
@@ -92,7 +201,7 @@ hist(rnorm(1000),
 )
 ```
 
-## Ejercicio 2
+### Ejercicio Opcional 2
 
 Ayudándose con la documentación de las funciones `hist()` y `rnorm()`:
 
@@ -112,7 +221,7 @@ hist(rnorm(30000, 173.47, 4.03),
 
 c)  Puede que su gráfico se vea muy parecido, más no igual al ejemplo. De hecho, cada vez que llama a la función gráfica observará que el gráfico cambia, ¿por qué sucede esto?
 
-## Gráfico de dispersión
+### Gráfico de dispersión
 
 Muchas veces necesitamos evaluar si existe una relación entre 2 variables cuantitativas. Una de las mejores formas de representar gráficamente estas relaciones es mediante gráficos de dispersión. A continuación un ejemplo utilizando el conjunto de datos `iris`, con el que ya debería estar muy familiarizado.
 
@@ -358,7 +467,7 @@ axis(side=2, at=seq(0,8,2), las=1, labels=c("cero", "dos", 4, "seis", 8))
 box(bty="l")
 ```
 
-## Gráficos de caja
+### Gráficos de caja
 
 ### *Leyendas y anotaciones*
 
@@ -426,48 +535,14 @@ legend("bottom", horiz=TRUE, bty = "n",
        fill = c("yellow", "orange"))
 ```
 
-## Ejercicio 3
+### Ejercicio Opcional 3
 
 a)  Analice el código precedente sin ejecutarlo, intentando describir qué hace cada línea. Luego, copie el mismo a un script dentro de `dia4` y ejecútelo por partes para entender el funcionamiento. Recuerde buscar en las ayudas interna de R y juegue con las opciones disponibles.
 b)  Repita el gráfico pero con una flecha azul que indique el valor de la mediana para la 0,5 mm/día del suplemento jugo de naranja. Además, ubique la leyenda en la posición `(x,y) = (2.5,5)`.
 
 <br>
 
-## Panel de múltiples gráficos
-
-En muchas ocasiones, necesitamos mostrar en un solo panel varios gráficos diferentes. Para ello, debemos utilizar la función `par()`, que permite configurar todos los parámetros básicos del dispositivo gráfico que usa R. Esta función tiene un nivel jerárquico superior a todas las que vimos previamente, ya que con la misma podemos cambiar el comportamiento *por defecto* de todos los parámetros gráficos de forma semi-permanente (i.e. en el contexto de RStudio, durante toda la sesión en curso; y para dispositivos gráficos externos, hasta que se reinicie el mismo). Por esto, si realizamos un cambio con `par()` para mostrar dos gráficos en paralelo y, posteriormente, queremos realizar un nuevo gráfico solitario, debemos volver a configurar el dispositivo gráfico para mostrar un solo gráfico.
-
-A pesar de la gran cantidad de usos que posee la función par(), dentro de los más comunes están la configuración de márgenes interiores (`mar`/`mai`) y exteriores (`oma` y `omi`), así como la configuración del emplazamiento de múltiples gráficos (`mfrow`).
-
-Para ver esto último en acción, pensemos que queremos realizar una regresión lineal y evaluar si los supuestos de la misma se cumplen. Para ellos, hagamos primero un modelo de regresión lineal entre las variables `Petal.Length` y `Sepal.Length`, para la especie *I. virginica* del conjunto de datos `iris`:
-
-```{r eval=T, echo=T, fig.align='center', fig.height=8, fig.width=8}
-# Creando y viendo el resultado del modelo de regresión lineal
-regL <- lm(Petal.Length ~ Sepal.Length, data = subset(iris[iris$Species == "virginica",]))
-summary(regL)
-```
-
-Habiendo generado el objeto que contiene el resultado de `lm()`, podemos pedirle a R que lo grafique con `plot()`. Este es un ejemplo más de la característica de *polimorfismo* que vimos en la [clase introductoria](../unidad1/IntroR.qmd){target="_blank"}, ya que `plot()` puede usarse sobre diferentes tipos de objetos, resultantes de diferentes funciones, y realizará diferentes gráficos según cada uno.
-
-Como en nuestro ejemplo la función `plot()`realizará 4 gráficos separados, configuraremos con `par()` la posibilidad de tener un panel de 4 gráficos, con 2 filas y 2 columnas, esto es: `mfrow = c(2,2)`.
-
-```{r eval=T, echo=T, fig.align='center', fig.height=8, fig.width=8}
-# Gráficos de diagnóstico del modelo de regresión lineal
-par(mfrow = c(2,2))
-plot(regL)
-```
-
-Si bien el análisis y explicación de cada uno de estos gráficos excede este curso, puede encontrar [en este vínculo](https://library.virginia.edu/data/articles/diagnostic-plots){target="_blank"} una buena explicación con ejemplos. Además, **puede inscribirse en la próxima edición del excelente curso dictado por Santiago Benitez-Vieyra**: [Introducción al lenguaje R. Modelos lineales y fundamentos de programación.](https://curso-statscba.github.io/curso-R/){target="_blank"}
-
-Para jugar un poco más, repitamos los gráficos pero ahora, pidiendo que los mismos estén emplazados en una sola fila de 4 columnas:
-
-```{r eval=T, echo=T, fig.align='center', fig.height=4, fig.width=10}
-# Gráficos de diagnóstico del modelo de regresión lineal
-par(mfrow = c(1,4))
-plot(regL)
-```
-
-## Ejercicio final
+### Ejercicio Final Opcional
 
 Con el conjunto de datos provisto, y ayudándose con la documentación de las funciones `points()`, `segments()` y `title()`, y buscando cómo funcionan los parámetros gráficos para líneas `lwd` y `lty`, realice un gráfico como el que se muestra a continuación.
 
@@ -501,10 +576,8 @@ with(subset(data, tipo != "punto"),
 title("Graficando con R base")
 ```
 
------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ::: {style="text-align: center;"}
-
 <a href="pics/plotbasememe.jpeg" target="_blank"> <img src="pics/plotbasememe.jpeg" style="padding: 5px 0 5px 0;width: 50rem;max-width:75%;height:auto;vertical-align:middle;border-style: none;"/></a>
-
 :::

@@ -535,6 +535,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">Matrices</a></li>
   <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas">Listas</a></li>
+  <li><a href="#clases-s4" id="toc-clases-s4" class="nav-link" data-scroll-target="#clases-s4">Clases S4</a></li>
   <li><a href="#el-paquete-dplyr" id="toc-el-paquete-dplyr" class="nav-link" data-scroll-target="#el-paquete-dplyr">El paquete <em>dplyr</em></a></li>
   </ul></li>
   <li><a href="#ejercicio-final" id="toc-ejercicio-final" class="nav-link" data-scroll-target="#ejercicio-final">Ejercicio final</a></li>
@@ -570,8 +571,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Para crear una tabla desde cero, en R utilizamos la <u id="table_classes">clase</u> <code>data.frame</code>, y una función con el mismo nombre para generarla:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-634bf8fafdb478d8143c" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-634bf8fafdb478d8143c">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-f79684911d9ebfa3279f" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-f79684911d9ebfa3279f">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -1244,8 +1245,8 @@ Pedro       lengua      8</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-52b2cd2bb010ce4d910b" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-52b2cd2bb010ce4d910b">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-2b42092abb7069c40356" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-2b42092abb7069c40356">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -1298,11 +1299,11 @@ Petal.Length 0.4089223 0.01889134 21.64602  1.038667e-47</code></pre>
 </div>
 </div>
 <p><strong>Mini ejericio:</strong> Extraiga de <code>mod_summ$coefficients</code> (con código, obviamente) el valor de pendiente (“Estimate”) para la variable Petal.Length y guardelo en un objeto llamado “est_petal”. Ayuda: identifique primero qué tipo de objeto es <code>mod_summ$coefficients</code> (también puede asignarlo a un nuevo objeto, si quiere), y a partir de ello, utilice la sintaxis adecuada para la extracción del dato buscado.</p>
-<section id="clases-s4" class="level4">
-<h4 class="anchored" data-anchor-id="clases-s4">Clases S4</h4>
+</section>
+<section id="clases-s4" class="level3">
+<h3 class="anchored" data-anchor-id="clases-s4">Clases S4</h3>
 <p>Otra salida menos común de algunos paquetes son las clases S4. En esencia, son muy similares a las listas en el sentido de que pueden almacenar cualquier tipo de objeto. Una de las diferencias radica en que el tipo de elemento a almacenar está predefinido, y no puede cambiarse.</p>
 <p>Un ejemplo es la salida de la función <code>raster()</code> del paquete <code>raster</code>, la cual genera un objeto de tipo raster, muy utilizado en el contexto de Sistemas de Información Geográfica. Por ahora, basta con saber que la información de estos objetos se acceden con el operador <code>@</code>, mediante la sintaxis <code>objeto@elemento</code>.</p>
-</section>
 </section>
 <section id="el-paquete-dplyr" class="level3">
 <h3 class="anchored" data-anchor-id="el-paquete-dplyr">El paquete <em>dplyr</em></h3>

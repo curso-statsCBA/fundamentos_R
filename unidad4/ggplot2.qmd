@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Otra lógica de programación
 
-El paquete *ggplot2* ofrece una nutrida biblioteca de funciones para la creación de gráficos de diversos tipos en R. La diversidad de gráficos y formas de personalización es enorme -es un curso en sí mismo- y aquí simplemente desarrollaremos los fundamentos básicos para su comprensión. Existen varias páginas web útiles para aprender sobre el desarrollo de gráficos con *ggplot2*, incluyendo a [The R Graph Gallery](https://r-graph-gallery.com/ggplot2-package.html){target="_blank"} y [R Charts](https://r-charts.com/colors/){target="_blank"}. En esta [página](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf){target="_blank"} se muestra una tabla de colores junto con su nombre a utilizar dentro del entorno R.
+El paquete *ggplot2* ofrece una nutrida biblioteca de funciones para la creación de gráficos de diversos tipos en R. La diversidad de gráficos y formas de personalización es enorme -es un curso en sí mismo- y aquí simplemente desarrollaremos los fundamentos básicos para su comprensión. Existen varias páginas web útiles para aprender sobre el desarrollo de gráficos con *ggplot2*, incluyendo a [The R Graph Gallery](https://r-graph-gallery.com/ggplot2-package.html){target="_blank"} y [R Charts](https://r-charts.com/colors/){target="_blank"}.
 
 A diferencia de otros paquetes de graficación, incluyendo a las funciones nativas de R que ya hemos visto, la creación de gráficos con *ggplot2* sigue una lógica diferente. Se trabaja mediante la concatenación de "capas gráficas" a través de un lenguaje propio del paquete. Si traducimos el código en palabras, sería algo así:
 
@@ -284,10 +284,11 @@ Las facetas permiten dividir un gráfico en múltiples paneles según los nivele
 
 En el siguiente ejemplo graficamos la relación entre el largo y el ancho del sépalo, con un panel para cada especie:
 
-```{r}
+```{r, fig.height=3.5}
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point() +
-  facet_wrap(~ Species)
+  facet_wrap(~ Species) +
+  theme(aspect.ratio = 1)
 ```
 
 Los tres paneles comparten los mismos ejes, lo que facilita comparar la dispersión y los rangos entre especies.
@@ -305,7 +306,8 @@ Luego usamos `facet_grid()` con `petal_size` en las filas y `Species` en las col
 ```{r}
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point() +
-  facet_grid(petal_size ~ Species)
+  facet_grid(petal_size ~ Species) +
+  theme(aspect.ratio = 1, )
 ```
 
 La grilla resultante tiene 2 filas × 3 columnas = 6 paneles. Puede observarse que *setosa* directamente no tiene "pétalos grandes", por lo que ese panel queda vacío. Esto en sí mismo es un resultado informativo.

@@ -525,7 +525,7 @@ mod_summ$coefficients
 
 **Mini ejericio:** Extraiga de `mod_summ$coefficients` (con código, obviamente) el valor de pendiente ("Estimate") para la variable Petal.Length y guardelo en un objeto llamado "est_petal". Ayuda: identifique primero qué tipo de objeto es `mod_summ$coefficients` (también puede asignarlo a un nuevo objeto, si quiere), y a partir de ello, utilice la sintaxis adecuada para la extracción del dato buscado.
 
-#### Clases S4
+### Clases S4
 
 Otra salida menos común de algunos paquetes son las clases S4. En esencia, son muy similares a las listas en el sentido de que pueden almacenar cualquier tipo de objeto. Una de las diferencias radica en que el tipo de elemento a almacenar está predefinido, y no puede cambiarse.
 
