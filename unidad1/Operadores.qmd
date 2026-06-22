@@ -213,7 +213,7 @@ a <- 5
 a < 3 && d > 10
 ```
 
-Aquí vemos que el objeto `b` no existe en el ambiente de R. Sin embargo, el resultado es `FALSE` porque la primera condición ya es falsa. Si hiciéramos la misma comparación con `&`, R devuelve un error:
+Aquí vemos que el objeto `d` no existe en el ambiente de R. Sin embargo, el resultado es `FALSE` porque la primera condición ya es falsa. Si hiciéramos la misma comparación con `&`, R devuelve un error:
 
 ```{r error=TRUE}
 a <- 5
