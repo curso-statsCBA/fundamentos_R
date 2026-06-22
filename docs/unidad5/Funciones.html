@@ -664,7 +664,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pesos_aleatorios <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>), <span class="fu">length</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">valor_promedio</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>, <span class="at">pesos =</span> pesos_aleatorios)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.66667</code></pre>
+<pre><code>[1] 11.025</code></pre>
 </div>
 </div>
 </section>
@@ -754,19 +754,19 @@ Se tomó el valor por defecto.</code></pre>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>lista_numeros</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
- [1] 442 908 827 288 110 983 691 923 850 280 302 898 330 118 616 439 134 178 270
-[20] 503 935 720 393 365 863  42 395 251 609 695 482 198 971 731 777  26 944 305
-[39] 303 890 299  95 542 355 377 194 951 360 191 584
+ [1] 313 226 705 677 439 632 652 335 512 581 131 869 485 789 951 183 467 465 806
+[20]   5 987 594 522 849 942 604 331 843 915 578 290 726  28 744 329 174 104 887
+[39] 917 636  90 379 209 221 681 185 630 883 776 130
 
 [[2]]
- [1] 211  67 893 723 159 550 607 180 156 401 633 704 818 880 650 960 333 840  77
-[20] 444 778 105 662 135 547 161 241 659 732 224 242 899 835 265 298 404 656 568
-[39] 802 303   9 603 706 558 535 371 521 616 408 525
+ [1]  41 894 521 285  12  49 193 347 995 594 699 934 544 270 619 163 268 225 667
+[20]  69 834 912 968 252  96 506 996 308 686  36 547 960 154 393 409 789 929 977
+[39]  77 369 998 784 490 144 543 942 175 883 146 755
 
 [[3]]
- [1] 180 661  24 887 794 953 275 656 270 146 758 986 228 713 963  41 839 402 493
-[20]  91  61 679 104 812 401  93 336 449 399 161 701 574 650 818 909 176 220 166
-[39] 573 751 242 637 476 235 429 805 714 958 342 158</code></pre>
+ [1] 825  10 634 444 609 826 235 315  55 455 735 851 376 733 633 904 470 351 144
+[20]  62 848 515 270 159 471 368 280 426 268 505  81 932 316 374 117 682 632 481
+[39] 242 960 715  61 497 180 952 801 639 317 255 602</code></pre>
 </div>
 </div>
 <p>La función <code>sapply()</code> aplica una función dada a un objeto de tipo <code>list()</code>, y devuelve un vector. En este ejemplo, utilizaremos la función recientemente creada (<code>valor_promedio()</code>), para calcular el promedio de cada conjunto de números de la lista (indicados en el primer argumento):</p>
@@ -774,7 +774,7 @@ Se tomó el valor por defecto.</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> <span class="fu">sapply</span>(lista_numeros, <span class="at">FUN =</span> valor_promedio)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>promedios</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 498.66 493.08 487.78</code></pre>
+<pre><code>[1] 528.14 508.94 472.26</code></pre>
 </div>
 </div>
 <p>Notar que para el argumento <code>FUN</code> indicamos el nombre de la función sin los paréntesis, la cual debe existir en el entorno (cargada por el usuario o por defecto en R).</p>
@@ -784,7 +784,7 @@ Se tomó el valor por defecto.</code></pre>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> <span class="fu">sapply</span>(lista_numeros, <span class="at">FUN =</span> valor_promedio, <span class="at">pesos =</span> pesos_aleatorios)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>promedios</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 386.175 386.250 397.795</code></pre>
+<pre><code>[1] 395.855 383.130 339.175</code></pre>
 </div>
 </div>
 <p><strong>Para pensar:</strong> tal cual como está programada, la función <code>valor_promedio()</code> no es útil para ser utilizada con la función <code>sapply()</code>, especialmente en cuanto al argumento <code>pesos</code>. ¿Por qué?</p>

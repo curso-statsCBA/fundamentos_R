@@ -874,7 +874,7 @@ window.Quarto = {
 <p>Los operadores <code>&amp;&amp;</code> y <code>||</code> trabajan secuencialmente, sólo evalúan la segunda condición si la primera es <code>TRUE</code>. Si la primera condición ya es <code>FALSE</code>, no se evalúa la segunda condición. Adquieren mayor sentido cuando el segundo elemento de la comparación no está definido, y suele utilizarse en contextos de programación más avanzada. Por ejemplo:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> b <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> d <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -882,15 +882,16 @@ window.Quarto = {
 <p>Aquí vemos que el objeto <code>b</code> no existe en el ambiente de R. Sin embargo, el resultado es <code>FALSE</code> porque la primera condición ya es falsa. Si hiciéramos la misma comparación con <code>&amp;</code>, R devuelve un error:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">&amp;</span> b <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">&amp;</span> d <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! object 'd' not found</code></pre>
 </div>
 </div>
 <p>Veamos un ejemplo similar con el operador <code>||</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">||</span> b <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">||</span> d <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -898,9 +899,10 @@ window.Quarto = {
 <p>El resultado es <code>TRUE</code>, porque la primera condición ya es verdadera. El mismo código con <code>|</code> arroja un error:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">|</span> b <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">|</span> d <span class="sc">&gt;</span> <span class="dv">10</span></span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! object 'd' not found</code></pre>
 </div>
 </div>
 <p>Las funciones <code>all()</code> y <code>any()</code> permiten evaluar más de una condición simultáneamente. La función <code>all()</code> devuelve <code>TRUE</code> si todas las condiciones indicadas son verdaderas, caso contrario devuelve <code>FALSE</code>. Su comportamiento es análogo al operador <code>&amp;</code> utilizado secuencialmente. Las condiciones se escriben de a una y separadas por coma. Por ejemplo:</p>

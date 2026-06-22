@@ -210,28 +210,28 @@ Los operadores `&&` y `||` trabajan secuencialmente, sólo evalúan la segunda c
 
 ```{r}
 a <- 5
-a < 3 && b > 10
+a < 3 && d > 10
 ```
 
 Aquí vemos que el objeto `b` no existe en el ambiente de R. Sin embargo, el resultado es `FALSE` porque la primera condición ya es falsa. Si hiciéramos la misma comparación con `&`, R devuelve un error:
 
 ```{r error=TRUE}
 a <- 5
-a < 3 & b > 10
+a < 3 & d > 10
 ```
 
 Veamos un ejemplo similar con el operador `||`:
 
 ```{r}
 a <- 5
-a > 3 || b > 10
+a > 3 || d > 10
 ```
 
 El resultado es `TRUE`, porque la primera condición ya es verdadera. El mismo código con `|` arroja un error:
 
 ```{r error=TRUE}
 a <- 5
-a > 3 | b > 10
+a > 3 | d > 10
 ```
 
 Las funciones `all()` y `any()` permiten evaluar más de una condición simultáneamente. La función `all()` devuelve `TRUE` si todas las condiciones indicadas son verdaderas, caso contrario devuelve `FALSE`. Su comportamiento es análogo al operador `&` utilizado secuencialmente. Las condiciones se escriben de a una y separadas por coma. Por ejemplo:
