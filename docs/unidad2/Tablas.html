@@ -571,8 +571,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Para crear una tabla desde cero, en R utilizamos la <u id="table_classes">clase</u> <code>data.frame</code>, y una función con el mismo nombre para generarla:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-1c3382cc3743e865e04e" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-1c3382cc3743e865e04e">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-321d91b63e72e0615dd4" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-321d91b63e72e0615dd4">{"x":{"element":"table_classes","opts":{"content":"<span style=\"font-size:16px;\">Si bien la clase más utilizada es <code>data.frame<\/code>, existen otras formas de generar tablas. Por ejemplo, a través de la función <code>data.table()<\/code> (del paquete <code>data.table<\/code>), o a través de la función <code>tibble()<\/code> (del paquete <code>tibble<\/code>).<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
@@ -851,13 +851,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejercicio-1" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h2>
-<p>Genere nuevas tablas a partir de la tabla <code>iris</code> (utilizar nombres nuevos para cada tabla), para:</p>
+<p>A partir de la tabla <code>iris</code>, generar:</p>
 <ul>
-<li>La especie “setosa”, y las columnas “Species” y “Petal.Width”.</li>
-<li>Las especies “setosa” y “versicolor”. Deberá utilizar el operador <code>%in%</code> o <code>|</code> en vez del <code>==</code> (recordá de qué estamos hablando en <a href="../unidad1/Vectores.html">Vectores</a>).</li>
-<li>Flores en donde “Petal.Length” es mayor o igual a 4.</li>
-<li>Flores en donde “Sepal.Width” es mayor a 3 o “Sepal.Length” &lt; 4.</li>
+<li>Una tabla que contenga sólo la especie “setosa”, y las columnas “Species” y “Petal.Width”.</li>
+<li>Una tabla que contenga sólo a las especies “setosa” y “versicolor”. Deberá utilizar el operador <code>%in%</code>, o <code>|</code> en en combinación con <code>==</code> (recordá de qué estamos hablando en <a href="../unidad1/Vectores.html">Vectores</a>).</li>
+<li>Una tabla que contenga aquellas observaciones en donde “Petal.Length” es mayor o igual a 4.</li>
+<li>Una tabla que contenca aquellas observaciones en donde “Sepal.Width” es mayor a 3 o “Sepal.Length” &lt; 4.</li>
 </ul>
+<p>Utilice nombres distintos para cada nueva tabla.</p>
 </section>
 <section id="creación-de-nuevas-columnas" class="level2">
 <h2 class="anchored" data-anchor-id="creación-de-nuevas-columnas">Creación de nuevas columnas</h2>
@@ -1109,7 +1110,7 @@ Levels: Corto Largo Mediano</code></pre>
 3  virginica        6.588       2.974</code></pre>
 </div>
 </div>
-<p>El uso del punto <code>.</code> es útil para hacer el cálculo sobre todas las columnas del dataset, a excepción de la definida a la derecha de <code>~</code>:</p>
+<p>El uso del punto <code>.</code> es útil para hacer el cálculo sobre todas las columnas del dataset en función de la columna definida a la derecha de <code>~</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>iris_mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> Species, <span class="at">data =</span> iris, <span class="at">FUN =</span> mean)</span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>iris_mean</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1123,7 +1124,7 @@ Levels: Corto Largo Mediano</code></pre>
 </section>
 <section id="ejercicio-3" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
-<p>Generar una tabla que contenga el cálculo de la media de “Petal.Length” para cada especie. Luego, generar otra tabla con la desviación estándar de “Petal.Length” para cada especie. En cada tabla, cambiar los nombres de las nuevas columnas a “Petal.Length.mean” y “Petal.Length.sd”. Finalmente, unir roda la información en una tabla, quedando una columna para especie, otra para la media y otra para la desviación estandar. Ayuda: fusione ambas tablas con <code>merge()</code> o <code>cbind()</code>.</p>
+<p>Generar una tabla que contenga el cálculo de la media de “Petal.Length” para cada especie. Luego, generar otra tabla con la desviación estándar de “Petal.Length” para cada especie. En cada tabla, cambiar los nombres de las nuevas columnas a “Petal.Length.mean” y “Petal.Length.sd”. Finalmente, unir toda la información en una tabla, quedando una columna para especie, otra para la media y otra para la desviación estandar. Ayuda: fusione ambas tablas con <code>merge()</code> o <code>cbind()</code>.</p>
 </section>
 <section id="exportación-de-tablas" class="level2">
 <h2 class="anchored" data-anchor-id="exportación-de-tablas">Exportación de tablas</h2>
@@ -1245,8 +1246,8 @@ Pedro       lengua      8</code></pre>
 <p>Por ejemplo, la salida de la función <code>lm()</code>, que confecciona una <u id="lm">regresión lineal</u>, es una lista:</p>
 <div class="cell">
 <div class="cell-output-display">
-<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-2fdbb585d75cef4a9c4f" width="100%"></span>
-<script type="application/json" data-for="htmlwidget-2fdbb585d75cef4a9c4f">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
+<span class="tippy html-widget html-fill-item" height="464px" id="htmlwidget-11651cc2997fe0ac6788" width="100%"></span>
+<script type="application/json" data-for="htmlwidget-11651cc2997fe0ac6788">{"x":{"element":"lm","opts":{"content":"<span style=\"font-size:16px;\">Una regresión líneal relaciona una variable respuesta con una o más variables predictoras. Para el caso de una única variable predictora, al final se obtiene una recta con su ordenada al origen y su pendiente asociada.<\/span>"}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">

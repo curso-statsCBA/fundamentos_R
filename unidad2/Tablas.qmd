@@ -217,12 +217,14 @@ iris <- read.table(file = "data/iris.csv")
 
 ## Ejercicio 1
 
-Genere nuevas tablas a partir de la tabla `iris` (utilizar nombres nuevos para cada tabla), para:
+A partir de la tabla `iris`, generar:
 
--   La especie "setosa", y las columnas "Species" y "Petal.Width".
--   Las especies "setosa" y "versicolor". Deberá utilizar el operador `%in%` o `|` en vez del `==` (recordá de qué estamos hablando en [Vectores](../unidad1/Vectores.qmd)).
--   Flores en donde "Petal.Length" es mayor o igual a 4.
--   Flores en donde "Sepal.Width" es mayor a 3 o "Sepal.Length" \< 4.
+-   Una tabla que contenga sólo la especie "setosa", y las columnas "Species" y "Petal.Width".
+-   Una tabla que contenga sólo a las especies "setosa" y "versicolor". Deberá utilizar el operador `%in%`, o `|` en en combinación con `==` (recordá de qué estamos hablando en [Vectores](../unidad1/Vectores.qmd)).
+-   Una tabla que contenga aquellas observaciones en donde "Petal.Length" es mayor o igual a 4.
+-   Una tabla que contenca aquellas observaciones en donde "Sepal.Width" es mayor a 3 o "Sepal.Length" \< 4.
+
+Utilice nombres distintos para cada nueva tabla.
 
 ## Creación de nuevas columnas
 
@@ -363,7 +365,7 @@ iris_mean <- aggregate(cbind(Sepal.Length, Sepal.Width) ~ Species, data = iris, 
 iris_mean
 ```
 
-El uso del punto `.` es útil para hacer el cálculo sobre todas las columnas del dataset, a excepción de la definida a la derecha de `~`:
+El uso del punto `.` es útil para hacer el cálculo sobre todas las columnas del dataset en función de la columna definida a la derecha de `~`:
 
 ```{r}
 iris_mean <- aggregate(. ~ Species, data = iris, FUN = mean)
@@ -372,7 +374,7 @@ iris_mean
 
 ## Ejercicio 3
 
-Generar una tabla que contenga el cálculo de la media de "Petal.Length" para cada especie. Luego, generar otra tabla con la desviación estándar de "Petal.Length" para cada especie. En cada tabla, cambiar los nombres de las nuevas columnas a "Petal.Length.mean" y "Petal.Length.sd". Finalmente, unir roda la información en una tabla, quedando una columna para especie, otra para la media y otra para la desviación estandar. Ayuda: fusione ambas tablas con `merge()` o `cbind()`.
+Generar una tabla que contenga el cálculo de la media de "Petal.Length" para cada especie. Luego, generar otra tabla con la desviación estándar de "Petal.Length" para cada especie. En cada tabla, cambiar los nombres de las nuevas columnas a "Petal.Length.mean" y "Petal.Length.sd". Finalmente, unir toda la información en una tabla, quedando una columna para especie, otra para la media y otra para la desviación estandar. Ayuda: fusione ambas tablas con `merge()` o `cbind()`.
 
 ## Exportación de tablas
 
