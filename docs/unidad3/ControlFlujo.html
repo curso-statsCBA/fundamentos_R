@@ -774,31 +774,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>El constructo <code>for</code> es otra estructura de tipo bucle que permite iterar sobre una colección dada de elementos. En pocas palabras, repetirá la ejecución de un mismo bloque de código tantas veces como elementos existan en dicha secuencia. Por ello, es importante recordar que su sintaxis básica es:</p>
 <p><code>for</code> (<em>item</em> <code>in</code> <strong>colección</strong>) <code>{código a ejecutar}</code></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>asistentes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Maria Guadalupe"</span>, <span class="st">"Clarisa"</span>, <span class="st">"Pablo Alejandro"</span>, <span class="st">"Andrea"</span>, <span class="st">"Raúl Andres"</span>, <span class="st">"Evangelina"</span>,</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Juan Manuel"</span>, <span class="st">"María Azul"</span>, <span class="st">"Gala"</span>, <span class="st">"Lucille"</span>, <span class="st">"Lucas"</span>, <span class="st">"Ludmila"</span>, <span class="st">"Adolfo Emiliano"</span>,</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Ana"</span>, <span class="st">"Julieta Lourdes"</span>, <span class="st">"Joaquín"</span>, <span class="st">"Agostina"</span>, <span class="st">"Victoria Lucia"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>asistentes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Darío"</span>, <span class="st">"Ana Paula"</span>, <span class="st">"Carina"</span>, <span class="st">"William"</span>, <span class="st">"Trinidad"</span>,</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Axel"</span>, <span class="st">"Martina"</span>, <span class="st">"Luciana"</span>, <span class="st">"Nicolás"</span>, <span class="st">"Ana"</span>, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Sofía"</span>, <span class="st">"Lucrecia"</span>, <span class="st">"Clara"</span>)</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (nombre <span class="cf">in</span> asistentes) {</span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(nombre)</span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Maria Guadalupe"
-[1] "Clarisa"
-[1] "Pablo Alejandro"
-[1] "Andrea"
-[1] "Raúl Andres"
-[1] "Evangelina"
-[1] "Juan Manuel"
-[1] "María Azul"
-[1] "Gala"
-[1] "Lucille"
-[1] "Lucas"
-[1] "Ludmila"
-[1] "Adolfo Emiliano"
+<pre><code>[1] "Darío"
+[1] "Ana Paula"
+[1] "Carina"
+[1] "William"
+[1] "Trinidad"
+[1] "Axel"
+[1] "Martina"
+[1] "Luciana"
+[1] "Nicolás"
 [1] "Ana"
-[1] "Julieta Lourdes"
-[1] "Joaquín"
-[1] "Agostina"
-[1] "Victoria Lucia"</code></pre>
+[1] "Sofía"
+[1] "Lucrecia"
+[1] "Clara"</code></pre>
 </div>
 </div>
 <p><strong>Para reflexionar:</strong> Compare el código de la celda precedente con el que usamos para <a href="#anch2">listar las carreras</a> usando un bucle <code>while</code>. ¿Qué diferencias nota? ¿Cuándo usaría uno u otro constructo?</p>
@@ -940,9 +935,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>mat</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
-[1,]   52   41   22
-[2,]   44   90    3
-[3,]   65   72   45</code></pre>
+[1,]   92   36   11
+[2,]   61   87   74
+[3,]   20   91   52</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>( j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(mat)) {</span>
@@ -950,15 +945,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 52"
-[1] "El elemento de la fila 1 y columna 2 es igual a 41"
-[1] "El elemento de la fila 1 y columna 3 es igual a 22"
-[1] "El elemento de la fila 2 y columna 1 es igual a 44"
-[1] "El elemento de la fila 2 y columna 2 es igual a 90"
-[1] "El elemento de la fila 2 y columna 3 es igual a 3"
-[1] "El elemento de la fila 3 y columna 1 es igual a 65"
-[1] "El elemento de la fila 3 y columna 2 es igual a 72"
-[1] "El elemento de la fila 3 y columna 3 es igual a 45"</code></pre>
+<pre><code>[1] "El elemento de la fila 1 y columna 1 es igual a 92"
+[1] "El elemento de la fila 1 y columna 2 es igual a 36"
+[1] "El elemento de la fila 1 y columna 3 es igual a 11"
+[1] "El elemento de la fila 2 y columna 1 es igual a 61"
+[1] "El elemento de la fila 2 y columna 2 es igual a 87"
+[1] "El elemento de la fila 2 y columna 3 es igual a 74"
+[1] "El elemento de la fila 3 y columna 1 es igual a 20"
+[1] "El elemento de la fila 3 y columna 2 es igual a 91"
+[1] "El elemento de la fila 3 y columna 3 es igual a 52"</code></pre>
 </div>
 </div>
 <p>¿Cómo funciona este código? La mejor forma de entender un bucle individual, o bucles anidados, es evaluar el primer caso de la serie de <em>repeticiones</em> que el bucle está efectuando y evaluar el código para el caso. Aquí, el primer caso sería cuando <code>i = 1</code> y <code>j = 1</code>.</p>
@@ -1008,7 +1003,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejercicio-final" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-final">Ejercicio Final</h3>
-<p><a href="https://github.com/pastornicolas/fundamentos_R/raw/6263d3cc456bb84cce07ce2d28bef5068cf2b6dd/unidad3/data/iris_more.zip">Descargue el archivo</a> denominado “iris_more.csv”, y cargue la tabla:</p>
+<p><a href="https://github.com/pastornicolas/fundamentos_R/raw/6263d3cc456bb84cce07ce2d28bef5068cf2b6dd/unidad3/data/iris_more.zip">Descargue el archivo zip</a> y extraiga el archivo denominado “iris_more.csv” en el directorio “día 4”. Cargue la tabla:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>iris_more <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/iris_more.csv"</span>)</span></code></pre></div><button title="Copiar" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

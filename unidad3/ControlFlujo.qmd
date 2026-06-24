@@ -226,9 +226,9 @@ El constructo `for` es otra estructura de tipo bucle que permite iterar sobre un
 `for` (*item* `in` **colección**) `{código a ejecutar}`
 
 ```{r }
-asistentes <- c("Maria Guadalupe", "Clarisa", "Pablo Alejandro", "Andrea", "Raúl Andres", "Evangelina",
-                "Juan Manuel", "María Azul", "Gala", "Lucille", "Lucas", "Ludmila", "Adolfo Emiliano",
-                "Ana", "Julieta Lourdes", "Joaquín", "Agostina", "Victoria Lucia")
+asistentes <- c("Darío", "Ana Paula", "Carina", "William", "Trinidad",
+                "Axel", "Martina", "Luciana", "Nicolás", "Ana", 
+                "Sofía", "Lucrecia", "Clara")
 for (nombre in asistentes) {
   print(nombre)
 }
@@ -410,7 +410,7 @@ Programar desde cero puede ser muy frustrante! Esto es, obviamente, la situació
 
 ### Ejercicio Final
 
-[Descargue el archivo](https://github.com/pastornicolas/fundamentos_R/raw/6263d3cc456bb84cce07ce2d28bef5068cf2b6dd/unidad3/data/iris_more.zip) denominado "iris_more.csv", y cargue la tabla:
+[Descargue el archivo zip](https://github.com/pastornicolas/fundamentos_R/raw/6263d3cc456bb84cce07ce2d28bef5068cf2b6dd/unidad3/data/iris_more.zip) y extraiga el archivo denominado "iris_more.csv" en el directorio "día 4". Cargue la tabla:
 
 ```{r}
 iris_more <- read.table("data/iris_more.csv")
