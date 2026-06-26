@@ -136,10 +136,14 @@ A la izquierda de la pantalla se encuentran disponibles todos los recursos prác
 
 # Evaluación 2026
 
-[Haz click aquí para acceder a la evaluación del curso](unidad5/Evaluacion.html){target="_blank"}
+[Click aquí para acceder a la evaluación del curso](unidad5/Evaluacion.html){target="_blank"}
 
 --->
 ```
+
+# Encuesta 2026
+
+[Click aquí para acceder a la encuesta](https://forms.gle/cXJi3G1ZPhNnyZz88)
 
 # Descarga el material del curso
 
