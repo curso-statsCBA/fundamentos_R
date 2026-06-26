@@ -131,15 +131,9 @@ A la izquierda de la pantalla se encuentran disponibles todos los recursos prác
 
 </p>
 
-```{=html}
-<!---
-
 # Evaluación 2026
 
 [Click aquí para acceder a la evaluación del curso](unidad5/Evaluacion.html){target="_blank"}
-
---->
-```
 
 # Encuesta 2026
 
