@@ -501,8 +501,8 @@ ul.task-list li input[type="checkbox"] {
 <p><font size="4">Curso de posgrado | Doctorado en Cs. Biológicas | FCEFyN - UNC</font></p>
 <p align="center" style="margin: 0; padding: 0;">
 <!-- Precarga de imágenes -->
-</p><p><link rel="preload" as="image" href="pics/foto_2025.jpg"> <link rel="preload" as="image" href="pics/foto_2024.jpg"></p>
-<img id="main-photo" src="pics/foto_2025.jpg" style="
+</p><p><link rel="preload" as="image" href="pics/foto_2026.jpg"> <link rel="preload" as="image" href="pics/foto_2025.jpg"> <link rel="preload" as="image" href="pics/foto_2024.jpg"></p>
+<img id="main-photo" src="pics/foto_2026.jpg" style="
     padding: 5px 0 5px 0;
     width: 66rem;
     max-width: 100%;
@@ -523,45 +523,44 @@ ul.task-list li input[type="checkbox"] {
     align-items: center;
     gap: 4px;
   ">
-<p><a href="#" id="btn2025" onclick="changePhoto('2025', true); return false;" style="text-decoration: none; font-weight: bold; display: inline; color: var(--carousel-btn-color);"> <i><sup>Edición 2025</sup></i> </a> <span style="display: inline; color: var(--carousel-btn-color);">&nbsp;&nbsp;</span> <a href="#" id="btn2024" onclick="changePhoto('2024', true); return false;" style="text-decoration: none; font-weight: normal; display: inline; color: var(--carousel-btn-color);"> <i><sup>Edición 2024</sup></i> </a></p>
+<p><a href="#" id="btn2026" onclick="changePhoto('2026', true); return false;" style="text-decoration: none; font-weight: bold; display: inline; color: var(--carousel-btn-color);"> <i><sup>Edición 2026</sup></i> </a> <span style="display: inline; color: var(--carousel-btn-color);">&nbsp;&nbsp;</span> <a href="#" id="btn2025" onclick="changePhoto('2025', true); return false;" style="text-decoration: none; font-weight: normal; display: inline; color: var(--carousel-btn-color);"> <i><sup>Edición 2025</sup></i> </a> <span style="display: inline; color: var(--carousel-btn-color);">&nbsp;&nbsp;</span> <a href="#" id="btn2024" onclick="changePhoto('2024', true); return false;" style="text-decoration: none; font-weight: normal; display: inline; color: var(--carousel-btn-color);"> <i><sup>Edición 2024</sup></i> </a></p>
 </div>
 <p></p>
 <script>
 // Precarga via JS como respaldo
 (function() {
+  var img2026 = new Image(); img2026.src = "pics/foto_2026.jpg";
   var img2025 = new Image(); img2025.src = "pics/foto_2025.jpg";
   var img2024 = new Image(); img2024.src = "pics/foto_2024.jpg";
 })();
 
-var currentYear = "2025";
+var years = ["2026", "2025", "2024"];
+var currentIndex = 0;
 var carouselTimer = null;
 var INTERVAL = 5000;
 
 function changePhoto(year, resetTimer) {
-  var img    = document.getElementById("main-photo");
-  var btn2024 = document.getElementById("btn2024");
+  var img     = document.getElementById("main-photo");
+  var btn2026 = document.getElementById("btn2026");
   var btn2025 = document.getElementById("btn2025");
+  var btn2024 = document.getElementById("btn2024");
 
-  currentYear = year;
+  currentIndex = years.indexOf(year);
 
   // Fade out
   img.style.opacity = 0;
 
   setTimeout(function() {
-    if (year === "2025") {
-      img.src = "pics/foto_2025.jpg";
-      btn2025.style.fontWeight = "bold";
-      btn2024.style.fontWeight = "normal";
-    } else {
-      img.src = "pics/foto_2024.jpg";
-      btn2024.style.fontWeight = "bold";
-      btn2025.style.fontWeight = "normal";
-    }
+    img.src = "pics/foto_" + year + ".jpg";
+
+    btn2026.style.fontWeight = year === "2026" ? "bold" : "normal";
+    btn2025.style.fontWeight = year === "2025" ? "bold" : "normal";
+    btn2024.style.fontWeight = year === "2024" ? "bold" : "normal";
+
     // Fade in
     img.style.opacity = 1;
   }, 400);
 
-  // Reiniciar timer si fue click manual
   if (resetTimer) {
     clearInterval(carouselTimer);
     startCarousel();
@@ -569,8 +568,8 @@ function changePhoto(year, resetTimer) {
 }
 
 function nextPhoto() {
-  var next = currentYear === "2025" ? "2024" : "2025";
-  changePhoto(next, false);
+  var nextIndex = (currentIndex + 1) % years.length;
+  changePhoto(years[nextIndex], false);
 }
 
 function startCarousel() {
